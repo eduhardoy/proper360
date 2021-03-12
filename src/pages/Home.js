@@ -1,12 +1,9 @@
 import React from "react";
-import AdminModal from "../components/admin/AdminModal";
+import styled from "styled-components";
+import HomeHeader from "../components/HomeHeader";
 
 const Home = () => {
-  return (
-    <div>
-      <AdminModal></AdminModal>
-    </div>
-  );
+  return <HomeHeader></HomeHeader>;
 };
 
 export default Home;
