@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-import Logo from "../images/logoproper.png";
+import HomeHeader from "../components/HomeHeader";
+import Departamentos from "../images/modern-apartment-architecture.jpg"
 
-const Header = styled.header`
+
+ /* const Header = styled.header`
   background: pink;
- /*  height: 100px; */
+ //  height: 100px; 
   display: flex;
   
-`;
+`; */
 
-const Header__Logo = styled.div`
+/* const Header__Logo = styled.div`
   width:50%;
   background:red;
   display:flex;
@@ -19,9 +21,9 @@ const Header__Logo = styled.div`
   div{
     margin-left: 50px;
     width: 40%;
-    /* height:80%; */
-    /* display: flex;
-    align-items: center; */
+    // height:80%; 
+    // display: flex;
+    //align-items: center; 
     background: green;
     display: flex;
     align-items: center;
@@ -34,9 +36,9 @@ const Header__Logo = styled.div`
     }
   }
   
-`;
+`; */
 
-const Header__Menu = styled.div`
+/* const Header__Menu = styled.div`
   width:50%;
   background: lightblue;
   nav{
@@ -57,16 +59,25 @@ const Header__Menu = styled.div`
       }
     }
   }
-`;
+`; */
 
-const Home__Hero = styled.div`
+/* const Home__Hero = styled.div`
+
+`;  */
+
+const HomeHero = styled.div`
+  height: calc(100vh - 120px);
+  background: url(${Departamentos}) no-repeat fixed center;
+  background-size: cover;
+  /* background-position: center;
+  background-repeat: no-repeat; */
 
 `;
 
 function Home(){
   return(
     <React.Fragment>
-      <Header>
+      {/* <Header>
         <Header__Logo>
           <div>
             <img src={Logo} alt= "Logo"/>
@@ -90,8 +101,9 @@ function Home(){
             </ul>
           </nav>
         </Header__Menu>
-      </Header>
-      <Home__Hero></Home__Hero>
+      </Header> */}
+      <HomeHeader/>
+      <HomeHero></HomeHero>
     </React.Fragment>
   );
 }
