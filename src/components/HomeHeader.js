@@ -10,6 +10,7 @@ const StyledHomeHeader = styled.header`
   width: 100%;
   height: 120px;
 `;
+
 const HeaderImageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -21,6 +22,7 @@ const HeaderImageContainer = styled.div`
     height: 90%;
   }
 `;
+
 const HeaderMenuContainer = styled.div`
   display: flex;
   justify-content: flex-end;
