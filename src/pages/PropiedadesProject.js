@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
+import Header from "../components/ProjectHeader";
 import ContactForm from "../components/ContactForm";
 
 import Footer from "../components/Footer";
 
 const ProjectsHeader = styled.header`
-    height: 200px;
-    width: 100%;
-    background-color: yellow;
-    display:flex;
-    justify-content: space-between;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
 `;
 
 const ProjectContainer = styled.div`
@@ -74,14 +74,7 @@ const PropiedadContactForm = styled.div`
 function PropiedadesProject (){
     return(
         <React.Fragment>
-            <ProjectsHeader>
-                <div>
-
-                </div>
-                <div>
-                    
-                </div>
-            </ProjectsHeader>
+            <Header/>
             <ProjectContainer>
                 <PropiedadTitle>
                    <h1>TITULO DE LA PROPIEDAD</h1>
