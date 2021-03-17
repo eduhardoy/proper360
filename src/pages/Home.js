@@ -15,7 +15,7 @@ const HomeHero = styled.div`
   height: calc(100vh - 120px);
   width: 100%;
   background-color: gray;
-  background-image: url(${Departamentos}) /* no-repeat fixed center */;
+  background-image: url(${Departamentos});
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -29,7 +29,7 @@ const HeroForm = styled.div`
     height: 450px;
     width: 400px;
     margin-right: 300px;
-    margin-bottom: 100px;
+    bottom: 100px;
 `;
 
 const HomeSectionInmobiliarias = styled.section` //nombre?

@@ -1,32 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-
-
-const InmobiliariaHeader = styled.header`
-    height:280px;
-    width: 80%;
-    margin: auto;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    div{
-        height: 150px;
-        width: 150px;
-        background: lightblue;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-`;
-
 const InmobiliariaData = styled.section`
     display:flex;
     flex-direction: column;
     align-items:center;
     width:80%;
     margin: auto;
-
 `;
 
 const InmobiliariaBanner = styled.div`
@@ -50,11 +30,6 @@ const InmobiliariaBanner = styled.div`
 function Inmobiliaria(){
     return(
         <React.Fragment>
-            <InmobiliariaHeader>
-                <div>
-                    logo Inmobiliaria
-                </div>
-            </InmobiliariaHeader>
             <InmobiliariaData>
                 <h1>SOBRE INMOBILIARIA</h1>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
