@@ -55,7 +55,7 @@ const FormContainer = styled.div`
                 box-sizing: border-box;
                 border: 0px solid black;
                 border-radius: 10px 0 0 10px;
-                background-color: rgba(255,255,255,0.85)
+                background-color: rgba(255,255,255,0.85);
                
             }
             button{
