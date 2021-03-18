@@ -1,63 +1,45 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "@reach/router";
 
-import LogoProper from "../images/logoproper.png";
-import LogoPropiedad from "../images/UNbqDI-covFZlmpCSRuqcEtRERT2kKwpdN1vBpddtMCgq6ItThhZ7ilf9tRWhf2MLEV3SmCEiiFlA1TRRzm4F5F9wyMaFQhO9JO1GwhbygpF-pBHz73FtfhyNpn1bryYm5U.png";
+import Logo from "../images/logoproper.png";
 
-const StyledHeader = styled.header`
+const StyledHomeHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 160px;
-  background:yellow;
+  height: 120px;
 `;
 
-const HeaderLogoContainer = styled.div`
+const HeaderImageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-left: 50px;
   height: 100%;
-  width: 30%;
+  width: 100%;
   a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    img {
       height: 90%;
-      img {
-            height: 80%;
+    }
   }
-  }
+  
 `;
 
-const HeaderLogoPropiedadContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
-  width: 30%;
-  background: green;
-  a{
-    height: 90%;
-    background: red;
-      img{
-        height: 80%;
-      }
-  }
-`;
 
 const HomeHeader = () => {
   return (
-    <StyledHeader>
-      <HeaderLogoContainer>
-        <a>
-            <img src={LogoProper}/>
-        </a>
-      </HeaderLogoContainer>
-      <HeaderLogoPropiedadContainer>
-        <a>
-            <img src={LogoPropiedad}/>
-        </a>
-      </HeaderLogoPropiedadContainer>
-    </StyledHeader>
+    <StyledHomeHeader>
+      <HeaderImageContainer>
+        <Link to="/">
+          <img src={Logo} alt='Logo proper'/>
+        </Link>
+      </HeaderImageContainer>
+    </StyledHomeHeader>
   );
 };
 

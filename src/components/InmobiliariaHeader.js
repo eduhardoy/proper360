@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "@reach/router";
 
 import Logo from "../images/UNbqDI-covFZlmpCSRuqcEtRERT2kKwpdN1vBpddtMCgq6ItThhZ7ilf9tRWhf2MLEV3SmCEiiFlA1TRRzm4F5F9wyMaFQhO9JO1GwhbygpF-pBHz73FtfhyNpn1bryYm5U.png";
 
@@ -13,7 +14,6 @@ const StyledHeader = styled.header`
     div{
         height: 150px;
         width: 150px;
-       /*  background: lightblue; */
         display:flex;
         justify-content: center;
         align-items: center;
@@ -33,9 +33,9 @@ function InmobiliariaHeader(){
     return(
         <StyledHeader>
             <div>
-                <a>
+                <Link to="/inmobiliaria">
                     <img src={Logo} alt="Logo Inmobiliaria"/>
-                </a>
+                </Link>
             </div>
         </StyledHeader>
     );

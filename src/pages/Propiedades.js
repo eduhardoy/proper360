@@ -25,7 +25,7 @@ const InmobiliariaContainer = styled.div`
     width: calc(100vw - 385px);
 `;
 
-function Inmobiliarias(){
+function Propiedades(){
 
     return(
         <React.Fragment>
@@ -35,7 +35,7 @@ function Inmobiliarias(){
                 </LeftSideBarContainer>
                 <InmobiliariaContainer>
                     <InmobiliariaHeader/>
-                    <InmobiliariaData/>
+                    <PropiedadesList/>
                 </InmobiliariaContainer>
             </Body>
             <Footer/>
@@ -43,4 +43,4 @@ function Inmobiliarias(){
     );
 }
 
-export default Inmobiliarias;
+export default Propiedades;

@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "@reach/router";
 
 import Edificio from "../images/CP-Patio-EdificioAlonso-0081mod.jpg";
 
 const ListContainer = styled.div`
     width: 80%;
     margin: auto;
-    background:gray;
+    /* background:gray; */
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 100px;
 
     ul{
         width: 100%;
@@ -74,6 +76,28 @@ function PropiedadesList(){
         <React.Fragment>
             <ListContainer>
                 <ul>
+                    <li>
+                        <Link to="/project">
+                            <img src={Edificio}/>
+                            <div>
+                                <p>DOMICILIO</p>
+                                <p>X HABITACIONES - X BAÑOS</p>
+                                
+                            </div>
+                            
+                        </Link>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src={Edificio}/>
+                            <div>
+                                <p>DOMICILIO</p>
+                                <p>X HABITACIONES - X BAÑOS</p>
+                                
+                            </div>
+                            
+                        </a>
+                    </li>
                     <li>
                         <a href="#">
                             <img src={Edificio}/>

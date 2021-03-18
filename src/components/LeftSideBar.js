@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "@reach/router";
 
 import Logo from "../images/logoproper.png";
 
@@ -77,9 +78,9 @@ function LeftSideBar(){
                     <dl>
                         <dt>ALQUILERES</dt>
                         <dd>
-                            <a href="#">
+                            <Link to="/propiedades">
                                 <span>Departamenos</span> 
-                            </a>
+                            </Link>
                         </dd>
                         <dd>
                             <a href="#">

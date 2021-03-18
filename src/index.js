@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import GlobalStyles from "./globalStyles";
+import {GlobalStyle} from "./globalStyles";
 
 //REDUX
 import { Provider } from "react-redux";
@@ -10,7 +10,7 @@ import Routes from "./routes";
 
 const App = () => (
   <div>
-    <GlobalStyles />
+    <GlobalStyle />
     <Routes />
   </div>
 );

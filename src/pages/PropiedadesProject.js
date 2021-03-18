@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Header from "../components/ProjectHeader";
+import InmobiliariaHeader from "../components/InmobiliariaHeader";
 import ContactForm from "../components/ContactForm";
 
 import Footer from "../components/Footer";
@@ -30,7 +31,7 @@ const PropiedadTitle = styled.div`
 const PropiedadView = styled.div`
     /* height: 100%; */
     min-height: 80vh;
-    width: 100%;
+    width: 90%;
     /* background: lightblue; */
     display:flex;
     align-items: center;
@@ -69,32 +70,35 @@ const PropiedadContactForm = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
 `;
 
 function PropiedadesProject (){
     return(
         <React.Fragment>
             <Header/>
+            <InmobiliariaHeader/>
             <ProjectContainer>
                 <PropiedadTitle>
                    <h1>TITULO DE LA PROPIEDAD</h1>
                 </PropiedadTitle>
+                <PropiedadDetails>
+                    <ul>
+                        <li>Direccion...</li>
+                        <li>Hambientes...</li>
+                        <li>Habitaciones...</li>
+                        <li>Baños...</li>
+                        <li>Cochera...</li>
+                        <li>Servicios...</li>
+                        <li>Amueblado...</li>
+                    </ul>
+                </PropiedadDetails>
                 <PropiedadView>
                     <IframeContainer>
                         <iframe src="https://kuula.co/share/7wW3l/collection/7YhvC?fs=1&vr=1&initload=0&thumbs=4&margin=10&inst=es&info=0&logo=1&logosize=83"></iframe>
                     </IframeContainer>
                 </PropiedadView>
-                <PropiedadDetails>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </PropiedadDetails>
+                
                 <PropiedadContactForm>
                     <h2>Contacto</h2>
                    <ContactForm/>
