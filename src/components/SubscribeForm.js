@@ -56,7 +56,7 @@ const FormContainer = styled.div`
                 border: 0px solid black;
                 border-radius: 10px 0 0 10px;
                 background-color: rgba(255,255,255,0.85);
-               
+                
             }
             button{
                 border:none;
@@ -91,7 +91,7 @@ function SubscribeForm(){
                 </div>
                 < div className="Form-input">
                     <input type="email" placeholder="Tu email"/>
-                    <button>▶</button>
+                    <button class="button">▶</button>
                 </div>
                 <div className="Form-msj">
                     <h2>Suscríbete</h2>

@@ -83,32 +83,32 @@ function LeftSideBar(){
                             </Link>
                         </dd>
                         <dd>
-                            <a href="#">
+                            <Link to="/propiedades">
                                 <span>Casas</span> 
-                            </a>
+                            </Link>
                         </dd>
                         <dd>
-                            <a href="#">
+                            <Link to="/propiedades">
                                 <span>Locales Comerciales</span> 
-                            </a>
+                            </Link>
                         </dd>
                     </dl>
                     <dl>
                         <dt>VENTAS</dt>
                         <dd>
-                            <a href="#">
+                            <Link to="/propiedades">
                                 <span>Departamenos</span> 
-                            </a>
+                            </Link>
                         </dd>
                         <dd>
-                            <a href="#">
+                            <Link to="/propiedades">
                                 <span>Casas</span> 
-                            </a>
+                            </Link>
                         </dd>
                         <dd>
-                            <a href="#">
+                            <Link to="/propiedades">
                                 <span>Locales Comerciales</span> 
-                            </a>
+                            </Link>
                         </dd>
                     </dl>  
                 </FilterGroups>

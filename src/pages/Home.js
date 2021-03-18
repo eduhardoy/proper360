@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "@reach/router";
 
 import HomeHeader from "../components/HomeHeader";
 import Footer from "../components/Footer";
@@ -106,24 +107,24 @@ function Home(){
         <div className="SectionContent">
           <ul>
             <li>
-              <a href="/inmobiliaria">
+              <Link to="/inmobiliaria">
                 <img src={Forte} alt="Logo Inmobilria Forte"/>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="/inmobiliaria">
                 <img src={House} alt="Logo Inmobilria House"/>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="/inmobiliaria">
                 <img src={Risso} alt="Logo Inmobilria Risso"/>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="/inmobiliaria">
                 <img src={Inalto} alt="Logo Inmobilria Inalto"/>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

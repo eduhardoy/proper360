@@ -25,14 +25,12 @@ const ProjectContainer = styled.div`
 `;
 
 const PropiedadTitle = styled.div`
-    /* background: pink; */
+    
 `;
 
 const PropiedadView = styled.div`
-    /* height: 100%; */
     min-height: 80vh;
     width: 90%;
-    /* background: lightblue; */
     display:flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +39,6 @@ const PropiedadView = styled.div`
 const IframeContainer = styled.div`
     height: 600px;
     width: 90%;
-    /* background: lightgray; */
     iframe{
         height: 100%;
         width: 100%;
@@ -50,13 +47,11 @@ const IframeContainer = styled.div`
 `;
 
 const PropiedadDetails = styled.section`
-    /* background: lightgreen; */
     width: 100%;
     display: flex;
     justify-content: center;
 
     ul{
-        /* background-color: gray; */
         width: 50%;
        
     }
@@ -64,7 +59,6 @@ const PropiedadDetails = styled.section`
 `;
 
 const PropiedadContactForm = styled.div`
-    /* background:red; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -85,11 +79,11 @@ function PropiedadesProject (){
                 <PropiedadDetails>
                     <ul>
                         <li>Direccion...</li>
-                        <li>Hambientes...</li>
-                        <li>Habitaciones...</li>
+                        <li>Ambientes...</li>
+                        <li>Dormitorios...</li>
                         <li>Baños...</li>
                         <li>Cochera...</li>
-                        <li>Servicios...</li>
+                        <li>X M2</li>
                         <li>Amueblado...</li>
                     </ul>
                 </PropiedadDetails>

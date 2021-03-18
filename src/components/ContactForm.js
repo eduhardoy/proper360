@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Form = styled.form`
     
     width: 40%;
-   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,6 +14,7 @@ const Form = styled.form`
         height: 40px;
         margin-top: 20px;
         border: 1px solid black;
+        
     }
     textarea{
         margin-top: 20px;

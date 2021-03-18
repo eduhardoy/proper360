@@ -15,7 +15,7 @@ const Routes = () => {
       <Inmobiliarias path='/inmobiliaria'/>
       <Propiedades path='/propiedades'/>
       <PropiedadesProject path='/project'/> 
-      <AdminRoute path='admin/*' />
+      <AdminRoute path='admin/*'/>
     </Router>
   );
 };

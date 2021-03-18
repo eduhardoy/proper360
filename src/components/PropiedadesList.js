@@ -7,7 +7,6 @@ import Edificio from "../images/CP-Patio-EdificioAlonso-0081mod.jpg";
 const ListContainer = styled.div`
     width: 80%;
     margin: auto;
-    /* background:gray; */
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 100px;
@@ -20,13 +19,12 @@ const ListContainer = styled.div`
         flex-wrap: wrap;
         align-items: center;
         justify-content:center;
-        background-color: lightgray;
         padding: 0;
 
         
         li{
-            height: 320px;
-            width: 380px;
+            height: 340px;
+            width: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -88,7 +86,7 @@ function PropiedadesList(){
                         </Link>
                     </li>
                     <li>
-                        <a href="#">
+                        <Link to="/project">
                             <img src={Edificio}/>
                             <div>
                                 <p>DOMICILIO</p>
@@ -96,10 +94,10 @@ function PropiedadesList(){
                                 
                             </div>
                             
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#">
+                        <Link to="/project">
                             <img src={Edificio}/>
                             <div>
                                 <p>DOMICILIO</p>
@@ -107,10 +105,10 @@ function PropiedadesList(){
                                 
                             </div>
                             
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#">
+                        <Link to="/project">
                             <img src={Edificio}/>
                             <div>
                                 <p>DOMICILIO</p>
@@ -118,41 +116,9 @@ function PropiedadesList(){
                                 
                             </div>
                             
-                        </a>
+                        </Link>
                     </li>
-                    <li>
-                        <a href="#">
-                            <img src={Edificio}/>
-                            <div>
-                                <p>DOMICILIO</p>
-                                <p>X HABITACIONES - X BAÑOS</p>
-                                
-                            </div>
-                            
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src={Edificio}/>
-                            <div>
-                                <p>DOMICILIO</p>
-                                <p>X HABITACIONES - X BAÑOS</p>
-                                
-                            </div>
-                            
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src={Edificio}/>
-                            <div>
-                                <p>DOMICILIO</p>
-                                <p>X HABITACIONES - X BAÑOS</p>
-                                
-                            </div>
-                            
-                        </a>
-                    </li>
+                    
                     
                     
                 </ul>
