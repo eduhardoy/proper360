@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Link} from "@reach/router";
-
-import Logo from "../images/logoproper.png";
+import { Link } from "@reach/router";
 
 const StyledHomeHeader = styled.header`
   display: flex;
@@ -19,7 +17,7 @@ const HeaderImageContainer = styled.div`
   margin-left: 50px;
   height: 100%;
   width: 100%;
-  a{
+  a {
     height: 100%;
     display: flex;
     align-items: center;
@@ -27,16 +25,14 @@ const HeaderImageContainer = styled.div`
       height: 90%;
     }
   }
-  
 `;
-
 
 const HomeHeader = () => {
   return (
     <StyledHomeHeader>
       <HeaderImageContainer>
-        <Link to="/">
-          <img src={Logo} alt='Logo proper'/>
+        <Link to='/'>
+          <img src='./images/logo.png' alt='Logo proper' />
         </Link>
       </HeaderImageContainer>
     </StyledHomeHeader>

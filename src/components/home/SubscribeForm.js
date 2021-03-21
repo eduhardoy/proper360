@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import SendIcon from "@material-ui/icons/Send";
 
 const FormContainer = styled.div`
   height: 100%;
@@ -9,7 +10,7 @@ const FormContainer = styled.div`
   border-radius: 20px;
   font-family: sans-serif;
   form {
-    font-family: "Raleway", "Open-Sans", Helvetica, Sans-Serif;
+    font-family: "Lato", "Open-Sans", Helvetica, Sans-Serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,11 +23,14 @@ const FormContainer = styled.div`
       text-align: center;
       width: 80%;
       margin-right: 20px;
+      h3 {
+        font-size: 30px;
+        margin: 15px;
+      }
       h1 {
+        margin: 10px;
         font-weight: 300;
-        .strong {
-          font-weight: 500;
-        }
+        font-family: "Poiret One", "Open-Sans", Helvetica, Sans-Serif;
       }
     }
     .Form-txt {
@@ -44,6 +48,7 @@ const FormContainer = styled.div`
       align-items: center;
       border-radius: 2px 2px 0 0;
       input {
+        font-size: 15px;
         outline: none;
         width: 100%;
         height: 40px;
@@ -75,29 +80,29 @@ const FormContainer = styled.div`
   }
 `;
 
-function SubscribeForm() {
+const SubscribeForm = () => {
   return (
     <FormContainer>
       <form>
         <div className='Form-title'>
-          <h1>
-            BIENVENIDO A <br />
-            <strong> PROPER 360°</strong>
-          </h1>
+          <h3>BIENVENIDO A</h3>
+          <h1>PROPER 360°</h1>
         </div>
         <div className='Form-txt'>
           <h2>ENCUENTRA LA PROPIEDAD QUE BUSCAS</h2>
         </div>
         <div className='Form-input'>
           <input type='email' placeholder='Tu email' />
-          <button class='button'>▶</button>
+          <button class='button'>
+            <SendIcon></SendIcon>
+          </button>
         </div>
         <div className='Form-msj'>
-          <h2>SUSCRIBETE</h2>
+          <h2>Suscríbete</h2>
         </div>
       </form>
     </FormContainer>
   );
-}
+};
 
 export default SubscribeForm;

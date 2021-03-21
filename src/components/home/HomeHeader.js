@@ -39,6 +39,7 @@ const HeaderMenuContainer = styled.div`
       li {
         padding: 20px;
         a {
+          padding-bottom: 4px;
           font-size: 20px;
           text-decoration: none;
           color: black;

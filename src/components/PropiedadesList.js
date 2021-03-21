@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 
-import Edificio from "../images/CP-Patio-EdificioAlonso-0081mod.jpg";
-
 const ListContainer = styled.div`
   width: 90%;
   margin: auto;
@@ -72,7 +70,7 @@ function PropiedadesList() {
         <ul>
           <li>
             <Link to='/project'>
-              <img src={Edificio} />
+              <img src='./images/project.jpg' />
               <div>
                 <p>DOMICILIO</p>
                 <p>X HABITACIONES - X BAÑOS</p>
@@ -81,7 +79,7 @@ function PropiedadesList() {
           </li>
           <li>
             <Link to='/project'>
-              <img src={Edificio} />
+              <img src='./images/project.jpg' />
               <div>
                 <p>DOMICILIO</p>
                 <p>X HABITACIONES - X BAÑOS</p>
@@ -90,7 +88,7 @@ function PropiedadesList() {
           </li>
           <li>
             <Link to='/project'>
-              <img src={Edificio} />
+              <img src='./images/project.jpg' />
               <div>
                 <p>DOMICILIO</p>
                 <p>X HABITACIONES - X BAÑOS</p>
@@ -99,7 +97,7 @@ function PropiedadesList() {
           </li>
           <li>
             <Link to='/project'>
-              <img src={Edificio} />
+              <img src='./images/project.jpg' />
               <div>
                 <p>DOMICILIO</p>
                 <p>X HABITACIONES - X BAÑOS</p>

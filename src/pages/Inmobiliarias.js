@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import InmobiliariaData from "../components/InmobiliariaData";
 import LeftSideBar from "../components/LeftSideBar";
 import InmobiliariaHeader from "../components/InmobiliariaHeader";
-import PropiedadesList from "../components/PropiedadesList";
 
 const Body = styled.div`
   width: 100%;
