@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 import Footer from "../components/Footer";
 import LeftSideBar from "../components/LeftSideBar";
-import InmobiliariaHeader from "../components/InmobiliariaHeader";
-import PropiedadesList from "../components/PropiedadesList";
+import InmobiliariaHeader from "../components/inmobiliarias/InmobiliariaHeader";
+import PropiedadesList from "../components/inmobiliarias/PropiedadesList";
 
 const Body = styled.div`
   width: 100%;

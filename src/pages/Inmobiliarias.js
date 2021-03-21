@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import Footer from "../components/Footer";
-import InmobiliariaData from "../components/InmobiliariaData";
+import InmobiliariaData from "../components/inmobiliarias/InmobiliariaData";
 import LeftSideBar from "../components/LeftSideBar";
-import InmobiliariaHeader from "../components/InmobiliariaHeader";
+import InmobiliariaHeader from "../components/inmobiliarias/InmobiliariaHeader";
 
 const Body = styled.div`
   width: 100%;
