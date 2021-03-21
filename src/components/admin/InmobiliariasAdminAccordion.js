@@ -7,6 +7,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { actions, types } from '../../store/actions/inmobiliarias'
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -55,46 +57,61 @@ const ButtonAccordion = styled.button`
 `;
 
 export default function InmobiliariasAdminAccordion() {
+  const dispatch = useDispatch()
+  const [data, setData] = React.useState({})
 
-  
+  const inmobiliarias = useSelector(state => state.inmobiliarias)
+
+  React.useEffect(() => {
+    async function fetchInmobiliarias() {
+      dispatch(actions.getInmobiliarias())
+    }
+    fetchInmobiliarias()
+  }, [])
+
+
   return (
     <AccordionWrapper>
+      {
+        inmobiliarias.result.map(data => (
+          <Accordion>
+            <StyledAccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls='panel1a-content'
+              id='panel1a-header'
+            >
+              <h2>{data.NOMBRE}</h2>
+              <ButtonWrapper>
+                <ButtonAccordion
+                  onClick={event => event.stopPropagation()}
+                  onFocus={event => event.stopPropagation()}
+                >
+                  <p>EDITAR</p>
+                  <EditIcon />
+                </ButtonAccordion>
+                <ButtonAccordion
+                  onClick={event => event.stopPropagation()}
+                  onFocus={event => event.stopPropagation()}
+                >
+                  <p>ELIMINAR</p>
+                  <DeleteIcon />
+                </ButtonAccordion>
+              </ButtonWrapper>
+            </StyledAccordionSummary>
+            <AccordionDetails>
+              <ListDetails>
+                <p>Logo: {data.LOGO_INMOBILIARIA}</p>
+                <p>Descripcion: {data.DESCRIPCION}</p>
+                <p>Telefono: {data.CONTACTO ? data.CONTACTO.telefono : ""}</p>
+                <p>Email: {data.CONTACTO ? data.CONTACTO.email : ""}</p>
+                <p>Direccion: {data.CONTACTO ? data.CONTACTO.direccion : ""}</p>
+                <p>Banner: {data.BANNER_INMOBILIARIA}</p>
+              </ListDetails>
+            </AccordionDetails>
+          </Accordion>
+        ))
+      }
 
-      <Accordion>
-        <StyledAccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls='panel1a-content'
-          id='panel1a-header'
-        >
-          <h2>Inmobiliaria 1</h2>
-          <ButtonWrapper>
-            <ButtonAccordion
-              onClick={event => event.stopPropagation()}
-              onFocus={event => event.stopPropagation()}
-            >
-              <p>EDITAR</p>
-              <EditIcon />
-            </ButtonAccordion>
-            <ButtonAccordion
-              onClick={event => event.stopPropagation()}
-              onFocus={event => event.stopPropagation()}
-            >
-              <p>ELIMINAR</p>
-              <DeleteIcon />
-            </ButtonAccordion>
-          </ButtonWrapper>
-        </StyledAccordionSummary>
-        <AccordionDetails>
-          <ListDetails>
-            <p>Logo:</p>
-            <p>Descripcion:</p>
-            <p>Telefono:</p>
-            <p>Email:</p>
-            <p>Direccion:</p>
-            <p>Banner:</p>
-          </ListDetails>
-        </AccordionDetails>
-      </Accordion>
     </AccordionWrapper>
   );
 }

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = axios.create({ url: "http://190.106.132.208:3001" })
+const api = axios.create({ baseURL: "http://190.106.132.208:3001/" })
 
 //Types
 const GET_INMOBILIARIAS = "GET_INMOBILIARIAS";
@@ -21,7 +21,7 @@ const getInmobiliarias = () => {
     // Initial action dispatched
     dispatch({ type: GET_INMOBILIARIAS });
     // Return promise with success and failure actions
-    return api.get("/inmobiliarias")
+    return api.get("inmobiliarias")
       .then(inmobiliarias => dispatch({ type: GET_INMOBILIARIAS_SUCCESS, payload: inmobiliarias.data }))
       .catch(err => dispatch({ type: GET_INMOBILIARIAS_FAILURE, payload: err.message }))
   }
