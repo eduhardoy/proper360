@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import adminReducer from "./admin";
+import inmobiliarias from "./inmobiliarias";
+import propiedades from './propiedades'
 
 const rootReducers = combineReducers({
-  admin: adminReducer,
+  inmobiliarias: inmobiliarias,
+  propiedades: propiedades
 });
 
 export default rootReducers;
