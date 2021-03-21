@@ -1,13 +1,21 @@
 import React from "react";
-import Home from "../pages/Home";
-import { Router } from "@reach/router";
+import { Router} from "@reach/router";
+
 import AdminRoute from "./AdminRoute";
+import Home from "../pages/Home";
+import Inmobiliarias from "../pages/Inmobiliarias";
+import Propiedades from "../pages/Propiedades";
+import PropiedadesProject from "../pages/PropiedadesProject";
+
 
 const Routes = () => {
   return (
-    <Router>
+    <Router> 
       <Home path='/' />
-      <AdminRoute path='admin/*' />
+      <Inmobiliarias path='/inmobiliaria'/>
+      <Propiedades path='/propiedades'/>
+      <PropiedadesProject path='/project'/> 
+      <AdminRoute path='admin/*'/>
     </Router>
   );
 };
