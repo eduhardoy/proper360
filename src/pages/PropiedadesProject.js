@@ -36,7 +36,7 @@ const PropiedadView = styled.div`
 
 const IframeContainer = styled.div`
   height: 600px;
-  width: 90%;
+  width: 300px;
   iframe {
     height: 100%;
     width: 100%;
