@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 
-const StyledHomeHeader = styled.header`
+const StyledProjectHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 120px;
+  height: 80px;
 `;
 
 const HeaderImageContainer = styled.div`
@@ -22,21 +22,21 @@ const HeaderImageContainer = styled.div`
     display: flex;
     align-items: center;
     img {
-      height: 90%;
+      height: 75%;
     }
   }
 `;
 
-const HomeHeader = () => {
+const ProjectHeader = () => {
   return (
-    <StyledHomeHeader>
+    <StyledProjectHeader>
       <HeaderImageContainer>
         <Link to='/'>
           <img src='./images/logo.png' alt='Logo proper' />
         </Link>
       </HeaderImageContainer>
-    </StyledHomeHeader>
+    </StyledProjectHeader>
   );
 };
 
-export default HomeHeader;
+export default ProjectHeader;

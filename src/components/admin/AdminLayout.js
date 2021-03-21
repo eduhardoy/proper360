@@ -95,7 +95,7 @@ const Layout = ({ children }) => {
         <MenuButton>
           <MenuIcon />
         </MenuButton>
-        <h2>ZONA CTES PROPIEDADES</h2>
+        <h2>PROPER 360</h2>
         <HomeButton>
           <HomeIcon />
         </HomeButton>

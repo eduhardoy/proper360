@@ -3,7 +3,7 @@ import styled from "styled-components";
 import AddIcon from "@material-ui/icons/Add";
 
 import AdminLayout from "../../components/admin/AdminLayout";
-import ClientesAdminAccordion from "../../components/admin/ClientesAdminAccordion";
+import ClientesAdminList from "../../components/admin/ClientesAdminList";
 
 const Container = styled.div`
   padding: 1%;
@@ -22,29 +22,6 @@ const TitleWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding-bottom: 20px;
-`;
-
-const ButtonModal = styled.button`
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-radius: 50%;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  :hover {
-    svg {
-      font-size: 60px;
-    }
-  }
-  svg {
-    font-size: 40px;
-  }
 `;
 
 const ListWrapper = styled.div`
@@ -82,12 +59,9 @@ const ClientesAdmin = () => {
       <Container>
         <TitleWrapper>
           <h1>Clientes</h1>
-          <ButtonModal>
-            <AddIcon />
-          </ButtonModal>
         </TitleWrapper>
         <ListWrapper>
-          <ClientesAdminAccordion />
+          <ClientesAdminList />
         </ListWrapper>
       </Container>
     </AdminLayout>

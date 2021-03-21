@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import Header from "../components/projects/ProjectHeader";
-import InmobiliariaHeader from "../components/inmobiliarias/InmobiliariaHeader";
+import ProjectHeader from "../components/projects/ProjectHeader";
+import InmobiliariaHeader from "../components/Header";
 import ContactForm from "../components/projects/ContactForm";
 
 import Footer from "../components/Footer";
@@ -17,7 +17,7 @@ const ProjectsHeader = styled.header`
 
 const ProjectContainer = styled.div`
   min-height: calc(100vh - 200px);
-  width: 80%;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -66,12 +66,17 @@ const PropiedadContactForm = styled.div`
 function PropiedadesProject() {
   return (
     <React.Fragment>
-      <Header />
+      <ProjectHeader />
       <InmobiliariaHeader />
       <ProjectContainer>
         <PropiedadTitle>
           <h1>TITULO DE LA PROPIEDAD</h1>
         </PropiedadTitle>
+        <PropiedadView>
+          <IframeContainer>
+            <iframe src='https://kuula.co/share/7wW3l/collection/7YhvC?fs=1&vr=1&initload=0&thumbs=4&margin=10&inst=es&info=0&logo=1&logosize=83'></iframe>
+          </IframeContainer>
+        </PropiedadView>
         <PropiedadDetails>
           <ul>
             <li>Direccion...</li>
@@ -83,11 +88,6 @@ function PropiedadesProject() {
             <li>Amueblado...</li>
           </ul>
         </PropiedadDetails>
-        <PropiedadView>
-          <IframeContainer>
-            <iframe src='https://kuula.co/share/7wW3l/collection/7YhvC?fs=1&vr=1&initload=0&thumbs=4&margin=10&inst=es&info=0&logo=1&logosize=83'></iframe>
-          </IframeContainer>
-        </PropiedadView>
 
         <PropiedadContactForm>
           <h2>Contacto</h2>

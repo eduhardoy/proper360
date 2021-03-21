@@ -27,7 +27,7 @@ const StyledHeader = styled.header`
   }
 `;
 
-function InmobiliariaHeader() {
+const Header = () => {
   return (
     <StyledHeader>
       <div>
@@ -37,6 +37,6 @@ function InmobiliariaHeader() {
       </div>
     </StyledHeader>
   );
-}
+};
 
-export default InmobiliariaHeader;
+export default Header;

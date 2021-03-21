@@ -29,6 +29,7 @@ const SideBarLogo = styled.div`
 const FilterGroups = styled.section`
   margin-top: 60px;
   color: white;
+  font-size: 20px;
   dl {
     width: 100%;
     margin-top: 60px;
@@ -76,7 +77,7 @@ function LeftSideBar() {
           <dt>ALQUILERES</dt>
           <dd>
             <Link to='/propiedades'>
-              <span>Departamenos</span>
+              <span>Departamentos</span>
             </Link>
           </dd>
           <dd>
@@ -94,7 +95,7 @@ function LeftSideBar() {
           <dt>VENTAS</dt>
           <dd>
             <Link to='/propiedades'>
-              <span>Departamenos</span>
+              <span>Departamentos</span>
             </Link>
           </dd>
           <dd>
