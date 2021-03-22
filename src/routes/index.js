@@ -7,7 +7,6 @@ import Inmobiliarias from "../pages/Inmobiliarias";
 import Propiedades from "../pages/Propiedades";
 import PropiedadesProject from "../pages/PropiedadesProject";
 
-
 const Routes = () => {
   return (
     <Router> 
