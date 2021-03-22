@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 import Footer from "../components/Footer";
 import LeftSideBar from "../components/LeftSideBar";
-import InmobiliariaHeader from "../components/inmobiliarias/InmobiliariaHeader";
-import PropiedadesList from "../components/inmobiliarias/PropiedadesList";
+import Header from "../components/Header";
+import PropiedadesList from "../components/propiedades/PropiedadesList";
 
 const Body = styled.div`
   width: 100%;
@@ -31,7 +31,7 @@ function Propiedades() {
           <LeftSideBar />
         </LeftSideBarContainer>
         <InmobiliariaContainer>
-          <InmobiliariaHeader />
+          <Header />
           <PropiedadesList />
         </InmobiliariaContainer>
       </Body>

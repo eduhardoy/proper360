@@ -36,8 +36,8 @@ const BarButton = styled.button`
   }
   p {
     display: block;
-    font-size: 10px;
-    font-family: "Raleway";
+    font-size: 8px;
+    font-family: "Lato";
     font-weight: 700;
   }
   svg {

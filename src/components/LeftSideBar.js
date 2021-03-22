@@ -29,6 +29,7 @@ const SideBarLogo = styled.div`
 const FilterGroups = styled.section`
   margin-top: 60px;
   color: white;
+  font-size: 20px;
   dl {
     width: 100%;
     margin-top: 60px;
@@ -42,6 +43,33 @@ const FilterGroups = styled.section`
     dd {
       padding-top: 10px;
       max-width: 100%;
+      summary {
+        width: 55%;
+        list-style: none;
+        outline: none;
+        text-decoration: none;
+        padding-bottom: 2px;
+        color: white;
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 1px;
+        transition: background-size 0.3s;
+        :hover {
+          background-size: 100% 1px;
+        }
+        :focus {
+          background-size: 0% 1px;
+        }
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          font-size: 15px;
+          padding: 2px;
+        }
+      }
       a {
         text-decoration: none;
         padding-bottom: 2px;
@@ -75,9 +103,16 @@ function LeftSideBar() {
         <dl>
           <dt>ALQUILERES</dt>
           <dd>
-            <Link to='/propiedades'>
-              <span>Departamenos</span>
-            </Link>
+            <details>
+              <summary>Departamentos</summary>
+              <ul>
+                <Link to='/propiedades'>
+                  <li>1 dormitorio</li>
+                </Link>
+                <li>2 dormitorios</li>
+                <li>3 dormitorios</li>
+              </ul>
+            </details>
           </dd>
           <dd>
             <Link to='/propiedades'>
@@ -94,7 +129,7 @@ function LeftSideBar() {
           <dt>VENTAS</dt>
           <dd>
             <Link to='/propiedades'>
-              <span>Departamenos</span>
+              <span>Departamentos</span>
             </Link>
           </dd>
           <dd>
