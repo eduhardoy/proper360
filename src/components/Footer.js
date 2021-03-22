@@ -1,14 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import {
-    FaWhatsapp,
-    FaFacebookF,
-    FaInstagram, 
-    FaPhoneAlt,
-    FaMailBulk,
-    FaMapMarkerAlt
-} from "react-icons/fa";
+import {FaWhatsapp, FaFacebookF, FaInstagram, FaPhoneAlt, FaMailBulk,FaMapMarkerAlt} from "react-icons/fa";
 
 const FooterContainer = styled.footer`
   /*   height: 200px; */
