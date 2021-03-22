@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import {Link} from "@reach/router";
 
-import Logo from "../images/logoproper.png";
+import Logo from "../images/logoproper_w.png";
 
 const LeftSideBarContainer = styled.aside`
     width: 100%;
     height: 100%;
-    background-color: #F1F1F1;
+    background: #6C7270;
+
     
 `;
 
@@ -40,12 +41,13 @@ const FilterGroups = styled.section`
             margin-left: 40px;
             margin-bottom: 10px;
             font-weight: bold;
+            color: white;
         }
         dd{
             max-width: 100%;
             a{
                 text-decoration: none;
-                color: black;
+                color: white;
                 background-image: linear-gradient(currentColor, currentColor);
                 background-position: 0% 100%;
                 background-repeat: no-repeat;

@@ -54,6 +54,7 @@ const FormContainer = styled.div`
                 margin: 8px 0;
                 box-sizing: border-box;
                 border: 0px solid black;
+                outline: none;
                 border-radius: 10px 0 0 10px;
                 background-color: rgba(255,255,255,0.85);
                 
@@ -63,6 +64,7 @@ const FormContainer = styled.div`
                 border-radius: 0 10px 10px 0;
                 color: white;
                 background-color: #262626;
+                outline: none;
                 height: 40px;
                 width:  40px;
             }
