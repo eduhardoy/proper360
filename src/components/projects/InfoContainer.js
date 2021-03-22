@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "@reach/router";
 
 const LogoInmobiliariaWrapper = styled.div`
-  padding-top: 20px;
+  padding: 10px;
   a {
     img {
       height: 150px;
@@ -12,7 +12,7 @@ const LogoInmobiliariaWrapper = styled.div`
 `;
 
 const StyledInfoContainer = styled.div`
-  width: 40%;
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,27 +20,28 @@ const StyledInfoContainer = styled.div`
 `;
 
 const StyledInfoBackground = styled.div`
-  height: 90%;
-  width: 80%;
+  width: 90%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  background-color: #e8e8e8;
+  background-color: white;
   border-radius: 20px;
-  box-shadow: 0 0 14px 0 #7a7a7a;
 `;
 
-const ProjectTitle = styled.div`
-  width: 80%;
-  padding-top: 20px;
-`;
 const ProjectDetails = styled.div`
-  width: 80%;
+  width: 95%;
   ul {
     font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    text-decoration: none;
+    list-style-type: none;
+    li {
+      padding: 5px;
+      font-weight: 300;
+    }
   }
 `;
 
@@ -53,18 +54,15 @@ const InfoContainer = () => {
             <img src='./images/inalto.png' alt='Logo Inmobilria Forte' />
           </Link>
         </LogoInmobiliariaWrapper>
-        <ProjectTitle>
-          <h2>Hosteria Caballo Campana - Jujuy 3200</h2>
-        </ProjectTitle>
         <ProjectDetails>
           <ul>
-            <li>Direccion...</li>
-            <li>Ambientes...</li>
-            <li>Dormitorios...</li>
-            <li>Baños...</li>
-            <li>Cochera...</li>
-            <li>X M2</li>
-            <li>Amueblado...</li>
+            <li>Direccion:</li>
+            <li>Ambientes:</li>
+            <li>Dormitorios:</li>
+            <li>Baños:</li>
+            <li>Cochera:</li>
+            <li>Metros cuadrados:</li>
+            <li>Amueblado:</li>
           </ul>
         </ProjectDetails>
       </StyledInfoBackground>

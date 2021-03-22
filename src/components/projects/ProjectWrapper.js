@@ -4,16 +4,15 @@ import styled from "styled-components";
 import InfoContainer from "./InfoContainer";
 
 const ProjectStyledWrapper = styled.div`
-  background-color: white;
   margin-bottom: 40px;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 170px);
 `;
 
 const IframeContainer = styled.div`
-  width: 60%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: center;

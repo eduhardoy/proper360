@@ -9,6 +9,7 @@ const StyledProjectHeader = styled.header`
   position: sticky;
   width: 100%;
   height: 80px;
+  box-shadow: 0 2px 9px -1px hsl(0deg 2% 48% / 60%);
 `;
 
 const HeaderImageContainer = styled.div`
