@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "@reach/router";
 
 const LogoInmobiliariaWrapper = styled.div`
+  padding-top: 20px;
   a {
     img {
       height: 150px;
@@ -11,28 +12,32 @@ const LogoInmobiliariaWrapper = styled.div`
 `;
 
 const StyledInfoContainer = styled.div`
-  width: 30%;
+  width: 40%;
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
 `;
 
 const StyledInfoBackground = styled.div`
   height: 90%;
-  width: 90%;
+  width: 80%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  background-color: #e8e8e8;
+  border-radius: 20px;
+  box-shadow: 0 0 14px 0 #7a7a7a;
 `;
 
 const ProjectTitle = styled.div`
   width: 80%;
+  padding-top: 20px;
 `;
 const ProjectDetails = styled.div`
   width: 80%;
   ul {
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

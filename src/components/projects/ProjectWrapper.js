@@ -5,23 +5,22 @@ import InfoContainer from "./InfoContainer";
 
 const ProjectStyledWrapper = styled.div`
   background-color: white;
-  padding-top: 60px;
   margin-bottom: 40px;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 80px);
 `;
 
 const IframeContainer = styled.div`
-  width: 70%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
   iframe {
     border: none;
-    width: 95%;
-    height: 95%;
+    width: 90%;
+    height: 90%;
   }
 `;
 
