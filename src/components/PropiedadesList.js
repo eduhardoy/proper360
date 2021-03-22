@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import {Link} from "@reach/router";
+import Axios from "axios";
 
 import Edificio from "../images/CP-Patio-EdificioAlonso-0081mod.jpg";
 
@@ -68,13 +69,72 @@ const ListContainer = styled.div`
     }
 `;
 
+/* function usePropiedades(){
+    const [propiedades, setPropiedades] = useState([])
+
+    useEffect (()=>{
+        fetch("server/propiedades.json")
+        .then(response => response.json())
+        .then(datos=>{
+            setPropiedades(datos)
+        })
+        
+    }, [])
+    
+    return propiedades
+} */
+
+const api = Axios.create({
+        baseURL: "http://inibotnea.com:3001"
+    })
+
 function PropiedadesList(){
+
+    
+
+    /* const propiedades = usePropiedades() */
+    const getPropiedades = async () => {
+        try {
+            const response = await api.get('/propiedades')
+            // console.log(response.data)
+            return [response.data, null]
+        } catch (error) {
+            return [null, error]
+        }
+    }
+
+    const [propiedades, setPropiedades] = useState([])
+
+    useEffect(()=>{
+        async function fetchData() {
+            const [data, err] = await getPropiedades()
+            console.log(data)
+            if (err != null){
+                return {
+                    //Handle error
+                }
+            }
+            setPropiedades(data)
+        }
+        fetchData()
+    },[setPropiedades]);
 
     return(
         <React.Fragment>
+            
             <ListContainer>
                 <ul>
-                    <li>
+                    {propiedades.map( item =>(
+                        <Link to="/project">
+                            <img src={item.img}/>
+                            <div>
+                                
+                                <p>{item.id}</p>
+                                <p>{item.ambientes} - {item.baños}</p>    
+                            </div>
+                        </Link>
+                    ))}
+                   {/*  <li>
                         <Link to="/project">
                             <img src={Edificio}/>
                             <div>
@@ -84,42 +144,7 @@ function PropiedadesList(){
                             </div>
                             
                         </Link>
-                    </li>
-                    <li>
-                        <Link to="/project">
-                            <img src={Edificio}/>
-                            <div>
-                                <p>DOMICILIO</p>
-                                <p>X HABITACIONES - X BAÑOS</p>
-                                
-                            </div>
-                            
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/project">
-                            <img src={Edificio}/>
-                            <div>
-                                <p>DOMICILIO</p>
-                                <p>X HABITACIONES - X BAÑOS</p>
-                                
-                            </div>
-                            
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/project">
-                            <img src={Edificio}/>
-                            <div>
-                                <p>DOMICILIO</p>
-                                <p>X HABITACIONES - X BAÑOS</p>
-                                
-                            </div>
-                            
-                        </Link>
-                    </li>
-                    
-                    
+                    </li> */}
                     
                 </ul>
             </ListContainer>
