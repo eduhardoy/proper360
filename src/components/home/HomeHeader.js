@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import Logo from "../images/logoproper.png";
-
 const StyledHomeHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
   width: 100%;
-  height: 120px;
+  height: 80px;
+  box-shadow: 0 2px 9px -1px hsl(0deg 2% 48% / 60%);
 `;
 
 const HeaderImageContainer = styled.div`
@@ -19,7 +19,7 @@ const HeaderImageContainer = styled.div`
   height: 100%;
   width: 30%;
   img {
-    height: 90%;
+    height: 75%;
   }
 `;
 
@@ -39,14 +39,17 @@ const HeaderMenuContainer = styled.div`
       li {
         padding: 20px;
         a {
+          padding-bottom: 4px;
+          font-size: 20px;
           text-decoration: none;
           color: black;
           background-image: linear-gradient(currentColor, currentColor);
           background-position: 50% 100%;
           background-repeat: no-repeat;
           background-size: 0% 1px;
-          transition: background-size .3s;
-          :hover, :focus{
+          transition: background-size 0.3s;
+          :hover,
+          :focus {
             background-size: 100% 1px;
           }
         }
@@ -59,7 +62,7 @@ const HomeHeader = () => {
   return (
     <StyledHomeHeader>
       <HeaderImageContainer>
-        <img src={Logo} alt='Logo proper'/>
+        <img src='./images/logo.png' alt='Logo proper' />
       </HeaderImageContainer>
       <HeaderMenuContainer>
         <nav>
@@ -68,10 +71,7 @@ const HomeHeader = () => {
               <a href=''>NOSOTROS</a>
             </li>
             <li>
-              <a href=''>PROYECTOS</a>
-            </li>
-            <li>
-              <a href=''>PRECIOS</a>
+              <a href=''>CLIENTES</a>
             </li>
             <li>
               <a href=''>CONTACTO</a>

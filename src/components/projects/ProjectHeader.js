@@ -1,46 +1,44 @@
 import React from "react";
 import styled from "styled-components";
-import {Link} from "@reach/router";
+import { Link } from "@reach/router";
 
-import Logo from "../images/logoproper.png";
-
-const StyledHomeHeader = styled.header`
+const StyledProjectHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
   width: 100%;
-  height: 120px;
+  height: 80px;
+  box-shadow: 0 2px 9px -1px hsl(0deg 2% 48% / 60%);
 `;
 
 const HeaderImageContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin-left: 50px;
   height: 100%;
   width: 100%;
-  a{
+  a {
     height: 100%;
     display: flex;
     align-items: center;
     img {
-      height: 90%;
+      height: 75%;
     }
   }
-  
 `;
 
-
-const HomeHeader = () => {
+const ProjectHeader = () => {
   return (
-    <StyledHomeHeader>
+    <StyledProjectHeader>
       <HeaderImageContainer>
-        <Link to="/">
-          <img src={Logo} alt='Logo proper'/>
+        <Link to='/'>
+          <img src='./images/logo.png' alt='Logo proper' />
         </Link>
       </HeaderImageContainer>
-    </StyledHomeHeader>
+    </StyledProjectHeader>
   );
 };
 
-export default HomeHeader;
+export default ProjectHeader;

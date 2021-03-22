@@ -63,7 +63,7 @@ const LoginForm = () => {
     //TODO LOGICA DE LOGIN
     localStorage.setItem("user", "user");
 
-    navigate("/empresas");
+    navigate("/admin/inmobiliarias");
   };
 
   return (

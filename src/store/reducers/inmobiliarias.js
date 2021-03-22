@@ -1,4 +1,4 @@
-import { actions, types } from "../actions/admin";
+import { actions, types } from "../actions/inmobiliarias";
 
 const initialState = {
   loading: false,
@@ -6,7 +6,7 @@ const initialState = {
   result: [],
 };
 
-function adminReducer(state = initialState, action) {
+function Inmobiliarias(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case types.GET_INMOBILIARIAS:
@@ -23,4 +23,4 @@ function adminReducer(state = initialState, action) {
   }
 }
 
-export default adminReducer;
+export default Inmobiliarias;

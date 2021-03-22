@@ -5,7 +5,9 @@ import LoginForm from "../../components/admin/LoginForm";
 const StyledLogin = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: url("images/edificios.jpg");
+  background-image: url("images/banner.jpg");
+  background-size: cover;
+  filter: grayscale(0.5);
   background-repeat: no-repeat;
   background-color: #f2f2f2;
   background-position: center top;
@@ -37,7 +39,7 @@ const Admin = () => {
   return (
     <StyledLogin>
       <LoginContainer>
-        <h1>ZONA CTES PROPIEDADES</h1>
+        <h1>PROPER 360</h1>
         <LoginForm />
       </LoginContainer>
     </StyledLogin>
