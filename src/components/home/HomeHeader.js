@@ -19,7 +19,7 @@ const HeaderImageContainer = styled.div`
   height: 100%;
   width: 30%;
   img {
-    height: 75%;
+    height: 65%;
   }
 `;
 
@@ -47,6 +47,7 @@ const HeaderMenuContainer = styled.div`
           background-position: 50% 100%;
           background-repeat: no-repeat;
           background-size: 0% 1px;
+          font-weight: 300;
           transition: background-size 0.3s;
           :hover,
           :focus {
@@ -68,10 +69,10 @@ const HomeHeader = () => {
         <nav>
           <ul>
             <li>
-              <a href=''>NOSOTROS</a>
+              <a href=''>INMOBILIARIAS</a>
             </li>
             <li>
-              <a href=''>CLIENTES</a>
+              <a href=''>NOSOTROS</a>
             </li>
             <li>
               <a href=''>CONTACTO</a>
