@@ -63,7 +63,7 @@ const HomeHeader = () => {
   return (
     <StyledHomeHeader>
       <HeaderImageContainer>
-        <img src='./images/logo.png' alt='Logo proper' />
+        <img src='./images/logoproper.png' alt='Logo proper' />
       </HeaderImageContainer>
       <HeaderMenuContainer>
         <nav>
