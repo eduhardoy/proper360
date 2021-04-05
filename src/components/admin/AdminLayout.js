@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "@reach/router";
 
-import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import AdminLeftSide from "./AdminLeftSide";
 
@@ -22,6 +22,10 @@ const StyledHeader = styled.header`
   justify-content: center;
   background-color: #1a1a1a;
   align-items: center;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 
   & h2 {
     margin: 0;
@@ -92,12 +96,12 @@ const Layout = ({ children }) => {
   return (
     <StyledContainer>
       <StyledHeader>
-        <MenuButton>
-          <MenuIcon />
-        </MenuButton>
+        <MenuButton></MenuButton>
         <h2>PROPER 360</h2>
         <HomeButton>
-          <HomeIcon />
+          <Link to='/'>
+            <HomeIcon />
+          </Link>
         </HomeButton>
       </StyledHeader>
       <StyledBody>

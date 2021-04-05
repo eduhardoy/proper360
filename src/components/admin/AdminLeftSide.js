@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "@reach/router";
 
 import BusinessIcon from "@material-ui/icons/Business";
 import ApartmentIcon from "@material-ui/icons/Apartment";
@@ -32,6 +33,10 @@ const BarButton = styled.button`
   overflow: visible;
   font-size: 1.5rem;
   text-align: center;
+  a {
+    color: white;
+    text-decoration: none;
+  }
   :hover {
   }
   p {
@@ -49,16 +54,22 @@ const AdminLeftSide = () => {
   return (
     <StyledLeftSideBar>
       <BarButton>
-        <BusinessIcon />
-        <p>INMOBILIARIAS</p>
+        <Link to='/admin/inmobiliarias'>
+          <BusinessIcon />
+          <p>INMOBILIARIAS</p>
+        </Link>
       </BarButton>
       <BarButton>
-        <ApartmentIcon />
-        <p>PROPIEDADES</p>
+        <Link to='/admin/propiedades'>
+          <ApartmentIcon />
+          <p>PROPIEDADES</p>
+        </Link>
       </BarButton>
       <BarButton>
-        <PersonAddIcon />
-        <p>CLIENTES</p>
+        <Link to='/admin/clientes'>
+          <PersonAddIcon />
+          <p>CLIENTES</p>
+        </Link>
       </BarButton>
     </StyledLeftSideBar>
   );
