@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "@reach/router";
+import { useDispatch, useSelector } from "react-redux";
+import { actions, types } from '../../store/actions/inmobiliarias'
 
 const HomeSectionInmobiliarias = styled.section`
   //nombre?
@@ -48,31 +50,25 @@ const HomeSectionInmobiliarias = styled.section`
 `;
 
 const HomeInmobiliarias = () => {
+  const dispatch = useDispatch()
+  const { result } = useSelector(state => state.inmobiliarias)
+  console.log(result)
+  React.useEffect(() => {
+    dispatch(actions.getInmobiliarias())
+  }, [])
+
   return (
     <HomeSectionInmobiliarias>
       <div className='SectionTitle'></div>
       <div className='SectionContent'>
         <ul>
-          <li>
-            <Link to='/inmobiliaria'>
-              <img src='./images/inalto.png' alt='Logo Inmobilria Forte' />
-            </Link>
-          </li>
-          <li>
-            <Link to='/inmobiliaria'>
-              <img src='./images/inalto.png' alt='Logo Inmobilria House' />
-            </Link>
-          </li>
-          <li>
-            <Link to='/inmobiliaria'>
-              <img src='./images/inalto.png' alt='Logo Inmobilria Risso' />
-            </Link>
-          </li>
-          <li>
-            <Link to='/inmobiliaria'>
-              <img src='./images/inalto.png' alt='Logo Inmobilria Inalto' />
-            </Link>
-          </li>
+          {result.map(inmo =>
+            <li>
+              <Link to='/inmobiliaria'>
+                <img src={`data:image/png;base64, ${inmo.logo}`} alt='Logo Inmobilria Forte' />
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </HomeSectionInmobiliarias>

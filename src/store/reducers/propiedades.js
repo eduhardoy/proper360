@@ -1,4 +1,4 @@
-import { actions, types } from "../actions/propiedadeds";
+import { actions, types } from "../actions/propiedades";
 
 const initialState = {
   loading: false,
