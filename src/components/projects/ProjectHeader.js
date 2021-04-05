@@ -6,8 +6,11 @@ const StyledHomeHeader = styled.header`
   align-items: center;
   justify-content: center;
   position: sticky;
+  top: 0;
+  z-index: 999999;
+  background-color: white;
   width: 100%;
-  height: 80px;
+  height: 70px;
   box-shadow: 0 2px 9px -1px hsl(0deg 2% 48% / 60%);
 `;
 
@@ -19,7 +22,7 @@ const HeaderImageContainer = styled.div`
   height: 100%;
   width: 30%;
   img {
-    height: 65%;
+    height: 75%;
   }
 `;
 
@@ -37,7 +40,7 @@ const HeaderMenuContainer = styled.div`
       list-style: none;
       margin-right: 50px;
       li {
-        padding: 20px;
+        padding: 18px;
         a {
           padding-bottom: 4px;
           font-size: 20px;
@@ -67,7 +70,17 @@ const HomeHeader = () => {
       </HeaderImageContainer>
       <HeaderMenuContainer>
         <nav>
-          <ul></ul>
+          <ul>
+            <li>
+              <a href=''>INMOBILIARIAS</a>
+            </li>
+            <li>
+              <a href=''>NOSOTROS</a>
+            </li>
+            <li>
+              <a href=''>CONTACTO</a>
+            </li>
+          </ul>
         </nav>
       </HeaderMenuContainer>
     </StyledHomeHeader>

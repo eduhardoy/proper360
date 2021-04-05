@@ -187,8 +187,9 @@ const useStyles = makeStyles(theme => ({
 function getSteps() {
   return [
     "VISITA PROPER 360",
-    "ELIGE TU INMOBILIARIA",
-    "ENCUENTRA LA PROPIEDAD QUE BUSCAS",
+    "SELECCIONA LA INMOBILIARIA",
+    "SELECCIONA EL TIPO DE PROPIEDAD",
+    "ENCUENTRA LA TUYA",
   ];
 }
 

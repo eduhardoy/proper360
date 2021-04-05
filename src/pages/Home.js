@@ -10,6 +10,9 @@ import HomeStepper from "../components/home/HomeStepper";
 import HomeAbout from "../components/home/HomeAbout";
 
 const Home = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <HomeHeader />

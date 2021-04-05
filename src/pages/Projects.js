@@ -17,6 +17,9 @@ const StyledProjects = styled.div`
 `;
 
 const Projects = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <StyledProjects>
       <ProjectHeader />
