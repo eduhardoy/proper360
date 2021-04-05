@@ -24,6 +24,9 @@ const InmobiliariaContainer = styled.div`
 `;
 
 function Inmobiliarias() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <React.Fragment>
       <Body>

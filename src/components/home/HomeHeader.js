@@ -6,8 +6,11 @@ const StyledHomeHeader = styled.header`
   align-items: center;
   justify-content: center;
   position: sticky;
+  top: 0;
+  z-index: 99999;
+  background-color: white;
   width: 100%;
-  height: 80px;
+  height: 70px;
   box-shadow: 0 2px 9px -1px hsl(0deg 2% 48% / 60%);
 `;
 
@@ -47,6 +50,7 @@ const HeaderMenuContainer = styled.div`
           background-position: 50% 100%;
           background-repeat: no-repeat;
           background-size: 0% 1px;
+          font-weight: 300;
           transition: background-size 0.3s;
           :hover,
           :focus {
@@ -62,16 +66,16 @@ const HomeHeader = () => {
   return (
     <StyledHomeHeader>
       <HeaderImageContainer>
-        <img src='./images/logo.png' alt='Logo proper' />
+        <img src='./images/logoproper.png' alt='Logo proper' />
       </HeaderImageContainer>
       <HeaderMenuContainer>
         <nav>
           <ul>
             <li>
-              <a href=''>NOSOTROS</a>
+              <a href=''>INMOBILIARIAS</a>
             </li>
             <li>
-              <a href=''>CLIENTES</a>
+              <a href=''>NOSOTROS</a>
             </li>
             <li>
               <a href=''>CONTACTO</a>

@@ -10,8 +10,10 @@ const HomeSectionInmobiliarias = styled.section`
   justify-content: center;
   align-items: center;
   .SectionTitle {
-    margin: 50px 0;
+    margin: 30px 0;
     h1 {
+      font-weight: 300;
+      font-size: 30px;
     }
   }
   .SectionContent {
@@ -48,9 +50,7 @@ const HomeSectionInmobiliarias = styled.section`
 const HomeInmobiliarias = () => {
   return (
     <HomeSectionInmobiliarias>
-      <div className='SectionTitle'>
-        <h1>INMOBILIARIAS</h1>
-      </div>
+      <div className='SectionTitle'></div>
       <div className='SectionContent'>
         <ul>
           <li>
