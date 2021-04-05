@@ -125,7 +125,10 @@ export const ButtonRed = styled.button`
 
 const ModalAdd = ({ children, setEstado, estado, modalAdd }) => {
   return (
-    <ModalBackground style={{ display: estado ? "" : "none" }} onClick={e => setEstado(false)}>
+    <ModalBackground
+      style={{ display: estado ? "" : "none" }}
+      onClick={e => setEstado(false)}
+    >
       <ModalWrapper onClick={e => e.stopPropagation()}>
         <CloseButton onClick={e => setEstado(false)}>
           <CloseIcon />
@@ -136,10 +139,14 @@ const ModalAdd = ({ children, setEstado, estado, modalAdd }) => {
         <ModalGridWrapper>{children}</ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={e => setEstado(false)}>CANCELAR</ButtonRed>
-          <ButtonGreen onClick={() => {
-            modalAdd()
-            setEstado(false)
-          }}>AGREGAR</ButtonGreen>
+          <ButtonGreen
+            onClick={() => {
+              modalAdd();
+              setEstado(false);
+            }}
+          >
+            AGREGAR
+          </ButtonGreen>
         </ModalButtonWrapper>
       </ModalWrapper>
     </ModalBackground>

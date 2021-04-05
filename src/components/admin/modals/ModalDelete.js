@@ -78,10 +78,14 @@ const ModalDelete = ({ setEstado, estado, modalEditDelete }) => {
         </ModalDescriptionWrapper>
         <ModalButtonWrapper>
           <ButtonBlack onClick={e => setEstado(false)}>CANCELAR</ButtonBlack>
-          <ButtonRed onClick={() => {
-            modalEditDelete()
-            setEstado(false)
-          }}>ELIMINAR</ButtonRed>
+          <ButtonRed
+            onClick={() => {
+              modalEditDelete();
+              setEstado(false);
+            }}
+          >
+            ELIMINAR
+          </ButtonRed>
         </ModalButtonWrapper>
       </ModalDeleteWrapper>
     </ModalBackground>
