@@ -13,6 +13,7 @@ const HomeStyledHero = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-bottom: 80px;
 `;
 
 const HeroForm = styled.div`
