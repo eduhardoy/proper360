@@ -19,9 +19,13 @@ const SideBarLogo = styled.div`
   a {
     height: auto;
     width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     img {
       height: Auto;
-      width: 100%;
+      width: 80%;
+      min-width: 240px;
     }
   }
 `;
@@ -44,6 +48,7 @@ const FilterGroups = styled.section`
       padding-top: 10px;
       max-width: 100%;
       summary {
+        cursor: pointer;
         width: 55%;
         list-style: none;
         outline: none;
@@ -128,9 +133,16 @@ function LeftSideBar() {
         <dl>
           <dt>VENTAS</dt>
           <dd>
-            <Link to='/propiedades'>
-              <span>Departamentos</span>
-            </Link>
+            <details>
+              <summary>Departamentos</summary>
+              <ul>
+                <Link to='/propiedades'>
+                  <li>1 dormitorio</li>
+                </Link>
+                <li>2 dormitorios</li>
+                <li>3 dormitorios</li>
+              </ul>
+            </details>
           </dd>
           <dd>
             <Link to='/propiedades'>
