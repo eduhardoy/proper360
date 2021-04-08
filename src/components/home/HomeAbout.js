@@ -8,8 +8,11 @@ const HomeSectionAbout = styled.section`
   flex-direction: column;
   align-items: center;
   h3 {
-    width: 80%;
+    width: 70%;
+    font-size: 25px;
     font-family: "Lato";
+    font-weight: 300;
+    text-align: justify;
   }
 `;
 
@@ -18,15 +21,10 @@ const HomeAbout = () => {
     <HomeSectionAbout>
       <h2>QUIENES SOMOS</h2>
       <h3>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+      Proper 360 se trata de una plataforma inmobiliaria que apuesta a la innovación tecnológica. Hemos incursionado en el mundo del Streaming 360 considerándolo una increíble herramienta de teletransportación,  para ofrecer un punto de vista privilegiado de cada inmueble a cada interesado. Procuramos a través de los recorridos virtuales, ofrecer a potenciales clientes una experiencia innovadora en primera persona, que con un simple recorrida pueda obtener una visión general de la propiedad.
+      <br/>
+      <br/>
+      Desarrollamos cada proyecto en forma integral desde la toma de imagenes, edición, retoque y programación.  
       </h3>
     </HomeSectionAbout>
   );

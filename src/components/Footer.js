@@ -7,7 +7,6 @@ import {
   FaInstagram,
   FaPhoneAlt,
   FaMailBulk,
-  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 const FooterContainer = styled.footer`
@@ -78,7 +77,7 @@ const Social = styled.div`
 `;
 
 const FooterCredits = styled.div`
-  height: 40px;
+  height: 80px;
   background: black;
   width: 100%;
   display: flex;
@@ -87,8 +86,9 @@ const FooterCredits = styled.div`
   a {
     color: white;
     text-decoration: none;
-    :hover {
-      color: #bfbfbf;
+    img{
+      padding: 10px;
+      height: 50px;
     }
   }
 `;
@@ -99,16 +99,12 @@ function Footer() {
       <ContactSection>
         <ul>
           <li>
-            <FaMapMarkerAlt />
-            <p>Moreno 1006 - Corrientes, Capital</p>
-          </li>
-          <li>
             <FaPhoneAlt />
-            <p>3794-666666</p>
+            <p>3794-275060</p>
           </li>
           <li>
             <FaMailBulk />
-            <p>proper360@gmail.com</p>
+            <p>proper360inmobiliario@gmail.com</p>
           </li>
         </ul>
       </ContactSection>
@@ -133,9 +129,9 @@ function Footer() {
         </Social>
       </AboutSection>
       <FooterCredits>
-        <p>
-          Desarrollado por <a href='https://inibotnea.com/'>inibiotnea.com©</a>
-        </p>
+        <a href="">
+          <img src="./images/inibot.png" alt=""/>
+        </a>
       </FooterCredits>
     </FooterContainer>
   );

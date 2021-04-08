@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SubscribeForm from "./SubscribeForm";
 
 const HomeStyledHero = styled.div`
-  height: calc(100vh - 80px);
+  height: calc(100vh - 70px);
   width: 100%;
   background-color: gray;
   background-image: url("images/banner.jpg");
@@ -18,6 +18,7 @@ const HomeStyledHero = styled.div`
 
 const HeroForm = styled.div`
   height: 70%;
+  max-height: 500px;
   width: 30%;
   margin-right: 200px;
   bottom: 100px;
