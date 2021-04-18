@@ -18,6 +18,7 @@ const FooterContainer = styled.footer`
   align-items: center;
   color: white;
   font-family: "Lato", "Open Sans", sans-serif;
+  padding-top: 20px;
 `;
 
 const ContactSection = styled.div`
@@ -31,6 +32,10 @@ const ContactSection = styled.div`
       display: flex;
       flex-direction: row;
       margin: 15px 0;
+      h4{
+        margin: 10px;
+      text-align: center;
+      }
       p {
         margin: 0;
         margin-left: 10px;
@@ -83,12 +88,13 @@ const FooterCredits = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
   a {
     color: white;
     text-decoration: none;
     img{
       padding: 10px;
-      height: 50px;
+      height: 40px;
     }
   }
 `;
@@ -98,6 +104,9 @@ function Footer() {
     <FooterContainer>
       <ContactSection>
         <ul>
+        <li>
+          <h4><strong>CONTACTANOS</strong></h4>
+        </li>
           <li>
             <FaPhoneAlt />
             <p>3794-275060</p>

@@ -5,9 +5,11 @@ const InmobiliariaData = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 60%;
   margin: auto;
+  margin-top: 50px;
   margin-bottom: 50px;
+  text-align: justify;
 `;
 
 function Inmobiliaria() {

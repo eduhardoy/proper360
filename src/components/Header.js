@@ -32,7 +32,7 @@ const Header = () => {
     <StyledHeader>
       <div>
         <Link to='/inmobiliaria'>
-          <img src='./images/inalto.png' alt='Logo Inmobiliaria' />
+          <img src='./images/malgor.jpg' alt='Logo Inmobiliaria' />
         </Link>
       </div>
     </StyledHeader>

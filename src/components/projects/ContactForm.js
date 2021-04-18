@@ -10,17 +10,19 @@ const Form = styled.form`
   padding-bottom: 20px;
 
   input {
-    width: 40%;
+    width: 400px;
     height: 40px;
     margin-top: 20px;
     border: 1px solid black;
+    padding: 5px;
   }
   textarea {
     margin-top: 20px;
-    width: 40%;
+    width: 400px;
     height: 150px;
     resize: none;
     border: 1px solid black;
+    padding: 5px;
   }
   button {
     height: 40px;

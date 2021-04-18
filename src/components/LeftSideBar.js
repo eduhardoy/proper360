@@ -12,7 +12,6 @@ const LeftSideBarContainer = styled.aside`
 const SideBarLogo = styled.div`
   padding-top: 70px;
   width: 100%;
-  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,8 +23,8 @@ const SideBarLogo = styled.div`
     justify-content: center;
     img {
       height: Auto;
-      width: 80%;
-      min-width: 240px;
+      width: 90%;
+      min-width: 200px;
     }
   }
 `;
