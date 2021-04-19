@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "@reach/router";
 
 const LeftSideBarContainer = styled.aside`
-  width: 200px;
+  width: 150px;
   height: 100%;
   background-color: #44494a;
   border-right: 1px solid black;
@@ -24,13 +24,13 @@ const FilterGroups = styled.section`
       justify-content: center;
       margin-bottom: 10px;
       font-weight: bold;
-      font-size: 25px;
+      font-size: 20px;
     }
     dd {
       padding-top: 10px;
       max-width: 100%;
       margin: 0;
-      font-size: 18px;
+      font-size: 15px;
       display: flex;
       justify-content: center;
       summary {
@@ -61,7 +61,7 @@ const FilterGroups = styled.section`
         align-items: center;
         flex-direction: column;
         li {
-          font-size: 15px;
+          font-size: 12px;
           padding: 5px;
         }
       }
