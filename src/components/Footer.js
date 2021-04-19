@@ -94,7 +94,7 @@ const FooterCredits = styled.div`
     text-decoration: none;
     img{
       padding: 10px;
-      height: 40px;
+      height: 30px;
     }
   }
 `;

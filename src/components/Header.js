@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "@reach/router";
 
 const StyledHeader = styled.header`
-  height: 150px;
   width: 100%;
   margin: auto;
   margin-top: 40px;
@@ -11,17 +10,25 @@ const StyledHeader = styled.header`
   justify-content: center;
   align-items: center;
   div {
-    height: 150px;
-    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     a {
       height: 100%;
       width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-decoration: none;
+      color: black;
+      font-size: 22px;
+      h2{
+        margin: 20px;
+      }
       img {
         height: auto;
-        width: 100%;
+        width: 150px;
       }
     }
   }
@@ -33,6 +40,7 @@ const Header = () => {
       <div>
         <Link to='/inmobiliaria'>
           <img src='./images/malgor.jpg' alt='Logo Inmobiliaria' />
+          <h2>INMOBILIARIA MALGOR</h2>
         </Link>
       </div>
     </StyledHeader>

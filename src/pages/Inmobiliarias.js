@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import InmobiliariaData from "../components/inmobiliarias/InmobiliariaData";
 import LeftSideBar from "../components/LeftSideBar";
 import Header from "../components/Header";
+import Whatsapp from "../components/Whatsapp";
 
 const Body = styled.div`
   width: 100%;
@@ -14,13 +15,13 @@ const Body = styled.div`
 
 const LeftSideBarContainer = styled.div`
   display: block;
-  width: 300px;
+  width: 200px;
   min-height: 100vh;
   background-color: gray;
 `;
 
 const InmobiliariaContainer = styled.div`
-  width: calc(100vw - 300px);
+  width: calc(100vw - 200px);
 `;
 
 function Inmobiliarias() {
@@ -39,6 +40,7 @@ function Inmobiliarias() {
         </InmobiliariaContainer>
       </Body>
       <Footer />
+      <Whatsapp/>
     </React.Fragment>
   );
 }

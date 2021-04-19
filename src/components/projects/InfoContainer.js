@@ -82,7 +82,7 @@ const InfoContainer = () => {
             <li>Dormitorios:</li>
             <li>Baños:</li>
             <li>Cochera:</li>
-            <li>Metros cuadrados:</li>
+            <li>Metros cuadrados (m²):</li>
             <li>Amueblado:</li>
           </ul>
         </ProjectDetails>
