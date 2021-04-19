@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 
 
 const ListContainer = styled.div`
-  width: 90%;
+  width: 95%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +14,7 @@ const ListContainer = styled.div`
 
 const PortadaContainer = styled.div`
 box-sizing: border-box;
-      width: calc(100% / 2);
+      width: calc(100% / 3);
       padding: 5px;
       display: flex;
       text-align: center;
