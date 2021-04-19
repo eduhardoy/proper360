@@ -5,12 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions, types } from '../../store/actions/inmobiliarias'
 
 const HomeSectionInmobiliarias = styled.section`
-  //nombre?
+
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: orange;
   .SectionTitle {
     margin: 30px 0;
     h1 {
@@ -28,8 +29,8 @@ const HomeSectionInmobiliarias = styled.section`
       padding: 0;
 
       li {
-        height: 180px;
-        width: 180px;
+        height: 150px;
+        width: 150px;
         margin: auto 40px;
         display: flex;
         justify-content: center;

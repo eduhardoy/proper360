@@ -9,7 +9,7 @@ const FormContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 20px;
   font-family: sans-serif;
-  @media (max-width: 425px) {
+  @media (max-width: 750px) {
     border-radius: 0px;
   }
   form {
@@ -29,7 +29,7 @@ const FormContainer = styled.div`
       h3 {
         font-size: 30px;
         margin: 15px;
-        @media (max-width: 425px) {
+        @media (max-width: 750px) {
           font-size: 25px;
   }
       }
@@ -37,7 +37,7 @@ const FormContainer = styled.div`
         margin: 10px;
         font-weight: 300;
         font-family: "Poiret One", "Open-Sans", Helvetica, Sans-Serif;
-        @media (max-width: 425px) {
+        @media (max-width: 750px) {
           font-size: 30px;
   }
       }
@@ -101,7 +101,7 @@ const SubscribeForm = () => {
         </div>
         <div className='Form-input'>
           <input type='email' placeholder='Tu email' />
-          <button class='button'>
+          <button className='button'>
             <SendIcon></SendIcon>
           </button>
         </div>

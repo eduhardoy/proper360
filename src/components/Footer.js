@@ -22,6 +22,9 @@ const FooterContainer = styled.footer`
   position: relative;
   bottom: 0;
   z-index: 99999;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const ContactSection = styled.div`
@@ -29,13 +32,23 @@ const ContactSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 600px) {
+    margin: 10px;
+    width: 60%;
+  }
   ul {
     list-style-type: none;
     margin: 0px;
+    @media (max-width: 600px) {
+        padding: 0;
+  }
     li {
       display: flex;
       flex-direction: row;
       margin: 15px 0;
+      @media (max-width: 600px) {
+        justify-content: center;
+  }
       h4{
         margin: 10px;
       text-align: center;
@@ -52,8 +65,11 @@ const AboutSection = styled.div`
   width: 40%;
   display: flex;
   flex-direction: column;
-
   align-items: center;
+  @media (max-width: 600px) {
+    margin: 20px;
+    width: 60%;
+  }
 `;
 
 const About = styled.div`

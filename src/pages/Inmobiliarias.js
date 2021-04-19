@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import InmobiliariaData from "../components/inmobiliarias/InmobiliariaData";
 import LeftSideBar from "../components/LeftSideBar";
-import Header from "../components/Header";
+import InmobiliariaHeader from "../components/inmobiliarias/InmobiliariaHeader";
 import Whatsapp from "../components/Whatsapp";
 import HomeHeader from "../components/home/HomeHeader";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,13 +19,13 @@ const Body = styled.div`
 
 const LeftSideBarContainer = styled.div`
   display: block;
-  width: 150px;
+  width: 180px;
   min-height: 100vh;
   background-color: gray;
 `;
 
 const InmobiliariaContainer = styled.div`
-  width: calc(100vw - 150px);
+  width: calc(100vw - 180px);
 `;
 
 function Inmobiliarias({ inmobiliaria }) {
@@ -58,7 +58,7 @@ function Inmobiliarias({ inmobiliaria }) {
           <LeftSideBar />
         </LeftSideBarContainer>
         <InmobiliariaContainer>
-          <Header {...headerData} />
+          <InmobiliariaHeader {...headerData} />
           <InmobiliariaData inmobiliaria={inmobiliariaConditional} />
         </InmobiliariaContainer>
       </Body>

@@ -16,9 +16,6 @@ const StepperWrapper = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-h3{
-  display: none;
-}
 @media (max-width: 750px) {
   div{    
     display: none;
@@ -227,7 +224,6 @@ export default function CustomizedSteppers() {
 
   return (
     <StepperWrapper>
-      <h3>SELECCIONA TU INMOBILIARIA</h3>
     <div className={classes.root}>
       <Stepper
         alternativeLabel

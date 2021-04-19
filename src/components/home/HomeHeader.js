@@ -19,13 +19,11 @@ const HeaderImageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 50px;
   height: 100%;
   width: 30%;
-  @media (max-width: 425px) {
+  @media (max-width: 1024px) {
     width: 100%;
     justify-content: center;
-    margin-left: 0px;
   }
   a{
     width: 100%;
@@ -35,6 +33,9 @@ const HeaderImageContainer = styled.div`
     align-items: center;
     img {
     height: 90%;
+    @media (max-width: 1024px) {
+    height: 70%;
+  }
   }
   }
 
@@ -46,7 +47,7 @@ const HeaderMenuContainer = styled.div`
   align-items: center;
   height: 100%;
   width: 70%;
-  @media (max-width: 425px) {
+  @media (max-width: 1024px) {
     display: none;
   }
   nav {
@@ -84,7 +85,7 @@ const HomeHeader = () => {
     <StyledHomeHeader>
       <HeaderImageContainer>
         <Link to='/'>
-        <img src='./images/logoproper.png' alt='Logo proper' />
+        <img src='https://live.staticflickr.com/65535/51125881378_647f7d6729_z.jpg' alt='Logo proper' />
         </Link>
       </HeaderImageContainer>
       <HeaderMenuContainer>
