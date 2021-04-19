@@ -66,7 +66,7 @@ function PropiedadesList({ propiedades }) {
         {propiedades.map(data => (
           <PortadaContainer>
             <Link to={`/project/${data._key}`}>
-              <Portada src={`data:image/jpeg;base64, ${data.logo}`} alt="" />
+              <Portada src={data.logo} alt="" />
               <PortadaTitle>
                 <p>{data.nombre}</p>
                 <p>{data.habitaciones} HABITACIONES - {data.banos} BAÑOS</p>

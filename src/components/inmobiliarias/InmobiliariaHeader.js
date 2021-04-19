@@ -39,7 +39,7 @@ const InmobiliariaHeader = ({ nombreInmobiliaria, logoInmobiliaria, keyInmobilia
     <StyledHeader>
       <div>
         <Link to={`/inmobiliaria/${keyInmobiliaria}`}>
-          <img src={`data:image/jpeg;base64, ${logoInmobiliaria}`} alt='Logo Inmobiliaria' />
+          <img src={`${logoInmobiliaria}`} alt='Logo Inmobiliaria' />
           <h2>{nombreInmobiliaria}</h2>
         </Link>
       </div>
