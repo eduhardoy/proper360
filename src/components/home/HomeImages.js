@@ -7,15 +7,22 @@ const StyledHomeImages = styled.div`
 
 const ImagesWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   div {
     position: relative;
     filter: grayscale(0.7);
-    width: calc(99% / 3);
-    max-height: 500px;
+    width: calc(97% / 3);
     padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 750px) {
+      width: calc(95% / 2);
+  }
+  @media (max-width: 450px) {
+      width: 100%;
+  }
     :hover {
       filter: none;
     }

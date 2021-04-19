@@ -23,6 +23,9 @@ h3{
   div{    
     display: none;
   }
+  h3{
+  display: flex;
+}
   }
 `
 

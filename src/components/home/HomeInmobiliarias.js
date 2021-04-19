@@ -28,8 +28,8 @@ const HomeSectionInmobiliarias = styled.section`
       padding: 0;
 
       li {
-        height: 180px;
-        width: 180px;
+        height: 150px;
+        width: 150px;
         margin: auto 40px;
         display: flex;
         justify-content: center;
