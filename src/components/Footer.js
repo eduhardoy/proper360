@@ -19,6 +19,9 @@ const FooterContainer = styled.footer`
   color: white;
   font-family: "Lato", "Open Sans", sans-serif;
   padding-top: 20px;
+  position: relative;
+  bottom: 0;
+  z-index: 99999;
 `;
 
 const ContactSection = styled.div`
@@ -101,7 +104,7 @@ const FooterCredits = styled.div`
 
 function Footer() {
   return (
-    <FooterContainer>
+    <FooterContainer id="contact">
       <ContactSection>
         <ul>
         <li>

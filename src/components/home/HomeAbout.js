@@ -18,7 +18,7 @@ const HomeSectionAbout = styled.section`
 
 const HomeAbout = () => {
   return (
-    <HomeSectionAbout>
+    <HomeSectionAbout id="about">
       <h2>QUIENES SOMOS</h2>
       <h3>
       Proper 360 se trata de una plataforma inmobiliaria que apuesta a la innovación tecnológica. Hemos incursionado en el mundo del Streaming 360 considerándolo una increíble herramienta de teletransportación,  para ofrecer un punto de vista privilegiado de cada inmueble a cada interesado. <br/> <br/>

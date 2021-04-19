@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Form = styled.form`
@@ -15,14 +16,7 @@ const Form = styled.form`
     margin-top: 20px;
     border: 1px solid black;
     padding: 5px;
-  }
-  textarea {
-    margin-top: 20px;
-    width: 400px;
-    height: 150px;
-    resize: none;
-    border: 1px solid black;
-    padding: 5px;
+    font-size: 15px;
   }
   button {
     height: 40px;
@@ -35,13 +29,57 @@ const Form = styled.form`
 `;
 
 function ContactForm() {
+  const [whatsAppMsgName, setWhatsAppMsgName] = useState();
+  const [whatsAppMsgEmail, setWhatsAppMsgEmail] = useState();
+  const [whatsAppMsgText, setWhatsAppMsgText] = useState();
+
+  function openInNewTab(url) {
+    var win = window.open(url, "_blank");
+    win.focus();
+  }
+
+  const initiateWhatsAppSMS = () => {
+    let url =
+      "https://wa.me/543794275060?text=" +
+      "Hola, mi nombre es " +
+      whatsAppMsgName +
+      ". Me gustaria tener mas informacion sobre la propiedad " +
+      whatsAppMsgText +
+      ". Mi email es " +
+      whatsAppMsgEmail +
+      ". Muchas gracias, espero su respuesta."
+      ;
+    openInNewTab(url);
+  };
+
   return (
     <Form>
       <h2>CONTACTO</h2>
-      <input type='text' placeholder='Tu nombre'></input>
-      <input type='email' placeholder='Tu email'></input>
-      <textarea></textarea>
-      <button type='button'>ENVIAR</button>
+      <input
+          value={whatsAppMsgName}
+          onChange={e => setWhatsAppMsgName(e.target.value)}
+          placeholder={"Nombre"}
+          type='text'
+        />
+        <input
+          value={whatsAppMsgEmail}
+          onChange={e => setWhatsAppMsgEmail(e.target.value)}
+          placeholder={"Email"}
+          type='email'
+        />
+        <input
+          value={whatsAppMsgText}
+          onChange={e => setWhatsAppMsgText(e.target.value)}
+          placeholder={"Propiedad"}
+          type='text'
+        />
+        <button
+          type='submit'
+          id='BotonEnviar'
+          onClick={initiateWhatsAppSMS}
+        >
+          ENVIAR
+        </button>
     </Form>
   );
 }

@@ -4,38 +4,16 @@ import { Link } from "@reach/router";
 
 const LeftSideBarContainer = styled.aside`
   width: 200px;
-  height: 100%;
+  height: 100vh;
   background-color: #44494a;
   border-right: 1px solid black;
-`;
-
-const SideBarLogo = styled.div`
-  padding-top: 70px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  a {
-    height: auto;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-decoration: none;
-    color: white;
-    font-size: 12px;
-    text-align: center;
-    img {
-      height: Auto;
-      width: 60%;
-      min-width: 100px;
-    }
-  }
+  box-shadow: 4px 0px 17px -4px rgba(0,0,0,0.69);
+  position: fixed;
+  z-index: 1;
 `;
 
 const FilterGroups = styled.section`
-  margin-top: 30px;
+  margin-top: 100px;
   color: white;
   font-size: 20px;
   dl {
@@ -111,12 +89,6 @@ const FilterGroups = styled.section`
 function LeftSideBar() {
   return (
     <LeftSideBarContainer>
-      <SideBarLogo>
-        <a href='/'>
-          <img src='./images/360.png' alt='Logo proper' />
-          <p>VOLVER A INICIO</p>
-        </a>
-      </SideBarLogo>
       <FilterGroups>
         <dl>
           <dt>ALQUILERES</dt>

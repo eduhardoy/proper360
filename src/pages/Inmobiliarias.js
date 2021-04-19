@@ -6,6 +6,8 @@ import InmobiliariaData from "../components/inmobiliarias/InmobiliariaData";
 import LeftSideBar from "../components/LeftSideBar";
 import Header from "../components/Header";
 import Whatsapp from "../components/Whatsapp";
+import HomeHeader from "../components/home/HomeHeader";
+
 
 const Body = styled.div`
   width: 100%;
@@ -30,6 +32,7 @@ function Inmobiliarias() {
   }, []);
   return (
     <React.Fragment>
+      <HomeHeader/>
       <Body>
         <LeftSideBarContainer>
           <LeftSideBar />

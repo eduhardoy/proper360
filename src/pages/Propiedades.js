@@ -5,6 +5,8 @@ import Footer from "../components/Footer";
 import LeftSideBar from "../components/LeftSideBar";
 import Header from "../components/Header";
 import PropiedadesList from "../components/propiedades/PropiedadesList";
+import Whatsapp from "../components/Whatsapp";
+import HomeHeader from "../components/home/HomeHeader";
 
 const Body = styled.div`
   width: 100%;
@@ -29,6 +31,7 @@ function Propiedades() {
   }, []);
   return (
     <React.Fragment>
+      <HomeHeader/>
       <Body>
         <LeftSideBarContainer>
           <LeftSideBar />
@@ -39,6 +42,7 @@ function Propiedades() {
         </InmobiliariaContainer>
       </Body>
       <Footer />
+      <Whatsapp/>
     </React.Fragment>
   );
 }

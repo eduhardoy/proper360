@@ -58,7 +58,7 @@ const HomeInmobiliarias = () => {
   }, [])
 
   return (
-    <HomeSectionInmobiliarias>
+    <HomeSectionInmobiliarias id="inmobiliarias">
       <div className='SectionTitle'></div>
       <div className='SectionContent'>
         <ul>

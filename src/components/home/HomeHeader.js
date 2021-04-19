@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "@reach/router";
 
 const StyledHomeHeader = styled.header`
   display: flex;
@@ -21,9 +22,14 @@ const HeaderImageContainer = styled.div`
   margin-left: 50px;
   height: 100%;
   width: 30%;
-  img {
+  a{
+    width: 100%;
+    height: 100%;
+    img {
     height: 90%;
   }
+  }
+
 `;
 
 const HeaderMenuContainer = styled.div`
@@ -66,19 +72,21 @@ const HomeHeader = () => {
   return (
     <StyledHomeHeader>
       <HeaderImageContainer>
+        <Link to='/'>
         <img src='./images/logoproper.png' alt='Logo proper' />
+        </Link>
       </HeaderImageContainer>
       <HeaderMenuContainer>
         <nav>
           <ul>
             <li>
-              <a href=''>INMOBILIARIAS</a>
+              <a href='/#inmobiliarias'>INMOBILIARIAS</a>
             </li>
             <li>
-              <a href=''>NOSOTROS</a>
+              <a href='/#about'>NOSOTROS</a>
             </li>
             <li>
-              <a href=''>CONTACTO</a>
+              <a href='/#contact'>CONTACTO</a>
             </li>
           </ul>
         </nav>
