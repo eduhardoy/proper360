@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = axios.create({ baseURL: "http://190.106.132.208:3006/" })
+const api = axios.create({ baseURL: "http://198.58.123.120:3006/" })
 
 //Types
 const GET_INMOBILIARIAS = "GET_INMOBILIARIAS";
