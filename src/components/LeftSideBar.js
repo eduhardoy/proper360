@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 
 const LeftSideBarContainer = styled.aside`
   width: 200px;
-  height: 100vh;
+  height: 100%;
   background-color: #44494a;
   border-right: 1px solid black;
   box-shadow: 4px 0px 17px -4px rgba(0,0,0,0.69);
