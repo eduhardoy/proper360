@@ -9,6 +9,9 @@ const FormContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 20px;
   font-family: sans-serif;
+  @media (max-width: 425px) {
+    border-radius: 0px;
+  }
   form {
     font-family: "Lato", "Open-Sans", Helvetica, Sans-Serif;
     display: flex;
@@ -26,11 +29,17 @@ const FormContainer = styled.div`
       h3 {
         font-size: 30px;
         margin: 15px;
+        @media (max-width: 425px) {
+          font-size: 25px;
+  }
       }
       h1 {
         margin: 10px;
         font-weight: 300;
         font-family: "Poiret One", "Open-Sans", Helvetica, Sans-Serif;
+        @media (max-width: 425px) {
+          font-size: 30px;
+  }
       }
     }
     .Form-txt {
@@ -42,7 +51,6 @@ const FormContainer = styled.div`
     .Form-input {
       width: 78%;
       height: 20%;
-
       display: flex;
       justify-content: center;
       align-items: center;
