@@ -12,12 +12,18 @@ const CarouselSection = styled.section`
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 750px) {
+      margin-top: 40px;
+      margin-bottom: 40px;
+  }
 `;
 
 const CarouselContainer= styled.div`
     width: 80%;
     margin: auto;
-
+    @media (max-width: 750px) {
+    width: 100%;
+  }
     .rec.rec-arrow {
 
         background-color: white;

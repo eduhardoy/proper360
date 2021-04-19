@@ -14,6 +14,9 @@ const HomeStyledHero = styled.div`
   align-items: center;
   justify-content: flex-end;
   margin-bottom: 80px;
+  @media (max-width: 750px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const HeroForm = styled.div`
