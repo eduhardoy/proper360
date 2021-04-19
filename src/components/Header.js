@@ -34,13 +34,13 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Header = () => {
+const Header = ({ nombreInmobiliaria, logoInmobiliaria, keyInmobiliaria }) => {
   return (
     <StyledHeader>
       <div>
-        <Link to='/inmobiliaria'>
-          <img src='./images/malgor.jpg' alt='Logo Inmobiliaria' />
-          <h2>INMOBILIARIA MALGOR</h2>
+        <Link to={`/inmobiliaria/${keyInmobiliaria}`}>
+          <img src={`data:image/jpeg;base64, ${logoInmobiliaria}`} alt='Logo Inmobiliaria' />
+          <h2>{nombreInmobiliaria}</h2>
         </Link>
       </div>
     </StyledHeader>

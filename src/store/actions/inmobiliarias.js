@@ -13,6 +13,18 @@ const types = {
   GET_INMOBILIARIAS_FAILURE,
 };
 
+const getInmobiliariaWithPropiedades = (inmobiliariaId) => {
+  console.log("IDIDIDIDID", inmobiliariaId)
+  return (dispatch) => {
+    //nameless functions
+    // Initial action dispatched
+    dispatch({ type: GET_INMOBILIARIAS });
+    // Return promise with success and failure actions
+    return api.get("inmobiliarias/" + inmobiliariaId)
+      .then(inmobiliaraias => dispatch({ type: GET_INMOBILIARIAS_SUCCESS, payload: inmobiliaraias.data }))
+      .catch(err => dispatch({ type: GET_INMOBILIARIAS_FAILURE, payload: err.message }))
+  }
+}
 
 
 const getInmobiliarias = () => {
@@ -29,6 +41,6 @@ const getInmobiliarias = () => {
 
 
 
-const actions = { getInmobiliarias };
+const actions = { getInmobiliarias, getInmobiliariaWithPropiedades };
 
 export { types, actions };

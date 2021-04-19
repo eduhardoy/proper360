@@ -24,7 +24,7 @@ const InmobiliariaData = styled.section`
   }
 `;
 
-function Inmobiliaria() {
+function Inmobiliaria({ inmobiliaria }) {
   return (
     <React.Fragment>
       <InmobiliariaData>

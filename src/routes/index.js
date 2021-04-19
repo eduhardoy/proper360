@@ -11,9 +11,9 @@ const Routes = () => {
   return (
     <Router>
       <Home path='/' />
-      <Inmobiliarias path='/inmobiliaria' />
-      <Propiedades path='/propiedades' />
-      <Projects path='/project' />
+      <Inmobiliarias path='/inmobiliaria/:inmobiliaria' />
+      <Propiedades path='/propiedades/:inmobiliaria' />
+      <Projects path='/project/:projectId' />
       <AdminRoute path='admin/*' />
     </Router>
   );

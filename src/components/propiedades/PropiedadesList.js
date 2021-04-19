@@ -56,46 +56,24 @@ const PortadaTitle = styled.div`
       }
       `
 
-function PropiedadesList() {
+function PropiedadesList({ propiedades }) {
+
+
+
   return (
     <React.Fragment>
       <ListContainer>
+        {propiedades.map(data => (
           <PortadaContainer>
-            <Portada src="https://live.staticflickr.com/65535/50742357442_6be54c293e_h.jpg" alt=""/>
-            <PortadaTitle>
-                <p>DOMICILIO</p>
-                <p>X HABITACIONES - X BAÑOS</p>
-            </PortadaTitle>
+            <Link to={`/project/${data._key}`}>
+              <Portada src={`data:image/jpeg;base64, ${data.logo}`} alt="" />
+              <PortadaTitle>
+                <p>{data.nombre}</p>
+                <p>{data.habitaciones} HABITACIONES - {data.banos} BAÑOS</p>
+              </PortadaTitle>
+            </Link>
           </PortadaContainer>
-          <PortadaContainer>
-            <Portada src="https://live.staticflickr.com/65535/50742344907_3e37600442_h.jpg" alt=""/>
-            <PortadaTitle>
-                <p>DOMICILIO</p>
-                <p>X HABITACIONES - X BAÑOS</p>
-            </PortadaTitle>
-          </PortadaContainer>
-          <PortadaContainer>
-            <Portada src="https://files.kuula.io/5fc0-1caa-5d46-7924/01-cover.jpg?ck=814831" alt=""/>
-            <PortadaTitle>
-                <p>DOMICILIO</p>
-                <p>X HABITACIONES - X BAÑOS</p>
-            </PortadaTitle>
-          </PortadaContainer>
-          <PortadaContainer>
-            <Portada src="https://i.pinimg.com/564x/e9/06/36/e9063662508b06eaae21e1e5b8febff8.jpg" alt=""/>
-            <PortadaTitle>
-                <p>DOMICILIO</p>
-                <p>X HABITACIONES - X BAÑOS</p>
-            </PortadaTitle>
-          </PortadaContainer>
-          <PortadaContainer>
-            <Portada src="https://live.staticflickr.com/65535/51107310353_1da0ddb7b9_h.jpg" alt=""/>
-            <PortadaTitle>
-                <p>DOMICILIO</p>
-                <p>X HABITACIONES - X BAÑOS</p>
-            </PortadaTitle>
-          </PortadaContainer>
-          
+        ))}
       </ListContainer>
     </React.Fragment>
   );

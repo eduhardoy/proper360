@@ -7,6 +7,8 @@ import Header from "../components/Header";
 import PropiedadesList from "../components/propiedades/PropiedadesList";
 import Whatsapp from "../components/Whatsapp";
 import HomeHeader from "../components/home/HomeHeader";
+import { useDispatch, useSelector } from "react-redux";
+import { actions } from "../store/actions/inmobiliarias";
 
 const Body = styled.div`
   width: 100%;
@@ -25,24 +27,43 @@ const InmobiliariaContainer = styled.div`
   width: calc(100vw - 150px);
 `;
 
-function Propiedades() {
+function Propiedades({ inmobiliaria }) {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const dispatch = useDispatch()
+
+  const inmobiliarias = useSelector(state => state.inmobiliarias)
+
+  React.useEffect(() => {
+    function fetchPropiedadesByInmobiliaria() {
+      dispatch(actions.getInmobiliariaWithPropiedades(inmobiliaria))
+    }
+    fetchPropiedadesByInmobiliaria()
+  }, [])
+
+  let inmobiliariaConditional = inmobiliarias.result.length > 0 ? inmobiliarias.result[0] : []
+  let headerData = {
+    nombreInmobiliaria: inmobiliariaConditional.nombre,
+    logoInmobiliaria: inmobiliariaConditional.logo,
+    keyInmobiliaria: inmobiliariaConditional._key
+  }
+  let propiedades = inmobiliarias.result.length > 0 ? inmobiliarias.result[0].propiedades : []
   return (
     <React.Fragment>
-      <HomeHeader/>
+      <HomeHeader />
       <Body>
         <LeftSideBarContainer>
           <LeftSideBar />
         </LeftSideBarContainer>
         <InmobiliariaContainer>
-          <Header />
-          <PropiedadesList />
+          <Header {...headerData} />
+          <PropiedadesList propiedades={propiedades} />
         </InmobiliariaContainer>
       </Body>
       <Footer />
-      <Whatsapp/>
+      <Whatsapp />
     </React.Fragment>
   );
 }
