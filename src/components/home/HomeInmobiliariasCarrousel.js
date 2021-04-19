@@ -41,8 +41,8 @@ const CarouselContainer= styled.div`
 `;
 
 const InmobiliariaLogo = styled.div`
-    width: 100%;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     color: white;
     font-size: 30px;
     margin: 20px;
@@ -50,9 +50,9 @@ const InmobiliariaLogo = styled.div`
     justify-content: center;
     align-items: center;
     a{
-        height: 180px;
-        width: 180px;
-        margin: auto 40px;
+        height: 100%;
+        width: 100%;
+        margin: auto ;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -92,8 +92,8 @@ function HomeInmobiliariasCarrousel(){
                 <Carousel breakPoints={breakPoints}>
                     {result.map(inmo =>
                         <InmobiliariaLogo>
-                            <Link to='/inmobiliaria'>
-                                <img src={`data:image/png;base64, ${inmo.logo}`} alt='Logo Inmobilria'/>
+                            <Link to={`/inmobiliaria/${inmo._key}`}>
+                                <img src={`data:image/png;base64, ${inmo.logo}`} alt='Logo Inmobiliaria'/>
                             </Link>
                         </InmobiliariaLogo>
                     )}
