@@ -2,109 +2,78 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 
+
 const ListContainer = styled.div`
-  width: 90%;
+  width: 95%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 100px;
-
-  ul {
-    width: 100%;
-    height: 100%;
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-
-    li {
-      height: auto;
-      width: 45%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 10px 20px;
-
-      a {
-        height: auto;
-        width: auto;
-        text-decoration: none;
-        color: black;
-        background-color: green;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-
-        img {
-          height: auto;
-          width: auto;
-          max-height: 100%;
-          max-width: 100%;
-        }
-        div {
-          position: absolute;
-          background-color: white;
-          height: 20%;
-          width: 90%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          bottom: 10px;
-          p {
-            margin: 1px;
-          }
-        }
-      }
-    }
-  }
+  margin-top: 40px;
 `;
 
-function PropiedadesList() {
+const PortadaContainer = styled.div`
+box-sizing: border-box;
+      width: calc(100% / 3);
+      padding: 5px;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      position: relative;
+      & :hover {
+        filter: none;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        width: 50%;
+      }
+      @media (max-width: 425px) {
+        width: 100%;
+      }`
+
+const Portada = styled.img`
+      width: 100%;
+      display: inline-flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      height: 45vh;
+      object-fit: cover;
+      filter: grayscale(80%);`
+
+const PortadaTitle = styled.div`
+      width: calc(100% - 10px);
+      font-size: 22px;
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+      margin: 0;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.7);
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 0px;
+      p{
+        margin: 10px;
+      }
+      `
+
+function PropiedadesList({ propiedades }) {
+
+
+
   return (
     <React.Fragment>
       <ListContainer>
-        <ul>
-          <li>
-            <Link to='/project'>
-              <img src='./images/project.jpg' />
-              <div>
-                <p>DOMICILIO</p>
-                <p>X HABITACIONES - X BAÑOS</p>
-              </div>
+        {propiedades.map(data => (
+          <PortadaContainer>
+            <Link to={`/project/${data._key}`}>
+              <Portada src={`data:image/jpeg;base64, ${data.logo}`} alt="" />
+              <PortadaTitle>
+                <p>{data.nombre}</p>
+                <p>{data.habitaciones} HABITACIONES - {data.banos} BAÑOS</p>
+              </PortadaTitle>
             </Link>
-          </li>
-          <li>
-            <Link to='/project'>
-              <img src='./images/project.jpg' />
-              <div>
-                <p>DOMICILIO</p>
-                <p>X HABITACIONES - X BAÑOS</p>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link to='/project'>
-              <img src='./images/project.jpg' />
-              <div>
-                <p>DOMICILIO</p>
-                <p>X HABITACIONES - X BAÑOS</p>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link to='/project'>
-              <img src='./images/project.jpg' />
-              <div>
-                <p>DOMICILIO</p>
-                <p>X HABITACIONES - X BAÑOS</p>
-              </div>
-            </Link>
-          </li>
-        </ul>
+          </PortadaContainer>
+        ))}
       </ListContainer>
     </React.Fragment>
   );

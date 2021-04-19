@@ -18,6 +18,13 @@ const FooterContainer = styled.footer`
   align-items: center;
   color: white;
   font-family: "Lato", "Open Sans", sans-serif;
+  padding-top: 20px;
+  position: relative;
+  bottom: 0;
+  z-index: 99999;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const ContactSection = styled.div`
@@ -25,12 +32,27 @@ const ContactSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 600px) {
+    margin: 10px;
+    width: 60%;
+  }
   ul {
     list-style-type: none;
+    margin: 0px;
+    @media (max-width: 600px) {
+        padding: 0;
+  }
     li {
       display: flex;
       flex-direction: row;
       margin: 15px 0;
+      @media (max-width: 600px) {
+        justify-content: center;
+  }
+      h4{
+        margin: 10px;
+      text-align: center;
+      }
       p {
         margin: 0;
         margin-left: 10px;
@@ -43,8 +65,11 @@ const AboutSection = styled.div`
   width: 40%;
   display: flex;
   flex-direction: column;
-
   align-items: center;
+  @media (max-width: 600px) {
+    margin: 20px;
+    width: 60%;
+  }
 `;
 
 const About = styled.div`
@@ -77,27 +102,31 @@ const Social = styled.div`
 `;
 
 const FooterCredits = styled.div`
-  height: 80px;
+  height: 60px;
   background: black;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
   a {
     color: white;
     text-decoration: none;
     img{
       padding: 10px;
-      height: 50px;
+      height: 30px;
     }
   }
 `;
 
 function Footer() {
   return (
-    <FooterContainer>
+    <FooterContainer id="contact">
       <ContactSection>
         <ul>
+        <li>
+          <h4><strong>CONTACTANOS</strong></h4>
+        </li>
           <li>
             <FaPhoneAlt />
             <p>3794-275060</p>

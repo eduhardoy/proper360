@@ -13,18 +13,31 @@ const types = {
   GET_PROPIEDADES_FAILUTE,
 };
 
-
-const getPropiedades = () => {
-  return dispatch => {
-    dispatch({ type: GET_PROPIEDADES })
-
-    return axios.get("propiedades")
+const getPropiedadesByInmobiliarias = (inmobiliariaId) => {
+  return (dispatch) => {
+    //nameless functions
+    // Initial action dispatched
+    dispatch({ type: GET_PROPIEDADES });
+    // Return promise with success and failure actions
+    return api.get("propiedades/inmobiliaria/" + inmobiliariaId)
       .then(propiedades => dispatch({ type: GET_PROPIEDADES_SUCCESS, payload: propiedades.data }))
-      .catch(err => dispatch({ tyoe: GET_PROPIEDADES_FAILUTE, payload: err.message }))
+      .catch(err => dispatch({ type: GET_PROPIEDADES_FAILUTE, payload: err.message }))
   }
 }
 
+const getPropiedades = () => {
+  return (dispatch) => {
+    //nameless functions
+    // Initial action dispatched
+    dispatch({ type: GET_PROPIEDADES });
+    // Return promise with success and failure actions
+    return api.get("propiedades")
+      .then(propiedades => dispatch({ type: GET_PROPIEDADES_SUCCESS, payload: propiedades.data }))
+      .catch(err => dispatch({ type: GET_PROPIEDADES_FAILUTE, payload: err.message }))
+  }
+};
 
-const actions = { getPropiedades };
+
+const actions = { getPropiedades, getPropiedadesByInmobiliarias };
 
 export { types, actions };

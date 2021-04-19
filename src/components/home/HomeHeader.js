@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "@reach/router";
 
 const StyledHomeHeader = styled.header`
   display: flex;
@@ -18,12 +19,26 @@ const HeaderImageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 50px;
   height: 100%;
   width: 30%;
-  img {
-    height: 75%;
+  @media (max-width: 1024px) {
+    width: 100%;
+    justify-content: center;
   }
+  a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+    height: 90%;
+    @media (max-width: 1024px) {
+    height: 70%;
+  }
+  }
+  }
+
 `;
 
 const HeaderMenuContainer = styled.div`
@@ -32,6 +47,9 @@ const HeaderMenuContainer = styled.div`
   align-items: center;
   height: 100%;
   width: 70%;
+  @media (max-width: 1024px) {
+    display: none;
+  }
   nav {
     ul {
       display: flex;
@@ -66,19 +84,21 @@ const HomeHeader = () => {
   return (
     <StyledHomeHeader>
       <HeaderImageContainer>
-        <img src='./images/logoproper.png' alt='Logo proper' />
+        <Link to='/'>
+        <img src='https://live.staticflickr.com/65535/51125881378_647f7d6729_z.jpg' alt='Logo proper' />
+        </Link>
       </HeaderImageContainer>
       <HeaderMenuContainer>
         <nav>
           <ul>
             <li>
-              <a href=''>INMOBILIARIAS</a>
+              <a href='/#inmobiliarias'>INMOBILIARIAS</a>
             </li>
             <li>
-              <a href=''>NOSOTROS</a>
+              <a href='/#about'>NOSOTROS</a>
             </li>
             <li>
-              <a href=''>CONTACTO</a>
+              <a href='/#contact'>CONTACTO</a>
             </li>
           </ul>
         </nav>

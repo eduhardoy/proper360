@@ -3,7 +3,7 @@ import styled from "styled-components";
 import AddIcon from "@material-ui/icons/Add";
 
 import AdminLayout from "../../components/admin/AdminLayout";
-import ClientesAdminList from "../../components/admin/ClientesAdminList";
+import ClientesAdminAccordion from "../../components/admin/ClientesAdminAccordion";
 
 const Container = styled.div`
   padding: 1%;
@@ -61,7 +61,7 @@ const ClientesAdmin = () => {
           <h1>Clientes</h1>
         </TitleWrapper>
         <ListWrapper>
-          <ClientesAdminList />
+          <ClientesAdminAccordion />
         </ListWrapper>
       </Container>
     </AdminLayout>
