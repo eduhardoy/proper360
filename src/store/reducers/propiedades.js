@@ -4,6 +4,7 @@ const initialState = {
   loading: false,
   error: null,
   result: [],
+  oneResult: null
 };
 
 function Propiedades(state = initialState, action) {
@@ -17,6 +18,14 @@ function Propiedades(state = initialState, action) {
 
     case types.GET_PROPIEDADES_SUCCESS:
       return { ...state, loading: false, result: payload };
+    case types.GET_ONE_PROPIEDADE:
+      return { ...state, loading: true };
+
+    case types.GET_ONE_PROPIEDADE_FAILUTE:
+      return { ...state, loading: false, error: payload };
+
+    case types.GET_ONE_PROPIEDADE_SUCCESS:
+      return { ...state, loading: false, oneResult: payload };
 
     default:
       return state;
