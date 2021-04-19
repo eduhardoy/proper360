@@ -22,9 +22,17 @@ const HeaderImageContainer = styled.div`
   margin-left: 50px;
   height: 100%;
   width: 30%;
+  @media (max-width: 425px) {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0px;
+  }
   a{
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
     height: 90%;
   }
@@ -38,6 +46,9 @@ const HeaderMenuContainer = styled.div`
   align-items: center;
   height: 100%;
   width: 70%;
+  @media (max-width: 425px) {
+    display: none;
+  }
   nav {
     ul {
       display: flex;

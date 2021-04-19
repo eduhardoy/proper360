@@ -31,6 +31,7 @@ const ContactSection = styled.div`
   align-items: center;
   ul {
     list-style-type: none;
+    margin: 0px;
     li {
       display: flex;
       flex-direction: row;
@@ -85,7 +86,7 @@ const Social = styled.div`
 `;
 
 const FooterCredits = styled.div`
-  height: 80px;
+  height: 60px;
   background: black;
   width: 100%;
   display: flex;

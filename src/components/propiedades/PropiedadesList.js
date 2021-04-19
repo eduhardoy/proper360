@@ -4,17 +4,17 @@ import { Link } from "@reach/router";
 
 
 const ListContainer = styled.div`
-  width: 90%;
+  width: 95%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 100px;
-  margin-top: 60px;
+  margin-top: 40px;
 `;
 
 const PortadaContainer = styled.div`
 box-sizing: border-box;
-      width: calc(100% / 2);
+      width: calc(100% / 3);
       padding: 5px;
       display: flex;
       text-align: center;

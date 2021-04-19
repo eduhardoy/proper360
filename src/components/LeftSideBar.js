@@ -3,13 +3,12 @@ import styled from "styled-components";
 import { Link } from "@reach/router";
 
 const LeftSideBarContainer = styled.aside`
-  width: 200px;
-  height: 100vh;
+  width: 150px;
+  height: 100%;
   background-color: #44494a;
   border-right: 1px solid black;
+  padding-top: 80px;
   box-shadow: 4px 0px 17px -4px rgba(0,0,0,0.69);
-  position: fixed;
-  z-index: 1;
 `;
 
 const FilterGroups = styled.section`
@@ -24,13 +23,13 @@ const FilterGroups = styled.section`
       justify-content: center;
       margin-bottom: 10px;
       font-weight: bold;
-      font-size: 25px;
+      font-size: 20px;
     }
     dd {
       padding-top: 10px;
       max-width: 100%;
       margin: 0;
-      font-size: 18px;
+      font-size: 15px;
       display: flex;
       justify-content: center;
       summary {
@@ -61,7 +60,7 @@ const FilterGroups = styled.section`
         align-items: center;
         flex-direction: column;
         li {
-          font-size: 15px;
+          font-size: 12px;
           padding: 5px;
         }
       }

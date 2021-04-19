@@ -10,6 +10,21 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import GroupAddIcon from "@material-ui/icons/GroupAdd";
 import VideoLabelIcon from "@material-ui/icons/VideoLabel";
 import StepConnector from "@material-ui/core/StepConnector";
+import styled from "styled-components";
+
+const StepperWrapper = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+h3{
+  display: none;
+}
+@media (max-width: 750px) {
+  div{    
+    display: none;
+  }
+  }
+`
 
 const QontoConnector = withStyles({
   alternativeLabel: {
@@ -211,6 +226,8 @@ export default function CustomizedSteppers() {
   };
 
   return (
+    <StepperWrapper>
+      <h3>SELECCIONA TU INMOBILIARIA</h3>
     <div className={classes.root}>
       <Stepper
         alternativeLabel
@@ -224,5 +241,6 @@ export default function CustomizedSteppers() {
         ))}
       </Stepper>
     </div>
+    </StepperWrapper>
   );
 }

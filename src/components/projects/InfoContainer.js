@@ -26,7 +26,7 @@ const StyledInfoContainer = styled.div`
 
 const StyledInfoBackground = styled.div`
   width: 90%;
-  height: 80%;
+  height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +56,7 @@ const ProjectDetails = styled.div`
 const StyledProjectsTitle = styled.div`
   text-align: center;
   font-size: 30px;
-  padding: 30px;
+  padding: 10px;
   margin: 0px;
   font-weight: 400;
   text-transform: uppercase;

@@ -19,13 +19,13 @@ const Body = styled.div`
 
 const LeftSideBarContainer = styled.div`
   display: block;
-  width: 200px;
+  width: 150px;
   min-height: 100vh;
   background-color: gray;
 `;
 
 const InmobiliariaContainer = styled.div`
-  width: calc(100vw - 200px);
+  width: calc(100vw - 150px);
 `;
 
 function Inmobiliarias({ inmobiliaria }) {
