@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "@reach/router";
 
 const LeftSideBarContainer = styled.aside`
-  width: 150px;
+  width: 180px;
   height: 100%;
   background-color: #44494a;
   border-right: 1px solid black;

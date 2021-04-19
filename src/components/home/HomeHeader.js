@@ -33,6 +33,9 @@ const HeaderImageContainer = styled.div`
     align-items: center;
     img {
     height: 90%;
+    @media (max-width: 1024px) {
+    height: 70%;
+  }
   }
   }
 

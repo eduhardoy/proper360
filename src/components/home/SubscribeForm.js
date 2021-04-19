@@ -101,7 +101,7 @@ const SubscribeForm = () => {
         </div>
         <div className='Form-input'>
           <input type='email' placeholder='Tu email' />
-          <button class='button'>
+          <button className='button'>
             <SendIcon></SendIcon>
           </button>
         </div>

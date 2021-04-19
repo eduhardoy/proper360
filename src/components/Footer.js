@@ -50,7 +50,7 @@ const ContactSection = styled.div`
         justify-content: center;
   }
       h4{
-        margin: 15px;
+        margin: 10px;
       text-align: center;
       }
       p {
