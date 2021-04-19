@@ -12,7 +12,7 @@ const InmobiliariaData = styled.section`
   text-align: justify;
 `;
 
-function Inmobiliaria() {
+function Inmobiliaria({ inmobiliaria }) {
   return (
     <React.Fragment>
       <InmobiliariaData>
