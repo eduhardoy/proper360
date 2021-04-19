@@ -22,7 +22,7 @@ const HeaderImageContainer = styled.div`
   margin-left: 50px;
   height: 100%;
   width: 30%;
-  @media (max-width: 425px) {
+  @media (max-width: 1024px) {
     width: 100%;
     justify-content: center;
     margin-left: 0px;
@@ -46,7 +46,7 @@ const HeaderMenuContainer = styled.div`
   align-items: center;
   height: 100%;
   width: 70%;
-  @media (max-width: 425px) {
+  @media (max-width: 1024px) {
     display: none;
   }
   nav {

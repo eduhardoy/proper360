@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 const StyledHomeImages = styled.div`
   margin-top: 100px;
+  @media (max-width: 450px) {
+    margin-top: 20px;
+  }
 `;
 
 const ImagesWrapper = styled.div`
@@ -20,7 +23,7 @@ const ImagesWrapper = styled.div`
     @media (max-width: 750px) {
       width: calc(95% / 2);
   }
-  @media (max-width: 450px) {
+  @media (max-width: 600px) {
       width: 100%;
   }
     :hover {

@@ -7,12 +7,20 @@ const HomeSectionAbout = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 600px) {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
   h3 {
     width: 60%;
     font-size: 25px;
     font-family: "Lato";
     font-weight: 300;
     text-align: justify;
+    @media (max-width: 600px) {
+    width: 90%;
+    font-size: 15px;
+  }
   }
 `;
 
