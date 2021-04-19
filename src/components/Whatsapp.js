@@ -4,7 +4,7 @@ import styled from "styled-components";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 
 const WhatsappButton = styled.a`
-  z-index: 3;
+  z-index: 999999;
   bottom: 70px;
   right: 20px;
   width: 60px;
