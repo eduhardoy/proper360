@@ -9,7 +9,7 @@ const ListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 100px;
-  margin-top: 60px;
+  margin-top: 40px;
 `;
 
 const PortadaContainer = styled.div`
