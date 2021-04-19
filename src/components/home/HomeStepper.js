@@ -224,7 +224,7 @@ export default function CustomizedSteppers() {
 
   return (
     <StepperWrapper>
-    <div className={classes.root}>
+    <div className={classes.root} id="inmobiliarias">
       <Stepper
         alternativeLabel
         activeStep={activeStep}

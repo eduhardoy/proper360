@@ -12,6 +12,9 @@ const CarouselSection = styled.section`
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    h1{
+        margin-bottom: 30px;
+    }
     @media (max-width: 750px) {
       margin-top: 40px;
       margin-bottom: 40px;
@@ -93,7 +96,7 @@ function HomeInmobiliariasCarrousel() {
 
     return (
         <CarouselSection>
-            <h1>INMOBILIARIAS</h1>
+            <h1>INMOBILIARIAS Y DESARROLLADORES INMOBILIARIOS</h1>
             <CarouselContainer>
                 <Carousel breakPoints={breakPoints}>
                     {result.map(inmo =>
