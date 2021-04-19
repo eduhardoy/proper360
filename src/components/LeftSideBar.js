@@ -13,7 +13,7 @@ const LeftSideBarContainer = styled.aside`
 `;
 
 const FilterGroups = styled.section`
-  margin-top: 100px;
+  margin-top: 50px;
   color: white;
   font-size: 20px;
   dl {
