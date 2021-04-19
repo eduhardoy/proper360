@@ -7,6 +7,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { actions } from "../../store/actions/propiedades";
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -55,46 +57,60 @@ const ButtonAccordion = styled.button`
 `;
 
 export default function PropiedadesAdminAccordion() {
+  const dispatch = useDispatch()
+  const [data, setData] = React.useState({})
+
+  const propiedades = useSelector(state => state.propiedades)
+
+  React.useEffect(() => {
+    async function fetchPropiedades() {
+      dispatch(actions.getPropiedades())
+    }
+    fetchPropiedades()
+  }, [])
+
   return (
     <AccordionWrapper>
-      <Accordion>
-        <StyledAccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls='panel1a-content'
-          id='panel1a-header'
-        >
-          <h2>PROPIEDAD 1</h2>
-          <ButtonWrapper>
-            <ButtonAccordion
-              onClick={event => event.stopPropagation()}
-              onFocus={event => event.stopPropagation()}
-            >
-              <p>EDITAR</p>
-              <EditIcon />
-            </ButtonAccordion>
-            <ButtonAccordion
-              onClick={event => event.stopPropagation()}
-              onFocus={event => event.stopPropagation()}
-            >
-              <p>ELIMINAR</p>
-              <DeleteIcon />
-            </ButtonAccordion>
-          </ButtonWrapper>
-        </StyledAccordionSummary>
-        <AccordionDetails>
-          <ListDetails>
-            <p>Descripcion:</p>
-            <p>Direccion:</p>
-            <p>Barrio:</p>
-            <p>Categoria:</p>
-            <p>Tipo:</p>
-            <p>Ambientes:</p>
-            <p>Habitaciones:</p>
-            <p>Baños:</p>
-            <p>Otros:</p>
-          </ListDetails>
-        </AccordionDetails>
-      </Accordion>
+      { propiedades.result.map(data => (
+        <Accordion>
+          <StyledAccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls='panel1a-content'
+            id='panel1a-header'
+          >
+            <h2>{data.nombre}</h2>
+            <ButtonWrapper>
+              <ButtonAccordion
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}
+              >
+                <p>EDITAR</p>
+                <EditIcon />
+              </ButtonAccordion>
+              <ButtonAccordion
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}
+              >
+                <p>ELIMINAR</p>
+                <DeleteIcon />
+              </ButtonAccordion>
+            </ButtonWrapper>
+          </StyledAccordionSummary>
+          <AccordionDetails>
+            <ListDetails>
+              <p>Descripcion: {data.descripcion}</p>
+              <p>Direccion: {data.direccion}</p>
+              <p>Barrio: {data.barrio}</p>
+              <p>Categoria: {data.categoria}</p>
+              <p>Tipo: {data.tipo}</p>
+              <p>Ambientes: {data.ambientes}</p>
+              <p>Habitaciones: {data.habitaciones}</p>
+              <p>Baños: {data.banos}</p>
+              <p>Otros: {data.extras}</p>
+            </ListDetails>
+          </AccordionDetails>
+        </Accordion>
+      ))}
     </AccordionWrapper>
   );
 }

@@ -8,7 +8,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actions, types } from '../../store/actions/inmobiliarias'
+import { actions, types } from '../../store/actions/clientes'
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -56,24 +56,24 @@ const ButtonAccordion = styled.button`
   }
 `;
 
-export default function InmobiliariasAdminAccordion() {
+const ClientesAdminAccordion = () => {
   const dispatch = useDispatch()
   const [data, setData] = React.useState({})
 
-  const inmobiliarias = useSelector(state => state.inmobiliarias)
+  const clientes = useSelector(state => state.clientes)
 
   React.useEffect(() => {
-    async function fetchInmobiliarias() {
-      dispatch(actions.getInmobiliarias())
+    async function fetchClientes() {
+      dispatch(actions.getClientes())
     }
-    fetchInmobiliarias()
+    fetchClientes()
   }, [])
 
 
   return (
     <AccordionWrapper>
       {
-        inmobiliarias.result.map(data => (
+        clientes.result.map(data => (
           <Accordion>
             <StyledAccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -100,12 +100,7 @@ export default function InmobiliariasAdminAccordion() {
             </StyledAccordionSummary>
             <AccordionDetails>
               <ListDetails>
-                <p>Logo: <img src={`data:image/jpeg;base64, ${data.logo}`}/></p>
-                <p>Descripcion: {data.descripcion}</p>
-                <p>Telefono: {data.CONTACTO ? data.CONTACTO.telefono : ""}</p>
-                <p>Email: {data.CONTACTO ? data.CONTACTO.email : ""}</p>
-                <p>Direccion: {data.CONTACTO ? data.CONTACTO.direccion : ""}</p>
-                <p>Banner: {data.BANNER_INMOBILIARIA}</p>
+                <p>Email: {data.email}</p>
               </ListDetails>
             </AccordionDetails>
           </Accordion>
@@ -114,4 +109,6 @@ export default function InmobiliariasAdminAccordion() {
 
     </AccordionWrapper>
   );
-}
+};
+
+export default ClientesAdminAccordion;
