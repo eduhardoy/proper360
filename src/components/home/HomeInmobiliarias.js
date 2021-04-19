@@ -66,7 +66,7 @@ const HomeInmobiliarias = () => {
           {result.map(inmo =>
             <li>
               <Link to='/inmobiliaria'>
-                <img src={`data:image/png;base64, ${inmo.logo}`} alt='Logo Inmobilria Forte' />
+                <img src={inmo.logo} alt='Logo Inmobilria Forte' />
               </Link>
             </li>
           )}

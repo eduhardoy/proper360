@@ -29,15 +29,17 @@ function Inmobiliaria({ inmobiliaria }) {
       <InmobiliariaData>
         <h2>SOBRE INMOBILIARIA</h2>
         <p>
-        Somos una empresa familiar que garantiza un trato al cliente sensato, integro, respetetuoso y por sobre todo honesto. 
-Buscamos brindar respuestas a los cambios del mercado con agilidad y sobre todo creatividad, adaptándonos a las nuevas tecnologías.  Actualmente nuestro director, el Martillero Publico Ricardo Maria Malgor, profesional matriculado de la ciudad de Corrientes, se encuentra acompañado por la Abogada, Ada Margarita Aguirre Martinez, y también, por su hijo, el Contador Publico Nacional, Ricardo Maria Malgor (h).
+          {inmobiliaria.descripcion}
         </p>
-        <br/>
+        <br />
         <h2>DATOS DE CONTACTO</h2>
         <ul>
-          <li>Domicilio:</li>
-          <li>Telefono:</li>
-          <li>Email:</li>
+          <li>Domicilio: {inmobiliaria.direccion}</li>
+          <li>Telefono: {inmobiliaria.telefono}</li>
+          <li>Email: {inmobiliaria.email}</li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
       </InmobiliariaData>
     </React.Fragment>

@@ -23,12 +23,12 @@ const IframeContainer = styled.div`
   }
 `;
 
-const ProjectsWrapper = () => {
+const ProjectsWrapper = ({ project }) => {
   return (
     <ProjectStyledWrapper>
-      <InfoContainer />
+      <InfoContainer project={project} />
       <IframeContainer>
-        <iframe src='https://kuula.co/share/7wW3l/collection/7YhvC?fs=1&vr=1&initload=0&thumbs=4&margin=10&inst=es&info=0&logo=1&logosize=83'></iframe>
+        <iframe src={project.tour}></iframe>
       </IframeContainer>
     </ProjectStyledWrapper>
   );

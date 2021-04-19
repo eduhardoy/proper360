@@ -18,7 +18,7 @@ const CarouselSection = styled.section`
   }
 `;
 
-const CarouselContainer= styled.div`
+const CarouselContainer = styled.div`
     width: 80%;
     margin: auto;
     @media (max-width: 750px) {
@@ -71,27 +71,27 @@ const InmobiliariaLogo = styled.div`
     }
 `;
 
-function HomeInmobiliariasCarrousel(){
+function HomeInmobiliariasCarrousel() {
 
     const dispatch = useDispatch()
     const { result } = useSelector(state => state.inmobiliarias)
     console.log(result)
     React.useEffect(() => {
-    dispatch(actions.getInmobiliarias())
+        dispatch(actions.getInmobiliarias())
     }, [])
-    
-    //Breakpoints carrousel - TESTEAR RESPONSIVE -
-    const breakPoints =[
-        {width: 320, itemsToShow: 1},
-        {width: 375, itemsToShow: 1},
-        {width: 425, itemsToShow: 2},
-        {width: 768, itemsToShow: 3},
-        {width: 1024, itemsToShow: 5},
-        {width: 1440, itemsToShow: 5},
-        {width: 2560, itemsToShow: 5}
-    ] 
 
-    return(
+    //Breakpoints carrousel - TESTEAR RESPONSIVE -
+    const breakPoints = [
+        { width: 320, itemsToShow: 1 },
+        { width: 375, itemsToShow: 1 },
+        { width: 425, itemsToShow: 2 },
+        { width: 768, itemsToShow: 3 },
+        { width: 1024, itemsToShow: 5 },
+        { width: 1440, itemsToShow: 5 },
+        { width: 2560, itemsToShow: 5 }
+    ]
+
+    return (
         <CarouselSection>
             <h1>INMOBILIARIAS</h1>
             <CarouselContainer>
@@ -99,7 +99,7 @@ function HomeInmobiliariasCarrousel(){
                     {result.map(inmo =>
                         <InmobiliariaLogo>
                             <Link to={`/inmobiliaria/${inmo._key}`}>
-                                <img src={`data:image/png;base64, ${inmo.logo}`} alt='Logo Inmobiliaria'/>
+                                <img src={`${inmo.logo}`} alt='Logo Inmobiliaria' />
                             </Link>
                         </InmobiliariaLogo>
                     )}

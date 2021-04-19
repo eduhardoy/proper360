@@ -62,28 +62,30 @@ const StyledProjectsTitle = styled.div`
   text-transform: uppercase;
 `;
 
-const InfoContainer = () => {
+const InfoContainer = ({ project }) => {
+  console.log(project)
   return (
     <StyledInfoContainer>
       <StyledInfoBackground>
         <LogoInmobiliariaWrapper>
-          <Link to='/inmobiliaria'>
-            <img src='./images/malgor.jpg' alt='Logo Inmobilria Forte' />
+          <Link to={`/inmobiliaria/${project.inmobiliaria._key}`}>
+            <img src={project.inmobiliaria.logo} alt='Logo Inmobilria Forte' />
             <p>VOLVER A INMOBILIARIA</p>
           </Link>
         </LogoInmobiliariaWrapper>
         <StyledProjectsTitle>
-        Hosteria Caballo Campana - Jujuy 3200
+          Hosteria Caballo Campana - Jujuy 3200
       </StyledProjectsTitle>
         <ProjectDetails>
           <ul>
-            <li>Direccion:</li>
-            <li>Ambientes:</li>
-            <li>Dormitorios:</li>
-            <li>Baños:</li>
-            <li>Cochera:</li>
-            <li>Metros cuadrados (m²):</li>
-            <li>Amueblado:</li>
+            <li>Direccion: {project.direccion}</li>
+            <li>Ambientes: {project.ambientes}</li>
+            <li>Dormitorios: {project.habitaciones}</li>
+            <li>Baños: {project.banos}</li>
+            <li>Extras: {project.extras}</li>
+            {/* <li>Cochera: </li> */}
+            {/* <li>Metros cuadrados (m²):</li> */}
+            {/* <li>Amueblado:</li> */}
           </ul>
         </ProjectDetails>
       </StyledInfoBackground>
