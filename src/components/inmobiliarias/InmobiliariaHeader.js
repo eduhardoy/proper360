@@ -25,6 +25,7 @@ const StyledHeader = styled.header`
       font-size: 22px;
       h2{
         margin: 20px;
+        text-transform: uppercase;
       }
       img {
         height: auto;
