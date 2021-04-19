@@ -5,7 +5,7 @@ import { Link } from "@reach/router";
 const StyledHeader = styled.header`
   width: 100%;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Header = ({ nombreInmobiliaria, logoInmobiliaria, keyInmobiliaria }) => {
+const InmobiliariaHeader = ({ nombreInmobiliaria, logoInmobiliaria, keyInmobiliaria }) => {
   return (
     <StyledHeader>
       <div>
@@ -47,4 +47,4 @@ const Header = ({ nombreInmobiliaria, logoInmobiliaria, keyInmobiliaria }) => {
   );
 };
 
-export default Header;
+export default InmobiliariaHeader;

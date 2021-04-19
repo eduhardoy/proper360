@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Footer from "../components/Footer";
 import LeftSideBar from "../components/LeftSideBar";
-import Header from "../components/Header";
+import InmobiliariaHeader from "../components/inmobiliarias/InmobiliariaHeader";
 import PropiedadesList from "../components/propiedades/PropiedadesList";
 import Whatsapp from "../components/Whatsapp";
 import HomeHeader from "../components/home/HomeHeader";
@@ -58,7 +58,7 @@ function Propiedades({ inmobiliaria }) {
           <LeftSideBar />
         </LeftSideBarContainer>
         <InmobiliariaContainer>
-          <Header {...headerData} />
+          <InmobiliariaHeader {...headerData} />
           <PropiedadesList propiedades={propiedades} />
         </InmobiliariaContainer>
       </Body>
