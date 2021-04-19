@@ -22,7 +22,7 @@ const HeaderImageContainer = styled.div`
   height: 100%;
   width: 30%;
   img {
-    height: 75%;
+    height: 90%;
   }
 `;
 

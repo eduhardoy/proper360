@@ -33,6 +33,7 @@ const ImagesWrapper = styled.div`
       bottom: 30px;
     }
     img {
+      object-fit: cover;
       width: 100%;
     }
   }

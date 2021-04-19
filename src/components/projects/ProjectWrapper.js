@@ -8,7 +8,8 @@ const ProjectStyledWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: calc(100vh - 170px);
+  margin-top: 70px;
+  height: calc(100vh - 140px);
 `;
 
 const IframeContainer = styled.div`
