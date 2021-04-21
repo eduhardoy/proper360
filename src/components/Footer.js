@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import {
-  FaWhatsapp,
+  FaLinkedin,
   FaFacebookF,
   FaInstagram,
   FaPhoneAlt,
@@ -152,8 +152,8 @@ function Footer() {
           <a href='https://www.instagram.com/'>
             <FaInstagram />
           </a>
-          <a href='https://web.whatsapp.com/'>
-            <FaWhatsapp />
+          <a href='https://www.linkedin.com'>
+            <FaLinkedin />
           </a>
         </Social>
       </AboutSection>

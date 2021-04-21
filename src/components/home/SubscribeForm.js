@@ -46,6 +46,9 @@ const FormContainer = styled.div`
       width: 83%;
       h2 {
         font-weight: lighter;
+        @media (max-width: 750px) {
+          font-size: 20px;
+  }
       }
     }
     .Form-input {
@@ -83,6 +86,9 @@ const FormContainer = styled.div`
       justify-content: flex-end;
       h2 {
         font-weight: lighter;
+        @media (max-width: 750px) {
+          font-size: 20px;
+  }
       }
     }
   }

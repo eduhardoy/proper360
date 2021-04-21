@@ -13,7 +13,14 @@ const CarouselSection = styled.section`
     flex-direction: column;
     align-items: center;
     h1{
+        width: 80%;
+        text-align: center;
         margin-bottom: 30px;
+        @media (max-width: 750px) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: 20px;
+  }
     }
     @media (max-width: 750px) {
       margin-top: 40px;
@@ -24,7 +31,7 @@ const CarouselSection = styled.section`
 const CarouselContainer = styled.div`
     width: 80%;
     margin: auto;
-    @media (max-width: 750px) {
+    @media (max-width: 1000px) {
     width: 100%;
   }
     .rec.rec-arrow {
@@ -58,9 +65,10 @@ const InmobiliariaLogo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
     a{
-        height: 100%;
-        width: 100%;
+        height: 150px;
+        width: 150px;
         margin: auto ;
         display: flex;
         justify-content: center;
@@ -70,6 +78,12 @@ const InmobiliariaLogo = styled.div`
             width: auto;
             max-height: 100%;
             max-width: 100%;
+        }
+        @media (max-width: 1000px) {
+        width: 120px;
+        }
+        @media (max-width: 1000px) {
+        width: 100px;
         }
     }
 `;
@@ -85,10 +99,10 @@ function HomeInmobiliariasCarrousel() {
 
     //Breakpoints carrousel - TESTEAR RESPONSIVE -
     const breakPoints = [
-        { width: 320, itemsToShow: 1 },
-        { width: 375, itemsToShow: 1 },
-        { width: 425, itemsToShow: 2 },
-        { width: 768, itemsToShow: 3 },
+        { width: 320, itemsToShow: 2 },
+        { width: 375, itemsToShow: 3 },
+        { width: 425, itemsToShow: 4 },
+        { width: 768, itemsToShow: 4 },
         { width: 1024, itemsToShow: 5 },
         { width: 1440, itemsToShow: 5 },
         { width: 2560, itemsToShow: 5 }
