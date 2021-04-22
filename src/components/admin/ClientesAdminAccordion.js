@@ -9,6 +9,11 @@ const AccordionWrapper = styled.div`
   width: 80%;
   display: flex;
   justify-content: center;
+  ul{
+    li{
+      list-style-type: none;
+    }
+  }
 `;
 
 const ClientesAdminAccordion = () => {
@@ -27,13 +32,16 @@ const ClientesAdminAccordion = () => {
 
   return (
     <AccordionWrapper>
+      <ul>
       {
         clientes.result.map(data => (
-          <div>
+          <li>
             <p>{data.email}</p>
-          </div>
+            {/* <p>{data.dateCreated}</p> */}
+          </li>
         ))
       }
+      </ul>
 
     </AccordionWrapper>
   );

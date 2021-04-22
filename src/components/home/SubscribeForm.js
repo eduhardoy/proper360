@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import SendIcon from "@material-ui/icons/Send";
+import { useDispatch, useSelector } from "react-redux";
+import { actions, types } from '../../store/actions/clientes'
+import { ContactSupportOutlined } from "@material-ui/icons";
+
 
 const FormContainer = styled.div`
   height: 100%;
@@ -88,16 +92,41 @@ const FormContainer = styled.div`
         font-weight: lighter;
         @media (max-width: 750px) {
           font-size: 20px;
-  }
+        }
       }
     }
   }
 `;
 
+
 const SubscribeForm = () => {
+
+  const dispatch = useDispatch()
+  const formState = useSelector(state => state.clientes.result[0] )
+
+  const [datos, setDatos] = React.useState({
+    email: ''
+  })
+
+  const handleInputChange = (event) => {
+     /* console.log(event.target.name)
+     console.log(event.target.value) */
+    setDatos({
+        ...datos,
+        [event.target.name] : event.target.value
+    })
+  }
+
+  const handleForm= (e) =>{
+    e.preventDefault();
+    /* console.log(datos) */
+    dispatch(actions.postCliente(datos))
+
+  }
+
   return (
     <FormContainer>
-      <form>
+      <form onSubmit={(e)=>handleForm(e)}>
         <div className='Form-title'>
           <h3>BIENVENIDO A</h3>
           <h1>PROPER 360°</h1>
@@ -106,8 +135,8 @@ const SubscribeForm = () => {
           <h2>ENCUENTRA LA PROPIEDAD QUE BUSCAS</h2>
         </div>
         <div className='Form-input'>
-          <input type='email' placeholder='Tu email' />
-          <button className='button'>
+          <input name="email" onChange={handleInputChange} type='email' placeholder='Tu email' />
+          <button type="submit" className='button'>
             <SendIcon></SendIcon>
           </button>
         </div>

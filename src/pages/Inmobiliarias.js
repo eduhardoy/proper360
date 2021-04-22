@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Footer from "../components/Footer";
 import InmobiliariaData from "../components/inmobiliarias/InmobiliariaData";
+import PropiedadesList from "../components/propiedades/PropiedadesList";
 import LeftSideBar from "../components/LeftSideBar";
 import InmobiliariaHeader from "../components/inmobiliarias/InmobiliariaHeader";
 import Whatsapp from "../components/Whatsapp";
@@ -50,6 +51,7 @@ function Inmobiliarias({ inmobiliaria }) {
     logoInmobiliaria: inmobiliariaConditional.logo,
     keyInmobiliaria: inmobiliariaConditional._key
   }
+  let propiedades = inmobiliarias.result.length > 0 ? inmobiliarias.result[0].propiedades : []
   return (
     <React.Fragment>
       <HomeHeader />
@@ -60,6 +62,7 @@ function Inmobiliarias({ inmobiliaria }) {
         <InmobiliariaContainer>
           <InmobiliariaHeader {...headerData} />
           <InmobiliariaData inmobiliaria={inmobiliariaConditional} />
+          <PropiedadesList propiedades={propiedades} />
         </InmobiliariaContainer>
       </Body>
       <Footer />

@@ -21,10 +21,10 @@ function Inmobiliarias(state = initialState, action) {
             return { ...state, loading: true };
 
         case types.POST_CLIENTES_FAILURE:
-            return { ...state, loading: false };
+            return { ...state, loading: false , error: true};
 
         case types.POST_CLIENTES_SUCCESS:
-            return { ...state, loading: false };
+            return { ...state, loading: false , error: false, result: [payload]};
 
         default:
             return state;
