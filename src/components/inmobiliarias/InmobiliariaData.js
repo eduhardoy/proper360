@@ -10,13 +10,19 @@ const InmobiliariaData = styled.section`
   margin: auto;
   margin-bottom: 50px;
   text-align: justify;
+  h2{
+    margin: 10px;
+  }
   p{
+    margin: 10px;
     font-size: 20px;
   }
   ul{
-    width: 100%;
     list-style: none;
+    padding: 0;
     li{
+      margin: 10px;
+      text-align: center;
       font-size: 22px;
       padding: 5px;
     }
@@ -34,12 +40,9 @@ function Inmobiliaria({ inmobiliaria }) {
         <br />
         <h2>DATOS DE CONTACTO</h2>
         <ul>
-          <li>Domicilio: {inmobiliaria.direccion}</li>
-          <li>Telefono: {inmobiliaria.telefono}</li>
-          <li>Email: {inmobiliaria.email}</li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>{inmobiliaria.direccion}</li>
+          <li>{inmobiliaria.telefono}</li>
+          <li>{inmobiliaria.email}</li>
         </ul>
       </InmobiliariaData>
     </React.Fragment>

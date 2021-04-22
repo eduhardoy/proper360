@@ -16,11 +16,19 @@ const IframeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  iframe {
+  div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    iframe {
     border: none;
     width: 90%;
     height: 90%;
   }
+  }
+  
 `;
 
 const ProjectsWrapper = ({ project }) => {
@@ -28,7 +36,7 @@ const ProjectsWrapper = ({ project }) => {
     <ProjectStyledWrapper>
       <InfoContainer project={project} />
       <IframeContainer>
-      <iframe class="ku-embed" frameborder="0" allowfullscreen allow="xr-spatial-tracking; gyroscope; accelerometer" scrolling="no" src="https://kuula.co/share/collection/7YGFL?fs=1&vr=1&sd=1&thumbs=1&info=1&logo=0"></iframe>
+      <div dangerouslySetInnerHTML={{ __html: (`${project.iframe}`)}} />
       </IframeContainer>
     </ProjectStyledWrapper>
   );

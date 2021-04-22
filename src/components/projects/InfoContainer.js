@@ -82,14 +82,14 @@ const InfoContainer = ({ project }) => {
       </StyledProjectsTitle>
         <ProjectDetails>
           <ul>
-            <li>Barrio/Zona: {project.direccion}</li>
+            <li>Barrio/Zona: {project.barrio}</li>
             <li>Ambientes: {project.ambientes}</li>
-            <li>Habitaciones: {project.habitaciones}</li>
             <li>Baños: {project.banos}</li>
-            <li>Extras: {project.extras}</li>
-            {/* <li>Cochera: </li> */}
-            {/* <li>Metros cuadrados (m²):</li> */}
-            {/* <li>Amueblado:</li> */}
+            <li>Habitaciones: {project.habitaciones}</li>
+            <br/>
+
+            <li><strong>Alquiler inicial: ${project.habitaciones}</strong></li>
+            
           </ul>
         </ProjectDetails>
       </StyledInfoBackground>
