@@ -20,6 +20,7 @@ const InmobiliariaData = styled.section`
   ul{
     list-style: none;
     padding: 0;
+    margin: 0;
     li{
       margin: 10px;
       text-align: center;
@@ -33,7 +34,6 @@ function Inmobiliaria({ inmobiliaria }) {
   return (
     <React.Fragment>
       <InmobiliariaData>
-        <h2>SOBRE INMOBILIARIA</h2>
         <p>
           {inmobiliaria.descripcion}
         </p>

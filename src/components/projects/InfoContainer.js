@@ -78,7 +78,7 @@ const InfoContainer = ({ project }) => {
           </Link>
         </LogoInmobiliariaWrapper>
         <StyledProjectsTitle>
-          <h2>PROPER 360°: {project.direccion}</h2>
+          <h2>PROPER 360°: {project.nombre}</h2>
       </StyledProjectsTitle>
         <ProjectDetails>
           <ul>
@@ -88,7 +88,7 @@ const InfoContainer = ({ project }) => {
             <li>Habitaciones: {project.habitaciones}</li>
             <br/>
 
-            <li><strong>Alquiler inicial: ${project.habitaciones}</strong></li>
+            <li><strong>Alquiler inicial: ${project.precio}</strong></li>
             
           </ul>
         </ProjectDetails>

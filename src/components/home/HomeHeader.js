@@ -32,9 +32,9 @@ const HeaderImageContainer = styled.div`
     justify-content: center;
     align-items: center;
     img {
-    height: 90%;
+    height: 80%;
     @media (max-width: 1024px) {
-    height: 70%;
+    height: 60%;
   }
   }
   }
@@ -85,7 +85,7 @@ const HomeHeader = () => {
     <StyledHomeHeader>
       <HeaderImageContainer>
         <Link to='/'>
-        <img src='https://live.staticflickr.com/65535/51125881378_647f7d6729_z.jpg' alt='Logo proper' />
+        <img src='https://live.staticflickr.com/65535/51132651295_d1cba6c406_n.jpg' alt='Logo proper' />
         </Link>
       </HeaderImageContainer>
       <HeaderMenuContainer>
