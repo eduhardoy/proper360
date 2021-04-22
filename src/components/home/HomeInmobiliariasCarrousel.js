@@ -82,8 +82,11 @@ const InmobiliariaLogo = styled.div`
         @media (max-width: 1000px) {
         width: 120px;
         }
-        @media (max-width: 1000px) {
+        @media (max-width: 750px) {
         width: 100px;
+        }
+        @media (max-width: 320px) {
+        width: 80px;
         }
     }
 `;
