@@ -77,10 +77,10 @@ const FormContainer = styled.div`
       button {
         border: none;
         border-radius: 0 10px 10px 0;
-        color: white;
-        background-color: #262626;
+        color: black;
+        background-color: #DCDCDB;
         height: 40px;
-        width: 40px;
+        width: 60px;
       }
     }
     .Form-msj {

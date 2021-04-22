@@ -8,8 +8,7 @@ const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 20px;
-
+  padding-bottom: 60px;
   input {
     width: 400px;
     height: 40px;

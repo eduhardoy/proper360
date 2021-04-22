@@ -23,6 +23,9 @@ const LeftSideBarContainer = styled.div`
   width: 180px;
   min-height: 100vh;
   background-color: gray;
+  @media (max-width: 750px) {
+    
+  }
 `;
 
 const InmobiliariaContainer = styled.div`

@@ -78,18 +78,18 @@ const InfoContainer = ({ project }) => {
           </Link>
         </LogoInmobiliariaWrapper>
         <StyledProjectsTitle>
-          <h2>PROPER 360°: {project.direccion}</h2>
+          <h2>PROPER 360°: {project.nombre}</h2>
       </StyledProjectsTitle>
         <ProjectDetails>
           <ul>
-            <li>Barrio/Zona: {project.direccion}</li>
+            <li>Barrio/Zona: {project.barrio}</li>
             <li>Ambientes: {project.ambientes}</li>
-            <li>Habitaciones: {project.habitaciones}</li>
             <li>Baños: {project.banos}</li>
-            <li>Extras: {project.extras}</li>
-            {/* <li>Cochera: </li> */}
-            {/* <li>Metros cuadrados (m²):</li> */}
-            {/* <li>Amueblado:</li> */}
+            <li>Habitaciones: {project.habitaciones}</li>
+            <br/>
+
+            <li><strong>Alquiler inicial: ${project.precio}</strong></li>
+            
           </ul>
         </ProjectDetails>
       </StyledInfoBackground>
