@@ -12,7 +12,7 @@ const Routes = () => {
     <Router>
       <Home path='/' />
       <Inmobiliarias path='/inmobiliaria/:inmobiliaria' />
-      <Propiedades path='/propiedades/:inmobiliaria' />
+      {/* <Propiedades path='/propiedades/:inmobiliaria' /> */}
       <Projects path='/project/:projectId' />
       <AdminRoute path='admin/*' />
     </Router>
