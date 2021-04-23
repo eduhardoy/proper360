@@ -44,11 +44,13 @@ width: 100vw;
 background-color: #44494A;
 display: none;
 @media (max-width: 1024px) {
-  display: flex;
+
   }
 `
 
 function Inmobiliarias({ inmobiliaria }) {
+  const [filtro, setFiltro] = React.useState(false);
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -71,9 +73,14 @@ function Inmobiliarias({ inmobiliaria }) {
     keyInmobiliaria: inmobiliariaConditional._key
   }
   let propiedades = inmobiliarias.result.length > 0 ? inmobiliarias.result[0].propiedades : []
+
+  const ActiveButtonClick = () => setFiltro(true);
+  const DisableButtonClick = () => setFiltro(false);
+
   return (
     <React.Fragment>
-      <FilterMenu>
+      <FilterMenu style={ filtro == true ? { display:'flex'} : {display : 'none'} }>
+        <button onClick={DisableButtonClick}></button>
         <LeftSideBar />
       </FilterMenu>
       <HomeHeader />
@@ -82,6 +89,7 @@ function Inmobiliarias({ inmobiliaria }) {
           <LeftSideBar />
         </LeftSideBarContainer>
         <InmobiliariaContainer>
+          <button onClick={ActiveButtonClick}></button>
           <InmobiliariaHeader {...headerData} />
           <InmobiliariaData inmobiliaria={inmobiliariaConditional} />
           <PropiedadesList propiedades={propiedades} />

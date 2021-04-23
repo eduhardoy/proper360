@@ -26,7 +26,7 @@ const getClientes = () => {
         dispatch({ type: GET_CLIENTES });
         // Return promise with success and failure actions
         return api.get("clientes")
-            .then(cliente => dispatch({ type: GET_CLIENTES_SUCCESS, payload: cliente.data }))
+            .then(cliente => dispatch({ type: GET_CLIENTES_SUCCESS, payload: cliente.data.body }))
             .catch(err => dispatch({ type: GET_CLIENTES_FAILURE, payload: err.message }))
     }
 };
@@ -38,7 +38,7 @@ const postCliente = (cliente) => {
         dispatch({ type: POST_CLIENTES });
         // Return promise with success and failure actions
         return api.post("clientes", cliente)
-            .then(cliente => dispatch({ type: POST_CLIENTES_SUCCESS, payload: cliente.data }))
+            .then(cliente => dispatch({ type: POST_CLIENTES_SUCCESS, payload: cliente.data.body }))
             .catch(err => dispatch({ type: POST_CLIENTES_FAILURE, payload: err.message }))
     }
 };
