@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import CloseIcon from '@material-ui/icons/Close';
 import Footer from "../components/Footer";
 import InmobiliariaData from "../components/inmobiliarias/InmobiliariaData";
 import PropiedadesList from "../components/propiedades/PropiedadesList";
@@ -35,6 +36,43 @@ const InmobiliariaContainer = styled.div`
   }
 `;
 
+const ButtonOpenFilter = styled.button`
+    display: none;
+    @media (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 2px 15px;
+    background-color: #44494A;
+    border-radius: 5px;
+    top: 90px;
+    right: 40px;
+    height: 40px;
+  }
+` 
+
+const ButtonCloseFilter = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  color: white;
+  outline: none;
+  border: none;
+  position: fixed;
+  z-index: 9999999999;
+  top: 0;
+  right: 0;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  top: 0;
+` 
+
 const FilterMenu = styled.div`
 position: fixed;
 z-index: 999999999;
@@ -43,9 +81,6 @@ height: 100vh;
 width: 100vw;
 background-color: #44494A;
 display: none;
-@media (max-width: 1024px) {
-
-  }
 `
 
 function Inmobiliarias({ inmobiliaria }) {
@@ -74,14 +109,14 @@ function Inmobiliarias({ inmobiliaria }) {
   }
   let propiedades = inmobiliarias.result.length > 0 ? inmobiliarias.result[0].propiedades : []
 
-  const ActiveButtonClick = () => setFiltro(true);
-  const DisableButtonClick = () => setFiltro(false);
+  const ActiveFilterMenu = () => setFiltro(true);
+  const DisableFilterMenu = () => setFiltro(false);
 
   return (
     <React.Fragment>
+      <ButtonCloseFilter onClick={DisableFilterMenu} style={ filtro == true ? { display:'flex'} : {display : 'none'} }><CloseIcon/></ButtonCloseFilter >
       <FilterMenu style={ filtro == true ? { display:'flex'} : {display : 'none'} }>
-        <button onClick={DisableButtonClick}></button>
-        <LeftSideBar />
+        <LeftSideBar/>
       </FilterMenu>
       <HomeHeader />
       <Body>
@@ -89,7 +124,7 @@ function Inmobiliarias({ inmobiliaria }) {
           <LeftSideBar />
         </LeftSideBarContainer>
         <InmobiliariaContainer>
-          <button onClick={ActiveButtonClick}></button>
+          <ButtonOpenFilter onClick={ActiveFilterMenu}>FILTROS</ButtonOpenFilter>
           <InmobiliariaHeader {...headerData} />
           <InmobiliariaData inmobiliaria={inmobiliariaConditional} />
           <PropiedadesList propiedades={propiedades} />

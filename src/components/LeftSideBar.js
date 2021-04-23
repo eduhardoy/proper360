@@ -14,7 +14,7 @@ const LeftSideBarContainer = styled.aside`
     padding-top: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
   }
 `;
 

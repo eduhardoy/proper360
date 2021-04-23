@@ -9,11 +9,12 @@ const InmobiliariaData = styled.section`
   width: 50%;
   margin: auto;
   margin-bottom: 50px;
-  text-align: justify;
+  text-align: center;
   h2{
     margin: 10px;
   }
   p{
+    text-align: justify;
     margin: 10px;
     font-size: 20px;
   }
@@ -38,7 +39,7 @@ function Inmobiliaria({ inmobiliaria }) {
           {inmobiliaria.descripcion}
         </p>
         <br />
-        <h2>DATOS DE CONTACTO</h2>
+        <h2>CONTACTO</h2>
         <ul>
           <li>{inmobiliaria.direccion}</li>
           <li>{inmobiliaria.telefono}</li>
