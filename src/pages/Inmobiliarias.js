@@ -23,14 +23,30 @@ const LeftSideBarContainer = styled.div`
   width: 180px;
   min-height: 100vh;
   background-color: gray;
-  @media (max-width: 750px) {
-    
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
 
 const InmobiliariaContainer = styled.div`
   width: calc(100vw - 180px);
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `;
+
+const FilterMenu = styled.div`
+position: fixed;
+z-index: 999999999;
+top: 0;
+height: 100vh;
+width: 100vw;
+background-color: #44494A;
+display: none;
+@media (max-width: 1024px) {
+  display: flex;
+  }
+`
 
 function Inmobiliarias({ inmobiliaria }) {
   React.useEffect(() => {
@@ -57,6 +73,9 @@ function Inmobiliarias({ inmobiliaria }) {
   let propiedades = inmobiliarias.result.length > 0 ? inmobiliarias.result[0].propiedades : []
   return (
     <React.Fragment>
+      <FilterMenu>
+        <LeftSideBar />
+      </FilterMenu>
       <HomeHeader />
       <Body>
         <LeftSideBarContainer>

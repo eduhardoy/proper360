@@ -8,12 +8,23 @@ const LeftSideBarContainer = styled.aside`
   background-color: #44494a;
   border-right: 2px solid black;
   padding-top: 80px;
+  @media (max-width: 1024px) {
+    border-right: none;
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
 `;
 
 const FilterGroups = styled.section`
   margin-top: 50px;
   color: white;
   font-size: 20px;
+  @media (max-width: 1024px) {
+    margin-top: 0px;
+  }
   dl {
     width: 100%;
     margin-top: 40px;
@@ -23,6 +34,9 @@ const FilterGroups = styled.section`
       margin-bottom: 10px;
       font-weight: bold;
       font-size: 20px;
+      @media (max-width: 1024px) {
+      font-size: 25px;
+  }
     }
     dd {
       padding-top: 10px;
@@ -31,6 +45,9 @@ const FilterGroups = styled.section`
       font-size: 15px;
       display: flex;
       justify-content: center;
+      @media (max-width: 1024px) {
+      font-size: 18px;
+  }
       summary {
         cursor: pointer;
         width: 100%;
@@ -61,6 +78,9 @@ const FilterGroups = styled.section`
         li {
           font-size: 12px;
           padding: 5px;
+          @media (max-width: 1024px) {
+      font-size: 16px;
+  }
         }
       }
       a {
