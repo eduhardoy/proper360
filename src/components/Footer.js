@@ -115,6 +115,9 @@ const FooterCredits = styled.div`
     img{
       padding: 10px;
       height: 30px;
+      @media (max-width: 600px) {
+      height: 20px;
+  }
     }
   }
 `;

@@ -21,7 +21,7 @@ const getInmobiliariaWithPropiedades = (inmobiliariaId) => {
     dispatch({ type: GET_INMOBILIARIAS });
     // Return promise with success and failure actions
     return api.get("inmobiliarias/" + inmobiliariaId)
-      .then(inmobiliaraias => dispatch({ type: GET_INMOBILIARIAS_SUCCESS, payload: inmobiliaraias.data }))
+      .then(inmobiliaraias => dispatch({ type: GET_INMOBILIARIAS_SUCCESS, payload: inmobiliaraias.data.body }))
       .catch(err => dispatch({ type: GET_INMOBILIARIAS_FAILURE, payload: err.message }))
   }
 }
@@ -34,7 +34,7 @@ const getInmobiliarias = () => {
     dispatch({ type: GET_INMOBILIARIAS });
     // Return promise with success and failure actions
     return api.get("inmobiliarias")
-      .then(inmobiliarias => dispatch({ type: GET_INMOBILIARIAS_SUCCESS, payload: inmobiliarias.data }))
+      .then(inmobiliarias => dispatch({ type: GET_INMOBILIARIAS_SUCCESS, payload: inmobiliarias.data.body }))
       .catch(err => dispatch({ type: GET_INMOBILIARIAS_FAILURE, payload: err.message }))
   }
 };

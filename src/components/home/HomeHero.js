@@ -25,11 +25,17 @@ const HeroForm = styled.div`
   width: 30%;
   margin-right: 200px;
   bottom: 100px;
+  min-height: 350px;
+  @media (max-width: 1250px) {
+    width: 40%;
+  }
+  @media (max-width: 950px) {
+    width: 50%;
+  }
   @media (max-width: 750px) {
     width: 100%;
     height: 65%;
     margin-right: 0px;
-    min-height: 350px;
   }
   @media (max-width: 450px) {
     width: 100%;

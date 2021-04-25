@@ -7,6 +7,7 @@ const ListContainer = styled.div`
   width: 95%;
   margin: auto;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 100px;
   margin-top: 40px;
@@ -24,12 +25,12 @@ box-sizing: border-box;
         filter: none;
         cursor: pointer;
       }
-      @media (max-width: 768px) {
-        width: 50%;
-      }
-      @media (max-width: 425px) {
-        width: 100%;
-      }`
+      @media (max-width: 1000px) {
+      width: calc(95% / 2);
+  }
+  @media (max-width: 650px) {
+      width: 100%;
+  }`
 
 const Portada = styled.img`
       width: 100%;

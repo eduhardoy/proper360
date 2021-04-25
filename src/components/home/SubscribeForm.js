@@ -5,8 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions, types } from '../../store/actions/clientes'
 import { ContactSupportOutlined } from "@material-ui/icons";
 
+import Alert from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar';
+import Slide from '@material-ui/core/Slide';
+
 
 const FormContainer = styled.div`
+
   height: 100%;
   width: 100%;
   color: white;
@@ -15,6 +20,10 @@ const FormContainer = styled.div`
   font-family: sans-serif;
   @media (max-width: 750px) {
     border-radius: 0px;
+    .MuiSnackbar-anchorOriginBottomCenter{
+      width: 90%;
+     
+    }
   }
   form {
     font-family: "Lato", "Open-Sans", Helvetica, Sans-Serif;
@@ -98,6 +107,10 @@ const FormContainer = styled.div`
   }
 `;
 
+//Snackbar slide animation
+function SlideTransition(props) {
+  return <Slide {...props} direction="up" />;
+}
 
 const SubscribeForm = () => {
 
@@ -121,30 +134,65 @@ const SubscribeForm = () => {
     e.preventDefault();
     /* console.log(datos) */
     dispatch(actions.postCliente(datos))
+    
 
   }
 
+  const [state, setState] = React.useState({
+    open: false,
+    vertical: '',
+    horizontal: '',
+  });
+
+  const { vertical, horizontal, open } = state;
+
+  const handleSnack = (newState) => () => {
+    setState({ 
+      open: true,
+       
+      ...newState });
+  };
+
+  const handleClose = () => {
+    setState({ 
+      ...state, 
+      open: false });
+  };
+
   return (
-    <FormContainer>
-      <form onSubmit={(e)=>handleForm(e)}>
-        <div className='Form-title'>
-          <h3>BIENVENIDO A</h3>
-          <h1>PROPER 360°</h1>
-        </div>
-        <div className='Form-txt'>
-          <h2>ENCUENTRA LA PROPIEDAD QUE BUSCAS</h2>
-        </div>
-        <div className='Form-input'>
-          <input name="email" onChange={handleInputChange} type='email' placeholder='Tu email' />
-          <button type="submit" className='button'>
-            <SendIcon></SendIcon>
-          </button>
-        </div>
-        <div className='Form-msj'>
-          <h2>Suscríbete</h2>
-        </div>
-      </form>
-    </FormContainer>
+    <React.Fragment>
+      <FormContainer>
+        <form onSubmit={(e)=>handleForm(e)}>
+          <div className='Form-title'>
+            <h3>BIENVENIDO A</h3>
+            <h1>PROPER 360°</h1>
+          </div>
+          <div className='Form-txt'>
+            <h2>ENCUENTRA LA PROPIEDAD QUE BUSCAS</h2>
+          </div>
+          <div className='Form-input'>
+            <input name="email" onChange={handleInputChange} type='email' placeholder='Tu email' />
+            <button type="submit" className='button' onClick={handleSnack({vertical: 'bottom', horizontal: 'center' })}>
+              <SendIcon></SendIcon>
+            </button>
+          </div>
+          <div className='Form-msj'>
+            <h2>Suscríbete</h2>
+            
+          </div>
+        </form>
+        <Snackbar
+          anchorOrigin={{ vertical, horizontal }}
+          open={open}
+          onClose={handleClose}
+          key={vertical + horizontal}
+          autoHideDuration={3000}
+        >
+          <Alert severity="success" variant="filled">Email registrado, gracias por suscribirte!</Alert>
+        </Snackbar>
+      </FormContainer>
+      
+    </React.Fragment>
   );
 };
 

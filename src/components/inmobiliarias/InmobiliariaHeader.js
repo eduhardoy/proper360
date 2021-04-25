@@ -35,6 +35,8 @@ const StyledHeader = styled.header`
   }
 `;
 
+
+
 const InmobiliariaHeader = ({ nombreInmobiliaria, logoInmobiliaria, keyInmobiliaria }) => {
   return (
     <StyledHeader>
