@@ -17,6 +17,15 @@ function Inmobiliarias(state = initialState, action) {
 
     case types.GET_INMOBILIARIAS_SUCCESS:
       return { ...state, loading: false, result: payload };
+
+      case types.POST_INMOBILIARIAS:
+            return { ...state, loading: true };
+
+        case types.POST_INMOBILIARIAS_FAILURE:
+            return { ...state, loading: false , error: true};
+
+        case types.POST_INMOBILIARIAS_SUCCESS:
+            return { ...state, loading: false , error: false, result: [payload]};
       
     default:
       return state;

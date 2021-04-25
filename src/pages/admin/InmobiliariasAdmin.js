@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import AddIcon from "@material-ui/icons/Add";
+import ModalAddInmobiliaria from "../../components/admin/modals/ModalAddInmobiliaria";
 
 import AdminLayout from "../../components/admin/AdminLayout";
 import InmobiliariasAdminAccordion from "../../components/admin/InmobiliariasAdminAccordion";
@@ -77,6 +78,7 @@ const ListWrapper = styled.div`
 `;
 
 const InmobiliariasAdmin = () => {
+
   return (
     <AdminLayout>
       <Container>
@@ -85,6 +87,8 @@ const InmobiliariasAdmin = () => {
           <ButtonModal>
             <AddIcon />
           </ButtonModal>
+          <ModalAddInmobiliaria estado={true}/>
+            
         </TitleWrapper>
         <ListWrapper>
           <InmobiliariasAdminAccordion />

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import AddIcon from "@material-ui/icons/Add";
-
 import AdminLayout from "../../components/admin/AdminLayout";
 import PropiedadesAdminAccordion from "../../components/admin/PropiedadesAdminAccordion";
+import ModalAddPropiedad from "../../components/admin/modals/ModalAddPropiedad";
 
 const Container = styled.div`
   padding: 1%;
@@ -85,6 +85,7 @@ const PropiedadesAdmin = () => {
           <ButtonModal>
             <AddIcon />
           </ButtonModal>
+          <ModalAddPropiedad estado={true}/>
         </TitleWrapper>
         <ListWrapper>
           <PropiedadesAdminAccordion />

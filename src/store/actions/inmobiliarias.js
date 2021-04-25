@@ -6,11 +6,17 @@ const api = axios.create({ baseURL: "http://198.58.123.120:3006/" })
 const GET_INMOBILIARIAS = "GET_INMOBILIARIAS";
 const GET_INMOBILIARIAS_SUCCESS = "GET_INMOBILIARIAS_SUCCESS";
 const GET_INMOBILIARIAS_FAILURE = "GET_INMOBILIARIAS_FAILURE";
+const POST_INMOBILIARIAS = "POST_INMOBILIARIAS";
+const POST_INMOBILIARIAS_SUCCESS = "POST_INMOBILIARIAS_SUCCESS";
+const POST_INMOBILIARIAS_FAILURE = "POST_INMOBILIARIAS_FAILURE";
 
 const types = {
   GET_INMOBILIARIAS,
   GET_INMOBILIARIAS_SUCCESS,
   GET_INMOBILIARIAS_FAILURE,
+  POST_INMOBILIARIAS,
+  POST_INMOBILIARIAS_SUCCESS,
+  POST_INMOBILIARIAS_FAILURE,
 };
 
 const getInmobiliariaWithPropiedades = (inmobiliariaId) => {
@@ -39,8 +45,20 @@ const getInmobiliarias = () => {
   }
 };
 
+const postInmobiliarias = (inmobiliaria) => {
+  return (dispatch) => {
+      //nameless functions
+      // Initial action dispatched
+      dispatch({ type: POST_INMOBILIARIAS });
+      // Return promise with success and failure actions
+      return api.post("inmobiliarias", inmobiliaria)
+          .then(inmobiliaria => dispatch({ type: POST_INMOBILIARIAS_SUCCESS, payload: inmobiliaria.data.body }))
+          .catch(err => dispatch({ type: POST_INMOBILIARIAS_FAILURE, payload: err.message }))
+  }
+};
 
 
-const actions = { getInmobiliarias, getInmobiliariaWithPropiedades };
+
+const actions = { getInmobiliarias, getInmobiliariaWithPropiedades, postInmobiliarias };
 
 export { types, actions };

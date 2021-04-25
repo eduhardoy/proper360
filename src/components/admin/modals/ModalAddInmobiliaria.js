@@ -1,6 +1,8 @@
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { actions, types } from '../../../store/actions/inmobiliarias';
 
 export const ModalBackground = styled.div`
   position: absolute;
@@ -123,7 +125,34 @@ export const ButtonRed = styled.button`
   }
 `;
 
-const ModalAdd = ({ children, setEstado, estado, modalAdd }) => {
+const ModalAddInmobiliaria = ({ setEstado, estado }) => {
+
+  const dispatch = useDispatch()
+
+  const [datos, setDatos] = React.useState({
+    logo:'',
+    nombre:'',
+    descpricion:'',
+    telefono:'',
+    direccion:'',
+    email: ''
+  })
+
+  const handleInputChange = (event) => {
+     /* console.log(event.target.name)
+     console.log(event.target.value) */
+    setDatos({
+        ...datos,
+        [event.target.name] : event.target.value
+    })
+  }
+
+  const modalAdd= (e) =>{
+    
+    /* console.log(datos) */
+    dispatch(actions.postInmobiliaria(datos))
+  }
+
   return (
     <ModalBackground
       style={{ display: estado ? "" : "none" }}
@@ -136,11 +165,19 @@ const ModalAdd = ({ children, setEstado, estado, modalAdd }) => {
         <ModalTitleWrapper>
           <h4>AGREGAR</h4>
         </ModalTitleWrapper>
-        <ModalGridWrapper>{children}</ModalGridWrapper>
+        <ModalGridWrapper>
+            <input name="logo" placeholder="LOGO" onChange={handleInputChange}/>
+            <input name="nombre" placeholder="NOMBRE" onChange={handleInputChange}/>
+            <input name="descripcion" placeholder="DESCRIPCION" onChange={handleInputChange}/>
+            <input name="telefono" placeholder="TELEFONO" onChange={handleInputChange}/>
+            <input name="direccion" placeholder="DIRECCION" onChange={handleInputChange}/>
+            <input name="email" type="email" placeholder="EMAIL" onChange={handleInputChange}/>
+        </ModalGridWrapper>
         <ModalButtonWrapper>
-          <ButtonRed onClick={e => setEstado(false)}>CANCELAR</ButtonRed>
+          <ButtonRed onClick={e => stEstado(false)}>CANCELAR</ButtonRed>
           <ButtonGreen
             onClick={() => {
+              
               modalAdd();
               setEstado(false);
             }}
@@ -153,4 +190,4 @@ const ModalAdd = ({ children, setEstado, estado, modalAdd }) => {
   );
 };
 
-export default ModalAdd;
+export default ModalAddInmobiliaria;
