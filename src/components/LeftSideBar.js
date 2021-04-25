@@ -104,7 +104,7 @@ const FilterGroups = styled.section`
   }
 `;
 
-function LeftSideBar() {
+function LeftSideBar({ closeFiltro }) {
   return (
     <LeftSideBarContainer>
       <FilterGroups>
