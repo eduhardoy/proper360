@@ -8,7 +8,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actions, types } from '../../store/actions/inmobiliarias'
+import { actions, types } from "../../store/actions/inmobiliarias";
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -57,61 +57,59 @@ const ButtonAccordion = styled.button`
 `;
 
 export default function InmobiliariasAdminAccordion() {
-  const dispatch = useDispatch()
-  const [data, setData] = React.useState({})
+  const dispatch = useDispatch();
+  const [data, setData] = React.useState({});
 
-  const inmobiliarias = useSelector(state => state.inmobiliarias)
+  const inmobiliarias = useSelector(state => state.inmobiliarias);
 
   React.useEffect(() => {
     async function fetchInmobiliarias() {
-      dispatch(actions.getInmobiliarias())
+      dispatch(actions.getInmobiliarias());
     }
-    fetchInmobiliarias()
-  }, [])
-
+    fetchInmobiliarias();
+  }, []);
 
   return (
     <AccordionWrapper>
-      {
-        inmobiliarias.result.map(data => (
-          <Accordion>
-            <StyledAccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls='panel1a-content'
-              id='panel1a-header'
-            >
-              <h2>{data.nombre}</h2>
-              <ButtonWrapper>
-                <ButtonAccordion
-                  onClick={event => event.stopPropagation()}
-                  onFocus={event => event.stopPropagation()}
-                >
-                  <p>EDITAR</p>
-                  <EditIcon />
-                </ButtonAccordion>
-                <ButtonAccordion
-                  onClick={event => event.stopPropagation()}
-                  onFocus={event => event.stopPropagation()}
-                >
-                  <p>ELIMINAR</p>
-                  <DeleteIcon />
-                </ButtonAccordion>
-              </ButtonWrapper>
-            </StyledAccordionSummary>
-            <AccordionDetails>
-              <ListDetails>
-                <p>Logo: <img src={data.logo} /></p>
-                <p>Descripcion: {data.descripcion}</p>
-                <p>Telefono: {data.CONTACTO ? data.CONTACTO.telefono : ""}</p>
-                <p>Email: {data.CONTACTO ? data.CONTACTO.email : ""}</p>
-                <p>Direccion: {data.CONTACTO ? data.CONTACTO.direccion : ""}</p>
-                <p>Banner: {data.BANNER_INMOBILIARIA}</p>
-              </ListDetails>
-            </AccordionDetails>
-          </Accordion>
-        ))
-      }
-
+      {inmobiliarias.result.map(data => (
+        <Accordion>
+          <StyledAccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls='panel1a-content'
+            id='panel1a-header'
+          >
+            <h2>{data.nombre}</h2>
+            <ButtonWrapper>
+              <ButtonAccordion
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}
+              >
+                <p>EDITAR</p>
+                <EditIcon />
+              </ButtonAccordion>
+              <ButtonAccordion
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}
+              >
+                <p>ELIMINAR</p>
+                <DeleteIcon />
+              </ButtonAccordion>
+            </ButtonWrapper>
+          </StyledAccordionSummary>
+          <AccordionDetails>
+            <ListDetails>
+              <p>
+                Logo: <img src={data.logo} />
+              </p>
+              <p>Descripcion: {data.descripcion}</p>
+              <p>Telefono: {data.CONTACTO ? data.CONTACTO.telefono : ""}</p>
+              <p>Email: {data.CONTACTO ? data.CONTACTO.email : ""}</p>
+              <p>Direccion: {data.CONTACTO ? data.CONTACTO.direccion : ""}</p>
+              <p>Banner: {data.BANNER_INMOBILIARIA}</p>
+            </ListDetails>
+          </AccordionDetails>
+        </Accordion>
+      ))}
     </AccordionWrapper>
   );
 }

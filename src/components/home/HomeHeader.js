@@ -25,20 +25,19 @@ const HeaderImageContainer = styled.div`
     width: 100%;
     justify-content: center;
   }
-  a{
+  a {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     img {
-    height: 80%;
-    @media (max-width: 1024px) {
-    height: 60%;
+      height: 80%;
+      @media (max-width: 1024px) {
+        height: 60%;
+      }
+    }
   }
-  }
-  }
-
 `;
 
 const HeaderMenuContainer = styled.div`
@@ -85,7 +84,10 @@ const HomeHeader = () => {
     <StyledHomeHeader>
       <HeaderImageContainer>
         <Link to='/'>
-        <img src='https://live.staticflickr.com/65535/51132651295_d1cba6c406_n.jpg' alt='Logo proper' />
+          <img
+            src='https://live.staticflickr.com/65535/51132651295_d1cba6c406_n.jpg'
+            alt='Logo proper'
+          />
         </Link>
       </HeaderImageContainer>
       <HeaderMenuContainer>

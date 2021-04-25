@@ -10,19 +10,19 @@ const InmobiliariaData = styled.section`
   margin: auto;
   margin-bottom: 50px;
   text-align: center;
-  h2{
+  h2 {
     margin: 10px;
   }
-  p{
+  p {
     text-align: justify;
     margin: 10px;
     font-size: 20px;
   }
-  ul{
+  ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    li{
+    li {
       margin: 10px;
       text-align: center;
       font-size: 22px;
@@ -35,9 +35,7 @@ function Inmobiliaria({ inmobiliaria }) {
   return (
     <React.Fragment>
       <InmobiliariaData>
-        <p>
-          {inmobiliaria.descripcion}
-        </p>
+        <p>{inmobiliaria.descripcion}</p>
         <br />
         <h2>CONTACTO</h2>
         <ul>

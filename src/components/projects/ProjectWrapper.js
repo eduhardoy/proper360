@@ -16,19 +16,18 @@ const IframeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  div{
+  div {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
     iframe {
-    border: none;
-    width: 90%;
-    height: 90%;
+      border: none;
+      width: 90%;
+      height: 90%;
+    }
   }
-  }
-  
 `;
 
 const ProjectsWrapper = ({ project }) => {
@@ -36,7 +35,7 @@ const ProjectsWrapper = ({ project }) => {
     <ProjectStyledWrapper>
       <InfoContainer project={project} />
       <IframeContainer>
-      <div dangerouslySetInnerHTML={{ __html: (`${project.iframe}`)}} />
+        <div dangerouslySetInnerHTML={{ __html: `${project.iframe}` }} />
       </IframeContainer>
     </ProjectStyledWrapper>
   );

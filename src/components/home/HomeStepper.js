@@ -13,15 +13,15 @@ import StepConnector from "@material-ui/core/StepConnector";
 import styled from "styled-components";
 
 const StepperWrapper = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-@media (max-width: 750px) {
-  div{    
-    display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 750px) {
+    div {
+      display: none;
+    }
   }
-  }
-`
+`;
 
 const QontoConnector = withStyles({
   alternativeLabel: {
@@ -224,19 +224,19 @@ export default function CustomizedSteppers() {
 
   return (
     <StepperWrapper>
-    <div className={classes.root} id="inmobiliarias">
-      <Stepper
-        alternativeLabel
-        activeStep={activeStep}
-        connector={<QontoConnector />}
-      >
-        {steps.map(label => (
-          <Step key={label}>
-            <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-    </div>
+      <div className={classes.root} id='inmobiliarias'>
+        <Stepper
+          alternativeLabel
+          activeStep={activeStep}
+          connector={<QontoConnector />}
+        >
+          {steps.map(label => (
+            <Step key={label}>
+              <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+      </div>
     </StepperWrapper>
   );
 }

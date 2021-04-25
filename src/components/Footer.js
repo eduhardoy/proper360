@@ -40,18 +40,18 @@ const ContactSection = styled.div`
     list-style-type: none;
     margin: 0px;
     @media (max-width: 600px) {
-        padding: 0;
-  }
+      padding: 0;
+    }
     li {
       display: flex;
       flex-direction: row;
       margin: 15px 0;
       @media (max-width: 600px) {
         justify-content: center;
-  }
-      h4{
+      }
+      h4 {
         margin: 10px;
-      text-align: center;
+        text-align: center;
       }
       p {
         margin: 0;
@@ -112,24 +112,26 @@ const FooterCredits = styled.div`
   a {
     color: white;
     text-decoration: none;
-    img{
+    img {
       padding: 10px;
       height: 30px;
       @media (max-width: 600px) {
-      height: 20px;
-  }
+        height: 20px;
+      }
     }
   }
 `;
 
 function Footer() {
   return (
-    <FooterContainer id="contact">
+    <FooterContainer id='contact'>
       <ContactSection>
         <ul>
-        <li>
-          <h4><strong>CONTACTANOS</strong></h4>
-        </li>
+          <li>
+            <h4>
+              <strong>CONTACTANOS</strong>
+            </h4>
+          </li>
           <li>
             <FaPhoneAlt />
             <p>3794-275060</p>
@@ -161,8 +163,8 @@ function Footer() {
         </Social>
       </AboutSection>
       <FooterCredits>
-        <a href="">
-          <img src="./images/inibot.png" alt=""/>
+        <a href=''>
+          <img src='./images/inibot.png' alt='' />
         </a>
       </FooterCredits>
     </FooterContainer>
