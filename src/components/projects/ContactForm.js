@@ -46,8 +46,7 @@ function ContactForm() {
       whatsAppMsgText +
       ". Mi email es " +
       whatsAppMsgEmail +
-      ". Muchas gracias, espero su respuesta."
-      ;
+      ". Muchas gracias, espero su respuesta.";
     openInNewTab(url);
   };
 
@@ -55,30 +54,26 @@ function ContactForm() {
     <Form>
       <h2>CONTACTO</h2>
       <input
-          value={whatsAppMsgName}
-          onChange={e => setWhatsAppMsgName(e.target.value)}
-          placeholder={"Nombre"}
-          type='text'
-        />
-        <input
-          value={whatsAppMsgEmail}
-          onChange={e => setWhatsAppMsgEmail(e.target.value)}
-          placeholder={"Email"}
-          type='email'
-        />
-        <input
-          value={whatsAppMsgText}
-          onChange={e => setWhatsAppMsgText(e.target.value)}
-          placeholder={"Propiedad"}
-          type='text'
-        />
-        <button
-          type='submit'
-          id='BotonEnviar'
-          onClick={initiateWhatsAppSMS}
-        >
-          ENVIAR
-        </button>
+        value={whatsAppMsgName}
+        onChange={e => setWhatsAppMsgName(e.target.value)}
+        placeholder={"Nombre"}
+        type='text'
+      />
+      <input
+        value={whatsAppMsgEmail}
+        onChange={e => setWhatsAppMsgEmail(e.target.value)}
+        placeholder={"Email"}
+        type='email'
+      />
+      <input
+        value={whatsAppMsgText}
+        onChange={e => setWhatsAppMsgText(e.target.value)}
+        placeholder={"Propiedad"}
+        type='text'
+      />
+      <button type='submit' id='BotonEnviar' onClick={initiateWhatsAppSMS}>
+        ENVIAR
+      </button>
     </Form>
   );
 }

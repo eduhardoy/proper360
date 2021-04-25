@@ -13,15 +13,14 @@ const Projects = ({ projectId }) => {
     window.scrollTo(0, 0);
   }, []);
 
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
-    dispatch(actions.getPropiedad(projectId))
-  }, [])
+    dispatch(actions.getPropiedad(projectId));
+  }, []);
 
-  const propiedad = useSelector(state => state.propiedades.oneResult)
-  console.log("PROROROP", propiedad)
+  const propiedad = useSelector(state => state.propiedades.oneResult);
+  console.log("PROROROP", propiedad);
   return (
     <div>
       <HomeHeader />
@@ -30,8 +29,7 @@ const Projects = ({ projectId }) => {
           <ProjectWrapper project={propiedad}></ProjectWrapper>
           <ContactForm project={propiedad} />
         </>
-      )
-      }
+      )}
 
       <Whatsapp />
       <Footer />

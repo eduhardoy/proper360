@@ -35,8 +35,8 @@ const FilterGroups = styled.section`
       font-weight: bold;
       font-size: 20px;
       @media (max-width: 1024px) {
-      font-size: 25px;
-  }
+        font-size: 25px;
+      }
     }
     dd {
       padding-top: 10px;
@@ -46,8 +46,8 @@ const FilterGroups = styled.section`
       display: flex;
       justify-content: center;
       @media (max-width: 1024px) {
-      font-size: 18px;
-  }
+        font-size: 18px;
+      }
       summary {
         cursor: pointer;
         width: 100%;
@@ -79,8 +79,8 @@ const FilterGroups = styled.section`
           font-size: 12px;
           padding: 5px;
           @media (max-width: 1024px) {
-      font-size: 16px;
-  }
+            font-size: 16px;
+          }
         }
       }
       a {
@@ -104,7 +104,7 @@ const FilterGroups = styled.section`
   }
 `;
 
-function LeftSideBar() {
+function LeftSideBar({ closeFiltro }) {
   return (
     <LeftSideBarContainer>
       <FilterGroups>

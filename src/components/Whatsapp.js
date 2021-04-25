@@ -24,14 +24,14 @@ const WhatsappButton = styled.a`
   justify-content: center;
   @media (max-width: 750px) {
     width: 40px;
-  height: 40px;
-  bottom: 40px;
+    height: 40px;
+    bottom: 40px;
   }
   svg {
     font-size: 40px;
     @media (max-width: 750px) {
-    font-size: 30px;
-  }
+      font-size: 30px;
+    }
   }
 `;
 

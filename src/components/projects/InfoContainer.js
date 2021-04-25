@@ -60,14 +60,14 @@ const StyledProjectsTitle = styled.div`
   margin: 0px;
   font-weight: 400;
   text-transform: uppercase;
-  h2{ 
-  font-size: 28px;
+  h2 {
+    font-size: 28px;
     margin: 0;
   }
 `;
 
 const InfoContainer = ({ project }) => {
-  console.log(project)
+  console.log(project);
   return (
     <StyledInfoContainer>
       <StyledInfoBackground>
@@ -79,17 +79,18 @@ const InfoContainer = ({ project }) => {
         </LogoInmobiliariaWrapper>
         <StyledProjectsTitle>
           <h2>PROPER 360°: {project.nombre}</h2>
-      </StyledProjectsTitle>
+        </StyledProjectsTitle>
         <ProjectDetails>
           <ul>
             <li>Barrio/Zona: {project.barrio}</li>
             <li>Ambientes: {project.ambientes}</li>
             <li>Baños: {project.banos}</li>
             <li>Habitaciones: {project.habitaciones}</li>
-            <br/>
+            <br />
 
-            <li><strong>Alquiler inicial: ${project.precio}</strong></li>
-            
+            <li>
+              <strong>Alquiler inicial: ${project.precio}</strong>
+            </li>
           </ul>
         </ProjectDetails>
       </StyledInfoBackground>

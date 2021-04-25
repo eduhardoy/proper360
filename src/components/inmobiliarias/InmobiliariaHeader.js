@@ -23,7 +23,7 @@ const StyledHeader = styled.header`
       text-decoration: none;
       color: black;
       font-size: 22px;
-      h2{
+      h2 {
         margin: 20px;
         text-transform: uppercase;
       }
@@ -35,9 +35,11 @@ const StyledHeader = styled.header`
   }
 `;
 
-
-
-const InmobiliariaHeader = ({ nombreInmobiliaria, logoInmobiliaria, keyInmobiliaria }) => {
+const InmobiliariaHeader = ({
+  nombreInmobiliaria,
+  logoInmobiliaria,
+  keyInmobiliaria,
+}) => {
   return (
     <StyledHeader>
       <div>

@@ -22,10 +22,10 @@ const ImagesWrapper = styled.div`
     align-items: center;
     @media (max-width: 750px) {
       width: calc(95% / 2);
-  }
-  @media (max-width: 600px) {
+    }
+    @media (max-width: 600px) {
       width: 100%;
-  }
+    }
     :hover {
       filter: none;
     }
@@ -54,13 +54,22 @@ const HomeImages = () => {
     <StyledHomeImages>
       <ImagesWrapper>
         <div>
-          <img src='https://live.staticflickr.com/65535/51130892154_ac74eec166_h.jpg' alt='' />
+          <img
+            src='https://live.staticflickr.com/65535/51130892154_ac74eec166_h.jpg'
+            alt=''
+          />
         </div>
         <div>
-          <img src='https://live.staticflickr.com/65535/51130890099_83767e8f09_c.jpg' alt='' />
+          <img
+            src='https://live.staticflickr.com/65535/51130890099_83767e8f09_c.jpg'
+            alt=''
+          />
         </div>
         <div>
-          <img src='https://live.staticflickr.com/65535/51130890134_e72f1b372d_c.jpg' alt='' />
+          <img
+            src='https://live.staticflickr.com/65535/51130890134_e72f1b372d_c.jpg'
+            alt=''
+          />
         </div>
       </ImagesWrapper>
     </StyledHomeImages>

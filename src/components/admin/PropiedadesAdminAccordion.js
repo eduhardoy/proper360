@@ -57,21 +57,21 @@ const ButtonAccordion = styled.button`
 `;
 
 export default function PropiedadesAdminAccordion() {
-  const dispatch = useDispatch()
-  const [data, setData] = React.useState({})
+  const dispatch = useDispatch();
+  const [data, setData] = React.useState({});
 
-  const propiedades = useSelector(state => state.propiedades)
+  const propiedades = useSelector(state => state.propiedades);
 
   React.useEffect(() => {
     async function fetchPropiedades() {
-      dispatch(actions.getPropiedades())
+      dispatch(actions.getPropiedades());
     }
-    fetchPropiedades()
-  }, [])
+    fetchPropiedades();
+  }, []);
 
   return (
     <AccordionWrapper>
-      { propiedades.result.map(data => (
+      {propiedades.result.map(data => (
         <Accordion>
           <StyledAccordionSummary
             expandIcon={<ExpandMoreIcon />}

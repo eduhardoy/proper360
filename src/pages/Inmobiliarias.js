@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIcon from "@material-ui/icons/Close";
 import Footer from "../components/Footer";
 import InmobiliariaData from "../components/inmobiliarias/InmobiliariaData";
 import PropiedadesList from "../components/propiedades/PropiedadesList";
@@ -11,7 +11,6 @@ import Whatsapp from "../components/Whatsapp";
 import HomeHeader from "../components/home/HomeHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../store/actions/inmobiliarias";
-
 
 const Body = styled.div`
   width: 100%;
@@ -37,8 +36,8 @@ const InmobiliariaContainer = styled.div`
 `;
 
 const ButtonOpenFilter = styled.button`
-    display: none;
-    @media (max-width: 1024px) {
+  display: none;
+  @media (max-width: 1024px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,13 +46,13 @@ const ButtonOpenFilter = styled.button`
     border: none;
     color: white;
     padding: 2px 15px;
-    background-color: #44494A;
+    background-color: #44494a;
     border-radius: 5px;
     top: 90px;
     right: 40px;
     height: 40px;
   }
-` 
+`;
 
 const ButtonCloseFilter = styled.button`
   display: flex;
@@ -71,17 +70,17 @@ const ButtonCloseFilter = styled.button`
   width: 40px;
   height: 40px;
   top: 0;
-` 
+`;
 
 const FilterMenu = styled.div`
-position: fixed;
-z-index: 999999999;
-top: 0;
-height: 100vh;
-width: 100vw;
-background-color: #44494A;
-display: none;
-`
+  position: fixed;
+  z-index: 999999999;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #44494a;
+  display: none;
+`;
 
 function Inmobiliarias({ inmobiliaria }) {
   const [filtro, setFiltro] = React.useState(false);
@@ -90,41 +89,52 @@ function Inmobiliarias({ inmobiliaria }) {
     window.scrollTo(0, 0);
   }, []);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const inmobiliarias = useSelector(state => state.inmobiliarias)
+  const inmobiliarias = useSelector(state => state.inmobiliarias);
 
   React.useEffect(() => {
     function fetchPropiedadesByInmobiliaria() {
-      dispatch(actions.getInmobiliariaWithPropiedades(inmobiliaria))
+      dispatch(actions.getInmobiliariaWithPropiedades(inmobiliaria));
     }
-    fetchPropiedadesByInmobiliaria()
-  }, [])
+    fetchPropiedadesByInmobiliaria();
+  }, []);
 
-  let inmobiliariaConditional = inmobiliarias.result.length > 0 ? inmobiliarias.result[0] : []
+  let inmobiliariaConditional =
+    inmobiliarias.result.length > 0 ? inmobiliarias.result[0] : [];
   let headerData = {
     nombreInmobiliaria: inmobiliariaConditional.nombre,
     logoInmobiliaria: inmobiliariaConditional.logo,
-    keyInmobiliaria: inmobiliariaConditional._key
-  }
-  let propiedades = inmobiliarias.result.length > 0 ? inmobiliarias.result[0].propiedades : []
+    keyInmobiliaria: inmobiliariaConditional._key,
+  };
+  let propiedades =
+    inmobiliarias.result.length > 0 ? inmobiliarias.result[0].propiedades : [];
 
   const ActiveFilterMenu = () => setFiltro(true);
   const DisableFilterMenu = () => setFiltro(false);
 
   return (
     <React.Fragment>
-      <ButtonCloseFilter onClick={DisableFilterMenu} style={ filtro == true ? { display:'flex'} : {display : 'none'} }><CloseIcon/></ButtonCloseFilter >
-      <FilterMenu style={ filtro == true ? { display:'flex'} : {display : 'none'} }>
-        <LeftSideBar/>
+      <ButtonCloseFilter
+        onClick={DisableFilterMenu}
+        style={filtro == true ? { display: "flex" } : { display: "none" }}
+      >
+        <CloseIcon />
+      </ButtonCloseFilter>
+      <FilterMenu
+        style={filtro == true ? { display: "flex" } : { display: "none" }}
+      >
+        <LeftSideBar />
       </FilterMenu>
       <HomeHeader />
       <Body>
         <LeftSideBarContainer>
-          <LeftSideBar />
+          <LeftSideBar closeFiltro={DisableFilterMenu} />
         </LeftSideBarContainer>
         <InmobiliariaContainer>
-          <ButtonOpenFilter onClick={ActiveFilterMenu}>FILTROS</ButtonOpenFilter>
+          <ButtonOpenFilter onClick={ActiveFilterMenu}>
+            FILTROS
+          </ButtonOpenFilter>
           <InmobiliariaHeader {...headerData} />
           <InmobiliariaData inmobiliaria={inmobiliariaConditional} />
           <PropiedadesList propiedades={propiedades} />

@@ -15,14 +15,14 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <HomeHeader/>
-      <Whatsapp/>
-      <HomeHero/>
-      <HomeStepper/>
-      <HomeInmobiliariasCarrousel/>
-      <HomeImages/>
-      <HomeAbout/>
-      <Footer/>
+      <HomeHeader />
+      <Whatsapp />
+      <HomeHero />
+      <HomeStepper />
+      <HomeInmobiliariasCarrousel />
+      <HomeImages />
+      <HomeAbout />
+      <Footer />
     </div>
   );
 };

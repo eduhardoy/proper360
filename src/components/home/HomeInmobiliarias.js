@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 import { useDispatch, useSelector } from "react-redux";
-import { actions, types } from '../../store/actions/inmobiliarias'
+import { actions, types } from "../../store/actions/inmobiliarias";
 
 const HomeSectionInmobiliarias = styled.section`
-
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -51,25 +50,25 @@ const HomeSectionInmobiliarias = styled.section`
 `;
 
 const HomeInmobiliarias = () => {
-  const dispatch = useDispatch()
-  const { result } = useSelector(state => state.inmobiliarias)
-  console.log(result)
+  const dispatch = useDispatch();
+  const { result } = useSelector(state => state.inmobiliarias);
+  console.log(result);
   React.useEffect(() => {
-    dispatch(actions.getInmobiliarias())
-  }, [])
+    dispatch(actions.getInmobiliarias());
+  }, []);
 
   return (
     <HomeSectionInmobiliarias>
       <div className='SectionTitle'></div>
       <div className='SectionContent'>
         <ul>
-          {result.map(inmo =>
+          {result.map(inmo => (
             <li>
               <Link to='/inmobiliaria'>
                 <img src={inmo.logo} alt='Logo Inmobilria Forte' />
               </Link>
             </li>
-          )}
+          ))}
         </ul>
       </div>
     </HomeSectionInmobiliarias>
