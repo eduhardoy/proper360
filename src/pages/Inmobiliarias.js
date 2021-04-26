@@ -95,20 +95,22 @@ function Inmobiliarias({ inmobiliaria }) {
 
   React.useEffect(() => {
     function fetchPropiedadesByInmobiliaria() {
-      dispatch(actionsInmobiliarias.getInmobiliariaWithPropiedades(inmobiliaria));
+      dispatch(
+        actionsInmobiliarias.getInmobiliariaWithPropiedades(inmobiliaria)
+      );
     }
     fetchPropiedadesByInmobiliaria();
   }, []);
 
   let inmobiliariaConditional =
-    inmobiliarias.result.length > 0 ? inmobiliarias.result[0] : [];
+    inmobiliarias.result.length > 0 ? inmobiliarias.result[2] : [];
   let headerData = {
     nombreInmobiliaria: inmobiliariaConditional.nombre,
     logoInmobiliaria: inmobiliariaConditional.logo,
     keyInmobiliaria: inmobiliariaConditional._key,
   };
   let propiedades =
-    inmobiliarias.result.length > 0 ? inmobiliarias.result[0].propiedades : [];
+    inmobiliarias.result.length > 0 ? inmobiliarias.result[2].propiedades : [];
 
   const ActiveFilterMenu = () => setFiltro(true);
   const DisableFilterMenu = () => setFiltro(false);
@@ -124,7 +126,7 @@ function Inmobiliarias({ inmobiliaria }) {
       <FilterMenu
         style={filtro == true ? { display: "flex" } : { display: "none" }}
       >
-        <LeftSideBar closeMenu={DisableFilterMenu}/>
+        <LeftSideBar closeMenu={DisableFilterMenu} />
       </FilterMenu>
       <HomeHeader />
       <Body>
@@ -137,7 +139,7 @@ function Inmobiliarias({ inmobiliaria }) {
           </ButtonOpenFilter>
           <InmobiliariaHeader {...headerData} />
           <InmobiliariaData inmobiliaria={inmobiliariaConditional} />
-          <PropiedadesList propiedades={propiedades} />
+          {propiedades != null && <PropiedadesList propiedades={propiedades} />}
         </InmobiliariaContainer>
       </Body>
       <Footer />
