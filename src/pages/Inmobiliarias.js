@@ -129,7 +129,7 @@ function Inmobiliarias({ inmobiliaria }) {
       <HomeHeader />
       <Body>
         <LeftSideBarContainer>
-          <LeftSideBar closeFiltro={DisableFilterMenu} />
+          <LeftSideBar/>
         </LeftSideBarContainer>
         <InmobiliariaContainer>
           <ButtonOpenFilter onClick={ActiveFilterMenu}>
