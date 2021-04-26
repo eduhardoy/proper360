@@ -104,7 +104,7 @@ const FilterGroups = styled.section`
   }
 `;
 
-function LeftSideBar() { 
+function LeftSideBar(props) { 
   return (
     <LeftSideBarContainer>
       <FilterGroups>
@@ -114,7 +114,7 @@ function LeftSideBar() {
             <details>
               <summary>DEPARTAMENTOS</summary>
               <ul>
-                  <li>1 DORMITORIO</li>
+                  <li onClick={() => console.log(props)}>1 DORMITORIO</li>
                   <li>2 DORMITORIOS</li>
                   <li>3 O MAS DORMITORIOS</li>
               </ul>
