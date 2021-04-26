@@ -8,7 +8,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actions, types } from "../../store/actions/inmobiliarias";
+import { actionsInmobiliarias, typesInmobiliarias } from "../../store/actions/inmobiliarias";
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -64,7 +64,7 @@ export default function InmobiliariasAdminAccordion() {
 
   React.useEffect(() => {
     async function fetchInmobiliarias() {
-      dispatch(actions.getInmobiliarias());
+      dispatch(actionsInmobiliarias.getInmobiliarias());
     }
     fetchInmobiliarias();
   }, []);
