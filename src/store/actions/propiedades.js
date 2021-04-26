@@ -9,6 +9,9 @@ const GET_PROPIEDADES_FAILUTE = "GET_PROPIEDADES_FAILUTE"
 const GET_ONE_PROPIEDADE = "GET_ONE_PROPIEDADE"
 const GET_ONE_PROPIEDADE_SUCCESS = "GET_ONE_PROPIEDADE_SUCCESS"
 const GET_ONE_PROPIEDADE_FAILUTE = "GET_ONE_PROPIEDADE_FAILUTE"
+const POST_PROPIEDADES = "POST_PROPIEDADES";
+const POST_PROPIEDADES_SUCCESS = "POST_PROPIEDADES_SUCCESS";
+const POST_PROPIEDADES_FAILURE = "POST_PROPIEDADES_FAILURE";
 
 const types = {
   GET_PROPIEDADES,
@@ -17,6 +20,9 @@ const types = {
   GET_ONE_PROPIEDADE,
   GET_ONE_PROPIEDADE_SUCCESS,
   GET_ONE_PROPIEDADE_FAILUTE,
+  POST_PROPIEDADES,
+  POST_PROPIEDADES_SUCCESS,
+  POST_PROPIEDADES_FAILURE
 };
 
 const getPropiedadesByInmobiliarias = (inmobiliariaId) => {
@@ -55,7 +61,19 @@ const getPropiedades = () => {
   }
 };
 
+const postPropiedad = (propiedad) => {
+  return (dispatch) => {
+      //nameless functions
+      // Initial action dispatched
+      dispatch({ type: POST_PROPIEDADES });
+      // Return promise with success and failure actions
+      return api.post("propiedades", propiedad)
+          .then(propiedad => dispatch({ type: POST_PROPIEDADES_SUCCESS, payload: propiedad.data.body }))
+          .catch(err => dispatch({ type: POST_PROPIEDADES_FAILURE, payload: err.message }))
+  }
+};
 
-const actions = { getPropiedades, getPropiedadesByInmobiliarias, getPropiedad };
+
+const actions = { getPropiedades, getPropiedadesByInmobiliarias, getPropiedad, postPropiedad };
 
 export { types, actions };

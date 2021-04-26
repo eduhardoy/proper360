@@ -3,6 +3,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { actions, types } from '../../../store/actions/propiedades';
+import { actionsInmobiliarias, typesInmobiliarias  } from '../../../store/actions/inmobiliarias';
 
 export const ModalBackground = styled.div`
   position: absolute;
@@ -54,6 +55,11 @@ export const ModalGridWrapper = styled.div`
   input {
     height: 30px;
     width: 40%;
+    margin: 5px;
+  }
+  select{
+    height: 36px;
+    width: 42%;
     margin: 5px;
   }
 `;
@@ -128,11 +134,15 @@ export const ButtonRed = styled.button`
 const ModalAddPropiedad = () => {
 
   const dispatch = useDispatch()
+  const modalState = useSelector(state => state.propiedades.result[0]);
+  const [data, setData] = React.useState({});
 
   const [datos, setDatos] = React.useState({
     logo:'',
+    imagen:'',
     nombre:'',
     descpricion:'',
+    extras:'',
     direccion:'',
     barrio:'',
     categoria:'',
@@ -154,11 +164,20 @@ const ModalAddPropiedad = () => {
     })
   }
 
-  const modalAdd= (e) =>{ 
+  const handleModal= () =>{ 
     
-    /* console.log(datos) */
+    console.log(datos)
     dispatch(actions.postPropiedad(datos))
   }
+
+  const inmobiliarias = useSelector(state => state.inmobiliarias);
+
+  React.useEffect(() => {
+    async function fetchInmobiliarias() {
+      dispatch(actionsInmobiliarias.getInmobiliarias());
+    }
+    fetchInmobiliarias();
+  }, []);
 
   return (
     <ModalBackground
@@ -172,22 +191,43 @@ const ModalAddPropiedad = () => {
         </ModalTitleWrapper>
         <ModalGridWrapper>
           <input name="logo" placeholder="LOGO" onChange={handleInputChange}/>
+          <input name="imagen" placeholder="IMAGEN" onChange={handleInputChange}/>
           <input name="nombre" placeholder="NOMBRE" onChange={handleInputChange}/>
           <input name="descripcion" placeholder="DESCRIPCION" onChange={handleInputChange}/>
+          <input name="extras" placeholder="EXTRAS" onChange={handleInputChange}/>
           <input name="direccion" placeholder="DIRECCION" onChange={handleInputChange}/>
           <input name="barrio" placeholder="BARRIO" onChange={handleInputChange}/>
-          <input name="categoria" placeholder="CATEGORIA" onChange={handleInputChange}/>
-          <input name="tipo" placeholder="TIPO" onChange={handleInputChange}/>
+          <select name="categoria" onChange={handleInputChange} >
+            <option disabled selected>CATEGORIA</option>
+            <option>Casa</option>
+            <option>Departamento</option>
+            <option>Local</option>
+          </select>
+          <select name="tipo" onChange={handleInputChange}>
+            <option disabled selected>TIPO</option>
+            <option>Venta</option>
+            <option>Alquiler</option>
+          </select>
           <input name="ambientes" placeholder="AMBIENTES" onChange={handleInputChange}/>
           <input name="habitaciones" placeholder="HABITACIONES" onChange={handleInputChange}/>
           <input name="banos" placeholder="BAÑOS" onChange={handleInputChange}/>
           <input name="precio" placeholder="PRECIO" onChange={handleInputChange}/>
           <input name="iframe" placeholder="IFRAME" onChange={handleInputChange}/>
-          <input name="inmobiliaria" placeholder="INMOBILIARIA" onChange={handleInputChange}/>
+          <select name="inmobiliaria" onChange={handleInputChange}>
+            <option disabled selected>INMOBILIARIA</option>
+            {inmobiliarias.result.map(data => (
+              <option>{data.nombre}</option>
+            ))}
+          </select>
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed>CANCELAR</ButtonRed>
           <ButtonGreen
+            onClick={handleModal}
+            /* onClick={() => {
+              handleModal();
+              setEstado(false);
+            }} */
           >
             AGREGAR
           </ButtonGreen>

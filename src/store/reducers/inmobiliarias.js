@@ -1,4 +1,4 @@
-import { actions, types } from "../actions/inmobiliarias";
+import { actionsInmobiliarias, typesInmobiliarias } from "../actions/inmobiliarias";
 
 const initialState = {
   loading: false,
@@ -9,23 +9,23 @@ const initialState = {
 function Inmobiliarias(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case types.GET_INMOBILIARIAS:
+    case typesInmobiliarias.GET_INMOBILIARIAS:
       return { ...state, loading: true };
 
-    case types.GET_INMOBILIARIAS_FAILURE:
+    case typesInmobiliarias.GET_INMOBILIARIAS_FAILURE:
       return { ...state, loading: false, error: payload };
 
-    case types.GET_INMOBILIARIAS_SUCCESS:
+    case typesInmobiliarias.GET_INMOBILIARIAS_SUCCESS:
       return { ...state, loading: false, result: payload };
 
-      case types.POST_INMOBILIARIAS:
-            return { ...state, loading: true };
+    case typesInmobiliarias.POST_INMOBILIARIAS:
+      return { ...state, loading: true };
 
-        case types.POST_INMOBILIARIAS_FAILURE:
-            return { ...state, loading: false , error: true};
+    case typesInmobiliarias.POST_INMOBILIARIAS_FAILURE:
+      return { ...state, loading: false , error: true};
 
-        case types.POST_INMOBILIARIAS_SUCCESS:
-            return { ...state, loading: false , error: false, result: [payload]};
+    case typesInmobiliarias.POST_INMOBILIARIAS_SUCCESS:
+      return { ...state, loading: false , error: false, result: [payload]};
       
     default:
       return state;

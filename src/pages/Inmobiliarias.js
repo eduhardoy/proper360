@@ -10,7 +10,7 @@ import InmobiliariaHeader from "../components/inmobiliarias/InmobiliariaHeader";
 import Whatsapp from "../components/Whatsapp";
 import HomeHeader from "../components/home/HomeHeader";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../store/actions/inmobiliarias";
+import { actionsInmobiliarias } from "../store/actions/inmobiliarias";
 
 const Body = styled.div`
   width: 100%;
@@ -95,7 +95,7 @@ function Inmobiliarias({ inmobiliaria }) {
 
   React.useEffect(() => {
     function fetchPropiedadesByInmobiliaria() {
-      dispatch(actions.getInmobiliariaWithPropiedades(inmobiliaria));
+      dispatch(actionsInmobiliarias.getInmobiliariaWithPropiedades(inmobiliaria));
     }
     fetchPropiedadesByInmobiliaria();
   }, []);

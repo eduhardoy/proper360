@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions, types } from "../../store/actions/inmobiliarias";
 import ModalEditInmobiliaria from "./modals/ModalEditInmobiliaria";
 import ModalDeleteInmobiliaria from "./modals/ModalDeleteInmobiliaria";
+import { actionsInmobiliarias, typesInmobiliarias } from "../../store/actions/inmobiliarias";
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -74,7 +75,7 @@ export default function InmobiliariasAdminAccordion() {
 
   React.useEffect(() => {
     async function fetchInmobiliarias() {
-      dispatch(actions.getInmobiliarias());
+      dispatch(actionsInmobiliarias.getInmobiliarias());
     }
     fetchInmobiliarias();
   }, []);
