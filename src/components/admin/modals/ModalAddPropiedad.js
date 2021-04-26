@@ -152,7 +152,7 @@ const ModalAddPropiedad = ({closeModal}) => {
     banos:'',
     precio:'',
     iframe:'',
-    inmobiliaria:''
+    inmobiliaria: ''
   })
 
   const handleInputChange = (event) => {
@@ -166,8 +166,9 @@ const ModalAddPropiedad = ({closeModal}) => {
 
   const handleModal= () =>{ 
     
-    console.log(datos)
-    dispatch(actionsPropiedades.postPropiedad(datos))
+    console.log(datos);
+    dispatch(actionsPropiedades.postPropiedad(datos));
+    closeModal()
   }
 
   const inmobiliarias = useSelector(state => state.inmobiliarias);
@@ -216,14 +217,14 @@ const ModalAddPropiedad = ({closeModal}) => {
           <select name="inmobiliaria" onChange={handleInputChange}>
             <option disabled selected>INMOBILIARIA</option>
             {inmobiliarias.result.map(data => (
-              <option>{data.nombre}</option>
+              <option value={{_key:data._key}}>{data.nombre}</option>
             ))}
           </select>
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
           <ButtonGreen
-            onClick={handleModal, closeModal}
+            onClick={handleModal}
             /* onClick={() => {
               handleModal();
               setEstado(false);

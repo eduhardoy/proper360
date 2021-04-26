@@ -17,6 +17,7 @@ function Clientes(state = initialState, action) {
 
         case typesClientes.GET_CLIENTES_SUCCESS:
             return { ...state, loading: false, result: payload };
+
         case typesClientes.POST_CLIENTES:
             return { ...state, loading: true };
 
