@@ -125,7 +125,7 @@ export const ButtonRed = styled.button`
   }
 `;
 
-const ModalAddInmobiliaria = () => {
+const ModalAddInmobiliaria = ({closeModal}) => {
 
   const dispatch = useDispatch()
   const modalState = useSelector(state => state.inmobiliarias.result[0]);
@@ -158,7 +158,7 @@ const ModalAddInmobiliaria = () => {
     <ModalBackground
     >
       <ModalWrapper >
-        <CloseButton >
+        <CloseButton onClick={closeModal}>
           <CloseIcon />
         </CloseButton>
         <ModalTitleWrapper>
@@ -173,9 +173,8 @@ const ModalAddInmobiliaria = () => {
             <input name="email" type="email" placeholder="EMAIL" onChange={handleInputChange}/>
         </ModalGridWrapper>
         <ModalButtonWrapper>
-          <ButtonRed >CANCELAR</ButtonRed>
-          <ButtonGreen
-            onClick={handleModal}
+          <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
+          <ButtonGreen onClick={handleModal, closeModal}
           >
             AGREGAR
           </ButtonGreen>

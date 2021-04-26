@@ -121,10 +121,10 @@ export default function InmobiliariasAdminAccordion() {
         </Accordion>
       ))}
             <div style={editModalInmobiliaria == true ? { display: "flex" } : { display: "none" }}>
-        <ModalEditInmobiliaria/>
+        <ModalEditInmobiliaria closeModal={CloseEditModalInmobiliaria}/>
       </div>
       <div style={deleteModalInmobiliaria == true ? { display: "flex" } : { display: "none" }}>
-        <ModalDeleteInmobiliaria/>
+        <ModalDeleteInmobiliaria closeModal={CloseDeleteModalInmobiliaria}/>
       </div>
     </AccordionWrapper>
   );

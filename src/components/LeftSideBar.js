@@ -49,6 +49,8 @@ const FilterGroups = styled.section`
         font-size: 18px;
       }
       summary {
+        display: flex;
+        justify-content: center;
         cursor: pointer;
         width: 100%;
         list-style: none;
@@ -104,7 +106,7 @@ const FilterGroups = styled.section`
   }
 `;
 
-function LeftSideBar({ closeFiltro }) {
+function LeftSideBar({closeMenu}) { 
   return (
     <LeftSideBarContainer>
       <FilterGroups>
@@ -114,27 +116,17 @@ function LeftSideBar({ closeFiltro }) {
             <details>
               <summary>DEPARTAMENTOS</summary>
               <ul>
-                <Link to='/propiedades'>
-                  <li>1 DORMITORIO</li>
-                </Link>
-                <Link to='/propiedades'>
+                  <li onClick={closeMenu}>1 DORMITORIO</li>
                   <li>2 DORMITORIOS</li>
-                </Link>
-                <Link to='/propiedades'>
-                  <li>3 DORMITORIOS</li>
-                </Link>
+                  <li>3 O MAS DORMITORIOS</li>
               </ul>
             </details>
           </dd>
           <dd>
-            <Link to='/propiedades'>
               <span>CASAS</span>
-            </Link>
           </dd>
           <dd>
-            <Link to='/propiedades'>
               <span>LOCALES</span>
-            </Link>
           </dd>
         </dl>
         <dl>
@@ -143,27 +135,17 @@ function LeftSideBar({ closeFiltro }) {
             <details>
               <summary>DEPARTAMENTOS</summary>
               <ul>
-                <Link to='/propiedades'>
                   <li>1 DORMITORIO</li>
-                </Link>
-                <Link to='/propiedades'>
                   <li>2 DORMITORIOS</li>
-                </Link>
-                <Link to='/propiedades'>
-                  <li>3 DORMITORIOS</li>
-                </Link>
+                  <li>3 O MAS DORMITORIOS</li>
               </ul>
             </details>
           </dd>
           <dd>
-            <Link to='/propiedades'>
               <span>CASAS</span>
-            </Link>
           </dd>
           <dd>
-            <Link to='/propiedades'>
               <span>LOCALES</span>
-            </Link>
           </dd>
         </dl>
       </FilterGroups>

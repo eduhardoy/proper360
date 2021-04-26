@@ -131,7 +131,7 @@ export const ButtonRed = styled.button`
   }
 `;
 
-const ModalAddPropiedad = () => {
+const ModalAddPropiedad = ({closeModal}) => {
 
   const dispatch = useDispatch()
   const modalState = useSelector(state => state.propiedades.result[0]);
@@ -183,7 +183,7 @@ const ModalAddPropiedad = () => {
     <ModalBackground
     >
       <ModalWrapper>
-        <CloseButton>
+        <CloseButton onClick={closeModal}>
           <CloseIcon />
         </CloseButton>
         <ModalTitleWrapper>
@@ -221,9 +221,9 @@ const ModalAddPropiedad = () => {
           </select>
         </ModalGridWrapper>
         <ModalButtonWrapper>
-          <ButtonRed>CANCELAR</ButtonRed>
+          <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
           <ButtonGreen
-            onClick={handleModal}
+            onClick={handleModal, closeModal}
             /* onClick={() => {
               handleModal();
               setEstado(false);

@@ -123,10 +123,10 @@ export default function PropiedadesAdminAccordion() {
         </Accordion>
       ))}
       <div style={editModalPropiedad == true ? { display: "flex" } : { display: "none" }}>
-        <ModalEditPropiedad/>
+        <ModalEditPropiedad closeModal={CloseEditModalPropiedad}/>
       </div>
       <div style={deleteModalPropiedad == true ? { display: "flex" } : { display: "none" }}>
-        <ModalDeletePropiedad/>
+        <ModalDeletePropiedad closeModal={CloseDeleteModalPropiedad}/>
       </div>
     </AccordionWrapper>
   );

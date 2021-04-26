@@ -91,7 +91,7 @@ const PropiedadesAdmin = () => {
             <AddIcon />
           </ButtonModal>
           <div style={addModalPropiedad == true ? { display: "flex" } : { display: "none" }}>
-            <ModalAddPropiedad/>
+            <ModalAddPropiedad closeModal={CloseAddModalPropiedad}/>
           </div>
         </TitleWrapper>
         <ListWrapper>

@@ -92,7 +92,7 @@ const InmobiliariasAdmin = () => {
             <AddIcon />
           </ButtonModal>
           <div style={addModalInmobiliaria == true ? { display: "flex" } : { display: "none" }}>
-            <ModalAddInmobiliaria/>
+            <ModalAddInmobiliaria closeModal={CloseAddModalInmobiliaria}/>
           </div>
         </TitleWrapper>
         <ListWrapper>
