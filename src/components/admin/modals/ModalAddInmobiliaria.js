@@ -175,6 +175,7 @@ const ModalAddInmobiliaria = () => {
         <ModalButtonWrapper>
           <ButtonRed >CANCELAR</ButtonRed>
           <ButtonGreen
+            onClick={handleModal}
           >
             AGREGAR
           </ButtonGreen>

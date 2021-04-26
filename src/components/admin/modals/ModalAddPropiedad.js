@@ -2,7 +2,7 @@ import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actions, types } from '../../../store/actions/propiedades';
+import { actionsPropiedades, typesPropiedades } from '../../../store/actions/propiedades';
 import { actionsInmobiliarias, typesInmobiliarias  } from '../../../store/actions/inmobiliarias';
 
 export const ModalBackground = styled.div`
@@ -167,7 +167,7 @@ const ModalAddPropiedad = () => {
   const handleModal= () =>{ 
     
     console.log(datos)
-    dispatch(actions.postPropiedad(datos))
+    dispatch(actionsPropiedades.postPropiedad(datos))
   }
 
   const inmobiliarias = useSelector(state => state.inmobiliarias);
