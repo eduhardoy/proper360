@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SendIcon from "@material-ui/icons/Send";
 import { useDispatch, useSelector } from "react-redux";
-import { actions, types } from "../../store/actions/clientes";
+import { actionsClientes, typesClientes } from "../../store/actions/clientes";
 import { ContactSupportOutlined } from "@material-ui/icons";
 
 import Alert from "@material-ui/lab/Alert";
@@ -129,7 +129,7 @@ const SubscribeForm = () => {
   const handleForm = e => {
     e.preventDefault();
     /* console.log(datos) */
-    dispatch(actions.postCliente(datos));
+    dispatch(actionsClientes.postCliente(datos));
   };
 
   const [state, setState] = React.useState({

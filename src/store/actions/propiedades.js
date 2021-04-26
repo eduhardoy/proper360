@@ -13,7 +13,7 @@ const POST_PROPIEDADES = "POST_PROPIEDADES";
 const POST_PROPIEDADES_SUCCESS = "POST_PROPIEDADES_SUCCESS";
 const POST_PROPIEDADES_FAILURE = "POST_PROPIEDADES_FAILURE";
 
-const types = {
+const typesPropiedades = {
   GET_PROPIEDADES,
   GET_PROPIEDADES_SUCCESS,
   GET_PROPIEDADES_FAILUTE,
@@ -74,6 +74,6 @@ const postPropiedad = (propiedad) => {
 };
 
 
-const actions = { getPropiedades, getPropiedadesByInmobiliarias, getPropiedad, postPropiedad };
+const actionsPropiedades = { getPropiedades, getPropiedadesByInmobiliarias, getPropiedad, postPropiedad };
 
-export { types, actions };
+export { typesPropiedades, actionsPropiedades };

@@ -8,7 +8,6 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actions, types } from "../../store/actions/inmobiliarias";
 import ModalEditInmobiliaria from "./modals/ModalEditInmobiliaria";
 import ModalDeleteInmobiliaria from "./modals/ModalDeleteInmobiliaria";
 import { actionsInmobiliarias, typesInmobiliarias } from "../../store/actions/inmobiliarias";

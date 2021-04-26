@@ -1,4 +1,4 @@
-import { actions, types } from "../actions/clientes";
+import { actionsClientes, typesClientes } from "../actions/clientes";
 
 const initialState = {
     loading: false,
@@ -6,24 +6,24 @@ const initialState = {
     result: [],
 };
 
-function Inmobiliarias(state = initialState, action) {
+function Clientes(state = initialState, action) {
     const { type, payload } = action;
     switch (type) {
-        case types.GET_CLIENTES:
+        case typesClientes.GET_CLIENTES:
             return { ...state, loading: true };
 
-        case types.GET_CLIENTES_FAILURE:
+        case typesClientes.GET_CLIENTES_FAILURE:
             return { ...state, loading: false, error: payload };
 
-        case types.GET_CLIENTES_SUCCESS:
+        case typesClientes.GET_CLIENTES_SUCCESS:
             return { ...state, loading: false, result: payload };
-        case types.POST_CLIENTES:
+        case typesClientes.POST_CLIENTES:
             return { ...state, loading: true };
 
-        case types.POST_CLIENTES_FAILURE:
+        case typesClientes.POST_CLIENTES_FAILURE:
             return { ...state, loading: false , error: true};
 
-        case types.POST_CLIENTES_SUCCESS:
+        case typesClientes.POST_CLIENTES_SUCCESS:
             return { ...state, loading: false , error: false, result: [payload]};
 
         default:
@@ -31,4 +31,4 @@ function Inmobiliarias(state = initialState, action) {
     }
 }
 
-export default Inmobiliarias;
+export default Clientes;

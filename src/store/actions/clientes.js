@@ -10,7 +10,7 @@ const POST_CLIENTES = "POST_CLIENTES";
 const POST_CLIENTES_SUCCESS = "POST_CLIENTES_SUCCESS";
 const POST_CLIENTES_FAILURE = "POST_CLIENTES_FAILURE";
 
-const types = {
+const typesClientes = {
     GET_CLIENTES,
     GET_CLIENTES_SUCCESS,
     GET_CLIENTES_FAILURE,
@@ -45,6 +45,6 @@ const postCliente = (cliente) => {
 
 
 
-const actions = { postCliente, getClientes };
+const actionsClientes = { postCliente, getClientes };
 
-export { types, actions };
+export { typesClientes, actionsClientes };

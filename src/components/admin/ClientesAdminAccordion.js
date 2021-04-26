@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actions, types } from "../../store/actions/clientes";
+import { actionsClientes, typesClientes } from "../../store/actions/clientes";
 
 const AccordionWrapper = styled.div`
   width: 80%;
@@ -23,7 +23,7 @@ const ClientesAdminAccordion = () => {
 
   React.useEffect(() => {
     async function fetchClientes() {
-      dispatch(actions.getClientes());
+      dispatch(actionsClientes.getClientes());
     }
     fetchClientes();
   }, []);

@@ -6,7 +6,7 @@ import HomeHeader from "../components/home/HomeHeader";
 import ProjectWrapper from "../components/projects/ProjectWrapper";
 import Whatsapp from "../components/Whatsapp";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../store/actions/propiedades";
+import { actionsPropiedades } from "../store/actions/propiedades";
 
 const Projects = ({ projectId }) => {
   React.useEffect(() => {
@@ -16,7 +16,7 @@ const Projects = ({ projectId }) => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    dispatch(actions.getPropiedad(projectId));
+    dispatch(actionsPropiedades.getPropiedad(projectId));
   }, []);
 
   const propiedad = useSelector(state => state.propiedades.oneResult);

@@ -8,7 +8,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../../store/actions/propiedades";
+import { actionsPropiedades } from "../../store/actions/propiedades";
 import ModalEditPropiedad from "./modals/ModalEditPropiedad";
 import ModalDeletePropiedad from "./modals/ModalDeletePropiedad";
 
@@ -75,7 +75,7 @@ export default function PropiedadesAdminAccordion() {
 
   React.useEffect(() => {
     async function fetchPropiedades() {
-      dispatch(actions.getPropiedades());
+      dispatch(actionsPropiedades.getPropiedades());
     }
     fetchPropiedades();
   }, []);
