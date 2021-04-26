@@ -10,7 +10,7 @@ const POST_INMOBILIARIAS = "POST_INMOBILIARIAS";
 const POST_INMOBILIARIAS_SUCCESS = "POST_INMOBILIARIAS_SUCCESS";
 const POST_INMOBILIARIAS_FAILURE = "POST_INMOBILIARIAS_FAILURE";
 
-const types = {
+const typesInmobiliarias = {
   GET_INMOBILIARIAS,
   GET_INMOBILIARIAS_SUCCESS,
   GET_INMOBILIARIAS_FAILURE,
@@ -59,6 +59,6 @@ const postInmobiliarias = (inmobiliaria) => {
 
 
 
-const actions = { getInmobiliarias, getInmobiliariaWithPropiedades, postInmobiliarias };
+const actionsInmobiliarias = { getInmobiliarias, getInmobiliariaWithPropiedades, postInmobiliarias };
 
-export { types, actions };
+export { typesInmobiliarias, actionsInmobiliarias };

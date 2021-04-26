@@ -3,7 +3,7 @@ import Carousel from "react-elastic-carousel";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 import { useDispatch, useSelector } from "react-redux";
-import { actions, types } from "../../store/actions/inmobiliarias";
+import { actionsInmobiliarias, typesInmobiliarias } from "../../store/actions/inmobiliarias";
 
 const CarouselSection = styled.section`
   margin-top: 80px;
@@ -106,7 +106,7 @@ function HomeInmobiliariasCarrousel() {
   const { result } = useSelector(state => state.inmobiliarias);
   console.log(result);
   React.useEffect(() => {
-    dispatch(actions.getInmobiliarias());
+    dispatch(actionsInmobiliarias.getInmobiliarias());
   }, []);
 
   //Breakpoints carrousel - TESTEAR RESPONSIVE -

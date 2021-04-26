@@ -27,6 +27,15 @@ function Propiedades(state = initialState, action) {
     case types.GET_ONE_PROPIEDADE_SUCCESS:
       return { ...state, loading: false, oneResult: payload };
 
+    case types.POST_PROPIEDADES:
+        return { ...state, loading: true };
+
+    case types.POST_PROPIEDADES_FAILURE:
+        return { ...state, loading: false , error: true};
+
+    case types.POST_PROPIEDADES_SUCCESS:
+        return { ...state, loading: false , error: false, result: [payload]};
+
     default:
       return state;
   }
