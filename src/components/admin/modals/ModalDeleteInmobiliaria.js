@@ -60,12 +60,12 @@ const ButtonBlack = styled.button`
   }
 `;
 
-const ModalDeleteInmobiliaria = () => {
+const ModalDeleteInmobiliaria = ({closeModal}) => {
   return (
     <ModalBackground
     >
       <ModalDeleteWrapper>
-        <CloseButton>
+        <CloseButton onClick={closeModal}>
           <CloseIcon />
         </CloseButton>
         <ModalTitleWrapper>
@@ -75,7 +75,7 @@ const ModalDeleteInmobiliaria = () => {
           <p>¿Esta seguro que desea eliminar?</p>
         </ModalDescriptionWrapper>
         <ModalButtonWrapper>
-          <ButtonBlack>CANCELAR</ButtonBlack>
+          <ButtonBlack onClick={closeModal}>CANCELAR</ButtonBlack>
           <ButtonRed
           >
             ELIMINAR

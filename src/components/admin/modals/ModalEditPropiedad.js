@@ -12,12 +12,12 @@ import {
   ButtonGreen,
 } from "./ModalAddPropiedad";
 
-const ModalEditPropiedad = () => {
+const ModalEditPropiedad = ({closeModal}) => {
   return (
     <ModalBackground
     >
       <ModalWrapper >
-        <CloseButton >
+        <CloseButton onClick={closeModal}>
           <CloseIcon />
         </CloseButton>
         <ModalTitleWrapper>
@@ -25,7 +25,7 @@ const ModalEditPropiedad = () => {
         </ModalTitleWrapper>
         <ModalGridWrapper></ModalGridWrapper>
         <ModalButtonWrapper>
-          <ButtonRed>CANCELAR</ButtonRed>
+          <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
           <ButtonGreen
           >
             ACEPTAR
