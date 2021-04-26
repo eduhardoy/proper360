@@ -3,7 +3,10 @@ import Carousel from "react-elastic-carousel";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 import { useDispatch, useSelector } from "react-redux";
-import { actionsInmobiliarias, typesInmobiliarias } from "../../store/actions/inmobiliarias";
+import {
+  actionsInmobiliarias,
+  typesInmobiliarias,
+} from "../../store/actions/inmobiliarias";
 
 const CarouselSection = styled.section`
   margin-top: 80px;
@@ -104,7 +107,15 @@ const InmobiliariaLogo = styled.div`
 function HomeInmobiliariasCarrousel() {
   const dispatch = useDispatch();
   const { result } = useSelector(state => state.inmobiliarias);
-  console.log(result);
+  function Shuffle(o) {
+    for (
+      var j, x, i = o.length;
+      i;
+      j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x
+    );
+    return o;
+  }
+  var resultNew = Shuffle(result);
   React.useEffect(() => {
     dispatch(actionsInmobiliarias.getInmobiliarias());
   }, []);
@@ -125,7 +136,7 @@ function HomeInmobiliariasCarrousel() {
       <h1>INMOBILIARIAS Y DESARROLLADORES INMOBILIARIOS</h1>
       <CarouselContainer>
         <Carousel breakPoints={breakPoints}>
-          {result.map(inmo => (
+          {resultNew.map(inmo => (
             <InmobiliariaLogo>
               <Link to={`/inmobiliaria/${inmo._key}`}>
                 <img src={`${inmo.logo}`} alt='Logo Inmobiliaria' />
