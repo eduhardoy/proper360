@@ -124,12 +124,12 @@ function Inmobiliarias({ inmobiliaria }) {
       <FilterMenu
         style={filtro == true ? { display: "flex" } : { display: "none" }}
       >
-        <LeftSideBar />
+        <LeftSideBar closeMenu={DisableFilterMenu}/>
       </FilterMenu>
       <HomeHeader />
       <Body>
         <LeftSideBarContainer>
-          <LeftSideBar closeMenu={DisableFilterMenu}/>
+          <LeftSideBar />
         </LeftSideBarContainer>
         <InmobiliariaContainer>
           <ButtonOpenFilter onClick={ActiveFilterMenu}>
