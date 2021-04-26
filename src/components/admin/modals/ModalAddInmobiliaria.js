@@ -150,8 +150,9 @@ const ModalAddInmobiliaria = ({closeModal}) => {
 
   const handleModal= () =>{
     
-    console.log(datos)
-    dispatch(actionsInmobiliarias.postInmobiliarias(datos))
+    console.log(datos);
+    dispatch(actionsInmobiliarias.postInmobiliarias(datos));
+    closeModal()
   }
 
   return (
@@ -174,7 +175,7 @@ const ModalAddInmobiliaria = ({closeModal}) => {
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
-          <ButtonGreen onClick={handleModal, closeModal}
+          <ButtonGreen onClick={handleModal}
           >
             AGREGAR
           </ButtonGreen>
