@@ -21,7 +21,7 @@ export const ModalBackground = styled.div`
 export const ModalWrapper = styled.div`
   width: 50%;
   min-width: 350px;
-  height: 80%;
+  height: 95%;
   z-index: 99999;
   border-radius: 20px;
   background-color: white;
@@ -46,7 +46,7 @@ export const CloseButton = styled.button`
 `;
 
 export const ModalGridWrapper = styled.div`
-  height: 50%;
+  height: 70%;
   width: 80%;
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@ export const ModalGridWrapper = styled.div`
     width: 40%;
     margin: 5px;
   }
-  select{
+  select {
     height: 36px;
     width: 42%;
     margin: 5px;
@@ -65,7 +65,7 @@ export const ModalGridWrapper = styled.div`
 `;
 
 export const ModalTitleWrapper = styled.div`
-  height: 20%;
+  height: 15%;
   font-size: 25px;
   display: flex;
   justify-content: center;
@@ -73,7 +73,7 @@ export const ModalTitleWrapper = styled.div`
 `;
 
 export const ModalButtonWrapper = styled.div`
-  height: 20%;
+  height: 15%;
   width: 80%;
   font-size: 25px;
   display: flex;
@@ -188,8 +188,7 @@ const ModalAddPropiedad = ({ closeModal }) => {
   }, []);
 
   return (
-    <ModalBackground
-    >
+    <ModalBackground>
       <ModalWrapper>
         <CloseButton onClick={closeModal}>
           <CloseIcon />
@@ -211,8 +210,10 @@ const ModalAddPropiedad = ({ closeModal }) => {
             <option>Departamento</option>
             <option>Local</option>
           </select>
-          <select name="tipo" onChange={handleInputChange}>
-            <option disabled selected>TIPO</option>
+          <select name='tipo' onChange={handleInputChange}>
+            <option disabled selected>
+              TIPO
+            </option>
             <option>Venta</option>
             <option>Alquiler</option>
           </select>

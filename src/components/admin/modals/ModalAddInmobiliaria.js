@@ -2,7 +2,10 @@ import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actionsInmobiliarias, typesInmobiliarias } from '../../../store/actions/inmobiliarias';
+import {
+  actionsInmobiliarias,
+  typesInmobiliarias,
+} from "../../../store/actions/inmobiliarias";
 
 export const ModalBackground = styled.div`
   position: absolute;
@@ -20,7 +23,7 @@ export const ModalBackground = styled.div`
 export const ModalWrapper = styled.div`
   width: 50%;
   min-width: 350px;
-  height: 80%;
+  height: 95%;
   z-index: 99999;
   border-radius: 20px;
   background-color: white;
@@ -45,7 +48,7 @@ export const CloseButton = styled.button`
 `;
 
 export const ModalGridWrapper = styled.div`
-  height: 50%;
+  height: 70%;
   width: 80%;
   display: flex;
   align-items: center;
@@ -59,7 +62,7 @@ export const ModalGridWrapper = styled.div`
 `;
 
 export const ModalTitleWrapper = styled.div`
-  height: 20%;
+  height: 15%;
   font-size: 25px;
   display: flex;
   justify-content: center;
@@ -67,7 +70,7 @@ export const ModalTitleWrapper = styled.div`
 `;
 
 export const ModalButtonWrapper = styled.div`
-  height: 20%;
+  height: 15%;
   width: 80%;
   font-size: 25px;
   display: flex;
@@ -125,39 +128,36 @@ export const ButtonRed = styled.button`
   }
 `;
 
-const ModalAddInmobiliaria = ({closeModal}) => {
-
-  const dispatch = useDispatch()
+const ModalAddInmobiliaria = ({ closeModal }) => {
+  const dispatch = useDispatch();
   const modalState = useSelector(state => state.inmobiliarias.result[0]);
 
   const [datos, setDatos] = React.useState({
-    logo:'',
-    nombre:'',
-    descpricion:'',
-    telefono:'',
-    direccion:'',
-    email: ''
-  })
+    logo: "",
+    nombre: "",
+    descpricion: "",
+    telefono: "",
+    direccion: "",
+    email: "",
+  });
 
-  const handleInputChange = (event) => {
-     /* console.log(event.target.name)
+  const handleInputChange = event => {
+    /* console.log(event.target.name)
      console.log(event.target.value) */
     setDatos({
-        ...datos,
-        [event.target.name] : event.target.value
-    })
-  }
+      ...datos,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-  const handleModal= () =>{
-    
-    console.log(datos)
-    dispatch(actionsInmobiliarias.postInmobiliarias(datos))
-  }
+  const handleModal = () => {
+    console.log(datos);
+    dispatch(actionsInmobiliarias.postInmobiliarias(datos));
+  };
 
   return (
-    <ModalBackground
-    >
-      <ModalWrapper >
+    <ModalBackground>
+      <ModalWrapper>
         <CloseButton onClick={closeModal}>
           <CloseIcon />
         </CloseButton>
@@ -165,19 +165,37 @@ const ModalAddInmobiliaria = ({closeModal}) => {
           <h4>AGREGAR</h4>
         </ModalTitleWrapper>
         <ModalGridWrapper>
-            <input name="logo" placeholder="LOGO" onChange={handleInputChange}/>
-            <input name="nombre" placeholder="NOMBRE" onChange={handleInputChange}/>
-            <input name="descripcion" placeholder="DESCRIPCION" onChange={handleInputChange}/>
-            <input name="telefono" placeholder="TELEFONO" onChange={handleInputChange}/>
-            <input name="direccion" placeholder="DIRECCION" onChange={handleInputChange}/>
-            <input name="email" type="email" placeholder="EMAIL" onChange={handleInputChange}/>
+          <input name='logo' placeholder='LOGO' onChange={handleInputChange} />
+          <input
+            name='nombre'
+            placeholder='NOMBRE'
+            onChange={handleInputChange}
+          />
+          <input
+            name='descripcion'
+            placeholder='DESCRIPCION'
+            onChange={handleInputChange}
+          />
+          <input
+            name='telefono'
+            placeholder='TELEFONO'
+            onChange={handleInputChange}
+          />
+          <input
+            name='direccion'
+            placeholder='DIRECCION'
+            onChange={handleInputChange}
+          />
+          <input
+            name='email'
+            type='email'
+            placeholder='EMAIL'
+            onChange={handleInputChange}
+          />
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
-          <ButtonGreen onClick={handleModal, closeModal}
-          >
-            AGREGAR
-          </ButtonGreen>
+          <ButtonGreen onClick={(handleModal, closeModal)}>AGREGAR</ButtonGreen>
         </ModalButtonWrapper>
       </ModalWrapper>
     </ModalBackground>
