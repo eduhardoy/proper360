@@ -111,7 +111,7 @@ function Inmobiliarias({ inmobiliaria }) {
     inmobiliarias.result.length > 0 ? inmobiliarias.result[0].propiedades : [];
 
   const ActiveFilterMenu = () => setFiltro(true);
-  const DisableFilterMenu = () => {setFiltro(false)};
+  const DisableFilterMenu = () => setFiltro(false);
 
   return (
     <React.Fragment>
@@ -129,7 +129,7 @@ function Inmobiliarias({ inmobiliaria }) {
       <HomeHeader />
       <Body>
         <LeftSideBarContainer>
-          <LeftSideBar setFilter={DisableFilterMenu}/>
+          <LeftSideBar closeMenu={DisableFilterMenu}/>
         </LeftSideBarContainer>
         <InmobiliariaContainer>
           <ButtonOpenFilter onClick={ActiveFilterMenu}>
