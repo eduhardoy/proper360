@@ -9,6 +9,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { actions, types } from "../../store/actions/inmobiliarias";
+import ModalEditInmobiliaria from "./modals/ModalEditInmobiliaria";
+import ModalDeleteInmobiliaria from "./modals/ModalDeleteInmobiliaria";
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -59,6 +61,14 @@ const ButtonAccordion = styled.button`
 export default function InmobiliariasAdminAccordion() {
   const dispatch = useDispatch();
   const [data, setData] = React.useState({});
+  const [editModalInmobiliaria, setEditModalInmobiliaria] = React.useState(false);
+  const [deleteModalInmobiliaria, setDeleteModalInmobiliaria] = React.useState(false);
+
+  const OpenEditModalInmobiliaria = () => setEditModalInmobiliaria(true);
+  const CloseEditModalInmobiliaria = () => setEditModalInmobiliaria(false);
+
+  const OpenDeleteModalInmobiliaria = () => setDeleteModalInmobiliaria(true);
+  const CloseDeleteModalInmobiliaria = () => setDeleteModalInmobiliaria(false);
 
   const inmobiliarias = useSelector(state => state.inmobiliarias);
 
@@ -81,14 +91,14 @@ export default function InmobiliariasAdminAccordion() {
             <h2>{data.nombre}</h2>
             <ButtonWrapper>
               <ButtonAccordion
-                onClick={event => event.stopPropagation()}
+                onClick={event => event.stopPropagation(), OpenEditModalInmobiliaria}
                 onFocus={event => event.stopPropagation()}
               >
                 <p>EDITAR</p>
                 <EditIcon />
               </ButtonAccordion>
               <ButtonAccordion
-                onClick={event => event.stopPropagation()}
+                onClick={event => event.stopPropagation(), OpenDeleteModalInmobiliaria}
                 onFocus={event => event.stopPropagation()}
               >
                 <p>ELIMINAR</p>
@@ -110,6 +120,12 @@ export default function InmobiliariasAdminAccordion() {
           </AccordionDetails>
         </Accordion>
       ))}
+            <div style={editModalInmobiliaria == true ? { display: "flex" } : { display: "none" }}>
+        <ModalEditInmobiliaria/>
+      </div>
+      <div style={deleteModalInmobiliaria == true ? { display: "flex" } : { display: "none" }}>
+        <ModalDeleteInmobiliaria/>
+      </div>
     </AccordionWrapper>
   );
 }

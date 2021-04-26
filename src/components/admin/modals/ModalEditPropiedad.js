@@ -10,29 +10,23 @@ import {
   ModalButtonWrapper,
   ButtonRed,
   ButtonGreen,
-} from "./ModalAdd";
+} from "./ModalAddPropiedad";
 
-const ModalEdit = ({ children, setEstado, estado, modalEditAceptar }) => {
+const ModalEditPropiedad = () => {
   return (
     <ModalBackground
-      style={{ display: estado ? "" : "none" }}
-      onClick={e => setEstado(false)}
     >
-      <ModalWrapper onClick={e => e.stopPropagation()}>
-        <CloseButton onClick={e => setEstado(false)}>
+      <ModalWrapper >
+        <CloseButton >
           <CloseIcon />
         </CloseButton>
         <ModalTitleWrapper>
           <h4>EDITAR</h4>
         </ModalTitleWrapper>
-        <ModalGridWrapper>{children}</ModalGridWrapper>
+        <ModalGridWrapper></ModalGridWrapper>
         <ModalButtonWrapper>
-          <ButtonRed onClick={e => setEstado(false)}>CANCELAR</ButtonRed>
+          <ButtonRed>CANCELAR</ButtonRed>
           <ButtonGreen
-            onClick={e => {
-              modalEditAceptar();
-              setEstado(false);
-            }}
           >
             ACEPTAR
           </ButtonGreen>
@@ -42,4 +36,4 @@ const ModalEdit = ({ children, setEstado, estado, modalEditAceptar }) => {
   );
 };
 
-export default ModalEdit;
+export default ModalEditPropiedad;

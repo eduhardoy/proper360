@@ -7,7 +7,7 @@ import {
   ModalTitleWrapper,
   ModalButtonWrapper,
   ButtonRed,
-} from "./ModalAdd";
+} from "./ModalAddInmobiliaria";
 
 const ModalDeleteWrapper = styled.div`
   width: 40%;
@@ -60,14 +60,12 @@ const ButtonBlack = styled.button`
   }
 `;
 
-const ModalDelete = ({ setEstado, estado, modalEditDelete }) => {
+const ModalDeleteInmobiliaria = () => {
   return (
     <ModalBackground
-      style={{ display: estado ? "" : "none" }}
-      onClick={e => setEstado(false)}
     >
-      <ModalDeleteWrapper onClick={e => e.stopPropagation()}>
-        <CloseButton onClick={e => setEstado(false)}>
+      <ModalDeleteWrapper>
+        <CloseButton>
           <CloseIcon />
         </CloseButton>
         <ModalTitleWrapper>
@@ -77,12 +75,8 @@ const ModalDelete = ({ setEstado, estado, modalEditDelete }) => {
           <p>¿Esta seguro que desea eliminar?</p>
         </ModalDescriptionWrapper>
         <ModalButtonWrapper>
-          <ButtonBlack onClick={e => setEstado(false)}>CANCELAR</ButtonBlack>
+          <ButtonBlack>CANCELAR</ButtonBlack>
           <ButtonRed
-            onClick={() => {
-              modalEditDelete();
-              setEstado(false);
-            }}
           >
             ELIMINAR
           </ButtonRed>
@@ -92,4 +86,4 @@ const ModalDelete = ({ setEstado, estado, modalEditDelete }) => {
   );
 };
 
-export default ModalDelete;
+export default ModalDeleteInmobiliaria;

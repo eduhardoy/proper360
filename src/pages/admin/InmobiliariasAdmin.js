@@ -78,17 +78,22 @@ const ListWrapper = styled.div`
 `;
 
 const InmobiliariasAdmin = () => {
+  const [addModalInmobiliaria, setAddModalInmobiliaria] = React.useState(false);
+
+  const OpenAddModalInmobiliaria = () => setAddModalInmobiliaria(true);
+  const CloseAddModalInmobiliaria = () => setAddModalInmobiliaria(false);
 
   return (
     <AdminLayout>
       <Container>
         <TitleWrapper>
           <h1>Inmobiliarias</h1>
-          <ButtonModal>
+          <ButtonModal onClick={OpenAddModalInmobiliaria}>
             <AddIcon />
           </ButtonModal>
-          <ModalAddInmobiliaria estado={true}/>
-            
+          <div style={addModalInmobiliaria == true ? { display: "flex" } : { display: "none" }}>
+            <ModalAddInmobiliaria/>
+          </div>
         </TitleWrapper>
         <ListWrapper>
           <InmobiliariasAdminAccordion />

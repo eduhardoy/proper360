@@ -9,6 +9,9 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../store/actions/propiedades";
+import ModalEditPropiedad from "./modals/ModalEditPropiedad";
+import ModalDeletePropiedad from "./modals/ModalDeletePropiedad";
+
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -59,6 +62,14 @@ const ButtonAccordion = styled.button`
 export default function PropiedadesAdminAccordion() {
   const dispatch = useDispatch();
   const [data, setData] = React.useState({});
+  const [editModalPropiedad, setEditModalPropiedad] = React.useState(false);
+  const [deleteModalPropiedad, setDeleteModalPropiedad] = React.useState(false);
+
+  const OpenEditModalPropiedad = () => setEditModalPropiedad(true);
+  const CloseEditModalPropiedad = () => setEditModalPropiedad(false);
+
+  const OpenDeleteModalPropiedad = () => setDeleteModalPropiedad(true);
+  const CloseDeleteModalPropiedad = () => setDeleteModalPropiedad(false);
 
   const propiedades = useSelector(state => state.propiedades);
 
@@ -81,14 +92,14 @@ export default function PropiedadesAdminAccordion() {
             <h2>{data.nombre}</h2>
             <ButtonWrapper>
               <ButtonAccordion
-                onClick={event => event.stopPropagation()}
+                onClick={event => event.stopPropagation(), OpenEditModalPropiedad}
                 onFocus={event => event.stopPropagation()}
               >
                 <p>EDITAR</p>
                 <EditIcon />
               </ButtonAccordion>
               <ButtonAccordion
-                onClick={event => event.stopPropagation()}
+                onClick={event => event.stopPropagation(), OpenDeleteModalPropiedad}
                 onFocus={event => event.stopPropagation()}
               >
                 <p>ELIMINAR</p>
@@ -111,6 +122,12 @@ export default function PropiedadesAdminAccordion() {
           </AccordionDetails>
         </Accordion>
       ))}
+      <div style={editModalPropiedad == true ? { display: "flex" } : { display: "none" }}>
+        <ModalEditPropiedad/>
+      </div>
+      <div style={deleteModalPropiedad == true ? { display: "flex" } : { display: "none" }}>
+        <ModalDeletePropiedad/>
+      </div>
     </AccordionWrapper>
   );
 }

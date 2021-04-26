@@ -77,15 +77,22 @@ const ListWrapper = styled.div`
 `;
 
 const PropiedadesAdmin = () => {
+  const [addModalPropiedad, setAddModalPropiedad] = React.useState(false);
+
+  const OpenAddModalPropiedad = () => setAddModalPropiedad(true);
+  const CloseAddModalPropiedad = () => setAddModalPropiedad(false);
+
   return (
     <AdminLayout>
       <Container>
         <TitleWrapper>
           <h1>Propiedades</h1>
-          <ButtonModal>
+          <ButtonModal onClick={OpenAddModalPropiedad}>
             <AddIcon />
           </ButtonModal>
-          <ModalAddPropiedad estado={true}/>
+          <div style={addModalPropiedad == true ? { display: "flex" } : { display: "none" }}>
+            <ModalAddPropiedad/>
+          </div>
         </TitleWrapper>
         <ListWrapper>
           <PropiedadesAdminAccordion />
