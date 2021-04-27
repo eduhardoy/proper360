@@ -108,14 +108,11 @@ export default function InmobiliariasAdminAccordion() {
           </StyledAccordionSummary>
           <AccordionDetails>
             <ListDetails>
-              <p>
-                Logo: <img src={data.logo} />
-              </p>
+              <img src={data.logo}/>              
               <p>Descripcion: {data.descripcion}</p>
-              <p>Telefono: {data.CONTACTO ? data.CONTACTO.telefono : ""}</p>
-              <p>Email: {data.CONTACTO ? data.CONTACTO.email : ""}</p>
-              <p>Direccion: {data.CONTACTO ? data.CONTACTO.direccion : ""}</p>
-              <p>Banner: {data.BANNER_INMOBILIARIA}</p>
+              <p>Telefono: {data.telefono}</p>
+              <p>Email: {data.email}</p>
+              <p>Direccion: {data.direccion}</p>
             </ListDetails>
           </AccordionDetails>
         </Accordion>

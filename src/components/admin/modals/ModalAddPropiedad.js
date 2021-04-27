@@ -141,7 +141,7 @@ const ModalAddPropiedad = ({ closeModal }) => {
     logo: '',
     imagen: '',
     nombre: '',
-    descpricion: '',
+    descripcion: '',
     extras: '',
     direccion: '',
     barrio: '',
@@ -174,7 +174,7 @@ const ModalAddPropiedad = ({ closeModal }) => {
   const handleModal = () => {
 
     console.log(datos);
-    // dispatch(actionsPropiedades.postPropiedad(datos));
+    //dispatch(actionsPropiedades.postPropiedad(datos))
     closeModal()
   }
 
@@ -233,10 +233,6 @@ const ModalAddPropiedad = ({ closeModal }) => {
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
           <ButtonGreen
             onClick={handleModal}
-          /* onClick={() => {
-            handleModal();
-            setEstado(false);
-          }} */
           >
             AGREGAR
           </ButtonGreen>
