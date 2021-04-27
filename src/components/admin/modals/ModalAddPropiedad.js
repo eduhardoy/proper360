@@ -139,10 +139,8 @@ const ModalAddPropiedad = ({ closeModal }) => {
 
   const [datos, setDatos] = React.useState({
     logo: '',
-    imagen: '',
     nombre: '',
     descripcion: '',
-    extras: '',
     direccion: '',
     barrio: '',
     categoria: '',
@@ -198,10 +196,8 @@ const ModalAddPropiedad = ({ closeModal }) => {
         </ModalTitleWrapper>
         <ModalGridWrapper>
           <input name="logo" placeholder="LOGO" onChange={handleInputChange} />
-          <input name="imagen" placeholder="IMAGEN" onChange={handleInputChange} />
           <input name="nombre" placeholder="NOMBRE" onChange={handleInputChange} />
           <input name="descripcion" placeholder="DESCRIPCION" onChange={handleInputChange} />
-          <input name="extras" placeholder="EXTRAS" onChange={handleInputChange} />
           <input name="direccion" placeholder="DIRECCION" onChange={handleInputChange} />
           <input name="barrio" placeholder="BARRIO" onChange={handleInputChange} />
           <select name="categoria" onChange={handleInputChange} >

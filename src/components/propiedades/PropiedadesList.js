@@ -52,7 +52,7 @@ const PortadaTitle = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   text-transform: uppercase;
   position: absolute;
-  bottom: 0px;
+  bottom: 9px;
   p {
     margin: 10px;
   }
