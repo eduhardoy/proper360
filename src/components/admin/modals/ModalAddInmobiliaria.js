@@ -135,7 +135,7 @@ const ModalAddInmobiliaria = ({ closeModal }) => {
   const [datos, setDatos] = React.useState({
     logo: "",
     nombre: "",
-    descpricion: "",
+    descripcion: "",
     telefono: "",
     direccion: "",
     email: "",
@@ -153,6 +153,7 @@ const ModalAddInmobiliaria = ({ closeModal }) => {
   const handleModal = () => {
     console.log(datos);
     dispatch(actionsInmobiliarias.postInmobiliarias(datos));
+    closeModal()
   };
 
   return (
@@ -195,7 +196,7 @@ const ModalAddInmobiliaria = ({ closeModal }) => {
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
-          <ButtonGreen onClick={(handleModal, closeModal)}>AGREGAR</ButtonGreen>
+          <ButtonGreen onClick={handleModal}>AGREGAR</ButtonGreen>
         </ModalButtonWrapper>
       </ModalWrapper>
     </ModalBackground>
