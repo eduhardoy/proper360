@@ -6,9 +6,9 @@ const api = axios.create({ baseURL: "http://198.58.123.120:3006/" });
 const GET_INMOBILIARIAS = "GET_INMOBILIARIAS";
 const GET_INMOBILIARIAS_SUCCESS = "GET_INMOBILIARIAS_SUCCESS";
 const GET_INMOBILIARIAS_FAILURE = "GET_INMOBILIARIAS_FAILURE";
-const GET_INMOBILIARIA = "GET_INMOBILIARIAS";
-const GET_INMOBILIARIA_SUCCESS = "GET_INMOBILIARIAS_SUCCESS";
-const GET_INMOBILIARIA_FAILURE = "GET_INMOBILIARIAS_FAILURE";
+const GET_INMOBILIARIA = "GET_INMOBILIARIA";
+const GET_INMOBILIARIA_SUCCESS = "GET_INMOBILIARIA_SUCCESS";
+const GET_INMOBILIARIA_FAILURE = "GET_INMOBILIARIA_FAILURE";
 const POST_INMOBILIARIAS = "POST_INMOBILIARIAS";
 const POST_INMOBILIARIAS_SUCCESS = "POST_INMOBILIARIAS_SUCCESS";
 const POST_INMOBILIARIAS_FAILURE = "POST_INMOBILIARIAS_FAILURE";
@@ -36,18 +36,20 @@ const getInmobiliariaWithPropiedades = inmobiliariaId => {
   return dispatch => {
     //nameless functions
     // Initial action dispatched
-    dispatch({ type: GET_INMOBILIARIAS });
+    dispatch({ type: GET_INMOBILIARIA });
     // Return promise with success and failure actions
     return api
       .get("inmobiliarias/" + inmobiliariaId)
-      .then(inmobiliaraias =>
+      .then(inmobiliaraias => {
+        console.log(inmobiliaraias)
         dispatch({
-          type: GET_INMOBILIARIAS_SUCCESS,
+          type: GET_INMOBILIARIA_SUCCESS,
           payload: inmobiliaraias.data.body,
         })
+      }
       )
       .catch(err =>
-        dispatch({ type: GET_INMOBILIARIAS_FAILURE, payload: err.message })
+        dispatch({ type: GET_INMOBILIARIA_FAILURE, payload: err.message })
       );
   };
 };
@@ -94,13 +96,13 @@ const postInmobiliarias = inmobiliaria => {
 
 const putInmobiliarias = (inmobiliaria) => {
   return (dispatch) => {
-      //nameless functions
-      // Initial action dispatched
-      dispatch({ type: PUT_INMOBILIARIAS });
-      // Return promise with success and failure actions
-      return api.post("inmobiliarias", inmobiliaria)
-          .then(inmobiliaria => dispatch({ type: PUT_INMOBILIARIAS_SUCCESS, payload: inmobiliaria.data.body }))
-          .catch(err => dispatch({ type: PUT_INMOBILIARIAS_FAILURE, payload: err.message }))
+    //nameless functions
+    // Initial action dispatched
+    dispatch({ type: PUT_INMOBILIARIAS });
+    // Return promise with success and failure actions
+    return api.post("inmobiliarias", inmobiliaria)
+      .then(inmobiliaria => dispatch({ type: PUT_INMOBILIARIAS_SUCCESS, payload: inmobiliaria.data.body }))
+      .catch(err => dispatch({ type: PUT_INMOBILIARIAS_FAILURE, payload: err.message }))
   }
 };
 
