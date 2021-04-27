@@ -24,7 +24,7 @@ const Projects = ({ projectId }) => {
   return (
     <div>
       <HomeHeader />
-      {propiedad && (
+      {propiedad != null && (
         <>
           <ProjectWrapper project={propiedad}></ProjectWrapper>
           <ContactForm project={propiedad} />
