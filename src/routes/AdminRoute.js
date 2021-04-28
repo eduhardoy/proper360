@@ -23,7 +23,6 @@ const PrivateRoute = ({ as: Comp, ...props }) => {
   React.useEffect(async () => {
     const token = localStorage.getItem("token")
     const tokenValidated = await (await axios.post("http://198.58.123.120:3006/auth/validate", { token })).data
-    console.log("TOKEN", tokenValidated)
     if (tokenValidated == false) navigate("/admin")
   }, [])
 

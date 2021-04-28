@@ -69,29 +69,29 @@ const getPropiedades = () => {
 
 const postPropiedad = (propiedad) => {
   return (dispatch) => {
-      //nameless functions
-      // Initial action dispatched
-      dispatch({ type: POST_PROPIEDADES });
-      // Return promise with success and failure actions
-      return api.post("propiedades", propiedad)
-          .then(propiedad => dispatch({ type: POST_PROPIEDADES_SUCCESS, payload: propiedad.data.body }))
-          .catch(err => dispatch({ type: POST_PROPIEDADES_FAILURE, payload: err.message }))
+    //nameless functions
+    // Initial action dispatched
+    dispatch({ type: POST_PROPIEDADES });
+    // Return promise with success and failure actions
+    return api.post("propiedades", propiedad, { headers: { token: localStorage.getItem("token") } })
+      .then(propiedad => dispatch({ type: POST_PROPIEDADES_SUCCESS, payload: propiedad.data.body }))
+      .catch(err => dispatch({ type: POST_PROPIEDADES_FAILURE, payload: err.message }))
   }
 };
 
 const putPropiedad = (propiedad) => {
   return (dispatch) => {
-      //nameless functions
-      // Initial action dispatched
-      dispatch({ type: PUT_PROPIEDADES });
-      // Return promise with success and failure actions
-      return api.post("propiedades", propiedad)
-          .then(propiedad => dispatch({ type: PUT_PROPIEDADES_SUCCESS, payload: propiedad.data.body }))
-          .catch(err => dispatch({ type: PUT_PROPIEDADES_FAILURE, payload: err.message }))
+    //nameless functions
+    // Initial action dispatched
+    dispatch({ type: PUT_PROPIEDADES });
+    // Return promise with success and failure actions
+    return api.post("propiedades", propiedad, { headers: { token: localStorage.getItem("token") } })
+      .then(propiedad => dispatch({ type: PUT_PROPIEDADES_SUCCESS, payload: propiedad.data.body }))
+      .catch(err => dispatch({ type: PUT_PROPIEDADES_FAILURE, payload: err.message }))
   }
 };
 
 
-const actionsPropiedades = { getPropiedades, getPropiedadesByInmobiliarias, getPropiedad, postPropiedad , putPropiedad};
+const actionsPropiedades = { getPropiedades, getPropiedadesByInmobiliarias, getPropiedad, postPropiedad, putPropiedad };
 
 export { typesPropiedades, actionsPropiedades };
