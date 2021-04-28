@@ -42,7 +42,7 @@ function ContactForm() {
       "https://wa.me/543794275060?text=" +
       "Hola, mi nombre es " +
       whatsAppMsgName +
-      ". Me gustaria tener mas informacion sobre la propiedad " +
+      ". Me gustaria agendar una visita a la propiedad " +
       whatsAppMsgText +
       ". Mi email es " +
       whatsAppMsgEmail +
@@ -52,7 +52,7 @@ function ContactForm() {
 
   return (
     <Form>
-      <h2>CONTACTO</h2>
+      <h2>AGENDAR UNA VISITA</h2>
       <input
         value={whatsAppMsgName}
         onChange={e => setWhatsAppMsgName(e.target.value)}
