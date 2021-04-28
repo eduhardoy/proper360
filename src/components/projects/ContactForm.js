@@ -27,10 +27,10 @@ const Form = styled.form`
   }
 `;
 
-function ContactForm() {
+function ContactForm({ project }) {
   const [whatsAppMsgName, setWhatsAppMsgName] = useState();
   const [whatsAppMsgEmail, setWhatsAppMsgEmail] = useState();
-  const [whatsAppMsgText, setWhatsAppMsgText] = useState();
+  const [whatsAppMsgText, setWhatsAppMsgText] = useState(project.nombre);
 
   function openInNewTab(url) {
     var win = window.open(url, "_blank");
@@ -64,12 +64,6 @@ function ContactForm() {
         onChange={e => setWhatsAppMsgEmail(e.target.value)}
         placeholder={"Email"}
         type='email'
-      />
-      <input
-        value={whatsAppMsgText}
-        onChange={e => setWhatsAppMsgText(e.target.value)}
-        placeholder={"Propiedad"}
-        type='text'
       />
       <button type='submit' id='BotonEnviar' onClick={initiateWhatsAppSMS}>
         ENVIAR

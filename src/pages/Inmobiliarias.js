@@ -11,6 +11,7 @@ import Whatsapp from "../components/Whatsapp";
 import HomeHeader from "../components/home/HomeHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { actionsInmobiliarias } from "../store/actions/inmobiliarias";
+import ListIcon from "@material-ui/icons/List";
 
 const Body = styled.div`
   width: 100%;
@@ -45,12 +46,16 @@ const ButtonOpenFilter = styled.button`
     outline: none;
     border: none;
     color: white;
-    padding: 2px 15px;
-    background-color: #44494a;
+    background-color: black;
     border-radius: 5px;
-    top: 90px;
-    right: 40px;
+    top: 100px;
+    right: 20px;
     height: 40px;
+    width: 40px;
+    cursor: pointer;
+    svg {
+      width: 40px;
+    }
   }
 `;
 
@@ -69,7 +74,6 @@ const ButtonCloseFilter = styled.button`
   font-size: 40px;
   width: 40px;
   height: 40px;
-  top: 0;
 `;
 
 const FilterMenu = styled.div`
@@ -107,8 +111,7 @@ function Inmobiliarias({ inmobiliaria }) {
     logoInmobiliaria: inmobiliariaData.logo,
     keyInmobiliaria: inmobiliariaData._key,
   };
-  let propiedades = inmobiliariaData.propiedades
-
+  let propiedades = inmobiliariaData.propiedades;
 
   const ActiveFilterMenu = () => setFiltro(true);
   const DisableFilterMenu = () => setFiltro(false);
@@ -133,7 +136,7 @@ function Inmobiliarias({ inmobiliaria }) {
         </LeftSideBarContainer>
         <InmobiliariaContainer>
           <ButtonOpenFilter onClick={ActiveFilterMenu}>
-            FILTROS
+            <ListIcon />
           </ButtonOpenFilter>
           <InmobiliariaHeader {...headerData} />
           <InmobiliariaData inmobiliaria={inmobiliariaData} />
