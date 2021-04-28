@@ -26,6 +26,7 @@ const WhatsappButton = styled.a`
     width: 40px;
     height: 40px;
     bottom: 40px;
+    z-index: 999999;
   }
   svg {
     font-size: 40px;

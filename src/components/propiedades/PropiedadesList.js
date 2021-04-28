@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "@reach/router";
+import PropiedadesFiltro from "./PropiedadesFiltro";
 
 const ListContainer = styled.div`
   width: 95%;
@@ -42,6 +43,11 @@ const Portada = styled.img`
   filter: grayscale(80%);
 `;
 
+const FiltroWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const PortadaTitle = styled.div`
   width: calc(100% - 10px);
   font-size: 22px;
@@ -61,6 +67,9 @@ const PortadaTitle = styled.div`
 function PropiedadesList({ propiedades }) {
   return (
     <React.Fragment>
+      <FiltroWrapper>
+        <PropiedadesFiltro />
+      </FiltroWrapper>
       <ListContainer>
         {propiedades.map(data => (
           <PortadaContainer>
