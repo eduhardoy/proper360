@@ -64,10 +64,9 @@ const LoginForm = () => {
     setError(null)
     let form = new FormData(e.target)
     //TODO LOGICA DE LOGIN
-    //http://198.58.123.120:3006/auth/login
     axios({
       method: "POST",
-      url: "http://localhost:3006/auth/login",
+      url: "http://198.58.123.120:3006/auth/login",
       data: { usuario: form.get("usuario"), contrasena: form.get("contrasena") }
     })
       .then(success => localStorage.setItem("token", success.data.access_token))
