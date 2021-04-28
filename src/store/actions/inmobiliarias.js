@@ -81,7 +81,7 @@ const postInmobiliarias = inmobiliaria => {
     dispatch({ type: POST_INMOBILIARIAS });
     // Return promise with success and failure actions
     return api
-      .post("inmobiliarias", inmobiliaria)
+      .post("inmobiliarias", inmobiliaria, { headers: { token: localStorage.getItem("token") } })
       .then(inmobiliaria =>
         dispatch({
           type: POST_INMOBILIARIAS_SUCCESS,
@@ -100,7 +100,7 @@ const putInmobiliarias = (inmobiliaria) => {
     // Initial action dispatched
     dispatch({ type: PUT_INMOBILIARIAS });
     // Return promise with success and failure actions
-    return api.post("inmobiliarias", inmobiliaria)
+    return api.post("inmobiliarias", inmobiliaria, { headers: { token: localStorage.getItem("token") } })
       .then(inmobiliaria => dispatch({ type: PUT_INMOBILIARIAS_SUCCESS, payload: inmobiliaria.data.body }))
       .catch(err => dispatch({ type: PUT_INMOBILIARIAS_FAILURE, payload: err.message }))
   }

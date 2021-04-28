@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "@reach/router";
+import axios from "axios";
 
 const StyledForm = styled.form`
   display: flex;
@@ -56,24 +57,35 @@ const StyledForm = styled.form`
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const [error, setError] = React.useState(null)
 
   const navigateToEmpresa = e => {
     e.preventDefault();
-
+    setError(null)
+    let form = new FormData(e.target)
     //TODO LOGICA DE LOGIN
-    localStorage.setItem("user", "user");
+    axios({
+      method: "POST",
+      url: "http://198.58.123.120:3006/auth/login",
+      data: { usuario: form.get("usuario"), contrasena: form.get("contrasena") }
+    })
+      .then(success => localStorage.setItem("token", success.data.access_token))
+      .catch(err => setError("error"))
 
-    navigate("/admin/inmobiliarias");
+    setTimeout(() => {
+      navigate("/admin/inmobiliarias");
+    }, 500);
   };
 
   return (
     <StyledForm action='inicio' onSubmit={e => navigateToEmpresa(e)}>
       <div>
-        <input placeholder='Usuario'></input>
+        <input name="usuario" placeholder='Usuario'></input>
       </div>
       <div>
-        <input type='password' placeholder='Contraseña'></input>
+        <input name="contrasena" type='password' placeholder='Contraseña'></input>
       </div>
+      {error != null && <p>Usuario y/o contraseña invalidas...</p>}
       <button>LOGIN</button>
     </StyledForm>
   );
