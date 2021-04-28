@@ -112,6 +112,7 @@ const FooterCredits = styled.div`
   a {
     color: white;
     text-decoration: none;
+    font-size: 10px;
     img {
       padding: 10px;
       height: 30px;
@@ -164,7 +165,7 @@ function Footer() {
       </AboutSection>
       <FooterCredits>
         <a href=''>
-          <img src='./images/inibot.png' alt='' />
+        © 2021 - INIBOT
         </a>
       </FooterCredits>
     </FooterContainer>
