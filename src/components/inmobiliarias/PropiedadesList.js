@@ -51,6 +51,12 @@ const FiltroWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  div{
+    width: 150px;
+    @media (max-width: 350px) {
+    width: 120px;
+  }
+  }
 `;
 
 const PortadaTitle = styled.div`
@@ -118,7 +124,7 @@ function PropiedadesList({ propiedades }) {
           className={classes.selectEmpty}
         >
           <MenuItem value=''>
-            <em>None</em>
+            <em>SELECCIONAR</em>
           </MenuItem>
           <MenuItem value={10}>ALQUILER</MenuItem>
           <MenuItem value={20}>VENTA</MenuItem>
@@ -137,7 +143,7 @@ function PropiedadesList({ propiedades }) {
           className={classes.selectEmpty}
         >
           <MenuItem value=''>
-            <em>None</em>
+            <em>SELECCIONAR</em>
           </MenuItem>
           <MenuItem value={10}>CASA</MenuItem>
           <MenuItem value={20}>DEPARTAMENTO</MenuItem>
@@ -157,7 +163,7 @@ function PropiedadesList({ propiedades }) {
           className={classes.selectEmpty}
         >
           <MenuItem value=''>
-            <em>None</em>
+            <em>SELECCIONAR</em>
           </MenuItem>
           <MenuItem value={10}>1</MenuItem>
           <MenuItem value={20}>2</MenuItem>
@@ -178,7 +184,7 @@ function PropiedadesList({ propiedades }) {
           className={classes.selectEmpty}
         >
           <MenuItem value=''>
-            <em>None</em>
+            <em>SELECCIONAR</em>
           </MenuItem>
           <MenuItem value={10}>1</MenuItem>
           <MenuItem value={20}>2</MenuItem>

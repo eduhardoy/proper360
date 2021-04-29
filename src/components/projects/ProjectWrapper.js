@@ -23,7 +23,7 @@ const IframeContainer = styled.div`
   justify-content: center;
   @media (max-width: 1024px) {
     width: 100%;
-    height: 80vh;
+    height: 70vh;
       }
   div {
     display: flex;
