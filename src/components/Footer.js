@@ -19,9 +19,7 @@ const FooterContainer = styled.footer`
   color: white;
   font-family: "Lato", "Open Sans", sans-serif;
   padding-top: 20px;
-  position: relative;
-  bottom: 0;
-  z-index: 99999;
+  margin-top: 80px;
   @media (max-width: 600px) {
     flex-direction: column;
   }

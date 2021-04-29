@@ -6,7 +6,7 @@ const InmobiliariaData = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 75%;
+  width: 60%;
   margin: auto;
   margin-bottom: 50px;
   text-align: center;

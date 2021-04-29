@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 import CloseIcon from "@material-ui/icons/Close";
-import ListIcon from "@material-ui/icons/List";
+import MenuIcon from '@material-ui/icons/Menu';
 
 const StyledHomeHeader = styled.header`
   display: flex;
@@ -36,7 +36,7 @@ const HeaderImageContainer = styled.div`
     img {
       height: 80%;
       @media (max-width: 1024px) {
-        height: 60%;
+        height: 70%;
       }
     }
   }
@@ -119,6 +119,9 @@ const ButtonCloseMenu = styled.button`
   font-size: 40px;
   width: 40px;
   height: 40px;
+  svg {
+      width: 40px;
+    }
 `;
 
 const MenuNav = styled.div`
@@ -127,9 +130,30 @@ const MenuNav = styled.div`
   top: 0;
   height: 100vh;
   width: 100vw;
-  background-color: #44494a;
+  background-color: black;
   filter: opacity(0.8);
   display: none;
+  nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li{
+        text-align: center;
+        padding: 20px;
+        a{
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        }
+      }
+    }
+  }
 `;
 
 const HomeHeader = () => {
@@ -141,7 +165,7 @@ const HomeHeader = () => {
   return (
     <StyledHomeHeader>
       <ButtonOpenMenu onClick={ActiveFilterMenu}>
-        <ListIcon />
+        <MenuIcon />
       </ButtonOpenMenu>
       <HeaderImageContainer>
         <Link to='/'>
@@ -176,13 +200,13 @@ const HomeHeader = () => {
         <nav>
           <ul>
             <li>
-              <a href='/#inmobiliarias'>INMOBILIARIAS</a>
+              <a onClick={DisableFilterMenu} href='/#inmobiliarias'>INMOBILIARIAS</a>
             </li>
             <li>
-              <a href='/#about'>NOSOTROS</a>
+              <a onClick={DisableFilterMenu} href='/#about'>NOSOTROS</a>
             </li>
             <li>
-              <a href='/#contact'>CONTACTO</a>
+              <a onClick={DisableFilterMenu} href='/#contact'>CONTACTO</a>
             </li>
           </ul>
         </nav>

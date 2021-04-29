@@ -2,15 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const HomeSectionAbout = styled.section`
-  margin-top: 100px;
-  margin-bottom: 100px;
+  padding-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (max-width: 600px) {
-    margin-top: 20px;
-    margin-bottom: 40px;
-  }
   h3 {
     width: 60%;
     font-size: 25px;
