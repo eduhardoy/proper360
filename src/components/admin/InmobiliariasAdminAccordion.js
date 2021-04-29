@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import ModalEditInmobiliaria from "./modals/ModalEditInmobiliaria";
 import ModalDeleteInmobiliaria from "./modals/ModalDeleteInmobiliaria";
-import { actionsInmobiliarias, typesInmobiliarias } from "../../store/actions/inmobiliarias";
+import { actionsInmobiliarias } from "../../store/actions/inmobiliarias";
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -60,7 +60,7 @@ const ButtonAccordion = styled.button`
 
 export default function InmobiliariasAdminAccordion() {
   const dispatch = useDispatch();
-  const [data, setData] = React.useState({});
+  
   const [editModalInmobiliaria, setEditModalInmobiliaria] = React.useState(false);
   const [deleteModalInmobiliaria, setDeleteModalInmobiliaria] = React.useState(false);
 
@@ -82,7 +82,7 @@ export default function InmobiliariasAdminAccordion() {
   return (
     <AccordionWrapper>
       {inmobiliarias.result.map(data => (
-        <Accordion>
+        <Accordion key={data._key}>
           <StyledAccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls='panel1a-content'
@@ -107,27 +107,20 @@ export default function InmobiliariasAdminAccordion() {
             </ButtonWrapper>
           </StyledAccordionSummary>
           <AccordionDetails>
-            <ListDetails>
-<<<<<<< HEAD
-              <img src={data.logo} />
-=======
->>>>>>> fc70a2320649553fbfbdaaeed417ad29e75d74a7
+            <ListDetails >
               <p>Descripcion: {data.descripcion}</p>
               <p>Telefono: {data.telefono}</p>
               <p>Email: {data.email}</p>
               <p>Direccion: {data.direccion}</p>
-<<<<<<< HEAD
-=======
-              <img src={data.logo}/>              
->>>>>>> fc70a2320649553fbfbdaaeed417ad29e75d74a7
+              <img alt="Logo de la propiedad" src={data.logo}/>
             </ListDetails>
           </AccordionDetails>
         </Accordion>
       ))}
-            <div style={editModalInmobiliaria == true ? { display: "flex" } : { display: "none" }}>
+            <div style={editModalInmobiliaria === true ? { display: "flex" } : { display: "none" }}>
         <ModalEditInmobiliaria closeModal={CloseEditModalInmobiliaria}/>
       </div>
-      <div style={deleteModalInmobiliaria == true ? { display: "flex" } : { display: "none" }}>
+      <div style={deleteModalInmobiliaria === true ? { display: "flex" } : { display: "none" }}>
         <ModalDeleteInmobiliaria closeModal={CloseDeleteModalInmobiliaria}/>
       </div>
     </AccordionWrapper>

@@ -1,4 +1,4 @@
-import { actionsClientes, typesClientes } from "../actions/clientes";
+import { typesClientes } from "../actions/clientes";
 
 const initialState = {
     loading: false,

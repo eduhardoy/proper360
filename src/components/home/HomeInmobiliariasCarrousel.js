@@ -120,7 +120,7 @@ function HomeInmobiliariasCarrousel() {
       <CarouselContainer>
         <Carousel breakPoints={breakPoints}>
           {resultNew.map(inmo => (
-            <InmobiliariaLogo>
+            <InmobiliariaLogo key={inmo._key}>
               <Link to={`/inmobiliaria/${inmo._key}`}>
                 <img src={`${inmo.logo}`} alt='Logo Inmobiliaria' />
               </Link>

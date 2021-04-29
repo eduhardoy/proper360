@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import Accordion from "@material-ui/core/Accordion";
 import { AccordionSummary } from "@material-ui/core";
@@ -61,7 +61,7 @@ const ButtonAccordion = styled.button`
 
 export default function PropiedadesAdminAccordion() {
   const dispatch = useDispatch();
-  const [data, setData] = React.useState({});
+  
   const [editModalPropiedad, setEditModalPropiedad] = React.useState(false);
   const [deleteModalPropiedad, setDeleteModalPropiedad] = React.useState(false);
 
@@ -73,7 +73,7 @@ export default function PropiedadesAdminAccordion() {
 
   const propiedades = useSelector(state => state.propiedades);
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function fetchPropiedades() {
       dispatch(actionsPropiedades.getPropiedades());
     }
@@ -83,7 +83,7 @@ export default function PropiedadesAdminAccordion() {
   return (
     <AccordionWrapper>
       {propiedades.result.map(data => (
-        <Accordion>
+        <Accordion key={data._key}>
           <StyledAccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls='panel1a-content'
@@ -121,10 +121,10 @@ export default function PropiedadesAdminAccordion() {
           </AccordionDetails>
         </Accordion>
       ))}
-      <div style={editModalPropiedad == true ? { display: "flex" } : { display: "none" }}>
+      <div style={editModalPropiedad === true ? { display: "flex" } : { display: "none" }}>
         <ModalEditPropiedad closeModal={CloseEditModalPropiedad}/>
       </div>
-      <div style={deleteModalPropiedad == true ? { display: "flex" } : { display: "none" }}>
+      <div style={deleteModalPropiedad === true ? { display: "flex" } : { display: "none" }}>
         <ModalDeletePropiedad closeModal={CloseDeleteModalPropiedad}/>
       </div>
     </AccordionWrapper>

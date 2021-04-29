@@ -99,7 +99,7 @@ QontoStepIcon.propTypes = {
   completed: PropTypes.bool,
 };
 
-const ColorlibConnector = withStyles({
+/* const ColorlibConnector = withStyles({
   alternativeLabel: {
     top: 22,
   },
@@ -121,7 +121,7 @@ const ColorlibConnector = withStyles({
     backgroundColor: "#red",
     borderRadius: 1,
   },
-})(StepConnector);
+})(StepConnector); */
 
 const useColorlibStepIconStyles = makeStyles({
   root: {
@@ -210,7 +210,7 @@ export default function CustomizedSteppers() {
   const [activeStep, setActiveStep] = React.useState(1);
   const steps = getSteps();
 
-  const handleNext = () => {
+/*   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
 
@@ -220,7 +220,7 @@ export default function CustomizedSteppers() {
 
   const handleReset = () => {
     setActiveStep(0);
-  };
+  }; */
 
   return (
     <StepperWrapper>

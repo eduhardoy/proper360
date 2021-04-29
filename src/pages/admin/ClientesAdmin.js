@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import AddIcon from "@material-ui/icons/Add";
 
 import AdminLayout from "../../components/admin/AdminLayout";
 import ClientesAdminAccordion from "../../components/admin/ClientesAdminAccordion";

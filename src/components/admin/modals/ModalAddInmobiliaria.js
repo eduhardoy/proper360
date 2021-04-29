@@ -1,11 +1,8 @@
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  actionsInmobiliarias,
-  typesInmobiliarias,
-} from "../../../store/actions/inmobiliarias";
+import { useDispatch } from "react-redux";
+import { actionsInmobiliarias} from "../../../store/actions/inmobiliarias";
 
 export const ModalBackground = styled.div`
   position: absolute;
@@ -130,7 +127,7 @@ export const ButtonRed = styled.button`
 
 const ModalAddInmobiliaria = ({ closeModal }) => {
   const dispatch = useDispatch();
-  const modalState = useSelector(state => state.inmobiliarias.result[0]);
+  /* const modalState = useSelector(state => state.inmobiliarias.result[0]); */
 
   const [datos, setDatos] = React.useState({
     logo: "",
@@ -155,11 +152,7 @@ const ModalAddInmobiliaria = ({ closeModal }) => {
     console.log(datos);
     dispatch(actionsInmobiliarias.postInmobiliarias(datos));
     closeModal()
-<<<<<<< HEAD
-  }
-=======
   };
->>>>>>> fc70a2320649553fbfbdaaeed417ad29e75d74a7
 
   return (
     <ModalBackground>
@@ -201,14 +194,7 @@ const ModalAddInmobiliaria = ({ closeModal }) => {
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
-<<<<<<< HEAD
-          <ButtonGreen onClick={handleModal}
-          >
-            AGREGAR
-          </ButtonGreen>
-=======
           <ButtonGreen onClick={handleModal}>AGREGAR</ButtonGreen>
->>>>>>> fc70a2320649553fbfbdaaeed417ad29e75d74a7
         </ModalButtonWrapper>
       </ModalWrapper>
     </ModalBackground>

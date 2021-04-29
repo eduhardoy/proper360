@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import SendIcon from "@material-ui/icons/Send";
-import { useDispatch, useSelector } from "react-redux";
-import { actionsClientes, typesClientes } from "../../store/actions/clientes";
-import { ContactSupportOutlined } from "@material-ui/icons";
+import { useDispatch } from "react-redux";
+import { actionsClientes } from "../../store/actions/clientes";
 
 import Alert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
-import Slide from "@material-ui/core/Slide";
 
 const FormContainer = styled.div`
   height: 100%;
@@ -104,14 +102,9 @@ const FormContainer = styled.div`
   }
 `;
 
-//Snackbar slide animation
-function SlideTransition(props) {
-  return <Slide {...props} direction='up' />;
-}
-
 const SubscribeForm = () => {
   const dispatch = useDispatch();
-  const formState = useSelector(state => state.clientes.result[0]);
+  //const formState = useSelector(state => state.clientes.result[0]);
 
   const [datos, setDatos] = React.useState({
     email: "",
@@ -134,8 +127,8 @@ const SubscribeForm = () => {
 
   const [state, setState] = React.useState({
     open: false,
-    vertical: "",
-    horizontal: "",
+    vertical: "bottom",
+    horizontal: "center",
   });
 
   const { vertical, horizontal, open } = state;

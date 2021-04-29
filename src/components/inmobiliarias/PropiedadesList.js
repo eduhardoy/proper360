@@ -195,7 +195,7 @@ function PropiedadesList({ propiedades }) {
       </FiltroWrapper>
       <ListContainer>
         {propiedades.map(data => (
-          <PortadaContainer>
+          <PortadaContainer key={data._key}>
             <Link to={`/project/${data._key}`}>
               <Portada src={data.logo} alt='' />
               <PortadaTitle>
