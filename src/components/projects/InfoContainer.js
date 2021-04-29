@@ -22,6 +22,9 @@ const StyledInfoContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  @media (max-width: 1024px) {
+    width: 90%;
+      }
 `;
 
 const StyledInfoBackground = styled.div`
@@ -38,6 +41,8 @@ const StyledInfoBackground = styled.div`
 const ProjectDetails = styled.div`
   width: 95%;
   height: auto;
+  display: flex;
+  justify-content: center;
   ul {
     font-size: 20px;
     display: flex;
@@ -46,6 +51,12 @@ const ProjectDetails = styled.div`
     justify-content: flex-start;
     text-decoration: none;
     list-style-type: none;
+    padding: 20px;
+    @media (max-width: 1300px) {
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+    }
     li {
       padding: 5px;
       font-weight: 300;
@@ -63,6 +74,9 @@ const StyledProjectsTitle = styled.div`
   h2 {
     font-size: 28px;
     margin: 0;
+    @media (max-width: 1300px) {
+      font-size: 22px;
+    }
   }
 `;
 
@@ -82,7 +96,7 @@ const InfoContainer = ({ project }) => {
         </StyledProjectsTitle>
         <ProjectDetails>
           <ul>
-            <li>Barrio/Zona: {project.barrio}</li>
+            <li>Barrio/zona: {project.barrio}</li>
             <li>Ambientes: {project.ambientes}</li>
             <li>Baños: {project.banos}</li>
             <li>Habitaciones: {project.habitaciones}</li>

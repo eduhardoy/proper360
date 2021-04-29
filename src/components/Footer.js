@@ -20,6 +20,9 @@ const FooterContainer = styled.footer`
   font-family: "Lato", "Open Sans", sans-serif;
   padding-top: 20px;
   margin-top: 80px;
+  @media (max-width: 750px) {
+    margin-top: 40px;
+    }
   @media (max-width: 600px) {
     flex-direction: column;
   }
