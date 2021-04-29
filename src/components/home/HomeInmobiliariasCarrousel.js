@@ -17,9 +17,10 @@ const CarouselSection = styled.section`
   h1 {
     width: 80%;
     text-align: center;
-    padding: 10px;
+    padding: 50px;
     @media (max-width: 750px) {
       font-size: 20px;
+      padding: 10px;
     }
   }
 `;

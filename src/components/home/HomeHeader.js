@@ -190,10 +190,10 @@ const HomeHeader = () => {
           </ul>
         </nav>
       </HeaderMenuContainer>
-      <MenuNav style={menu == true ? { display: "flex" } : { display: "none" }}>
+      <MenuNav style={menu === true ? { display: "flex" } : { display: "none" }}>
         <ButtonCloseMenu
           onClick={DisableFilterMenu}
-          style={menu == true ? { display: "flex" } : { display: "none" }}
+          style={menu === true ? { display: "flex" } : { display: "none" }}
         >
           <CloseIcon />
         </ButtonCloseMenu>

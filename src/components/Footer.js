@@ -150,19 +150,19 @@ function Footer() {
           </p>
         </About>
         <Social>
-          <a href='https://www.facebook.com/'>
+          <a target="_blank" href='https://www.facebook.com/'>
             <FaFacebookF />
           </a>
-          <a href='https://www.instagram.com/'>
+          <a target="_blank" href='https://www.instagram.com/'>
             <FaInstagram />
           </a>
-          <a href='https://www.linkedin.com'>
+          <a target="_blank" href='https://www.linkedin.com'>
             <FaLinkedin />
           </a>
         </Social>
       </AboutSection>
       <FooterCredits>
-        <a href=''>
+        <a target="_blank" href='https://www.inibot.net'>
         © 2021 - INIBOT
         </a>
       </FooterCredits>

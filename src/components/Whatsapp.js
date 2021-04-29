@@ -38,7 +38,7 @@ const WhatsappButton = styled.a`
 
 const Whatsapp = () => {
   return (
-    <WhatsappButton href='https://api.whatsapp.com/send?phone=543794290578&text=Hola,%20necesitaria%20una%20cotizaci%C3%B3n'>
+    <WhatsappButton target="_blank" href='https://api.whatsapp.com/send?phone=543794290578&text=Hola,%20necesitaria%20agendar%20una%20visita'>
       <WhatsAppIcon></WhatsAppIcon>
     </WhatsappButton>
   );
