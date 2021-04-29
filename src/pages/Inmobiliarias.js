@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 import Footer from "../components/Footer";
 import InmobiliariaData from "../components/inmobiliarias/InmobiliariaData";
-import PropiedadesList from "../components/propiedades/PropiedadesList";
+import PropiedadesList from "../components/inmobiliarias/PropiedadesList";
 import InmobiliariaHeader from "../components/inmobiliarias/InmobiliariaHeader";
 import Whatsapp from "../components/Whatsapp";
-import HomeHeader from "../components/home/HomeHeader";
+import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { actionsInmobiliarias } from "../store/actions/inmobiliarias";
 
@@ -50,7 +50,7 @@ function Inmobiliarias({ inmobiliaria }) {
 
   return (
     <React.Fragment>
-      <HomeHeader />
+      <Header />
       <Body>
         <InmobiliariaContainer>
           <InmobiliariaHeader {...headerData} />

@@ -1,6 +1,6 @@
 import React from "react";
 
-import HomeHeader from "../components/home/HomeHeader";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Whatsapp from "../components/Whatsapp";
 import HomeHero from "../components/home/HomeHero";
@@ -15,7 +15,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <HomeHeader />
+      <Header />
       <Whatsapp />
       <HomeHero />
       <HomeStepper />

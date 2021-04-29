@@ -156,7 +156,7 @@ const MenuNav = styled.div`
   }
 `;
 
-const HomeHeader = () => {
+const Header = () => {
   const [menu, setMenu] = React.useState(false);
 
   const ActiveFilterMenu = () => setMenu(true);
@@ -215,4 +215,4 @@ const HomeHeader = () => {
   );
 };
 
-export default HomeHeader;
+export default Header;
