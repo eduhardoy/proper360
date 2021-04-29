@@ -139,10 +139,8 @@ const ModalAddPropiedad = ({ closeModal }) => {
 
   const [datos, setDatos] = React.useState({
     logo: '',
-    imagen: '',
     nombre: '',
-    descpricion: '',
-    extras: '',
+    descripcion: '',
     direccion: '',
     barrio: '',
     categoria: '',
@@ -174,7 +172,7 @@ const ModalAddPropiedad = ({ closeModal }) => {
   const handleModal = () => {
 
     console.log(datos);
-    // dispatch(actionsPropiedades.postPropiedad(datos));
+    dispatch(actionsPropiedades.postPropiedad(datos))
     closeModal()
   }
 
@@ -198,10 +196,8 @@ const ModalAddPropiedad = ({ closeModal }) => {
         </ModalTitleWrapper>
         <ModalGridWrapper>
           <input name="logo" placeholder="LOGO" onChange={handleInputChange} />
-          <input name="imagen" placeholder="IMAGEN" onChange={handleInputChange} />
           <input name="nombre" placeholder="NOMBRE" onChange={handleInputChange} />
           <input name="descripcion" placeholder="DESCRIPCION" onChange={handleInputChange} />
-          <input name="extras" placeholder="EXTRAS" onChange={handleInputChange} />
           <input name="direccion" placeholder="DIRECCION" onChange={handleInputChange} />
           <input name="barrio" placeholder="BARRIO" onChange={handleInputChange} />
           <select name="categoria" onChange={handleInputChange} >
@@ -233,10 +229,6 @@ const ModalAddPropiedad = ({ closeModal }) => {
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
           <ButtonGreen
             onClick={handleModal}
-          /* onClick={() => {
-            handleModal();
-            setEstado(false);
-          }} */
           >
             AGREGAR
           </ButtonGreen>

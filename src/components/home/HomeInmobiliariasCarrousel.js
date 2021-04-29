@@ -9,7 +9,7 @@ import {
 } from "../../store/actions/inmobiliarias";
 
 const CarouselSection = styled.section`
-  margin-top: 80px;
+  padding-top: 80px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -17,28 +17,11 @@ const CarouselSection = styled.section`
   h1 {
     width: 80%;
     text-align: center;
-    margin-bottom: 30px;
+    padding: 50px;
     @media (max-width: 750px) {
-      margin-top: 20px;
-      margin-bottom: 20px;
       font-size: 20px;
+      padding: 10px;
     }
-  }
-  @media (max-width: 750px) {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    /* .rec.rec-slider-conatiner{
-          display:flex;
-          flex-wrap:wrap; 
-      } */
-    // mostrar 4 en mobile
-    /* .rec.rec-swipable{ 
-          display:flex;
-          flex-wrap: wrap;
-          
-          max-height: 300px;
-          min-height: 300px;
-        }  */
   }
 `;
 
@@ -132,7 +115,7 @@ function HomeInmobiliariasCarrousel() {
   ];
 
   return (
-    <CarouselSection>
+    <CarouselSection id='inmobiliarias'>
       <h1>INMOBILIARIAS Y DESARROLLADORES INMOBILIARIOS</h1>
       <CarouselContainer>
         <Carousel breakPoints={breakPoints}>

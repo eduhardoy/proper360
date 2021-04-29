@@ -2,7 +2,7 @@ import React from "react";
 
 import ContactForm from "../components/projects/ContactForm";
 import Footer from "../components/Footer";
-import HomeHeader from "../components/home/HomeHeader";
+import Header from "../components/Header";
 import ProjectWrapper from "../components/projects/ProjectWrapper";
 import Whatsapp from "../components/Whatsapp";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,8 +23,8 @@ const Projects = ({ projectId }) => {
   console.log("PROROROP", propiedad);
   return (
     <div>
-      <HomeHeader />
-      {propiedad && (
+      <Header />
+      {propiedad != null && (
         <>
           <ProjectWrapper project={propiedad}></ProjectWrapper>
           <ContactForm project={propiedad} />

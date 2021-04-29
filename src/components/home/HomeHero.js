@@ -15,7 +15,7 @@ const HomeStyledHero = styled.div`
   justify-content: flex-end;
   margin-bottom: 80px;
   @media (max-width: 750px) {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 `;
 

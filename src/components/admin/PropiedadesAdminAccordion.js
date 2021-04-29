@@ -117,7 +117,6 @@ export default function PropiedadesAdminAccordion() {
               <p>Ambientes: {data.ambientes}</p>
               <p>Habitaciones: {data.habitaciones}</p>
               <p>Baños: {data.banos}</p>
-              <p>Otros: {data.extras}</p>
             </ListDetails>
           </AccordionDetails>
         </Accordion>

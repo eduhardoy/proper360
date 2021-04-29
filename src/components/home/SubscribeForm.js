@@ -128,7 +128,7 @@ const SubscribeForm = () => {
 
   const handleForm = e => {
     e.preventDefault();
-    /* console.log(datos) */
+    console.log(datos);
     dispatch(actionsClientes.postCliente(datos));
   };
 
@@ -143,7 +143,7 @@ const SubscribeForm = () => {
   const handleSnack = newState => () => {
     setState({
       open: true,
-
+      
       ...newState,
     });
   };

@@ -7,8 +7,13 @@ const ProjectStyledWrapper = styled.div`
   margin-bottom: 40px;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: calc(100vh - 70px);
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+    height: auto;
+      }
 `;
 
 const IframeContainer = styled.div`
@@ -16,6 +21,10 @@ const IframeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 70vh;
+      }
   div {
     display: flex;
     align-items: center;

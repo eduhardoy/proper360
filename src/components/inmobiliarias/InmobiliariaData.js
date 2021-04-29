@@ -6,10 +6,13 @@ const InmobiliariaData = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 50%;
+  width: 60%;
   margin: auto;
   margin-bottom: 50px;
   text-align: center;
+  @media (max-width: 750px) {
+    width: 90%;
+  }
   h2 {
     margin: 10px;
   }
@@ -17,6 +20,9 @@ const InmobiliariaData = styled.section`
     text-align: justify;
     margin: 10px;
     font-size: 20px;
+    @media (max-width: 750px) {
+      font-size: 15px;
+    }
   }
   ul {
     list-style: none;

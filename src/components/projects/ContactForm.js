@@ -16,6 +16,9 @@ const Form = styled.form`
     border: 1px solid black;
     padding: 5px;
     font-size: 15px;
+    @media (max-width: 1024px) {
+    width: 300px;
+      }
   }
   button {
     height: 40px;
@@ -27,10 +30,10 @@ const Form = styled.form`
   }
 `;
 
-function ContactForm() {
+function ContactForm({ project }) {
   const [whatsAppMsgName, setWhatsAppMsgName] = useState();
   const [whatsAppMsgEmail, setWhatsAppMsgEmail] = useState();
-  const [whatsAppMsgText, setWhatsAppMsgText] = useState();
+  const [whatsAppMsgText, setWhatsAppMsgText] = useState(project.nombre);
 
   function openInNewTab(url) {
     var win = window.open(url, "_blank");
@@ -42,7 +45,7 @@ function ContactForm() {
       "https://wa.me/543794275060?text=" +
       "Hola, mi nombre es " +
       whatsAppMsgName +
-      ". Me gustaria tener mas informacion sobre la propiedad " +
+      ". Me gustaria agendar una visita a la propiedad " +
       whatsAppMsgText +
       ". Mi email es " +
       whatsAppMsgEmail +
@@ -52,7 +55,7 @@ function ContactForm() {
 
   return (
     <Form>
-      <h2>CONTACTO</h2>
+      <h2>AGENDAR UNA VISITA</h2>
       <input
         value={whatsAppMsgName}
         onChange={e => setWhatsAppMsgName(e.target.value)}
@@ -64,12 +67,6 @@ function ContactForm() {
         onChange={e => setWhatsAppMsgEmail(e.target.value)}
         placeholder={"Email"}
         type='email'
-      />
-      <input
-        value={whatsAppMsgText}
-        onChange={e => setWhatsAppMsgText(e.target.value)}
-        placeholder={"Propiedad"}
-        type='text'
       />
       <button type='submit' id='BotonEnviar' onClick={initiateWhatsAppSMS}>
         ENVIAR

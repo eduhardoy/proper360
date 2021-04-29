@@ -19,9 +19,10 @@ const FooterContainer = styled.footer`
   color: white;
   font-family: "Lato", "Open Sans", sans-serif;
   padding-top: 20px;
-  position: relative;
-  bottom: 0;
-  z-index: 99999;
+  margin-top: 80px;
+  @media (max-width: 750px) {
+    margin-top: 40px;
+    }
   @media (max-width: 600px) {
     flex-direction: column;
   }
@@ -112,6 +113,7 @@ const FooterCredits = styled.div`
   a {
     color: white;
     text-decoration: none;
+    font-size: 10px;
     img {
       padding: 10px;
       height: 30px;
@@ -151,20 +153,20 @@ function Footer() {
           </p>
         </About>
         <Social>
-          <a href='https://www.facebook.com/'>
+          <a target="_blank" href='https://www.facebook.com/'>
             <FaFacebookF />
           </a>
-          <a href='https://www.instagram.com/'>
+          <a target="_blank" href='https://www.instagram.com/'>
             <FaInstagram />
           </a>
-          <a href='https://www.linkedin.com'>
+          <a target="_blank" href='https://www.linkedin.com'>
             <FaLinkedin />
           </a>
         </Social>
       </AboutSection>
       <FooterCredits>
-        <a href=''>
-          <img src='./images/inibot.png' alt='' />
+        <a target="_blank" href='https://www.inibot.net'>
+        © 2021 - INIBOT
         </a>
       </FooterCredits>
     </FooterContainer>
