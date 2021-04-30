@@ -85,7 +85,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function PropiedadesList({ propiedades }) {
+function PropiedadesList({ propiedades, queries }) {
   const classes = useStyles();
   const [tipo, setTipo] = React.useState("");
   const [categoria, setCategoria] = React.useState("");
@@ -117,11 +117,13 @@ function PropiedadesList({ propiedades }) {
     setQueryBanos(`&banos=${event.target.value}`)
   };
 
-  const Queries = () => {
+  const CreateQueries = () => {
     return (
       `?${queryTipo}${queryCategoria}${queryHabitaciones}${queryBanos}`
     );
   };
+
+  queries(CreateQueries);
 
   return (
     <React.Fragment>
