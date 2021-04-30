@@ -1,10 +1,7 @@
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  actionsInmobiliarias,
-  typesInmobiliarias,
-} from "../../../store/actions/inmobiliarias";
+import { useDispatch } from "react-redux";
+import { actionsInmobiliarias } from "../../../store/actions/inmobiliarias";
 
 import {
   CloseButton,
@@ -19,7 +16,7 @@ import {
 
 const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
   const dispatch = useDispatch();
-  const modalState = useSelector(state => state.inmobiliarias.result[0]);
+  /* const modalState = useSelector(state => state.inmobiliarias.result[0]); */
 
   const [datos, setDatos] = React.useState({
     logo: "",
@@ -45,14 +42,14 @@ const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
     closeModal();
   };
 
-  const inmobiliarias = useSelector(state => state.inmobiliarias);
+  /* const inmobiliarias = useSelector(state => state.inmobiliarias);
 
   React.useEffect(() => {
     async function fetchInmobiliarias() {
       dispatch(actionsInmobiliarias.getInmobiliarias());
     }
     fetchInmobiliarias();
-  }, []);
+  }, []); */
 
   return (
     <ModalBackground>
@@ -73,27 +70,32 @@ const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
           <input
             name='nombre'
             placeholder='NOMBRE'
+            /* value={data.nombre} */
             onChange={handleInputChange}
           />
           <input
             name='descripcion'
             placeholder='DESCRIPCION'
+            /* value={data.descripcion} */
             onChange={handleInputChange}
           />
           <input
             name='telefono'
             placeholder='TELEFONO'
+            /* value={data.telefono} */
             onChange={handleInputChange}
           />
           <input
             name='direccion'
             placeholder='DIRECCION'
+            /* value={data.direccion} */
             onChange={handleInputChange}
           />
           <input
             name='email'
             type='email'
             placeholder='EMAIL'
+            /* value={data.email} */
             onChange={handleInputChange}
           />
         </ModalGridWrapper>

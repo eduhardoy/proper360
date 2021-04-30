@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actionsClientes, typesClientes } from "../../store/actions/clientes";
+import { actionsClientes } from "../../store/actions/clientes";
 
 const AccordionWrapper = styled.div`
   width: 80%;
@@ -17,7 +17,7 @@ const AccordionWrapper = styled.div`
 
 const ClientesAdminAccordion = () => {
   const dispatch = useDispatch();
-  const [data, setData] = React.useState({});
+  //const [data, setData] = React.useState({});
 
   const clientes = useSelector(state => state.clientes);
 
@@ -32,9 +32,8 @@ const ClientesAdminAccordion = () => {
     <AccordionWrapper>
       <ul>
         {clientes.result.map(data => (
-          <li>
+          <li key={data._key}>
             <p>{data.email}</p>
-            {/* <p>{data.dateCreated}</p> */}
           </li>
         ))}
       </ul>

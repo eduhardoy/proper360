@@ -2,8 +2,8 @@ import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actionsPropiedades, typesPropiedades } from '../../../store/actions/propiedades';
-import { actionsInmobiliarias, typesInmobiliarias } from '../../../store/actions/inmobiliarias';
+import { actionsPropiedades } from '../../../store/actions/propiedades';
+import { actionsInmobiliarias } from '../../../store/actions/inmobiliarias';
 
 export const ModalBackground = styled.div`
   position: absolute;
@@ -134,8 +134,7 @@ export const ButtonRed = styled.button`
 const ModalAddPropiedad = ({ closeModal }) => {
 
   const dispatch = useDispatch()
-  const modalState = useSelector(state => state.propiedades.result[0]);
-  const [data, setData] = React.useState({});
+  /* const modalState = useSelector(state => state.propiedades.result[0]); */
 
   const [datos, setDatos] = React.useState({
     logo: '',

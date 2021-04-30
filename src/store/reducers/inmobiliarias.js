@@ -1,7 +1,4 @@
-import {
-  actionsInmobiliarias,
-  typesInmobiliarias,
-} from "../actions/inmobiliarias";
+import { typesInmobiliarias } from "../actions/inmobiliarias";
 
 const initialState = {
   loading: false,

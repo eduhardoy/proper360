@@ -10,10 +10,7 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import ModalEditInmobiliaria from "./modals/ModalEditInmobiliaria";
 import ModalDeleteInmobiliaria from "./modals/ModalDeleteInmobiliaria";
-import {
-  actionsInmobiliarias,
-  typesInmobiliarias,
-} from "../../store/actions/inmobiliarias";
+import { actionsInmobiliarias } from "../../store/actions/inmobiliarias";
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -93,7 +90,7 @@ export default function InmobiliariasAdminAccordion() {
   return (
     <AccordionWrapper>
       {inmobiliarias.result.map(data => (
-        <Accordion>
+        <Accordion key={data._key}>
           <StyledAccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls='panel1a-content'
@@ -128,7 +125,7 @@ export default function InmobiliariasAdminAccordion() {
               <p>Telefono: {data.telefono}</p>
               <p>Email: {data.email}</p>
               <p>Direccion: {data.direccion}</p>
-              <img src={data.logo} />
+              <img alt='Logo de la propiedad' src={data.logo} />
             </ListDetails>
           </AccordionDetails>
           <div
