@@ -8,7 +8,7 @@ import {
 } from "../../../store/actions/inmobiliarias";
 
 export const ModalBackground = styled.div`
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   top: 0;
   left: 0;
@@ -153,7 +153,7 @@ const ModalAddInmobiliaria = ({ closeModal }) => {
   const handleModal = () => {
     console.log(datos);
     dispatch(actionsInmobiliarias.postInmobiliarias(datos));
-    closeModal()
+    closeModal();
   };
 
   return (

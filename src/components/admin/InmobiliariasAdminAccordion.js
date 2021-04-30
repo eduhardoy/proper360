@@ -10,7 +10,10 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import ModalEditInmobiliaria from "./modals/ModalEditInmobiliaria";
 import ModalDeleteInmobiliaria from "./modals/ModalDeleteInmobiliaria";
-import { actionsInmobiliarias, typesInmobiliarias } from "../../store/actions/inmobiliarias";
+import {
+  actionsInmobiliarias,
+  typesInmobiliarias,
+} from "../../store/actions/inmobiliarias";
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
@@ -31,6 +34,10 @@ const AccordionWrapper = styled.div`
 const ListDetails = styled.div`
   width: 100%;
   padding-left: 40px;
+  img {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -61,8 +68,12 @@ const ButtonAccordion = styled.button`
 export default function InmobiliariasAdminAccordion() {
   const dispatch = useDispatch();
   const [data, setData] = React.useState({});
-  const [editModalInmobiliaria, setEditModalInmobiliaria] = React.useState(false);
-  const [deleteModalInmobiliaria, setDeleteModalInmobiliaria] = React.useState(false);
+  const [editModalInmobiliaria, setEditModalInmobiliaria] = React.useState(
+    false
+  );
+  const [deleteModalInmobiliaria, setDeleteModalInmobiliaria] = React.useState(
+    false
+  );
 
   const OpenEditModalInmobiliaria = () => setEditModalInmobiliaria(true);
   const CloseEditModalInmobiliaria = () => setEditModalInmobiliaria(false);
@@ -91,14 +102,19 @@ export default function InmobiliariasAdminAccordion() {
             <h2>{data.nombre}</h2>
             <ButtonWrapper>
               <ButtonAccordion
-                onClick={event => event.stopPropagation(), OpenEditModalInmobiliaria}
+                onClick={
+                  (event => event.stopPropagation(), OpenEditModalInmobiliaria)
+                }
                 onFocus={event => event.stopPropagation()}
               >
                 <p>EDITAR</p>
                 <EditIcon />
               </ButtonAccordion>
               <ButtonAccordion
-                onClick={event => event.stopPropagation(), OpenDeleteModalInmobiliaria}
+                onClick={
+                  (event => event.stopPropagation(),
+                  OpenDeleteModalInmobiliaria)
+                }
                 onFocus={event => event.stopPropagation()}
               >
                 <p>ELIMINAR</p>
@@ -112,16 +128,31 @@ export default function InmobiliariasAdminAccordion() {
               <p>Telefono: {data.telefono}</p>
               <p>Email: {data.email}</p>
               <p>Direccion: {data.direccion}</p>
-              <img src={data.logo}/>              
+              <img src={data.logo} />
             </ListDetails>
           </AccordionDetails>
+          <div
+            style={
+              editModalInmobiliaria == true
+                ? { display: "flex" }
+                : { display: "none" }
+            }
+          >
+            <ModalEditInmobiliaria
+              Datos={data}
+              closeModal={CloseEditModalInmobiliaria}
+            />
+          </div>
         </Accordion>
       ))}
-            <div style={editModalInmobiliaria == true ? { display: "flex" } : { display: "none" }}>
-        <ModalEditInmobiliaria closeModal={CloseEditModalInmobiliaria}/>
-      </div>
-      <div style={deleteModalInmobiliaria == true ? { display: "flex" } : { display: "none" }}>
-        <ModalDeleteInmobiliaria closeModal={CloseDeleteModalInmobiliaria}/>
+      <div
+        style={
+          deleteModalInmobiliaria == true
+            ? { display: "flex" }
+            : { display: "none" }
+        }
+      >
+        <ModalDeleteInmobiliaria closeModal={CloseDeleteModalInmobiliaria} />
       </div>
     </AccordionWrapper>
   );

@@ -17,8 +17,7 @@ import {
   ButtonGreen,
 } from "./ModalAddInmobiliaria";
 
-const ModalEditInmobiliaria = ({closeModal}) => {
-
+const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
   const dispatch = useDispatch();
   const modalState = useSelector(state => state.inmobiliarias.result[0]);
 
@@ -43,7 +42,7 @@ const ModalEditInmobiliaria = ({closeModal}) => {
   const handleModal = () => {
     console.log(datos);
     dispatch(actionsInmobiliarias.putInmobiliarias(datos));
-    closeModal()
+    closeModal();
   };
 
   const inmobiliarias = useSelector(state => state.inmobiliarias);
@@ -55,10 +54,9 @@ const ModalEditInmobiliaria = ({closeModal}) => {
     fetchInmobiliarias();
   }, []);
 
-  
   return (
     <ModalBackground>
-      <ModalWrapper >
+      <ModalWrapper>
         <CloseButton onClick={closeModal}>
           <CloseIcon />
         </CloseButton>
@@ -66,10 +64,11 @@ const ModalEditInmobiliaria = ({closeModal}) => {
           <h4>EDITAR</h4>
         </ModalTitleWrapper>
         <ModalGridWrapper>
-          <input 
+          <input
             name='logo'
-            placeholder='LOGO' 
-            onChange={handleInputChange} 
+            placeholder='LOGO'
+            onChange={handleInputChange}
+            value={Datos.logo}
           />
           <input
             name='nombre'
@@ -96,12 +95,12 @@ const ModalEditInmobiliaria = ({closeModal}) => {
             type='email'
             placeholder='EMAIL'
             onChange={handleInputChange}
-          /> 
+          />
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
           <ButtonGreen onClick={handleModal}>ACEPTAR</ButtonGreen>
-        </ModalButtonWrapper> 
+        </ModalButtonWrapper>
       </ModalWrapper>
     </ModalBackground>
   );
