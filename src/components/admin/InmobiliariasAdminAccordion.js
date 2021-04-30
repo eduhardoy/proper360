@@ -99,19 +99,20 @@ export default function InmobiliariasAdminAccordion() {
             <h2>{data.nombre}</h2>
             <ButtonWrapper>
               <ButtonAccordion
-                onClick={
-                  (event => event.stopPropagation(), OpenEditModalInmobiliaria)
-                }
+                onClick={event => {
+                  event.stopPropagation();
+                  OpenEditModalInmobiliaria();
+                }}
                 onFocus={event => event.stopPropagation()}
               >
                 <p>EDITAR</p>
                 <EditIcon />
               </ButtonAccordion>
               <ButtonAccordion
-                onClick={
-                  (event => event.stopPropagation(),
-                  OpenDeleteModalInmobiliaria)
-                }
+                onClick={event => {
+                  event.stopPropagation();
+                  OpenDeleteModalInmobiliaria();
+                }}
                 onFocus={event => event.stopPropagation()}
               >
                 <p>ELIMINAR</p>

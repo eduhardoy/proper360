@@ -70,32 +70,32 @@ const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
           <input
             name='nombre'
             placeholder='NOMBRE'
-            /* value={data.nombre} */
+            value={Datos.nombre}
             onChange={handleInputChange}
           />
           <input
             name='descripcion'
             placeholder='DESCRIPCION'
-            /* value={data.descripcion} */
+            value={Datos.descripcion}
             onChange={handleInputChange}
           />
           <input
             name='telefono'
             placeholder='TELEFONO'
-            /* value={data.telefono} */
+            value={Datos.telefono}
             onChange={handleInputChange}
           />
           <input
             name='direccion'
             placeholder='DIRECCION'
-            /* value={data.direccion} */
+            value={Datos.direccion}
             onChange={handleInputChange}
           />
           <input
             name='email'
             type='email'
             placeholder='EMAIL'
-            /* value={data.email} */
+            value={Datos.email}
             onChange={handleInputChange}
           />
         </ModalGridWrapper>

@@ -2,7 +2,7 @@ import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { actionsInmobiliarias} from "../../../store/actions/inmobiliarias";
+import { actionsInmobiliarias } from "../../../store/actions/inmobiliarias";
 
 export const ModalBackground = styled.div`
   position: fixed;
@@ -49,6 +49,7 @@ export const ModalGridWrapper = styled.div`
   width: 80%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
   input {
@@ -147,8 +148,7 @@ const ModalAddInmobiliaria = ({ closeModal }) => {
     });
   };
 
-  const handleModal= () =>{
-    
+  const handleModal = () => {
     console.log(datos);
     dispatch(actionsInmobiliarias.postInmobiliarias(datos));
     closeModal();
