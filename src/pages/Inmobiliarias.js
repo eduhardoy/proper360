@@ -10,6 +10,8 @@ import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { actionsInmobiliarias } from "../store/actions/inmobiliarias";
 
+
+
 const Body = styled.div`
   width: 100%;
   height: 100%;

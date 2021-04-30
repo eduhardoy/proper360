@@ -92,20 +92,35 @@ function PropiedadesList({ propiedades }) {
   const [habitaciones, setHabitaciones] = React.useState("");
   const [banos, setBanos] = React.useState("");
 
+  const [queryTipo, setQueryTipo] = React.useState("");
+  const [queryCategoria, setQueryCategoria] = React.useState("");
+  const [queryHabitaciones, setQueryHabitaciones] = React.useState("");
+  const [queryBanos, setQueryBanos] = React.useState("");
+
   const handleChangeTipo = event => {
     setTipo(event.target.value);
+    setQueryTipo(`&tipo=${event.target.value}`)
   };
 
   const handleChangeCategoria = event => {
     setCategoria(event.target.value);
+    setQueryCategoria(`&categoria=${event.target.value}`)
   };
 
   const handleChangeHabitaciones = event => {
     setHabitaciones(event.target.value);
+    setQueryHabitaciones(`&habitaciones=${event.target.value}`)
   };
 
   const handleChangeBanos = event => {
     setBanos(event.target.value);
+    setQueryBanos(`&banos=${event.target.value}`)
+  };
+
+  const Queries = () => {
+    return (
+      `?${queryTipo}${queryCategoria}${queryHabitaciones}${queryBanos}`
+    );
   };
 
   return (
@@ -124,10 +139,10 @@ function PropiedadesList({ propiedades }) {
           className={classes.selectEmpty}
         >
           <MenuItem value=''>
-            <em>SELECCIONAR</em>
+            <em>Seleccionar</em>
           </MenuItem>
-          <MenuItem value={10}>ALQUILER</MenuItem>
-          <MenuItem value={20}>VENTA</MenuItem>
+          <MenuItem value={"Alquiler"}>ALQUILER</MenuItem>
+          <MenuItem value={"Venta"}>VENTA</MenuItem>
         </Select>
       </FormControl>
       <FormControl className={classes.formControl}>
@@ -143,11 +158,11 @@ function PropiedadesList({ propiedades }) {
           className={classes.selectEmpty}
         >
           <MenuItem value=''>
-            <em>SELECCIONAR</em>
+            <em>Seleccionar</em>
           </MenuItem>
-          <MenuItem value={10}>CASA</MenuItem>
-          <MenuItem value={20}>DEPARTAMENTO</MenuItem>
-          <MenuItem value={30}>LOCAL</MenuItem>
+          <MenuItem value={"Casa"}>CASA</MenuItem>
+          <MenuItem value={"Departamento"}>DEPARTAMENTO</MenuItem>
+          <MenuItem value={"Oficina"}>LOCAL</MenuItem>
         </Select>
       </FormControl>
       <FormControl className={classes.formControl}>
@@ -163,12 +178,12 @@ function PropiedadesList({ propiedades }) {
           className={classes.selectEmpty}
         >
           <MenuItem value=''>
-            <em>SELECCIONAR</em>
+            <em>Seleccionar</em>
           </MenuItem>
-          <MenuItem value={10}>1</MenuItem>
-          <MenuItem value={20}>2</MenuItem>
-          <MenuItem value={30}>3</MenuItem>
-          <MenuItem value={40}>+3</MenuItem>
+          <MenuItem value={1}>1</MenuItem>
+          <MenuItem value={2}>2</MenuItem>
+          <MenuItem value={3}>3</MenuItem>
+          <MenuItem value={4}>4 o más</MenuItem>
         </Select>
       </FormControl>
       <FormControl className={classes.formControl}>
@@ -184,12 +199,12 @@ function PropiedadesList({ propiedades }) {
           className={classes.selectEmpty}
         >
           <MenuItem value=''>
-            <em>SELECCIONAR</em>
+            <em>Seleccionar</em>
           </MenuItem>
-          <MenuItem value={10}>1</MenuItem>
-          <MenuItem value={20}>2</MenuItem>
-          <MenuItem value={30}>3</MenuItem>
-          <MenuItem value={40}>+3</MenuItem>
+          <MenuItem value={1}>1</MenuItem>
+          <MenuItem value={2}>2</MenuItem>
+          <MenuItem value={3}>3</MenuItem>
+          <MenuItem value={4}>4 o más</MenuItem>
         </Select>
       </FormControl>
       </FiltroWrapper>
