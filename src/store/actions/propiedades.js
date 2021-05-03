@@ -31,13 +31,13 @@ const typesPropiedades = {
   PUT_PROPIEDADES_FAILURE
 };
 
-const getPropiedadesByInmobiliarias = (inmobiliariaId, queries="") => {
+const getPropiedadesByInmobiliarias = (inmobiliariaId) => {
   return (dispatch) => {
     //nameless functions
     // Initial action dispatched
     dispatch({ type: GET_PROPIEDADES });
     // Return promise with success and failure actions
-    return api.get("propiedades/inmobiliaria/" + inmobiliariaId + queries)
+    return api.get("propiedades/inmobiliaria/" + inmobiliariaId )
       .then(propiedades => dispatch({ type: GET_PROPIEDADES_SUCCESS, payload: propiedades.data.body }))
       .catch(err => dispatch({ type: GET_PROPIEDADES_FAILUTE, payload: err.message }))
   }

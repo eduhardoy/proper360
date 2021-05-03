@@ -39,8 +39,6 @@ function Inmobiliarias({ inmobiliaria }) {
   React.useEffect(() => {
     function fetchPropiedadesByInmobiliaria() {
       console.log(propQueries)
-      console.log(propQueries)
-      console.log(propQueries)
       dispatch(
         actionsInmobiliarias.getInmobiliariaWithPropiedades(inmobiliaria, propQueries)
         );
