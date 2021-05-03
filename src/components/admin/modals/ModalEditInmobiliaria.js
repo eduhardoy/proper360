@@ -18,22 +18,10 @@ const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
   const dispatch = useDispatch();
   /* const modalState = useSelector(state => state.inmobiliarias.result[0]); */
 
-  const [datos, setDatos] = React.useState({
-    logo: "",
-    nombre: "",
-    descpricion: "",
-    telefono: "",
-    direccion: "",
-    email: "",
-  });
+  const [datos, setDatos] = React.useState({Datos});
 
   const handleInputChange = event => {
-    /* console.log(event.target.name)
-     console.log(event.target.value) */
-    setDatos({
-      ...datos,
-      [event.target.name]: event.target.value,
-    });
+    setDatos(`${event.target.value}`)
   };
 
   const handleModal = () => {
@@ -65,37 +53,37 @@ const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
             name='logo'
             placeholder='LOGO'
             onChange={handleInputChange}
-            value={Datos.logo}
+            value={datos.logo}
           />
           <input
             name='nombre'
             placeholder='NOMBRE'
-            value={Datos.nombre}
+            value={datos.nombre}
             onChange={handleInputChange}
           />
           <input
             name='descripcion'
             placeholder='DESCRIPCION'
-            value={Datos.descripcion}
+            value={datos.descripcion}
             onChange={handleInputChange}
           />
           <input
             name='telefono'
             placeholder='TELEFONO'
-            value={Datos.telefono}
+            value={datos.telefono}
             onChange={handleInputChange}
           />
           <input
             name='direccion'
             placeholder='DIRECCION'
-            value={Datos.direccion}
+            value={datos.direccion}
             onChange={handleInputChange}
           />
           <input
             name='email'
             type='email'
             placeholder='EMAIL'
-            value={Datos.email}
+            value={datos.email}
             onChange={handleInputChange}
           />
         </ModalGridWrapper>
