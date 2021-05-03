@@ -87,10 +87,10 @@ const useStyles = makeStyles(theme => ({
 
 function PropiedadesList({ propiedades, queries }) {
   const classes = useStyles();
-  const [tipo, setTipo] = React.useState("");
-  const [categoria, setCategoria] = React.useState("");
-  const [habitaciones, setHabitaciones] = React.useState("");
-  const [banos, setBanos] = React.useState("");
+  const [tipo, setTipo] = React.useState(0);
+  const [categoria, setCategoria] = React.useState(0);
+  const [habitaciones, setHabitaciones] = React.useState(0);
+  const [banos, setBanos] = React.useState(0);
 
   const [queryTipo, setQueryTipo] = React.useState("");
   const [queryCategoria, setQueryCategoria] = React.useState("");
@@ -99,22 +99,38 @@ function PropiedadesList({ propiedades, queries }) {
 
   const handleChangeTipo = event => {
     setTipo(event.target.value);
-    setQueryTipo(`&tipo=${event.target.value}`)
+    if(event.target.value != 0) {
+      setQueryTipo(`&tipo=${event.target.value}`)
+    } else {
+      setQueryTipo('')
+    }
   };
 
   const handleChangeCategoria = event => {
     setCategoria(event.target.value);
+    if(event.target.value != 0) {
     setQueryCategoria(`&categoria=${event.target.value}`)
+    } else {
+      setQueryCategoria('')
+    }
   };
 
   const handleChangeHabitaciones = event => {
     setHabitaciones(event.target.value);
+    if(event.target.value != 0) {
     setQueryHabitaciones(`&habitaciones=${event.target.value}`)
+    } else {
+      setQueryHabitaciones('')
+    }
   };
 
   const handleChangeBanos = event => {
     setBanos(event.target.value);
+    if(event.target.value != 0) {
     setQueryBanos(`&banos=${event.target.value}`)
+    } else {
+      setQueryBanos('')
+    }
   };
 
   const CreateQueries = () => {
@@ -140,8 +156,8 @@ function PropiedadesList({ propiedades, queries }) {
           displayEmpty
           className={classes.selectEmpty}
         >
-          <MenuItem value=''>
-            <em>Seleccionar</em>
+          <MenuItem value={0}>
+            <em>TODOS</em>
           </MenuItem>
           <MenuItem value={"Alquiler"}>ALQUILER</MenuItem>
           <MenuItem value={"Venta"}>VENTA</MenuItem>
@@ -159,12 +175,12 @@ function PropiedadesList({ propiedades, queries }) {
           displayEmpty
           className={classes.selectEmpty}
         >
-          <MenuItem value=''>
-            <em>Seleccionar</em>
+          <MenuItem value={0}>
+            <em>TODOS</em>
           </MenuItem>
           <MenuItem value={"Casa"}>CASA</MenuItem>
           <MenuItem value={"Departamento"}>DEPARTAMENTO</MenuItem>
-          <MenuItem value={"Oficina"}>LOCAL</MenuItem>
+          <MenuItem value={"Local"}>LOCAL</MenuItem>
         </Select>
       </FormControl>
       <FormControl className={classes.formControl}>
@@ -179,8 +195,8 @@ function PropiedadesList({ propiedades, queries }) {
           displayEmpty
           className={classes.selectEmpty}
         >
-          <MenuItem value=''>
-            <em>Seleccionar</em>
+          <MenuItem value={0}>
+            <em>TODOS</em>
           </MenuItem>
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>
@@ -200,8 +216,8 @@ function PropiedadesList({ propiedades, queries }) {
           displayEmpty
           className={classes.selectEmpty}
         >
-          <MenuItem value=''>
-            <em>Seleccionar</em>
+          <MenuItem value={0}>
+            <em>TODOS</em>
           </MenuItem>
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>

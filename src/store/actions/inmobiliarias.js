@@ -37,15 +37,14 @@ const typesInmobiliarias = {
   DELETE_INMOBILIARIAS_FAILURE
 };
 
-const getInmobiliariaWithPropiedades = inmobiliariaId => {
-  console.log("IDIDIDIDID", inmobiliariaId);
+const getInmobiliariaWithPropiedades = (inmobiliariaId, queries) => {
   return dispatch => {
     //nameless functions
     // Initial action dispatched
     dispatch({ type: GET_INMOBILIARIA });
     // Return promise with success and failure actions
     return api
-      .get("inmobiliarias/" + inmobiliariaId)
+      .get("inmobiliarias/" + inmobiliariaId + queries)
       .then(inmobiliaraias => {
         console.log(inmobiliaraias)
         dispatch({
