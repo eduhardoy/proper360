@@ -14,19 +14,17 @@ import {
   ButtonGreen,
 } from "./ModalAddInmobiliaria";
 
-const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
+const ModalEditInmobiliaria = ({ closeModal, data }) => {
   const dispatch = useDispatch();
   /* const modalState = useSelector(state => state.inmobiliarias.result[0]); */
 
-  const [datos, setDatos] = React.useState({...Datos});
+  const [datos, setDatos] = React.useState({ ...data });
 
   const handleInputChange = event => {
-
     setDatos({
       ...datos,
       [event.target.name]: event.target.value,
     });
-    
   };
 
   const handleModal = () => {

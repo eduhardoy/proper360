@@ -18,6 +18,7 @@ const PUT_INMOBILIARIAS_FAILURE = "PUT_INMOBILIARIAS_FAILURE";
 const DELETE_INMOBILIARIAS = "DELETE_INMOBILIARIAS";
 const DELETE_INMOBILIARIAS_SUCCESS = "DELETE_INMOBILIARIAS_SUCCESS";
 const DELETE_INMOBILIARIAS_FAILURE = "DELETE_INMOBILIARIAS_FAILURE";
+const SET_SELECTED_INMOBILIARIA = "SET_SELECTED_INMOBILIARIA";
 
 const typesInmobiliarias = {
   GET_INMOBILIARIAS,
@@ -34,7 +35,8 @@ const typesInmobiliarias = {
   PUT_INMOBILIARIAS_FAILURE,
   DELETE_INMOBILIARIAS,
   DELETE_INMOBILIARIAS_SUCCESS,
-  DELETE_INMOBILIARIAS_FAILURE
+  DELETE_INMOBILIARIAS_FAILURE,
+  SET_SELECTED_INMOBILIARIA,
 };
 
 const getInmobiliariaWithPropiedades = (inmobiliariaId, queries) => {
@@ -46,13 +48,12 @@ const getInmobiliariaWithPropiedades = (inmobiliariaId, queries) => {
     return api
       .get("inmobiliarias/" + inmobiliariaId + queries)
       .then(inmobiliaraias => {
-        console.log(inmobiliaraias)
+        console.log(inmobiliaraias);
         dispatch({
           type: GET_INMOBILIARIA_SUCCESS,
           payload: inmobiliaraias.data.body,
-        })
-      }
-      )
+        });
+      })
       .catch(err =>
         dispatch({ type: GET_INMOBILIARIA_FAILURE, payload: err.message })
       );
@@ -86,7 +87,9 @@ const postInmobiliarias = inmobiliaria => {
     dispatch({ type: POST_INMOBILIARIAS });
     // Return promise with success and failure actions
     return api
-      .post("inmobiliarias", inmobiliaria, { headers: { token: localStorage.getItem("token") } })
+      .post("inmobiliarias", inmobiliaria, {
+        headers: { token: localStorage.getItem("token") },
+      })
       .then(inmobiliaria =>
         dispatch({
           type: POST_INMOBILIARIAS_SUCCESS,
@@ -99,29 +102,59 @@ const postInmobiliarias = inmobiliaria => {
   };
 };
 
-const putInmobiliarias = (inmobiliaria) => {
-  return (dispatch) => {
+const putInmobiliarias = inmobiliaria => {
+  return dispatch => {
     //nameless functions
     // Initial action dispatched
     dispatch({ type: PUT_INMOBILIARIAS });
     // Return promise with success and failure actions
-    return api.put("inmobiliarias", inmobiliaria, { headers: { token: localStorage.getItem("token") } })
-      .then(inmobiliaria => dispatch({ type: PUT_INMOBILIARIAS_SUCCESS, payload: inmobiliaria.data.body }))
-      .catch(err => dispatch({ type: PUT_INMOBILIARIAS_FAILURE, payload: err.message }))
-  }
+    return api
+      .put("inmobiliarias", inmobiliaria, {
+        headers: { token: localStorage.getItem("token") },
+      })
+      .then(inmobiliaria =>
+        dispatch({
+          type: PUT_INMOBILIARIAS_SUCCESS,
+          payload: inmobiliaria.data.body,
+        })
+      )
+      .catch(err =>
+        dispatch({ type: PUT_INMOBILIARIAS_FAILURE, payload: err.message })
+      );
+  };
 };
 
-const deleteInmobiliarias = (inmobiliariaId) =>{
-  return (dispatch) => {
-    dispatch ({type: DELETE_INMOBILIARIAS});
-    return api.delete("inmobiliarias/" + inmobiliariaId , { headers: { token: localStorage.getItem("token")}})
-    .then(inmobiliaria => dispatch({ type: DELETE_INMOBILIARIAS_SUCCESS, payload: inmobiliaria.data.body}))
-    .catch(err => dispatch({ type: DELETE_INMOBILIARIAS_FAILURE, payload: err.message }))
-  }
-} 
+const deleteInmobiliarias = inmobiliariaId => {
+  return dispatch => {
+    dispatch({ type: DELETE_INMOBILIARIAS });
+    return api
+      .delete("inmobiliarias/" + inmobiliariaId, {
+        headers: { token: localStorage.getItem("token") },
+      })
+      .then(inmobiliaria =>
+        dispatch({
+          type: DELETE_INMOBILIARIAS_SUCCESS,
+          payload: inmobiliaria.data.body,
+        })
+      )
+      .catch(err =>
+        dispatch({ type: DELETE_INMOBILIARIAS_FAILURE, payload: err.message })
+      );
+  };
+};
 
+const setSelectedInmobiliaria = inmobiliariaData => {
+  return dispatch =>
+    dispatch({ type: SET_SELECTED_INMOBILIARIA, payload: inmobiliariaData });
+};
 
-
-const actionsInmobiliarias = { getInmobiliarias, getInmobiliariaWithPropiedades, postInmobiliarias, putInmobiliarias, deleteInmobiliarias };
+const actionsInmobiliarias = {
+  getInmobiliarias,
+  getInmobiliariaWithPropiedades,
+  postInmobiliarias,
+  putInmobiliarias,
+  deleteInmobiliarias,
+  setSelectedInmobiliaria,
+};
 
 export { typesInmobiliarias, actionsInmobiliarias };

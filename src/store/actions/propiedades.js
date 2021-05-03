@@ -18,6 +18,7 @@ const PUT_PROPIEDADES_FAILURE = "PUT_PROPIEDADES_FAILURE";
 const DELETE_PROPIEDADES = "DELETE_PROPIEDADES";
 const DELETE_PROPIEDADES_SUCCESS = "DELETE_PROPIEDADES_SUCCESS";
 const DELETE_PROPIEDADES_FAILURE = "DELETE_PROPIEDADES_FAILURE";
+const SET_SELECTED_PROPIEDAD = "SET_SELECTED_PROPIEDAD";
 
 const typesPropiedades = {
   GET_PROPIEDADES,
@@ -35,6 +36,7 @@ const typesPropiedades = {
   DELETE_PROPIEDADES,
   DELETE_PROPIEDADES_SUCCESS,
   DELETE_PROPIEDADES_FAILURE,
+  SET_SELECTED_PROPIEDAD,
 };
 
 const getPropiedadesByInmobiliarias = inmobiliariaId => {
@@ -157,6 +159,11 @@ const deletePropiedad = propiedadId => {
   };
 };
 
+const setSelectedPropiedad = propiedadData => {
+  return dispatch =>
+    dispatch({ type: SET_SELECTED_PROPIEDAD, payload: propiedadData });
+};
+
 const actionsPropiedades = {
   getPropiedades,
   getPropiedadesByInmobiliarias,
@@ -164,6 +171,7 @@ const actionsPropiedades = {
   postPropiedad,
   putPropiedad,
   deletePropiedad,
+  setSelectedPropiedad,
 };
 
 export { typesPropiedades, actionsPropiedades };

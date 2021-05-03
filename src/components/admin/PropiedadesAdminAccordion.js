@@ -64,10 +64,18 @@ export default function PropiedadesAdminAccordion() {
   const [editModalPropiedad, setEditModalPropiedad] = React.useState(false);
   const [deleteModalPropiedad, setDeleteModalPropiedad] = React.useState(false);
 
-  const OpenEditModalPropiedad = () => setEditModalPropiedad(true);
+  const OpenEditModalPropiedad = data => {
+    dispatch(actionsPropiedades.setSelectedPropiedad(data));
+    setEditModalPropiedad(true);
+  };
+
   const CloseEditModalPropiedad = () => setEditModalPropiedad(false);
 
-  const OpenDeleteModalPropiedad = () => setDeleteModalPropiedad(true);
+  const OpenDeleteModalPropiedad = data => {
+    dispatch(actionsPropiedades.setSelectedPropiedad(data));
+    setDeleteModalPropiedad(true);
+  };
+
   const CloseDeleteModalPropiedad = () => setDeleteModalPropiedad(false);
 
   const propiedades = useSelector(state => state.propiedades);
@@ -93,7 +101,7 @@ export default function PropiedadesAdminAccordion() {
               <ButtonAccordion
                 onClick={event => {
                   event.stopPropagation();
-                  OpenEditModalPropiedad();
+                  OpenEditModalPropiedad(data);
                 }}
                 onFocus={event => event.stopPropagation()}
               >
@@ -103,7 +111,7 @@ export default function PropiedadesAdminAccordion() {
               <ButtonAccordion
                 onClick={event => {
                   event.stopPropagation();
-                  OpenDeleteModalPropiedad();
+                  OpenDeleteModalPropiedad(data);
                 }}
                 onFocus={event => event.stopPropagation()}
               >
@@ -129,32 +137,26 @@ export default function PropiedadesAdminAccordion() {
               <p>Baños: {data.banos}</p>
             </ListDetails>
           </AccordionDetails>
-          <div
-            style={
-              editModalPropiedad === true
-                ? { display: "flex" }
-                : { display: "none" }
-            }
-          >
-            <ModalEditPropiedad
-              closeModal={CloseEditModalPropiedad}
-              Datos={data}
-            />
-          </div>
-          <div
-            style={
-              deleteModalPropiedad === true
-                ? { display: "flex" }
-                : { display: "none" }
-            }
-          >
-            <ModalDeletePropiedad
-              propiedadId={data._key}
-              closeModal={CloseDeleteModalPropiedad}
-            />
-          </div>
         </Accordion>
       ))}
+      <div
+        style={
+          editModalPropiedad === true
+            ? { display: "flex" }
+            : { display: "none" }
+        }
+      >
+        <ModalEditPropiedad closeModal={CloseEditModalPropiedad} />
+      </div>
+      <div
+        style={
+          deleteModalPropiedad === true
+            ? { display: "flex" }
+            : { display: "none" }
+        }
+      >
+        <ModalDeletePropiedad closeModal={CloseDeleteModalPropiedad} />
+      </div>
     </AccordionWrapper>
   );
 }

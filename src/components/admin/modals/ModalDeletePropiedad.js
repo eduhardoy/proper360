@@ -63,7 +63,7 @@ const ButtonBlack = styled.button`
   }
 `;
 
-const ModalDeletePropiedad = ({ closeModal, propiedadId }) => {
+const ModalDeletePropiedad = ({ closeModal, propiedadId, data }) => {
   const dispatch = useDispatch();
 
   const handleModal = () => {

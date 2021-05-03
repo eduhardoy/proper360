@@ -4,12 +4,16 @@ const initialState = {
   loading: false,
   error: null,
   result: [],
-  oneResult: null
+  oneResult: null,
+  selected: null,
 };
 
 function Propiedades(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
+    case typesPropiedades.SET_SELECTED_PROPIEDAD:
+      return { ...state, selected: payload };
+
     case typesPropiedades.GET_PROPIEDADES:
       return { ...state, loading: true };
 
@@ -31,28 +35,28 @@ function Propiedades(state = initialState, action) {
       return { ...state, loading: true };
 
     case typesPropiedades.POST_PROPIEDADES_FAILURE:
-      return { ...state, loading: false , error: true};
+      return { ...state, loading: false, error: true };
 
     case typesPropiedades.POST_PROPIEDADES_SUCCESS:
-      return { ...state, loading: false , error: false, result: [payload]};
-    
+      return { ...state, loading: false, error: false, result: [payload] };
+
     case typesPropiedades.PUT_PROPIEDADES:
       return { ...state, loading: true };
 
     case typesPropiedades.PUT_PROPIEDADES_FAILURE:
-      return { ...state, loading: false , error: true};
+      return { ...state, loading: false, error: true };
 
     case typesPropiedades.PUT_PROPIEDADES_SUCCESS:
-      return { ...state, loading: false , error: false, result: [payload]};
+      return { ...state, loading: false, error: false, result: [payload] };
 
     case typesPropiedades.DELETE_PROPIEDADES:
       return { ...state, loading: true };
-  
+
     case typesPropiedades.DELETE_PROPIEDADES_FAILURE:
-      return { ...state, loading: false , error: true};
-  
+      return { ...state, loading: false, error: true };
+
     case typesPropiedades.DELETE_PROPIEDADES_SUCCESS:
-      return { ...state, loading: false , error: false, result: [payload]};
+      return { ...state, loading: false, error: false, result: [payload] };
 
     default:
       return state;

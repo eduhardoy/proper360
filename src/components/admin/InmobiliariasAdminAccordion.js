@@ -71,9 +71,18 @@ export default function InmobiliariasAdminAccordion() {
     false
   );
 
-  const OpenEditModalInmobiliaria = () => setEditModalInmobiliaria(true);
+  const OpenEditModalInmobiliaria = data => {
+    dispatch(actionsInmobiliarias.setSelectedInmobiliaria(data));
+    setEditModalInmobiliaria(true);
+  };
+
   const CloseEditModalInmobiliaria = () => setEditModalInmobiliaria(false);
-  const OpenDeleteModalInmobiliaria = () => setDeleteModalInmobiliaria(true);
+
+  const OpenDeleteModalInmobiliaria = data => {
+    dispatch(actionsInmobiliarias.setSelectedInmobiliaria(data));
+    setDeleteModalInmobiliaria(true);
+  };
+
   const CloseDeleteModalInmobiliaria = () => setDeleteModalInmobiliaria(false);
 
   const inmobiliarias = useSelector(state => state.inmobiliarias);
@@ -84,7 +93,7 @@ export default function InmobiliariasAdminAccordion() {
     }
     fetchInmobiliarias();
   }, []);
-  
+
   return (
     <AccordionWrapper>
       {inmobiliarias.result.map(data => (
@@ -99,7 +108,7 @@ export default function InmobiliariasAdminAccordion() {
               <ButtonAccordion
                 onClick={event => {
                   event.stopPropagation();
-                  OpenEditModalInmobiliaria();
+                  OpenEditModalInmobiliaria(data);
                 }}
                 onFocus={event => event.stopPropagation()}
               >
@@ -109,7 +118,7 @@ export default function InmobiliariasAdminAccordion() {
               <ButtonAccordion
                 onClick={event => {
                   event.stopPropagation();
-                  OpenDeleteModalInmobiliaria();
+                  OpenDeleteModalInmobiliaria(data);
                 }}
                 onFocus={event => event.stopPropagation()}
               >
@@ -127,31 +136,26 @@ export default function InmobiliariasAdminAccordion() {
               <img alt='Logo de la propiedad' src={data.logo} />
             </ListDetails>
           </AccordionDetails>
-          <div
-            style={
-              editModalInmobiliaria === true
-                ? { display: "flex" }
-                : { display: "none" }
-            }
-          >
-            <ModalEditInmobiliaria
-              Datos={data}
-              closeModal={CloseEditModalInmobiliaria}
-            />
-          </div>
-          <div
-            style={
-              deleteModalInmobiliaria === true
-                ? { display: "flex" }
-                : { display: "none" }
-            }
-          >
-            <ModalDeleteInmobiliaria
-             inmobiliariaId={data._key}
-             closeModal={CloseDeleteModalInmobiliaria} />
-          </div>
         </Accordion>
       ))}
+      <div
+        style={
+          editModalInmobiliaria === true
+            ? { display: "flex" }
+            : { display: "none" }
+        }
+      >
+        <ModalEditInmobiliaria closeModal={CloseEditModalInmobiliaria} />
+      </div>
+      <div
+        style={
+          deleteModalInmobiliaria === true
+            ? { display: "flex" }
+            : { display: "none" }
+        }
+      >
+        <ModalDeleteInmobiliaria closeModal={CloseDeleteModalInmobiliaria} />
+      </div>
     </AccordionWrapper>
   );
 }

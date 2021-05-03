@@ -63,8 +63,7 @@ const ButtonBlack = styled.button`
   }
 `;
 
-const ModalDeleteInmobiliaria = ({closeModal, inmobiliariaId}) => {
-
+const ModalDeleteInmobiliaria = ({ closeModal, inmobiliariaId, data }) => {
   const dispatch = useDispatch();
 
   const handleModal = () => {
@@ -74,8 +73,7 @@ const ModalDeleteInmobiliaria = ({closeModal, inmobiliariaId}) => {
   };
 
   return (
-    <ModalBackground
-    >
+    <ModalBackground>
       <ModalDeleteWrapper>
         <CloseButton onClick={closeModal}>
           <CloseIcon />
@@ -88,11 +86,7 @@ const ModalDeleteInmobiliaria = ({closeModal, inmobiliariaId}) => {
         </ModalDescriptionWrapper>
         <ModalButtonWrapper>
           <ButtonBlack onClick={closeModal}>CANCELAR</ButtonBlack>
-          <ButtonRed
-            onClick={handleModal}
-          >
-            ELIMINAR
-          </ButtonRed>
+          <ButtonRed onClick={handleModal}>ELIMINAR</ButtonRed>
         </ModalButtonWrapper>
       </ModalDeleteWrapper>
     </ModalBackground>
