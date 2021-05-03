@@ -1,4 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { actionsPropiedades } from "../../../store/actions/propiedades";
+
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
 import {
@@ -60,7 +63,16 @@ const ButtonBlack = styled.button`
   }
 `;
 
-const ModalDeletePropiedad = ({closeModal}) => {
+const ModalDeletePropiedad = ({closeModal, propiedadId}) => {
+
+  const dispatch = useDispatch();
+
+  const handleModal = () => {
+    console.log(propiedadId);
+    //dispatch(actionsPropiedades.deletePropiedades(propiedadId));
+    closeModal();
+  };
+
   return (
     <ModalBackground
     >
@@ -77,6 +89,7 @@ const ModalDeletePropiedad = ({closeModal}) => {
         <ModalButtonWrapper>
           <ButtonBlack onClick={closeModal}>CANCELAR</ButtonBlack>
           <ButtonRed
+            onClick={handleModal}
           >
             ELIMINAR
           </ButtonRed>

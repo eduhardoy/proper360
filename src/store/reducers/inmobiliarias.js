@@ -45,6 +45,15 @@ function Inmobiliarias(state = initialState, action) {
   
     case typesInmobiliarias.PUT_INMOBILIARIAS_SUCCESS:
       return { ...state, loading: false , error: false, result: [payload]};
+    
+    case typesInmobiliarias.DELETE_INMOBILIARIAS:
+      return { ...state, loading: true };
+    
+    case typesInmobiliarias.DELETE_INMOBILIARIAS_FAILURE:
+      return { ...state, loading: false , error: true};
+    
+    case typesInmobiliarias.DELETE_INMOBILIARIAS_SUCCESS:
+      return { ...state, loading: false , error: false, result: [payload]};
       
     default:
       return state;

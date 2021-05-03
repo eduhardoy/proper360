@@ -64,7 +64,6 @@ const ButtonAccordion = styled.button`
 
 export default function InmobiliariasAdminAccordion() {
   const dispatch = useDispatch();
-  const [data, setData] = React.useState({});
   const [editModalInmobiliaria, setEditModalInmobiliaria] = React.useState(
     false
   );
@@ -74,7 +73,6 @@ export default function InmobiliariasAdminAccordion() {
 
   const OpenEditModalInmobiliaria = () => setEditModalInmobiliaria(true);
   const CloseEditModalInmobiliaria = () => setEditModalInmobiliaria(false);
-
   const OpenDeleteModalInmobiliaria = () => setDeleteModalInmobiliaria(true);
   const CloseDeleteModalInmobiliaria = () => setDeleteModalInmobiliaria(false);
 
@@ -86,7 +84,7 @@ export default function InmobiliariasAdminAccordion() {
     }
     fetchInmobiliarias();
   }, []);
-
+  
   return (
     <AccordionWrapper>
       {inmobiliarias.result.map(data => (
@@ -131,7 +129,7 @@ export default function InmobiliariasAdminAccordion() {
           </AccordionDetails>
           <div
             style={
-              editModalInmobiliaria == true
+              editModalInmobiliaria === true
                 ? { display: "flex" }
                 : { display: "none" }
             }
@@ -141,17 +139,19 @@ export default function InmobiliariasAdminAccordion() {
               closeModal={CloseEditModalInmobiliaria}
             />
           </div>
+          <div
+            style={
+              deleteModalInmobiliaria === true
+                ? { display: "flex" }
+                : { display: "none" }
+            }
+          >
+            <ModalDeleteInmobiliaria
+             inmobiliariaId={data._key}
+             closeModal={CloseDeleteModalInmobiliaria} />
+          </div>
         </Accordion>
       ))}
-      <div
-        style={
-          deleteModalInmobiliaria == true
-            ? { display: "flex" }
-            : { display: "none" }
-        }
-      >
-        <ModalDeleteInmobiliaria closeModal={CloseDeleteModalInmobiliaria} />
-      </div>
     </AccordionWrapper>
   );
 }

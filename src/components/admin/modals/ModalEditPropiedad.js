@@ -15,29 +15,14 @@ import {
   ButtonGreen,
 } from "./ModalAddPropiedad";
 
-const ModalEditPropiedad = ({closeModal}) => {
+const ModalEditPropiedad = ({closeModal, Datos}) => {
 
   const dispatch = useDispatch()
-  /* const modalState = useSelector(state => state.propiedades.result[0]);
-  const [data, setData] = React.useState({}); */
+  // const modalState = useSelector(state => state.propiedades.result[0]);
 
   const [datos, setDatos] = React.useState({
-    logo: '',
-    imagen: '',
-    nombre: '',
-    descpricion: '',
-    extras: '',
-    direccion: '',
-    barrio: '',
-    categoria: '',
-    tipo: '',
-    ambientes: '',
-    habitaciones: '',
-    banos: '',
-    precio: '',
-    iframe: '',
-    inmobiliaria: ''
-  })
+   ...Datos
+  });
 
   const handleInputChange = (event) => {
     /* console.log(event.target.name)
@@ -47,7 +32,7 @@ const ModalEditPropiedad = ({closeModal}) => {
       [event.target.name]: event.target.value
     })
   }
-
+ 
   const handleSelectChange = event => {
     setDatos({
       ...datos,
@@ -58,7 +43,7 @@ const ModalEditPropiedad = ({closeModal}) => {
   const handleModal = () => {
 
     console.log(datos);
-    dispatch(actionsPropiedades.putPropiedad(datos))
+    //dispatch(actionsPropiedades.putPropiedad(datos))
     closeModal()
   }
 
@@ -82,32 +67,28 @@ const ModalEditPropiedad = ({closeModal}) => {
           <h4>EDITAR</h4>
         </ModalTitleWrapper>
         <ModalGridWrapper>
-          <input name="logo" placeholder="LOGO" onChange={handleInputChange} />
-          <input name="imagen" placeholder="IMAGEN" onChange={handleInputChange} />
-          <input name="nombre" placeholder="NOMBRE" onChange={handleInputChange} />
-          <input name="descripcion" placeholder="DESCRIPCION" onChange={handleInputChange} />
-          <input name="extras" placeholder="EXTRAS" onChange={handleInputChange} />
-          <input name="direccion" placeholder="DIRECCION" onChange={handleInputChange} />
-          <input name="barrio" placeholder="BARRIO" onChange={handleInputChange} />
-          <select name="categoria" onChange={handleInputChange} >
+          <input name="logo" placeholder="LOGO" value={datos.logo} onChange={handleInputChange} />
+          <input name="nombre" placeholder="NOMBRE" value={datos.nombre} onChange={handleInputChange} />
+          <input name="descripcion" placeholder="DESCRIPCION" value={datos.descripcion} onChange={handleInputChange} />
+          <input name="direccion" placeholder="DIRECCION" value={datos.direccion} onChange={handleInputChange} />
+          <input name="barrio" placeholder="BARRIO" value={datos.barrio} onChange={handleInputChange} />
+          <select name="categoria" value={datos.categoria} onChange={handleInputChange} >
             <option disabled selected>CATEGORIA</option>
             <option>Casa</option>
             <option>Departamento</option>
             <option>Local</option>
           </select>
-          <select name='tipo' onChange={handleInputChange}>
-            <option disabled selected>
-              TIPO
-            </option>
+          <select name='tipo' value={datos.tipo} onChange={handleInputChange}>
+            <option disabled selected> TIPO</option>
             <option>Venta</option>
             <option>Alquiler</option>
           </select>
-          <input name="ambientes" placeholder="AMBIENTES" onChange={handleInputChange} />
-          <input name="habitaciones" placeholder="HABITACIONES" onChange={handleInputChange} />
-          <input name="banos" placeholder="BAÑOS" onChange={handleInputChange} />
-          <input name="precio" placeholder="PRECIO" onChange={handleInputChange} />
-          <input name="iframe" placeholder="IFRAME" onChange={handleInputChange} />
-          <select name="inmobiliaria" onChange={handleSelectChange}>
+          <input name="ambientes" placeholder="AMBIENTES" value={datos.ambientes} onChange={handleInputChange} />
+          <input name="habitaciones" placeholder="HABITACIONES" value={datos.habitaciones} onChange={handleInputChange} />
+          <input name="banos" placeholder="BAÑOS" value={datos.banos} onChange={handleInputChange} />
+          <input name="precio" placeholder="PRECIO" value={datos.precio} onChange={handleInputChange} />
+          <input name="iframe" placeholder="IFRAME" value={datos.iframe} onChange={handleInputChange} />
+          <select name="inmobiliaria" value={datos.inmobiliaria} onChange={handleSelectChange}>
             <option disabled selected>INMOBILIARIA</option>
             {inmobiliarias.map(data => (
               <option value={JSON.stringify(data)}>{data.nombre}</option>

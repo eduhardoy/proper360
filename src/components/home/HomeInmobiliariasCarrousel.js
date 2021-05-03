@@ -3,10 +3,7 @@ import Carousel from "react-elastic-carousel";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  actionsInmobiliarias,
-  typesInmobiliarias,
-} from "../../store/actions/inmobiliarias";
+import {actionsInmobiliarias} from "../../store/actions/inmobiliarias";
 
 const CarouselSection = styled.section`
   padding-top: 80px;

@@ -1,4 +1,7 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { actionsInmobiliarias } from "../../../store/actions/inmobiliarias";
+
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
 import {
@@ -60,7 +63,16 @@ const ButtonBlack = styled.button`
   }
 `;
 
-const ModalDeleteInmobiliaria = ({closeModal}) => {
+const ModalDeleteInmobiliaria = ({closeModal, inmobiliariaId}) => {
+
+  const dispatch = useDispatch();
+
+  const handleModal = () => {
+    console.log(inmobiliariaId);
+    //dispatch(actionsInmobiliarias.deleteInmobiliarias(inmobiliariaId));
+    closeModal();
+  };
+
   return (
     <ModalBackground
     >
@@ -77,6 +89,7 @@ const ModalDeleteInmobiliaria = ({closeModal}) => {
         <ModalButtonWrapper>
           <ButtonBlack onClick={closeModal}>CANCELAR</ButtonBlack>
           <ButtonRed
+            onClick={handleModal}
           >
             ELIMINAR
           </ButtonRed>

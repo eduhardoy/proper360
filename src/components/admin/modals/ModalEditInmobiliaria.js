@@ -21,8 +21,12 @@ const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
   const [datos, setDatos] = React.useState({...Datos});
 
   const handleInputChange = event => {
-    setDatos(`${event.target.value}`)
-    console.log(datos)
+
+    setDatos({
+      ...datos,
+      [event.target.name]: event.target.value,
+    });
+    
   };
 
   const handleModal = () => {
@@ -30,15 +34,6 @@ const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
     dispatch(actionsInmobiliarias.putInmobiliarias(datos));
     closeModal();
   };
-
-  /* const inmobiliarias = useSelector(state => state.inmobiliarias);
-
-  React.useEffect(() => {
-    async function fetchInmobiliarias() {
-      dispatch(actionsInmobiliarias.getInmobiliarias());
-    }
-    fetchInmobiliarias();
-  }, []); */
 
   return (
     <ModalBackground>

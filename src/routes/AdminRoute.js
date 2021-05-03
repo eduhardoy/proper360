@@ -23,7 +23,7 @@ const PrivateRoute = ({ as: Comp, ...props }) => {
   React.useEffect(async () => {
     const token = localStorage.getItem("token")
     const tokenValidated = await (await axios.post("http://198.58.123.120:3006/auth/validate", { token })).data
-    if (tokenValidated == false) navigate("/admin")
+    if (tokenValidated === false) navigate("/admin")
   }, [])
 
   return <Comp {...props} />
@@ -35,7 +35,7 @@ const IsLogged = ({ as: Comp, ...props }) => {
   React.useEffect(async () => {
     const token = localStorage.getItem("token")
     const tokenValidated = await (await axios.post("http://198.58.123.120:3006/auth/validate", { token })).data
-    if (tokenValidated == true) navigate("/admin/inmobiliarias")
+    if (tokenValidated === true) navigate("/admin/inmobiliarias")
   }, [])
 
   return <Admin path='/' />

@@ -122,28 +122,38 @@ export default function PropiedadesAdminAccordion() {
               <p>Ambientes: {data.ambientes}</p>
               <p>Habitaciones: {data.habitaciones}</p>
               <p>Baños: {data.banos}</p>
+              <p>Inmobiliaria: {data.inmobiliaria}</p>
+
             </ListDetails>
           </AccordionDetails>
+          <div
+            style={
+              editModalPropiedad === true
+              ? { display: "flex" }
+              : { display: "none" }
+            }
+          >
+            <ModalEditPropiedad
+              closeModal={CloseEditModalPropiedad}
+              Datos={data} 
+            />
+          </div>
+          <div
+            style={
+              deleteModalPropiedad === true
+                ? { display: "flex" }
+                : { display: "none" }
+            }
+          >
+            <ModalDeletePropiedad 
+              propiedadId={data._key}
+              closeModal={CloseDeleteModalPropiedad} 
+            />
+          </div>
         </Accordion>
       ))}
-      <div
-        style={
-          editModalPropiedad === true
-            ? { display: "flex" }
-            : { display: "none" }
-        }
-      >
-        <ModalEditPropiedad closeModal={CloseEditModalPropiedad} />
-      </div>
-      <div
-        style={
-          deleteModalPropiedad === true
-            ? { display: "flex" }
-            : { display: "none" }
-        }
-      >
-        <ModalDeletePropiedad closeModal={CloseDeleteModalPropiedad} />
-      </div>
+      
+      
     </AccordionWrapper>
   );
 }

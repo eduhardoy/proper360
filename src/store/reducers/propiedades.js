@@ -28,13 +28,31 @@ function Propiedades(state = initialState, action) {
       return { ...state, loading: false, oneResult: payload };
 
     case typesPropiedades.POST_PROPIEDADES:
-        return { ...state, loading: true };
+      return { ...state, loading: true };
 
     case typesPropiedades.POST_PROPIEDADES_FAILURE:
-        return { ...state, loading: false , error: true};
+      return { ...state, loading: false , error: true};
 
     case typesPropiedades.POST_PROPIEDADES_SUCCESS:
-        return { ...state, loading: false , error: false, result: [payload]};
+      return { ...state, loading: false , error: false, result: [payload]};
+    
+    case typesPropiedades.PUT_PROPIEDADES:
+      return { ...state, loading: true };
+
+    case typesPropiedades.PUT_PROPIEDADES_FAILURE:
+      return { ...state, loading: false , error: true};
+
+    case typesPropiedades.PUT_PROPIEDADES_SUCCESS:
+      return { ...state, loading: false , error: false, result: [payload]};
+
+    case typesPropiedades.DELETE_PROPIEDADES:
+      return { ...state, loading: true };
+  
+    case typesPropiedades.DELETE_PROPIEDADES_FAILURE:
+      return { ...state, loading: false , error: true};
+  
+    case typesPropiedades.DELETE_PROPIEDADES_SUCCESS:
+      return { ...state, loading: false , error: false, result: [payload]};
 
     default:
       return state;

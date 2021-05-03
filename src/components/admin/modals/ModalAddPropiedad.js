@@ -6,7 +6,7 @@ import { actionsPropiedades } from '../../../store/actions/propiedades';
 import { actionsInmobiliarias } from '../../../store/actions/inmobiliarias';
 
 export const ModalBackground = styled.div`
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   top: 0;
   left: 0;

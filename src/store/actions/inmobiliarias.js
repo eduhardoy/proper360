@@ -15,6 +15,9 @@ const POST_INMOBILIARIAS_FAILURE = "POST_INMOBILIARIAS_FAILURE";
 const PUT_INMOBILIARIAS = "PUT_INMOBILIARIAS";
 const PUT_INMOBILIARIAS_SUCCESS = "PUT_INMOBILIARIAS_SUCCESS";
 const PUT_INMOBILIARIAS_FAILURE = "PUT_INMOBILIARIAS_FAILURE";
+const DELETE_INMOBILIARIAS = "DELETE_INMOBILIARIAS";
+const DELETE_INMOBILIARIAS_SUCCESS = "DELETE_INMOBILIARIAS_SUCCESS";
+const DELETE_INMOBILIARIAS_FAILURE = "DELETE_INMOBILIARIAS_FAILURE";
 
 const typesInmobiliarias = {
   GET_INMOBILIARIAS,
@@ -29,6 +32,9 @@ const typesInmobiliarias = {
   PUT_INMOBILIARIAS,
   PUT_INMOBILIARIAS_SUCCESS,
   PUT_INMOBILIARIAS_FAILURE,
+  DELETE_INMOBILIARIAS,
+  DELETE_INMOBILIARIAS_SUCCESS,
+  DELETE_INMOBILIARIAS_FAILURE
 };
 
 const getInmobiliariaWithPropiedades = inmobiliariaId => {
@@ -100,14 +106,23 @@ const putInmobiliarias = (inmobiliaria) => {
     // Initial action dispatched
     dispatch({ type: PUT_INMOBILIARIAS });
     // Return promise with success and failure actions
-    return api.post("inmobiliarias", inmobiliaria, { headers: { token: localStorage.getItem("token") } })
+    return api.put("inmobiliarias", inmobiliaria, { headers: { token: localStorage.getItem("token") } })
       .then(inmobiliaria => dispatch({ type: PUT_INMOBILIARIAS_SUCCESS, payload: inmobiliaria.data.body }))
       .catch(err => dispatch({ type: PUT_INMOBILIARIAS_FAILURE, payload: err.message }))
   }
 };
 
+const deleteInmobiliarias = (inmobiliariaId) =>{
+  return (dispatch) => {
+    dispatch ({type: DELETE_INMOBILIARIAS});
+    return api.delete("inmobiliarias/" + inmobiliariaId , { headers: { token: localStorage.getItem("token")}})
+    .then(inmobiliaria => dispatch({ type: DELETE_INMOBILIARIAS_SUCCESS, payload: inmobiliaria.data.body}))
+    .catch(err => dispatch({ type: DELETE_INMOBILIARIAS_FAILURE, payload: err.message }))
+  }
+} 
 
 
-const actionsInmobiliarias = { getInmobiliarias, getInmobiliariaWithPropiedades, postInmobiliarias, putInmobiliarias };
+
+const actionsInmobiliarias = { getInmobiliarias, getInmobiliariaWithPropiedades, postInmobiliarias, putInmobiliarias, deleteInmobiliarias };
 
 export { typesInmobiliarias, actionsInmobiliarias };
