@@ -1,8 +1,8 @@
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import { useDispatch, useSelector } from "react-redux";
-import { actionsPropiedades } from '../../../store/actions/propiedades';
-import { actionsInmobiliarias } from '../../../store/actions/inmobiliarias';
+import { actionsPropiedades } from "../../../store/actions/propiedades";
+import { actionsInmobiliarias } from "../../../store/actions/inmobiliarias";
 
 import {
   CloseButton,
@@ -15,37 +15,35 @@ import {
   ButtonGreen,
 } from "./ModalAddPropiedad";
 
-const ModalEditPropiedad = ({closeModal, Datos}) => {
-
-  const dispatch = useDispatch()
+const ModalEditPropiedad = ({ closeModal, Datos }) => {
+  const dispatch = useDispatch();
   // const modalState = useSelector(state => state.propiedades.result[0]);
 
   const [datos, setDatos] = React.useState({
-   ...Datos
+    ...Datos,
   });
 
-  const handleInputChange = (event) => {
+  const handleInputChange = event => {
     /* console.log(event.target.name)
     console.log(event.target.value) */
     setDatos({
       ...datos,
-      [event.target.name]: event.target.value
-    })
-  }
- 
+      [event.target.name]: event.target.value,
+    });
+  };
+
   const handleSelectChange = event => {
     setDatos({
       ...datos,
-      [event.target.name]: JSON.parse(event.target.value)
-    })
-  }
+      [event.target.name]: JSON.parse(event.target.value),
+    });
+  };
 
   const handleModal = () => {
-
     console.log(datos);
     //dispatch(actionsPropiedades.putPropiedad(datos))
-    closeModal()
-  }
+    closeModal();
+  };
 
   const inmobiliarias = useSelector(state => state.inmobiliarias.result);
 
@@ -57,9 +55,8 @@ const ModalEditPropiedad = ({closeModal, Datos}) => {
   }, []);
 
   return (
-    <ModalBackground
-    >
-      <ModalWrapper >
+    <ModalBackground>
+      <ModalWrapper>
         <CloseButton onClick={closeModal}>
           <CloseIcon />
         </CloseButton>
@@ -67,29 +64,94 @@ const ModalEditPropiedad = ({closeModal, Datos}) => {
           <h4>EDITAR</h4>
         </ModalTitleWrapper>
         <ModalGridWrapper>
-          <input name="logo" placeholder="LOGO" value={datos.logo} onChange={handleInputChange} />
-          <input name="nombre" placeholder="NOMBRE" value={datos.nombre} onChange={handleInputChange} />
-          <input name="descripcion" placeholder="DESCRIPCION" value={datos.descripcion} onChange={handleInputChange} />
-          <input name="direccion" placeholder="DIRECCION" value={datos.direccion} onChange={handleInputChange} />
-          <input name="barrio" placeholder="BARRIO" value={datos.barrio} onChange={handleInputChange} />
-          <select name="categoria" value={datos.categoria} onChange={handleInputChange} >
-            <option disabled selected>CATEGORIA</option>
+          <input
+            name='logo'
+            placeholder='LOGO'
+            value={datos.logo}
+            onChange={handleInputChange}
+          />
+          <input
+            name='nombre'
+            placeholder='NOMBRE'
+            value={datos.nombre}
+            onChange={handleInputChange}
+          />
+          <input
+            name='descripcion'
+            placeholder='DESCRIPCION'
+            value={datos.descripcion}
+            onChange={handleInputChange}
+          />
+          <input
+            name='direccion'
+            placeholder='DIRECCION'
+            value={datos.direccion}
+            onChange={handleInputChange}
+          />
+          <input
+            name='barrio'
+            placeholder='BARRIO'
+            value={datos.barrio}
+            onChange={handleInputChange}
+          />
+          <select
+            name='categoria'
+            value={datos.categoria}
+            onChange={handleInputChange}
+          >
+            <option disabled selected>
+              CATEGORIA
+            </option>
             <option>Casa</option>
             <option>Departamento</option>
             <option>Local</option>
           </select>
           <select name='tipo' value={datos.tipo} onChange={handleInputChange}>
-            <option disabled selected> TIPO</option>
+            <option disabled selected>
+              {" "}
+              TIPO
+            </option>
             <option>Venta</option>
             <option>Alquiler</option>
           </select>
-          <input name="ambientes" placeholder="AMBIENTES" value={datos.ambientes} onChange={handleInputChange} />
-          <input name="habitaciones" placeholder="HABITACIONES" value={datos.habitaciones} onChange={handleInputChange} />
-          <input name="banos" placeholder="BAÑOS" value={datos.banos} onChange={handleInputChange} />
-          <input name="precio" placeholder="PRECIO" value={datos.precio} onChange={handleInputChange} />
-          <input name="iframe" placeholder="IFRAME" value={datos.iframe} onChange={handleInputChange} />
-          <select name="inmobiliaria" value={datos.inmobiliaria} onChange={handleSelectChange}>
-            <option disabled selected>INMOBILIARIA</option>
+          <input
+            name='ambientes'
+            placeholder='AMBIENTES'
+            value={datos.ambientes}
+            onChange={handleInputChange}
+          />
+          <input
+            name='habitaciones'
+            placeholder='HABITACIONES'
+            value={datos.habitaciones}
+            onChange={handleInputChange}
+          />
+          <input
+            name='banos'
+            placeholder='BAÑOS'
+            value={datos.banos}
+            onChange={handleInputChange}
+          />
+          <input
+            name='precio'
+            placeholder='PRECIO'
+            value={datos.precio}
+            onChange={handleInputChange}
+          />
+          <input
+            name='iframe'
+            placeholder='IFRAME'
+            value={datos.iframe}
+            onChange={handleInputChange}
+          />
+          <select
+            name='inmobiliaria'
+            value={datos.inmobiliaria}
+            onChange={handleSelectChange}
+          >
+            <option disabled selected>
+              INMOBILIARIA
+            </option>
             {inmobiliarias.map(data => (
               <option value={JSON.stringify(data)}>{data.nombre}</option>
             ))}
@@ -97,10 +159,7 @@ const ModalEditPropiedad = ({closeModal, Datos}) => {
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
-          <ButtonGreen onClick={handleModal}
-          >
-            ACEPTAR
-          </ButtonGreen>
+          <ButtonGreen onClick={handleModal}>ACEPTAR</ButtonGreen>
         </ModalButtonWrapper>
       </ModalWrapper>
     </ModalBackground>

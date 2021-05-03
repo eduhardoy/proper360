@@ -13,18 +13,19 @@ const ProjectStyledWrapper = styled.div`
   @media (max-width: 1024px) {
     flex-direction: column-reverse;
     height: auto;
-      }
+  }
 `;
 
 const IframeContainer = styled.div`
   width: 70%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   @media (max-width: 1024px) {
     width: 100%;
     height: 70vh;
-      }
+  }
   div {
     display: flex;
     align-items: center;

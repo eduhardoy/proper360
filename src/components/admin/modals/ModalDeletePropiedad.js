@@ -63,20 +63,18 @@ const ButtonBlack = styled.button`
   }
 `;
 
-const ModalDeletePropiedad = ({closeModal, propiedadId}) => {
-
+const ModalDeletePropiedad = ({ closeModal, propiedadId }) => {
   const dispatch = useDispatch();
 
   const handleModal = () => {
     console.log(propiedadId);
-    //dispatch(actionsPropiedades.deletePropiedades(propiedadId));
+    dispatch(actionsPropiedades.deletePropiedad(propiedadId));
     closeModal();
   };
 
   return (
-    <ModalBackground
-    >
-      <ModalDeleteWrapper >
+    <ModalBackground>
+      <ModalDeleteWrapper>
         <CloseButton onClick={closeModal}>
           <CloseIcon />
         </CloseButton>
@@ -88,11 +86,7 @@ const ModalDeletePropiedad = ({closeModal, propiedadId}) => {
         </ModalDescriptionWrapper>
         <ModalButtonWrapper>
           <ButtonBlack onClick={closeModal}>CANCELAR</ButtonBlack>
-          <ButtonRed
-            onClick={handleModal}
-          >
-            ELIMINAR
-          </ButtonRed>
+          <ButtonRed onClick={handleModal}>ELIMINAR</ButtonRed>
         </ModalButtonWrapper>
       </ModalDeleteWrapper>
     </ModalBackground>

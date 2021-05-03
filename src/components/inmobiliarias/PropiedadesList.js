@@ -51,11 +51,11 @@ const FiltroWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  div{
+  div {
     width: 150px;
     @media (max-width: 350px) {
-    width: 120px;
-  }
+      width: 120px;
+    }
   }
 `;
 
@@ -99,44 +99,42 @@ function PropiedadesList({ propiedades, queries }) {
 
   const handleChangeTipo = event => {
     setTipo(event.target.value);
-    if(event.target.value != 0) {
-      setQueryTipo(`&tipo=${event.target.value}`)
+    if (event.target.value != 0) {
+      setQueryTipo(`&tipo=${event.target.value}`);
     } else {
-      setQueryTipo('')
+      setQueryTipo("");
     }
   };
 
   const handleChangeCategoria = event => {
     setCategoria(event.target.value);
-    if(event.target.value != 0) {
-    setQueryCategoria(`&categoria=${event.target.value}`)
+    if (event.target.value != 0) {
+      setQueryCategoria(`&categoria=${event.target.value}`);
     } else {
-      setQueryCategoria('')
+      setQueryCategoria("");
     }
   };
 
   const handleChangeHabitaciones = event => {
     setHabitaciones(event.target.value);
-    if(event.target.value != 0) {
-    setQueryHabitaciones(`&habitaciones=${event.target.value}`)
+    if (event.target.value != 0) {
+      setQueryHabitaciones(`&habitaciones=${event.target.value}`);
     } else {
-      setQueryHabitaciones('')
+      setQueryHabitaciones("");
     }
   };
 
   const handleChangeBanos = event => {
     setBanos(event.target.value);
-    if(event.target.value != 0) {
-    setQueryBanos(`&banos=${event.target.value}`)
+    if (event.target.value != 0) {
+      setQueryBanos(`&banos=${event.target.value}`);
     } else {
-      setQueryBanos('')
+      setQueryBanos("");
     }
   };
 
   const CreateQueries = () => {
-    return (
-      `?${queryTipo}${queryCategoria}${queryHabitaciones}${queryBanos}`
-    );
+    return `?${queryTipo}${queryCategoria}${queryHabitaciones}${queryBanos}`;
   };
 
   queries(CreateQueries);
@@ -144,87 +142,87 @@ function PropiedadesList({ propiedades, queries }) {
   return (
     <React.Fragment>
       <FiltroWrapper>
-      <FormControl className={classes.formControl}>
-        <InputLabel shrink id='demo-simple-select-placeholder-label-label'>
-          TIPO
-        </InputLabel>
-        <Select
-          labelId='demo-simple-select-placeholder-label-label'
-          id='demo-simple-select-placeholder-label'
-          value={tipo}
-          onChange={handleChangeTipo}
-          displayEmpty
-          className={classes.selectEmpty}
-        >
-          <MenuItem value={0}>
-            <em>TODOS</em>
-          </MenuItem>
-          <MenuItem value={"Alquiler"}>ALQUILER</MenuItem>
-          <MenuItem value={"Venta"}>VENTA</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl className={classes.formControl}>
-        <InputLabel shrink id='demo-simple-select-placeholder-label-label'>
-          CATEGORIA
-        </InputLabel>
-        <Select
-          labelId='demo-simple-select-placeholder-label-label'
-          id='demo-simple-select-placeholder-label'
-          value={categoria}
-          onChange={handleChangeCategoria}
-          displayEmpty
-          className={classes.selectEmpty}
-        >
-          <MenuItem value={0}>
-            <em>TODOS</em>
-          </MenuItem>
-          <MenuItem value={"Casa"}>CASA</MenuItem>
-          <MenuItem value={"Departamento"}>DEPARTAMENTO</MenuItem>
-          <MenuItem value={"Local"}>LOCAL</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl className={classes.formControl}>
-        <InputLabel shrink id='demo-simple-select-placeholder-label-label'>
-          HABITACIONES
-        </InputLabel>
-        <Select
-          labelId='demo-simple-select-placeholder-label-label'
-          id='demo-simple-select-placeholder-label'
-          value={habitaciones}
-          onChange={handleChangeHabitaciones}
-          displayEmpty
-          className={classes.selectEmpty}
-        >
-          <MenuItem value={0}>
-            <em>TODOS</em>
-          </MenuItem>
-          <MenuItem value={1}>1</MenuItem>
-          <MenuItem value={2}>2</MenuItem>
-          <MenuItem value={3}>3</MenuItem>
-          <MenuItem value={4}>4 o más</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl className={classes.formControl}>
-        <InputLabel shrink id='demo-simple-select-placeholder-label-label'>
-          BAÑOS
-        </InputLabel>
-        <Select
-          labelId='demo-simple-select-placeholder-label-label'
-          id='demo-simple-select-placeholder-label'
-          value={banos}
-          onChange={handleChangeBanos}
-          displayEmpty
-          className={classes.selectEmpty}
-        >
-          <MenuItem value={0}>
-            <em>TODOS</em>
-          </MenuItem>
-          <MenuItem value={1}>1</MenuItem>
-          <MenuItem value={2}>2</MenuItem>
-          <MenuItem value={3}>3</MenuItem>
-          <MenuItem value={4}>4 o más</MenuItem>
-        </Select>
-      </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel shrink id='demo-simple-select-placeholder-label-label'>
+            TIPO
+          </InputLabel>
+          <Select
+            labelId='demo-simple-select-placeholder-label-label'
+            id='demo-simple-select-placeholder-label'
+            value={tipo}
+            onChange={handleChangeTipo}
+            displayEmpty
+            className={classes.selectEmpty}
+          >
+            <MenuItem value={0}>
+              <em>TODAS</em>
+            </MenuItem>
+            <MenuItem value={"Alquiler"}>ALQUILER</MenuItem>
+            <MenuItem value={"Venta"}>VENTA</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel shrink id='demo-simple-select-placeholder-label-label'>
+            CATEGORIA
+          </InputLabel>
+          <Select
+            labelId='demo-simple-select-placeholder-label-label'
+            id='demo-simple-select-placeholder-label'
+            value={categoria}
+            onChange={handleChangeCategoria}
+            displayEmpty
+            className={classes.selectEmpty}
+          >
+            <MenuItem value={0}>
+              <em>TODAS</em>
+            </MenuItem>
+            <MenuItem value={"Casa"}>CASA</MenuItem>
+            <MenuItem value={"Departamento"}>DEPARTAMENTO</MenuItem>
+            <MenuItem value={"Local"}>LOCAL</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel shrink id='demo-simple-select-placeholder-label-label'>
+            HABITACIONES
+          </InputLabel>
+          <Select
+            labelId='demo-simple-select-placeholder-label-label'
+            id='demo-simple-select-placeholder-label'
+            value={habitaciones}
+            onChange={handleChangeHabitaciones}
+            displayEmpty
+            className={classes.selectEmpty}
+          >
+            <MenuItem value={0}>
+              <em>TODAS</em>
+            </MenuItem>
+            <MenuItem value={1}>1</MenuItem>
+            <MenuItem value={2}>2</MenuItem>
+            <MenuItem value={3}>3</MenuItem>
+            <MenuItem value={4}>4 o más</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel shrink id='demo-simple-select-placeholder-label-label'>
+            BAÑOS
+          </InputLabel>
+          <Select
+            labelId='demo-simple-select-placeholder-label-label'
+            id='demo-simple-select-placeholder-label'
+            value={banos}
+            onChange={handleChangeBanos}
+            displayEmpty
+            className={classes.selectEmpty}
+          >
+            <MenuItem value={0}>
+              <em>TODAS</em>
+            </MenuItem>
+            <MenuItem value={1}>1</MenuItem>
+            <MenuItem value={2}>2</MenuItem>
+            <MenuItem value={3}>3</MenuItem>
+            <MenuItem value={4}>4 o más</MenuItem>
+          </Select>
+        </FormControl>
       </FiltroWrapper>
       <ListContainer>
         {propiedades.map(data => (
