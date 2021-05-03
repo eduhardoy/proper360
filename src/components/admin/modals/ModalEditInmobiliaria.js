@@ -18,10 +18,11 @@ const ModalEditInmobiliaria = ({ closeModal, Datos }) => {
   const dispatch = useDispatch();
   /* const modalState = useSelector(state => state.inmobiliarias.result[0]); */
 
-  const [datos, setDatos] = React.useState({Datos});
+  const [datos, setDatos] = React.useState({...Datos});
 
   const handleInputChange = event => {
     setDatos(`${event.target.value}`)
+    console.log(datos)
   };
 
   const handleModal = () => {
