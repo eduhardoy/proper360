@@ -168,7 +168,7 @@ const ModalAddPropiedad = ({ closeModal }) => {
   };
 
   const handleModal = () => {
-    console.log(datos);
+    //console.log(datos);
     dispatch(actionsPropiedades.postPropiedad(datos));
     closeModal();
   };

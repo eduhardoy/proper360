@@ -34,7 +34,8 @@ const ModalEditInmobiliaria = ({ closeModal }) => {
   };
 
   const handleModal = () => {
-    console.log(datos);
+    //console.log(datos);
+    //console.log(datos._key);
     dispatch(actionsInmobiliarias.putInmobiliarias(datos));
     closeModal();
   };

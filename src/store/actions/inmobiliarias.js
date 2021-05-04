@@ -109,7 +109,7 @@ const putInmobiliarias = inmobiliaria => {
     dispatch({ type: PUT_INMOBILIARIAS });
     // Return promise with success and failure actions
     return api
-      .put("inmobiliarias", inmobiliaria, {
+      .put("inmobiliarias/" + inmobiliaria._key , inmobiliaria, {
         headers: { token: localStorage.getItem("token") },
       })
       .then(inmobiliaria =>
