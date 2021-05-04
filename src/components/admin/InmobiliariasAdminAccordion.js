@@ -97,13 +97,13 @@ export default function InmobiliariasAdminAccordion() {
   return (
     <AccordionWrapper>
       {inmobiliarias.result.map(data => (
-        <Accordion key={data._key}>
+        <Accordion key={data ? data._key : ""}>
           <StyledAccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls='panel1a-content'
             id='panel1a-header'
           >
-            <h2>{data.nombre}</h2>
+            <h2>{data ? data.nombre : ""}</h2>
             <ButtonWrapper>
               <ButtonAccordion
                 onClick={event => {
@@ -129,11 +129,11 @@ export default function InmobiliariasAdminAccordion() {
           </StyledAccordionSummary>
           <AccordionDetails>
             <ListDetails>
-              <p>Descripcion: {data.descripcion}</p>
-              <p>Telefono: {data.telefono}</p>
-              <p>Email: {data.email}</p>
-              <p>Direccion: {data.direccion}</p>
-              <img alt='Logo de la propiedad' src={data.logo} />
+              <p>Descripcion: {data ? data.descripcion : ""}</p>
+              <p>Telefono: {data ? data.telefono : ""}</p>
+              <p>Email: {data ? data.email : ""}</p>
+              <p>Direccion: {data ? data.direccion : ""}</p>
+              <img alt='Logo de la propiedad' src={data ? data.logo : ""} />
             </ListDetails>
           </AccordionDetails>
         </Accordion>

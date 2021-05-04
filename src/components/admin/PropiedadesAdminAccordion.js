@@ -90,13 +90,13 @@ export default function PropiedadesAdminAccordion() {
   return (
     <AccordionWrapper>
       {propiedades.result.map(data => (
-        <Accordion key={data._key}>
+        <Accordion key={data ? data._key : ""}>
           <StyledAccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls='panel1a-content'
             id='panel1a-header'
           >
-            <h2>{data.nombre}</h2>
+            <h2>{data ? data.nombre : ""}</h2>
             <ButtonWrapper>
               <ButtonAccordion
                 onClick={event => {
@@ -127,14 +127,14 @@ export default function PropiedadesAdminAccordion() {
                   {data.inmobiliaria ? data.inmobiliaria.nombre : ""}
                 </strong>
               </h3>
-              <p>Descripcion: {data.descripcion}</p>
-              <p>Direccion: {data.direccion}</p>
-              <p>Barrio: {data.barrio}</p>
-              <p>Categoria: {data.categoria}</p>
-              <p>Tipo: {data.tipo}</p>
-              <p>Ambientes: {data.ambientes}</p>
-              <p>Habitaciones: {data.habitaciones}</p>
-              <p>Baños: {data.banos}</p>
+              <p>Descripcion: {data ? data.descripcion : ""}</p>
+              <p>Direccion: {data ? data.direccion : ""}</p>
+              <p>Barrio: {data ? data.barrio : ""}</p>
+              <p>Categoria: {data ? data.categoria : ""}</p>
+              <p>Tipo: {data ? data.tipo : ""}</p>
+              <p>Ambientes: {data ? data.ambientes : ""}</p>
+              <p>Habitaciones: {data ? data.habitaciones : ""}</p>
+              <p>Baños: {data ? data.banos : ""}</p>
             </ListDetails>
           </AccordionDetails>
         </Accordion>
