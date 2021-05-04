@@ -92,7 +92,7 @@ export default function InmobiliariasAdminAccordion() {
       dispatch(actionsInmobiliarias.getInmobiliarias());
     }
     fetchInmobiliarias();
-  }, []);
+  }, [inmobiliarias.result]);
 
   return (
     <AccordionWrapper>

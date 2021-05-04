@@ -85,7 +85,7 @@ export default function PropiedadesAdminAccordion() {
       dispatch(actionsPropiedades.getPropiedades());
     }
     fetchPropiedades();
-  }, []);
+  }, [propiedades.result]);
 
   return (
     <AccordionWrapper>
@@ -124,7 +124,7 @@ export default function PropiedadesAdminAccordion() {
             <ListDetails>
               <h3>
                 <strong>
-                  {data.inmobiliaria ? data.inmobiliaria.nombre : ""}
+                  {data ? data.inmobiliaria.nombre : ""}
                 </strong>
               </h3>
               <p>Descripcion: {data ? data.descripcion : ""}</p>
