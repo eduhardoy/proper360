@@ -20,7 +20,7 @@ export const ModalBackground = styled.div`
 export const ModalWrapper = styled.div`
   width: 50%;
   min-width: 350px;
-  height: 95%;
+  height: 70%;
   z-index: 99999;
   border-radius: 20px;
   background-color: white;

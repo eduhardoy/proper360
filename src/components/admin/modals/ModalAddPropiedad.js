@@ -2,8 +2,8 @@ import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { actionsPropiedades } from '../../../store/actions/propiedades';
-import { actionsInmobiliarias } from '../../../store/actions/inmobiliarias';
+import { actionsPropiedades } from "../../../store/actions/propiedades";
+import { actionsInmobiliarias } from "../../../store/actions/inmobiliarias";
 
 export const ModalBackground = styled.div`
   position: fixed;
@@ -21,7 +21,7 @@ export const ModalBackground = styled.div`
 export const ModalWrapper = styled.div`
   width: 50%;
   min-width: 350px;
-  height: 95%;
+  height: 70%;
   z-index: 99999;
   border-radius: 20px;
   background-color: white;
@@ -132,48 +132,46 @@ export const ButtonRed = styled.button`
 `;
 
 const ModalAddPropiedad = ({ closeModal }) => {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   /* const modalState = useSelector(state => state.propiedades.result[0]); */
 
   const [datos, setDatos] = React.useState({
-    logo: '',
-    nombre: '',
-    descripcion: '',
-    direccion: '',
-    barrio: '',
-    categoria: '',
-    tipo: '',
-    ambientes: '',
-    habitaciones: '',
-    banos: '',
-    precio: '',
-    iframe: '',
-    inmobiliaria: ''
-  })
+    logo: "",
+    nombre: "",
+    descripcion: "",
+    direccion: "",
+    barrio: "",
+    categoria: "",
+    tipo: "",
+    ambientes: "",
+    habitaciones: "",
+    banos: "",
+    precio: "",
+    iframe: "",
+    inmobiliaria: "",
+  });
 
-  const handleInputChange = (event) => {
+  const handleInputChange = event => {
     /* console.log(event.target.name)
     console.log(event.target.value) */
     setDatos({
       ...datos,
-      [event.target.name]: event.target.value
-    })
-  }
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const handleSelectChange = event => {
     setDatos({
       ...datos,
-      [event.target.name]: JSON.parse(event.target.value)
-    })
-  }
+      [event.target.name]: JSON.parse(event.target.value),
+    });
+  };
 
   const handleModal = () => {
-
     console.log(datos);
-    dispatch(actionsPropiedades.postPropiedad(datos))
-    closeModal()
-  }
+    dispatch(actionsPropiedades.postPropiedad(datos));
+    closeModal();
+  };
 
   const inmobiliarias = useSelector(state => state.inmobiliarias.result);
 
@@ -194,13 +192,31 @@ const ModalAddPropiedad = ({ closeModal }) => {
           <h4>AGREGAR</h4>
         </ModalTitleWrapper>
         <ModalGridWrapper>
-          <input name="logo" placeholder="LOGO" onChange={handleInputChange} />
-          <input name="nombre" placeholder="NOMBRE" onChange={handleInputChange} />
-          <input name="descripcion" placeholder="DESCRIPCION" onChange={handleInputChange} />
-          <input name="direccion" placeholder="DIRECCION" onChange={handleInputChange} />
-          <input name="barrio" placeholder="BARRIO" onChange={handleInputChange} />
-          <select name="categoria" onChange={handleInputChange} >
-            <option disabled selected>CATEGORIA</option>
+          <input name='logo' placeholder='LOGO' onChange={handleInputChange} />
+          <input
+            name='nombre'
+            placeholder='NOMBRE'
+            onChange={handleInputChange}
+          />
+          <input
+            name='descripcion'
+            placeholder='DESCRIPCION'
+            onChange={handleInputChange}
+          />
+          <input
+            name='direccion'
+            placeholder='DIRECCION'
+            onChange={handleInputChange}
+          />
+          <input
+            name='barrio'
+            placeholder='BARRIO'
+            onChange={handleInputChange}
+          />
+          <select name='categoria' onChange={handleInputChange}>
+            <option disabled selected>
+              CATEGORIA
+            </option>
             <option>Casa</option>
             <option>Departamento</option>
             <option>Local</option>
@@ -212,13 +228,35 @@ const ModalAddPropiedad = ({ closeModal }) => {
             <option>Venta</option>
             <option>Alquiler</option>
           </select>
-          <input name="ambientes" placeholder="AMBIENTES" onChange={handleInputChange} />
-          <input name="habitaciones" placeholder="HABITACIONES" onChange={handleInputChange} />
-          <input name="banos" placeholder="BAÑOS" onChange={handleInputChange} />
-          <input name="precio" placeholder="PRECIO" onChange={handleInputChange} />
-          <input name="iframe" placeholder="IFRAME" onChange={handleInputChange} />
-          <select name="inmobiliaria" onChange={handleSelectChange}>
-            <option disabled selected>INMOBILIARIA</option>
+          <input
+            name='ambientes'
+            placeholder='AMBIENTES'
+            onChange={handleInputChange}
+          />
+          <input
+            name='habitaciones'
+            placeholder='HABITACIONES'
+            onChange={handleInputChange}
+          />
+          <input
+            name='banos'
+            placeholder='BAÑOS'
+            onChange={handleInputChange}
+          />
+          <input
+            name='precio'
+            placeholder='PRECIO'
+            onChange={handleInputChange}
+          />
+          <input
+            name='iframe'
+            placeholder='IFRAME'
+            onChange={handleInputChange}
+          />
+          <select name='inmobiliaria' onChange={handleSelectChange}>
+            <option disabled selected>
+              INMOBILIARIA
+            </option>
             {inmobiliarias.map(data => (
               <option value={JSON.stringify(data)}>{data.nombre}</option>
             ))}
@@ -226,11 +264,7 @@ const ModalAddPropiedad = ({ closeModal }) => {
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
-          <ButtonGreen
-            onClick={handleModal}
-          >
-            AGREGAR
-          </ButtonGreen>
+          <ButtonGreen onClick={handleModal}>AGREGAR</ButtonGreen>
         </ModalButtonWrapper>
       </ModalWrapper>
     </ModalBackground>
