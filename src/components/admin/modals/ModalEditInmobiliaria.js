@@ -1,6 +1,6 @@
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actionsInmobiliarias } from "../../../store/actions/inmobiliarias";
 
 import {
@@ -14,11 +14,17 @@ import {
   ButtonGreen,
 } from "./ModalAddInmobiliaria";
 
-const ModalEditInmobiliaria = ({ closeModal, data }) => {
+const ModalEditInmobiliaria = ({ closeModal }) => {
+  const [datos, setDatos] = React.useState({});
+  const selectedInmobiliaria = useSelector(
+    state => state.inmobiliarias.selected
+  );
+  React.useEffect(() => {
+    setDatos(selectedInmobiliaria);
+  }, [selectedInmobiliaria]);
+
   const dispatch = useDispatch();
   /* const modalState = useSelector(state => state.inmobiliarias.result[0]); */
-
-  const [datos, setDatos] = React.useState({ ...data });
 
   const handleInputChange = event => {
     setDatos({
@@ -47,37 +53,37 @@ const ModalEditInmobiliaria = ({ closeModal, data }) => {
             name='logo'
             placeholder='LOGO'
             onChange={handleInputChange}
-            value={datos.logo}
+            value={datos ? datos.logo : ""}
           />
           <input
             name='nombre'
             placeholder='NOMBRE'
-            value={datos.nombre}
+            value={datos ? datos.nombre : ""}
             onChange={handleInputChange}
           />
           <input
             name='descripcion'
             placeholder='DESCRIPCION'
-            value={datos.descripcion}
+            value={datos ? datos.descripcion : ""}
             onChange={handleInputChange}
           />
           <input
             name='telefono'
             placeholder='TELEFONO'
-            value={datos.telefono}
+            value={datos ? datos.telefono : ""}
             onChange={handleInputChange}
           />
           <input
             name='direccion'
             placeholder='DIRECCION'
-            value={datos.direccion}
+            value={datos ? datos.direccion : ""}
             onChange={handleInputChange}
           />
           <input
             name='email'
             type='email'
             placeholder='EMAIL'
-            value={datos.email}
+            value={datos ? datos.email : ""}
             onChange={handleInputChange}
           />
         </ModalGridWrapper>

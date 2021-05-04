@@ -18,14 +18,12 @@ import {
 const ModalEditPropiedad = ({ closeModal }) => {
   const [datos, setDatos] = React.useState({});
   const selectedPropiedad = useSelector(state => state.propiedades.selected);
-  console.log(selectedPropiedad);
-
-  const dispatch = useDispatch();
-  // const modalState = useSelector(state => state.propiedades.result[0]);
-
   React.useEffect(() => {
     setDatos(selectedPropiedad);
   }, [selectedPropiedad]);
+
+  const dispatch = useDispatch();
+  // const modalState = useSelector(state => state.propiedades.result[0]);
 
   const handleInputChange = event => {
     setDatos({
