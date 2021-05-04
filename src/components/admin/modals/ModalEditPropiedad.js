@@ -16,12 +16,16 @@ import {
 } from "./ModalAddPropiedad";
 
 const ModalEditPropiedad = ({ closeModal }) => {
+  const [datos, setDatos] = React.useState({});
   const selectedPropiedad = useSelector(state => state.propiedades.selected);
+  console.log(selectedPropiedad);
 
   const dispatch = useDispatch();
   // const modalState = useSelector(state => state.propiedades.result[0]);
 
-  const [datos, setDatos] = React.useState(selectedPropiedad);
+  React.useEffect(() => {
+    setDatos(selectedPropiedad);
+  }, [selectedPropiedad]);
 
   const handleInputChange = event => {
     setDatos({
@@ -62,39 +66,39 @@ const ModalEditPropiedad = ({ closeModal }) => {
           <h4>EDITAR</h4>
         </ModalTitleWrapper>
         <ModalGridWrapper>
-          {/* <input
+          <input
             name='logo'
             placeholder='LOGO'
-            value={datos.logo}
+            value={datos ? datos.logo : ""}
             onChange={handleInputChange}
           />
           <input
             name='nombre'
             placeholder='NOMBRE'
-            value={datos.nombre}
+            value={datos ? datos.nombre : ""}
             onChange={handleInputChange}
           />
           <input
             name='descripcion'
             placeholder='DESCRIPCION'
-            value={datos.descripcion}
+            value={datos ? datos.descripcion : ""}
             onChange={handleInputChange}
           />
           <input
             name='direccion'
             placeholder='DIRECCION'
-            value={datos.direccion}
+            value={datos ? datos.direccion : ""}
             onChange={handleInputChange}
           />
           <input
             name='barrio'
             placeholder='BARRIO'
-            value={datos.barrio}
+            value={datos ? datos.barrio : ""}
             onChange={handleInputChange}
           />
           <select
             name='categoria'
-            value={datos.categoria}
+            value={datos ? datos.categoria : ""}
             onChange={handleInputChange}
           >
             <option disabled selected>
@@ -104,7 +108,11 @@ const ModalEditPropiedad = ({ closeModal }) => {
             <option>Departamento</option>
             <option>Local</option>
           </select>
-          <select name='tipo' value={datos.tipo} onChange={handleInputChange}>
+          <select
+            name='tipo'
+            value={datos ? datos.tipo : ""}
+            onChange={handleInputChange}
+          >
             <option disabled selected>
               {" "}
               TIPO
@@ -115,36 +123,36 @@ const ModalEditPropiedad = ({ closeModal }) => {
           <input
             name='ambientes'
             placeholder='AMBIENTES'
-            value={datos.ambientes}
+            value={datos ? datos.ambientes : ""}
             onChange={handleInputChange}
           />
           <input
             name='habitaciones'
             placeholder='HABITACIONES'
-            value={datos.habitaciones}
+            value={datos ? datos.habitaciones : ""}
             onChange={handleInputChange}
           />
           <input
             name='banos'
             placeholder='BAÑOS'
-            value={datos.banos}
+            value={datos ? datos.banos : ""}
             onChange={handleInputChange}
           />
           <input
             name='precio'
             placeholder='PRECIO'
-            value={datos.precio}
+            value={datos ? datos.precio : ""}
             onChange={handleInputChange}
           />
           <input
             name='iframe'
             placeholder='IFRAME'
-            value={datos.iframe}
+            value={datos ? datos.iframe : ""}
             onChange={handleInputChange}
           />
           <select
             name='inmobiliaria'
-            value={datos.inmobiliaria}
+            value={datos ? datos.inmobiliaria : ""}
             onChange={handleSelectChange}
           >
             <option disabled selected>
@@ -153,7 +161,7 @@ const ModalEditPropiedad = ({ closeModal }) => {
             {inmobiliarias.map(data => (
               <option value={JSON.stringify(data)}>{data.nombre}</option>
             ))}
-          </select> */}
+          </select>
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>
