@@ -149,7 +149,7 @@ const ModalAddInmobiliaria = ({ closeModal }) => {
   };
 
   const handleModal = () => {
-    console.log(datos);
+    //console.log(datos);
     dispatch(actionsInmobiliarias.postInmobiliarias(datos));
     closeModal();
   };
