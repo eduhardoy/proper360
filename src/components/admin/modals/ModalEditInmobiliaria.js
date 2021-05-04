@@ -1,6 +1,6 @@
 import React from "react";
 import CloseIcon from "@material-ui/icons/Close";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actionsInmobiliarias } from "../../../store/actions/inmobiliarias";
 
 import {
@@ -14,11 +14,16 @@ import {
   ButtonGreen,
 } from "./ModalAddInmobiliaria";
 
-const ModalEditInmobiliaria = ({ closeModal, data }) => {
+const ModalEditInmobiliaria = ({ closeModal }) => {
   const dispatch = useDispatch();
   /* const modalState = useSelector(state => state.inmobiliarias.result[0]); */
 
-  const [datos, setDatos] = React.useState({ ...data });
+  const [datos, setDatos] = React.useState({});
+  const selectedInmobiliaria = useSelector(state => state.inmobiliarias.selected);
+
+  React.useEffect(()=>{
+    setDatos(selectedInmobiliaria);
+  }, [selectedInmobiliaria]);
 
   const handleInputChange = event => {
     setDatos({
@@ -29,7 +34,7 @@ const ModalEditInmobiliaria = ({ closeModal, data }) => {
 
   const handleModal = () => {
     console.log(datos);
-    dispatch(actionsInmobiliarias.putInmobiliarias(datos));
+    //dispatch(actionsInmobiliarias.putInmobiliarias(datos));
     closeModal();
   };
 
