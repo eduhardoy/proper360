@@ -15,21 +15,20 @@ import {
   ButtonGreen,
 } from "./ModalAddPropiedad";
 
-const ModalEditPropiedad = ({ closeModal, Datos }) => {
+const ModalEditPropiedad = ({ closeModal }) => {
+  const selectedPropiedad = useSelector(state => state.propiedades.selected);
+
   const dispatch = useDispatch();
   // const modalState = useSelector(state => state.propiedades.result[0]);
 
-  const [datos, setDatos] = React.useState({
-    ...Datos,
-  });
+  const [datos, setDatos] = React.useState(selectedPropiedad);
 
   const handleInputChange = event => {
-    /* console.log(event.target.name)
-    console.log(event.target.value) */
     setDatos({
       ...datos,
       [event.target.name]: event.target.value,
     });
+    console.log(datos);
   };
 
   const handleSelectChange = event => {
@@ -40,7 +39,6 @@ const ModalEditPropiedad = ({ closeModal, Datos }) => {
   };
 
   const handleModal = () => {
-    console.log(datos);
     //dispatch(actionsPropiedades.putPropiedad(datos))
     closeModal();
   };
@@ -64,7 +62,7 @@ const ModalEditPropiedad = ({ closeModal, Datos }) => {
           <h4>EDITAR</h4>
         </ModalTitleWrapper>
         <ModalGridWrapper>
-          <input
+          {/* <input
             name='logo'
             placeholder='LOGO'
             value={datos.logo}
@@ -155,7 +153,7 @@ const ModalEditPropiedad = ({ closeModal, Datos }) => {
             {inmobiliarias.map(data => (
               <option value={JSON.stringify(data)}>{data.nombre}</option>
             ))}
-          </select>
+          </select> */}
         </ModalGridWrapper>
         <ModalButtonWrapper>
           <ButtonRed onClick={closeModal}>CANCELAR</ButtonRed>

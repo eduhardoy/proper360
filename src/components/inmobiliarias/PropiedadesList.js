@@ -99,7 +99,7 @@ function PropiedadesList({ propiedades, queries }) {
 
   const handleChangeTipo = event => {
     setTipo(event.target.value);
-    if (event.target.value != 0) {
+    if (event.target.value !== 0) {
       setQueryTipo(`&tipo=${event.target.value}`);
     } else {
       setQueryTipo("");
@@ -108,7 +108,7 @@ function PropiedadesList({ propiedades, queries }) {
 
   const handleChangeCategoria = event => {
     setCategoria(event.target.value);
-    if (event.target.value != 0) {
+    if (event.target.value !== 0) {
       setQueryCategoria(`&categoria=${event.target.value}`);
     } else {
       setQueryCategoria("");
@@ -117,7 +117,7 @@ function PropiedadesList({ propiedades, queries }) {
 
   const handleChangeHabitaciones = event => {
     setHabitaciones(event.target.value);
-    if (event.target.value != 0) {
+    if (event.target.value !== 0) {
       setQueryHabitaciones(`&habitaciones=${event.target.value}`);
     } else {
       setQueryHabitaciones("");
@@ -126,7 +126,7 @@ function PropiedadesList({ propiedades, queries }) {
 
   const handleChangeBanos = event => {
     setBanos(event.target.value);
-    if (event.target.value != 0) {
+    if (event.target.value !== 0) {
       setQueryBanos(`&banos=${event.target.value}`);
     } else {
       setQueryBanos("");
