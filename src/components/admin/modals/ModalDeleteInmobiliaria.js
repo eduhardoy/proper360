@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actionsInmobiliarias } from "../../../store/actions/inmobiliarias";
 
 import CloseIcon from "@material-ui/icons/Close";
@@ -63,12 +63,20 @@ const ButtonBlack = styled.button`
   }
 `;
 
-const ModalDeleteInmobiliaria = ({ closeModal, inmobiliariaId, data }) => {
+const ModalDeleteInmobiliaria = ({ closeModal }) => {
   const dispatch = useDispatch();
 
+  const [datos, setDatos] = React.useState({});
+  const selectedInmobiliaria = useSelector(
+    state => state.inmobiliarias.selected
+  );
+  React.useEffect(() => {
+    setDatos(selectedInmobiliaria);
+  }, [selectedInmobiliaria]);
+
   const handleModal = () => {
-    console.log(inmobiliariaId);
-    //dispatch(actionsInmobiliarias.deleteInmobiliarias(inmobiliariaId));
+    //console.log(datos._key);
+    dispatch(actionsInmobiliarias.deleteInmobiliarias(datos._key));
     closeModal();
   };
 

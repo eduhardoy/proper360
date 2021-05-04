@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actionsPropiedades } from "../../../store/actions/propiedades";
 
 import CloseIcon from "@material-ui/icons/Close";
@@ -63,12 +63,20 @@ const ButtonBlack = styled.button`
   }
 `;
 
-const ModalDeletePropiedad = ({ closeModal, propiedadId, data }) => {
+const ModalDeletePropiedad = ({ closeModal }) => {
   const dispatch = useDispatch();
 
+  const [datos, setDatos] = React.useState({});
+  const selectedPropiedad = useSelector(
+    state => state.propiedades.selected
+  );
+  React.useEffect(() => {
+    setDatos(selectedPropiedad);
+  }, [selectedPropiedad]);
+
   const handleModal = () => {
-    console.log(propiedadId);
-    dispatch(actionsPropiedades.deletePropiedad(propiedadId));
+    //console.log(datos._key);
+    dispatch(actionsPropiedades.deletePropiedad(datos._key));
     closeModal();
   };
 

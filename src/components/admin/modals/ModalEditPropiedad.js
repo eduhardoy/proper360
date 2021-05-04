@@ -18,21 +18,19 @@ import {
 const ModalEditPropiedad = ({ closeModal }) => {
   const [datos, setDatos] = React.useState({});
   const selectedPropiedad = useSelector(state => state.propiedades.selected);
-  console.log(selectedPropiedad);
-
-  const dispatch = useDispatch();
-  // const modalState = useSelector(state => state.propiedades.result[0]);
-
   React.useEffect(() => {
     setDatos(selectedPropiedad);
   }, [selectedPropiedad]);
+
+  const dispatch = useDispatch();
+  // const modalState = useSelector(state => state.propiedades.result[0]);
 
   const handleInputChange = event => {
     setDatos({
       ...datos,
       [event.target.name]: event.target.value,
     });
-    console.log(datos);
+    //console.log(datos);
   };
 
   const handleSelectChange = event => {
@@ -43,7 +41,7 @@ const ModalEditPropiedad = ({ closeModal }) => {
   };
 
   const handleModal = () => {
-    //dispatch(actionsPropiedades.putPropiedad(datos))
+    dispatch(actionsPropiedades.putPropiedad(datos))
     closeModal();
   };
 
