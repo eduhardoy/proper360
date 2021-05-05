@@ -11,7 +11,7 @@ const ProjectStyledWrapper = styled.div`
   width: 100%;
   height: calc(100vh - 70px);
   @media (max-width: 1024px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     height: auto;
   }
 `;

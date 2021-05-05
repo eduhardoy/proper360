@@ -6,7 +6,7 @@ const HomeStyledHero = styled.div`
   height: calc(100vh - 70px);
   width: 100%;
   background-color: gray;
-  background-image: url("https://live.staticflickr.com/65535/51130890244_69f97e3548_h.jpg");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/31/Corrientes-puente.jpg");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;

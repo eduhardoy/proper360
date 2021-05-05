@@ -22,7 +22,7 @@ const FooterContainer = styled.footer`
   margin-top: 80px;
   @media (max-width: 750px) {
     margin-top: 40px;
-    }
+  }
   @media (max-width: 600px) {
     flex-direction: column;
   }
@@ -153,20 +153,28 @@ function Footer() {
           </p>
         </About>
         <Social>
-          <a target="_blank" rel="noreferrer" href='https://www.facebook.com/'>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://www.facebook.com/Proper-360-108956058019621/'
+          >
             <FaFacebookF />
           </a>
-          <a target="_blank" rel="noreferrer" href='https://www.instagram.com/'>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://instagram.com/proper360inmobiliario?igshid=1cwibalvlxmib'
+          >
             <FaInstagram />
           </a>
-          <a target="_blank" rel="noreferrer" href='https://www.linkedin.com'>
+          <a target='_blank' rel='noreferrer' href='https://www.linkedin.com'>
             <FaLinkedin />
           </a>
         </Social>
       </AboutSection>
       <FooterCredits>
-        <a target="_blank" rel="noreferrer" href='https://www.inibot.net'>
-        © 2021 - INIBOT
+        <a target='_blank' rel='noreferrer' href='https://www.inibot.net'>
+          © 2021 - INIBOT
         </a>
       </FooterCredits>
     </FooterContainer>

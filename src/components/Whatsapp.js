@@ -23,22 +23,25 @@ const WhatsappButton = styled.a`
   align-items: center;
   justify-content: center;
   @media (max-width: 750px) {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     bottom: 40px;
     z-index: 9999;
   }
   svg {
     font-size: 40px;
     @media (max-width: 750px) {
-      font-size: 30px;
+      font-size: 40px;
     }
   }
 `;
 
 const Whatsapp = () => {
   return (
-    <WhatsappButton target="_blank" href='https://api.whatsapp.com/send?phone=543794290578&text=Hola,%20necesitaria%20agendar%20una%20visita'>
+    <WhatsappButton
+      target='_blank'
+      href='https://api.whatsapp.com/send?phone=543794275060text=Hola,%20necesitaria%20agendar%20una%20visita'
+    >
       <WhatsAppIcon></WhatsAppIcon>
     </WhatsappButton>
   );

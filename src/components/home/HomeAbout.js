@@ -14,7 +14,7 @@ const HomeSectionAbout = styled.section`
     text-align: justify;
     @media (max-width: 600px) {
       width: 90%;
-      font-size: 16px;
+      font-size: 19px;
     }
   }
 `;

@@ -24,7 +24,7 @@ const StyledInfoContainer = styled.div`
   flex-direction: column;
   @media (max-width: 1024px) {
     width: 90%;
-      }
+  }
 `;
 
 const StyledInfoBackground = styled.div`
@@ -60,6 +60,8 @@ const ProjectDetails = styled.div`
     li {
       padding: 5px;
       font-weight: 300;
+      display: flex;
+      text-align: center;
     }
   }
 `;
@@ -96,14 +98,14 @@ const InfoContainer = ({ project }) => {
         </StyledProjectsTitle>
         <ProjectDetails>
           <ul>
-            <li>Barrio/zona: {project.barrio}</li>
+            <li>Barrio/Zona: {project.barrio}</li>
             <li>Ambientes: {project.ambientes}</li>
             <li>Baños: {project.banos}</li>
             <li>Habitaciones: {project.habitaciones}</li>
             <br />
 
             <li>
-              <strong>Alquiler inicial: ${project.precio}</strong>
+              <strong>Alquiler inicial/Monto: ${project.precio}</strong>
             </li>
           </ul>
         </ProjectDetails>
