@@ -213,16 +213,16 @@ const ModalAddPropiedad = ({ closeModal }) => {
             placeholder='BARRIO'
             onChange={handleInputChange}
           />
-          <select name='categoria' onChange={handleInputChange}>
-            <option disabled selected>
+          <select value="CATEGORIA" name='categoria' onChange={handleInputChange}>
+            <option disabled>
               CATEGORIA
             </option>
             <option>Casa</option>
             <option>Departamento</option>
             <option>Local</option>
           </select>
-          <select name='tipo' onChange={handleInputChange}>
-            <option disabled selected>
+          <select value="TIPO" name='tipo' onChange={handleInputChange}>
+            <option disabled>
               TIPO
             </option>
             <option>Venta</option>
@@ -253,12 +253,12 @@ const ModalAddPropiedad = ({ closeModal }) => {
             placeholder='IFRAME'
             onChange={handleInputChange}
           />
-          <select name='inmobiliaria' onChange={handleSelectChange}>
-            <option disabled selected>
+          <select value="INMOBILIARIA" name='inmobiliaria' onChange={handleSelectChange}>
+            <option disabled>
               INMOBILIARIA
             </option>
             {inmobiliarias.map(data => (
-              <option value={JSON.stringify(data)}>{data.nombre}</option>
+              <option key={data._key} value={JSON.stringify(data)}>{data.nombre}</option>
             ))}
           </select>
         </ModalGridWrapper>
