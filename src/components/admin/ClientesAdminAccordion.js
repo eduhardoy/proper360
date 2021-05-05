@@ -26,7 +26,7 @@ const ClientesAdminAccordion = () => {
       dispatch(actionsClientes.getClientes());
     }
     fetchClientes();
-  }, []);
+  }, [clientes.result]);
 
   return (
     <AccordionWrapper>

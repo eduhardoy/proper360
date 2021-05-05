@@ -124,7 +124,7 @@ export default function PropiedadesAdminAccordion() {
             <ListDetails>
               <h3>
                 <strong>
-                  {data ? data.inmobiliaria.nombre : ""}
+                  {data && data.inmobiliaria ? data.inmobiliaria.nombre : ""}
                 </strong>
               </h3>
               <p>Descripcion: {data ? data.descripcion : ""}</p>
