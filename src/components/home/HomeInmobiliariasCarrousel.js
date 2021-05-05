@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Link } from "@reach/router";
 import { useDispatch, useSelector } from "react-redux";
 import {actionsInmobiliarias} from "../../store/actions/inmobiliarias";
+import ReactGA from 'react-ga'
 
 const CarouselSection = styled.section`
   padding-top: 80px;
@@ -111,14 +112,22 @@ function HomeInmobiliariasCarrousel() {
     { width: 2560, itemsToShow: 5 },
   ];
 
+
+  const ClickHandlerInmobiliaria = (inmobiliaria) => {
+    ReactGA.event({
+      category: "INMOBILIARIA",
+      action: `Seleccion ${inmobiliaria}`
+    })
+  }
+
   return (
     <CarouselSection id='inmobiliarias'>
       <h1>INMOBILIARIAS Y DESARROLLADORES INMOBILIARIOS</h1>
       <CarouselContainer>
         <Carousel breakPoints={breakPoints}>
           {resultNew.map(inmo => (
-            <InmobiliariaLogo key={inmo._key}>
-              <Link to={`/inmobiliaria/${inmo._key}`}>
+            <InmobiliariaLogo key={inmo._key} >
+              <Link onClick={() => ClickHandlerInmobiliaria(inmo.nombre)} to={`/inmobiliaria/${inmo._key}`}>
                 <img src={`${inmo.logo}`} alt='Logo Inmobiliaria' />
               </Link>
             </InmobiliariaLogo>

@@ -6,6 +6,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import ReactGA from "react-ga";
 
 const ListContainer = styled.div`
   width: 90%;
@@ -139,6 +140,83 @@ function PropiedadesList({ propiedades, queries }) {
 
   queries(CreateQueries);
 
+  const ClickHandlerCategoriaCasa = () => {
+    ReactGA.event({
+      category: "Filtro CATEGORIA",
+      action: "Seleccion CASA como CATEGORIA"
+    })
+  }
+
+  const ClickHandlerCategoriaDepartamento = () => {
+    ReactGA.event({
+      category: "Filtro CATEGORIA",
+      action: "Seleccion DEPARTAMENTO como CATEGORIA"
+    })
+  }
+
+  const ClickHandlerCategoriaLocal = () => {
+    ReactGA.event({
+      category: "Filtro CATEGORIA",
+      action: "Seleccion LOCAL como CATEGORIA"
+    })
+  }
+
+  const ClickHandlerTipoAlquiler = () => {
+    ReactGA.event({
+      category: "Filtro TIPO",
+      action: "Seleccion ALQUILER como TIPO"
+    })
+  }
+
+  const ClickHandlerTipoVenta = () => {
+    ReactGA.event({
+      category: "Filtro TIPO",
+      action: "Seleccion VENTA como TIPO"
+    })
+  }
+
+  const ClickHandlerHabitacionesUna = () => {
+    ReactGA.event({
+      category: "Filtro HABITACIONES",
+      action: "Seleccion UNA como HABITACIONES"
+    })
+  }
+
+  const ClickHandlerHabitacionesDos = () => {
+    ReactGA.event({
+      category: "Filtro HABITACIONES",
+      action: "Seleccion DOS como HABITACIONES"
+    })
+  }
+
+  const ClickHandlerHabitacionesTres = () => {
+    ReactGA.event({
+      category: "Filtro HABITACIONES",
+      action: "Seleccion TRES como HABITACIONES"
+    })
+  }
+
+  const ClickHandlerHabitacionesCuatro = () => {
+    ReactGA.event({
+      category: "Filtro HABITACIONES",
+      action: "Seleccion CUATRO O MAS como HABITACIONES"
+    })
+  }
+
+  const ClickHandlerPropiedad = (propiedad) => {
+    ReactGA.event({
+      category: "PROPIEDAD",
+      action: `Seleccion ${propiedad}`
+    })
+  }
+
+  const ClickHandlerBarrio = (barrio) => {
+    ReactGA.event({
+      category: "BARRIO",
+      action: `Seleccion ${barrio}`
+    })
+  }
+
   return (
     <React.Fragment>
       <FiltroWrapper>
@@ -157,8 +235,8 @@ function PropiedadesList({ propiedades, queries }) {
             <MenuItem value={0}>
               <em>TODAS</em>
             </MenuItem>
-            <MenuItem value={"Alquiler"}>ALQUILER</MenuItem>
-            <MenuItem value={"Venta"}>VENTA</MenuItem>
+            <MenuItem onClick={ClickHandlerTipoAlquiler} value={"Alquiler"}>ALQUILER</MenuItem>
+            <MenuItem onClick={ClickHandlerTipoVenta} value={"Venta"}>VENTA</MenuItem>
           </Select>
         </FormControl>
         <FormControl className={classes.formControl}>
@@ -176,9 +254,9 @@ function PropiedadesList({ propiedades, queries }) {
             <MenuItem value={0}>
               <em>TODAS</em>
             </MenuItem>
-            <MenuItem value={"Casa"}>CASA</MenuItem>
-            <MenuItem value={"Departamento"}>DEPARTAMENTO</MenuItem>
-            <MenuItem value={"Local"}>LOCAL</MenuItem>
+            <MenuItem onClick={ClickHandlerCategoriaCasa} value={"Casa"}>CASA</MenuItem>
+            <MenuItem onClick={ClickHandlerCategoriaDepartamento} value={"Departamento"}>DEPARTAMENTO</MenuItem>
+            <MenuItem onClick={ClickHandlerCategoriaLocal} value={"Local"}>LOCAL</MenuItem>
           </Select>
         </FormControl>
         <FormControl className={classes.formControl}>
@@ -196,10 +274,10 @@ function PropiedadesList({ propiedades, queries }) {
             <MenuItem value={0}>
               <em>TODAS</em>
             </MenuItem>
-            <MenuItem value={1}>1</MenuItem>
-            <MenuItem value={2}>2</MenuItem>
-            <MenuItem value={3}>3</MenuItem>
-            <MenuItem value={4}>4 o más</MenuItem>
+            <MenuItem onClick={ClickHandlerHabitacionesUna} value={1}>1</MenuItem>
+            <MenuItem onClick={ClickHandlerHabitacionesDos} value={2}>2</MenuItem>
+            <MenuItem onClick={ClickHandlerHabitacionesTres} value={3}>3</MenuItem>
+            <MenuItem onClick={ClickHandlerHabitacionesCuatro} value={4}>4 o más</MenuItem>
           </Select>
         </FormControl>
         <FormControl className={classes.formControl}>
@@ -227,7 +305,7 @@ function PropiedadesList({ propiedades, queries }) {
       <ListContainer>
         {propiedades.map(data => (
           <PortadaContainer key={data._key}>
-            <Link to={`/project/${data._key}`}>
+            <Link onClick={() => {ClickHandlerPropiedad(data.nombre); ClickHandlerBarrio(data.barrio)}} to={`/project/${data._key}`}>
               <Portada src={data.logo} alt='' />
               <PortadaTitle>
                 <p>{data.nombre}</p>
