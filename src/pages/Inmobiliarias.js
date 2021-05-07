@@ -10,8 +10,6 @@ import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { actionsInmobiliarias } from "../store/actions/inmobiliarias";
 
-
-
 const Body = styled.div`
   width: 100%;
   height: 100%;
@@ -27,22 +25,25 @@ const InmobiliariaContainer = styled.div`
 
 function Inmobiliarias({ inmobiliaria }) {
   const [propQueries, setpropQueries] = React.useState("");
-  
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   const dispatch = useDispatch();
-  
+
   const inmobiliariaData = useSelector(state => state.inmobiliarias.resultOne);
-  
+
   React.useEffect(() => {
     function fetchPropiedadesByInmobiliaria() {
-      console.log(propQueries)
+      console.log(propQueries);
       dispatch(
-        actionsInmobiliarias.getInmobiliariaWithPropiedades(inmobiliaria, propQueries)
-        );
-      }
+        actionsInmobiliarias.getInmobiliariaWithPropiedades(
+          inmobiliaria,
+          propQueries
+        )
+      );
+    }
     fetchPropiedadesByInmobiliaria();
   }, [propQueries]);
 
@@ -60,7 +61,12 @@ function Inmobiliarias({ inmobiliaria }) {
         <InmobiliariaContainer>
           <InmobiliariaHeader {...headerData} />
           <InmobiliariaData inmobiliaria={inmobiliariaData} />
-          {propiedades != null && <PropiedadesList propiedades={propiedades} queries={setpropQueries}/>}
+          {propiedades != null && (
+            <PropiedadesList
+              propiedades={propiedades}
+              queries={setpropQueries}
+            />
+          )}
         </InmobiliariaContainer>
       </Body>
       <Footer />

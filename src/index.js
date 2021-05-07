@@ -9,7 +9,6 @@ import store from "./store";
 import Routes from "./routes";
 
 const App = () => {
-
   return (
     <div>
       <GlobalStyle />

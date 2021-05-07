@@ -143,79 +143,79 @@ function PropiedadesList({ propiedades, queries }) {
   const ClickHandlerCategoriaCasa = () => {
     ReactGA.event({
       category: "Filtro CATEGORIA",
-      action: "Seleccion CASA como CATEGORIA"
-    })
-  }
+      action: "Seleccion CASA como CATEGORIA",
+    });
+  };
 
   const ClickHandlerCategoriaDepartamento = () => {
     ReactGA.event({
       category: "Filtro CATEGORIA",
-      action: "Seleccion DEPARTAMENTO como CATEGORIA"
-    })
-  }
+      action: "Seleccion DEPARTAMENTO como CATEGORIA",
+    });
+  };
 
   const ClickHandlerCategoriaLocal = () => {
     ReactGA.event({
       category: "Filtro CATEGORIA",
-      action: "Seleccion LOCAL como CATEGORIA"
-    })
-  }
+      action: "Seleccion LOCAL como CATEGORIA",
+    });
+  };
 
   const ClickHandlerTipoAlquiler = () => {
     ReactGA.event({
       category: "Filtro TIPO",
-      action: "Seleccion ALQUILER como TIPO"
-    })
-  }
+      action: "Seleccion ALQUILER como TIPO",
+    });
+  };
 
   const ClickHandlerTipoVenta = () => {
     ReactGA.event({
       category: "Filtro TIPO",
-      action: "Seleccion VENTA como TIPO"
-    })
-  }
+      action: "Seleccion VENTA como TIPO",
+    });
+  };
 
   const ClickHandlerHabitacionesUna = () => {
     ReactGA.event({
       category: "Filtro HABITACIONES",
-      action: "Seleccion UNA como HABITACIONES"
-    })
-  }
+      action: "Seleccion UNA como HABITACIONES",
+    });
+  };
 
   const ClickHandlerHabitacionesDos = () => {
     ReactGA.event({
       category: "Filtro HABITACIONES",
-      action: "Seleccion DOS como HABITACIONES"
-    })
-  }
+      action: "Seleccion DOS como HABITACIONES",
+    });
+  };
 
   const ClickHandlerHabitacionesTres = () => {
     ReactGA.event({
       category: "Filtro HABITACIONES",
-      action: "Seleccion TRES como HABITACIONES"
-    })
-  }
+      action: "Seleccion TRES como HABITACIONES",
+    });
+  };
 
   const ClickHandlerHabitacionesCuatro = () => {
     ReactGA.event({
       category: "Filtro HABITACIONES",
-      action: "Seleccion CUATRO O MAS como HABITACIONES"
-    })
-  }
+      action: "Seleccion CUATRO O MAS como HABITACIONES",
+    });
+  };
 
-  const ClickHandlerPropiedad = (propiedad) => {
+  const ClickHandlerPropiedad = propiedad => {
     ReactGA.event({
       category: "PROPIEDAD",
-      action: `Seleccion ${propiedad}`
-    })
-  }
+      action: `Seleccion ${propiedad}`,
+    });
+  };
 
-  const ClickHandlerBarrio = (barrio) => {
+  const ClickHandlerBarrio = barrio => {
     ReactGA.event({
       category: "BARRIO",
-      action: `Seleccion ${barrio}`
-    })
-  }
+      action: `Seleccion ${barrio}`,
+    });
+  };
 
   return (
     <React.Fragment>
@@ -235,8 +235,12 @@ function PropiedadesList({ propiedades, queries }) {
             <MenuItem value={0}>
               <em>TODAS</em>
             </MenuItem>
-            <MenuItem onClick={ClickHandlerTipoAlquiler} value={"Alquiler"}>ALQUILER</MenuItem>
-            <MenuItem onClick={ClickHandlerTipoVenta} value={"Venta"}>VENTA</MenuItem>
+            <MenuItem onClick={ClickHandlerTipoAlquiler} value={"Alquiler"}>
+              ALQUILER
+            </MenuItem>
+            <MenuItem onClick={ClickHandlerTipoVenta} value={"Venta"}>
+              VENTA
+            </MenuItem>
           </Select>
         </FormControl>
         <FormControl className={classes.formControl}>
@@ -254,9 +258,18 @@ function PropiedadesList({ propiedades, queries }) {
             <MenuItem value={0}>
               <em>TODAS</em>
             </MenuItem>
-            <MenuItem onClick={ClickHandlerCategoriaCasa} value={"Casa"}>CASA</MenuItem>
-            <MenuItem onClick={ClickHandlerCategoriaDepartamento} value={"Departamento"}>DEPARTAMENTO</MenuItem>
-            <MenuItem onClick={ClickHandlerCategoriaLocal} value={"Local"}>LOCAL</MenuItem>
+            <MenuItem onClick={ClickHandlerCategoriaCasa} value={"Casa"}>
+              CASA
+            </MenuItem>
+            <MenuItem
+              onClick={ClickHandlerCategoriaDepartamento}
+              value={"Departamento"}
+            >
+              DEPARTAMENTO
+            </MenuItem>
+            <MenuItem onClick={ClickHandlerCategoriaLocal} value={"Local"}>
+              LOCAL
+            </MenuItem>
           </Select>
         </FormControl>
         <FormControl className={classes.formControl}>
@@ -274,10 +287,18 @@ function PropiedadesList({ propiedades, queries }) {
             <MenuItem value={0}>
               <em>TODAS</em>
             </MenuItem>
-            <MenuItem onClick={ClickHandlerHabitacionesUna} value={1}>1</MenuItem>
-            <MenuItem onClick={ClickHandlerHabitacionesDos} value={2}>2</MenuItem>
-            <MenuItem onClick={ClickHandlerHabitacionesTres} value={3}>3</MenuItem>
-            <MenuItem onClick={ClickHandlerHabitacionesCuatro} value={4}>4 o más</MenuItem>
+            <MenuItem onClick={ClickHandlerHabitacionesUna} value={1}>
+              1
+            </MenuItem>
+            <MenuItem onClick={ClickHandlerHabitacionesDos} value={2}>
+              2
+            </MenuItem>
+            <MenuItem onClick={ClickHandlerHabitacionesTres} value={3}>
+              3
+            </MenuItem>
+            <MenuItem onClick={ClickHandlerHabitacionesCuatro} value={4}>
+              4 o más
+            </MenuItem>
           </Select>
         </FormControl>
         <FormControl className={classes.formControl}>
@@ -305,7 +326,13 @@ function PropiedadesList({ propiedades, queries }) {
       <ListContainer>
         {propiedades.map(data => (
           <PortadaContainer key={data._key}>
-            <Link onClick={() => {ClickHandlerPropiedad(data.nombre); ClickHandlerBarrio(data.barrio)}} to={`/project/${data._key}`}>
+            <Link
+              onClick={() => {
+                ClickHandlerPropiedad(data.nombre);
+                ClickHandlerBarrio(data.barrio);
+              }}
+              to={`/project/${data._key}`}
+            >
               <Portada src={data.logo} alt='' />
               <PortadaTitle>
                 <p>{data.nombre}</p>

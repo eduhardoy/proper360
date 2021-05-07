@@ -91,8 +91,14 @@ const InmobiliariasAdmin = () => {
           <ButtonModal onClick={OpenAddModalInmobiliaria}>
             <AddIcon />
           </ButtonModal>
-          <div style={addModalInmobiliaria === true ? { display: "flex" } : { display: "none" }}>
-            <ModalAddInmobiliaria closeModal={CloseAddModalInmobiliaria}/>
+          <div
+            style={
+              addModalInmobiliaria === true
+                ? { display: "flex" }
+                : { display: "none" }
+            }
+          >
+            <ModalAddInmobiliaria closeModal={CloseAddModalInmobiliaria} />
           </div>
         </TitleWrapper>
         <ListWrapper>

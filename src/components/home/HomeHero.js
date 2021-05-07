@@ -6,9 +6,9 @@ const HomeStyledHero = styled.div`
   height: calc(100vh - 70px);
   width: 100%;
   background-color: gray;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/31/Corrientes-puente.jpg");
+  background-image: url("https://live.staticflickr.com/65535/51162644248_86d25a4d61_b.jpg");
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
   display: flex;
   align-items: center;

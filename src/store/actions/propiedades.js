@@ -128,7 +128,7 @@ const putPropiedad = propiedad => {
     dispatch({ type: PUT_PROPIEDADES });
     // Return promise with success and failure actions
     return api
-      .put("propiedades/" + propiedad._key , propiedad, {
+      .put("propiedades/" + propiedad._key, propiedad, {
         headers: { token: localStorage.getItem("token") },
       })
       .then(propiedad =>

@@ -136,7 +136,7 @@ const SubscribeForm = () => {
   const handleSnack = newState => () => {
     setState({
       open: true,
-      
+
       ...newState,
     });
   };

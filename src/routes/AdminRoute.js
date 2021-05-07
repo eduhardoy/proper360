@@ -18,27 +18,31 @@ const AdminRoute = () => {
 };
 
 const PrivateRoute = ({ as: Comp, ...props }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   React.useEffect(async () => {
-    const token = localStorage.getItem("token")
-    const tokenValidated = await (await axios.post("http://198.58.123.120:3006/auth/validate", { token })).data
-    if (tokenValidated === false) navigate("/admin")
-  }, [])
+    const token = localStorage.getItem("token");
+    const tokenValidated = await (
+      await axios.post("http://198.58.123.120:3006/auth/validate", { token })
+    ).data;
+    if (tokenValidated === false) navigate("/admin");
+  }, []);
 
-  return <Comp {...props} />
-}
+  return <Comp {...props} />;
+};
 
 const IsLogged = ({ as: Comp, ...props }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   React.useEffect(async () => {
-    const token = localStorage.getItem("token")
-    const tokenValidated = await (await axios.post("http://198.58.123.120:3006/auth/validate", { token })).data
-    if (tokenValidated === true) navigate("/admin/inmobiliarias")
-  }, [])
+    const token = localStorage.getItem("token");
+    const tokenValidated = await (
+      await axios.post("http://198.58.123.120:3006/auth/validate", { token })
+    ).data;
+    if (tokenValidated === true) navigate("/admin/inmobiliarias");
+  }, []);
 
-  return <Admin path='/' />
-}
+  return <Admin path='/' />;
+};
 
 export default AdminRoute;

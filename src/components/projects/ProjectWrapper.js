@@ -13,6 +13,7 @@ const ProjectStyledWrapper = styled.div`
   @media (max-width: 1024px) {
     flex-direction: column;
     height: auto;
+    margin-top: 20px;
   }
 `;
 

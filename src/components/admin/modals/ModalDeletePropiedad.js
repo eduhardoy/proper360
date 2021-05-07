@@ -67,9 +67,7 @@ const ModalDeletePropiedad = ({ closeModal }) => {
   const dispatch = useDispatch();
 
   const [datos, setDatos] = React.useState({});
-  const selectedPropiedad = useSelector(
-    state => state.propiedades.selected
-  );
+  const selectedPropiedad = useSelector(state => state.propiedades.selected);
   React.useEffect(() => {
     setDatos(selectedPropiedad);
   }, [selectedPropiedad]);

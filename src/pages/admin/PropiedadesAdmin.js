@@ -90,8 +90,14 @@ const PropiedadesAdmin = () => {
           <ButtonModal onClick={OpenAddModalPropiedad}>
             <AddIcon />
           </ButtonModal>
-          <div style={addModalPropiedad === true ? { display: "flex" } : { display: "none" }}>
-            <ModalAddPropiedad closeModal={CloseAddModalPropiedad}/>
+          <div
+            style={
+              addModalPropiedad === true
+                ? { display: "flex" }
+                : { display: "none" }
+            }
+          >
+            <ModalAddPropiedad closeModal={CloseAddModalPropiedad} />
           </div>
         </TitleWrapper>
         <ListWrapper>

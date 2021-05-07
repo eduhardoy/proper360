@@ -43,7 +43,7 @@ const ModalEditPropiedad = ({ closeModal }) => {
 
   const handleModal = () => {
     //console.log(datos)
-    dispatch(actionsPropiedades.putPropiedad(datos))
+    dispatch(actionsPropiedades.putPropiedad(datos));
     closeModal();
   };
 
@@ -101,9 +101,7 @@ const ModalEditPropiedad = ({ closeModal }) => {
             value={datos ? datos.categoria : ""}
             onChange={handleInputChange}
           >
-            <option disabled>
-              CATEGORIA
-            </option>
+            <option disabled>CATEGORIA</option>
             <option>Casa</option>
             <option>Departamento</option>
             <option>Local</option>
@@ -113,10 +111,7 @@ const ModalEditPropiedad = ({ closeModal }) => {
             value={datos ? datos.tipo : ""}
             onChange={handleInputChange}
           >
-            <option disabled>
-              {" "}
-              TIPO
-            </option>
+            <option disabled> TIPO</option>
             <option>Venta</option>
             <option>Alquiler</option>
           </select>
@@ -155,11 +150,11 @@ const ModalEditPropiedad = ({ closeModal }) => {
             value={datos ? JSON.stringify(datos.inmobiliaria) : ""}
             onChange={handleSelectChange}
           >
-            <option disabled >
-              INMOBILIARIA
-            </option>
+            <option disabled>INMOBILIARIA</option>
             {inmobiliarias.map(data => (
-              <option key={data._key} value={JSON.stringify(data)}>{data.nombre}</option>
+              <option key={data._key} value={JSON.stringify(data)}>
+                {data.nombre}
+              </option>
             ))}
           </select>
         </ModalGridWrapper>

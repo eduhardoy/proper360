@@ -17,8 +17,8 @@ const Form = styled.form`
     padding: 5px;
     font-size: 15px;
     @media (max-width: 1024px) {
-    width: 300px;
-      }
+      width: 300px;
+    }
   }
   button {
     height: 40px;
