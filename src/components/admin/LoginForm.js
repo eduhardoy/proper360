@@ -66,7 +66,7 @@ const LoginForm = () => {
     //TODO LOGICA DE LOGIN
     axios({
       method: "POST",
-      url: "http://198.58.123.120:3006/auth/login",
+      url: "https://proper360.net/api/auth/login",
       data: {
         usuario: form.get("usuario"),
         contrasena: form.get("contrasena"),
