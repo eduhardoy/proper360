@@ -40,7 +40,7 @@ const Whatsapp = () => {
   return (
     <WhatsappButton
       target='_blank'
-      href='https://api.whatsapp.com/send?phone=543794275060text=Hola,%20necesitaria%20agendar%20una%20visita'
+      href='https://api.whatsapp.com/send?phone=543794275060&text=Hola,%20necesitaria%20agendar%20una%20visita'
     >
       <WhatsAppIcon></WhatsAppIcon>
     </WhatsappButton>
