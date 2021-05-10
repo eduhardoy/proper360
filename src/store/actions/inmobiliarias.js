@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const api = axios.create({ baseURL: "http://198.58.123.120:3006/" });
+// const api = axios.create({ baseURL: "http://198.58.123.120:3006/" });
+const api = axios.create({ baseURL: "https://proper360.net/api/" });
 
 //Types
 const GET_INMOBILIARIAS = "GET_INMOBILIARIAS";
